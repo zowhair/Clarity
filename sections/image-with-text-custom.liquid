@@ -83,7 +83,9 @@
           <div
             id="ImageWithText--{{ section.id }}"
             class="lm-image-{{section.id}} image-with-text__content image-with-text__content--{{ section.settings.desktop_content_position }} image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} image-with-text__content--{{ section.settings.height }} gradient color-{{ section.settings.color_scheme }} content-container"
-            {% if section.settings.full-width  %} style="margin:0;"{% endif %}
+            {% if section.settings['full-width'] %}
+              style="margin:0;"
+            {% endif %}
           >
             {%- for block in section.blocks -%}
               {%- assign previous_block_index = forloop.index0 | minus: 1 -%}
@@ -250,38 +252,41 @@
                     </span>
                   </button>
                   <script>
-               document.querySelector('.buybutton-{{ block.id }}').onclick = clickBuyButton;
-                  
-                  function clickBuyButton(e) {
+                    document.querySelector('.buybutton-{{ block.id }}').onclick = clickBuyButton;
+
+                    function clickBuyButton(e) {
                       // Get the current quantity value
                       let quantity = 1; // Default quantity value
-                  
+
                       // Check if a tiered option is active and retrieve its quantity value
                       const activeTieredOption = document.querySelector('.tiered-option');
                       if (activeTieredOption && activeTieredOption.dataset.quantity) {
-                          quantity = parseInt(activeTieredOption.dataset.quantity, 10);
+                        quantity = parseInt(activeTieredOption.dataset.quantity, 10);
                       } else {
-                          // If no active tiered option, fallback to the quantity input field
-                          const quantityInput = document.querySelector('.product-form__quantity');
-                          if (quantityInput) {
-                              quantity = parseInt(quantityInput.value, 10) || 1;
-                          } else {
-                              // If the quantity input doesn't exist, create a hidden input with a default quantity value
-                              document.querySelector('.product-form__buttons').insertAdjacentHTML('beforebegin', `
+                        // If no active tiered option, fallback to the quantity input field
+                        const quantityInput = document.querySelector('.product-form__quantity');
+                        if (quantityInput) {
+                          quantity = parseInt(quantityInput.value, 10) || 1;
+                        } else {
+                          // If the quantity input doesn't exist, create a hidden input with a default quantity value
+                          document.querySelector('.product-form__buttons').insertAdjacentHTML(
+                            'beforebegin',
+                            `
                                   <input class="product-form__quantity" type="hidden" name="quantity" value="${quantity}">
-                              `);
-                          }
+                              `
+                          );
+                        }
                       }
-                  
+
                       // Update the quantity input value to match the selected quantity
                       const hiddenQuantityInput = document.querySelector('.product-form__quantity');
                       if (hiddenQuantityInput) {
-                          hiddenQuantityInput.value = quantity;
+                        hiddenQuantityInput.value = quantity;
                       }
-                  
+
                       // Click the submit button
                       document.querySelector('.product-form__submit').click();
-                  }
+                    }
                   </script>
               {%- endcase -%}
             {%- endfor -%}
@@ -293,11 +298,11 @@
 </section>
 {% schema %}
 {
-  "name": "Lumin Mega Section",
+  "name": "t:sections.names.image_with_text_custom",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "color_scheme",
@@ -492,26 +497,26 @@
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
-     {
-    "type": "range",
-    "id": "margin_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "margin_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Bottom",
-    "default": 36
-  },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 36
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -570,22 +575,22 @@
       "type": "feature",
       "name": "Feature List",
       "settings": [
-             {
-              "type": "image_picker",
-              "id": "icon",
-              "label": "Image"
-            },
-               {
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Image"
+        },
+        {
           "type": "range",
           "id": "icon_size",
           "label": "Feature Image Size",
-          "min":       20,
-          "max":        100,
-          "step":       2,
-          "unit":       "px",
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
 
           "default": 50
-          },
+        },
         {
           "type": "inline_richtext",
           "id": "heading",
@@ -610,51 +615,47 @@
         }
       ]
     },
-      {
+    {
       "type": "percent",
       "name": "Percent List",
       "settings": [
-            {
+        {
           "type": "range",
           "id": "icon_size",
           "label": "Circle Size",
-          "min":       20,
-          "max":        100,
-          "step":       2,
-          "unit":       "px",
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
           "default": 70
-          },
+        },
         {
           "type": "range",
           "id": "circle_width",
           "label": "circle width",
-          "min":       1,
-          "max":        10,
-          "step":       1,
+          "min": 1,
+          "max": 10,
+          "step": 1,
           "default": 4
-          },
-          {
-        "type": "color",
-        "id": "percent_bg",
-        "label": "Circle Background",
-        "default": "#191919"
-      },
-        {   "type": "color",
-        "id": "percent_border",
-        "label": "Circle Border",
-        "default": "#f2f2f2"
-      },
-      {
-      "type": "range",
-      "id": "circle_value_1",
-      "label": "Circle Value",
-      "min":       10,
-      "max":        100,
-      "step":       1,
-      "unit":       "%",
+        },
+        {
+          "type": "color",
+          "id": "percent_bg",
+          "label": "Circle Background",
+          "default": "#191919"
+        },
+        { "type": "color", "id": "percent_border", "label": "Circle Border", "default": "#f2f2f2" },
+        {
+          "type": "range",
+          "id": "circle_value_1",
+          "label": "Circle Value",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
 
-      "default": 92
-      },
+          "default": 92
+        },
         {
           "type": "range",
           "id": "percent_text",
@@ -765,33 +766,33 @@
         }
       ]
     },
-     {
+    {
       "type": "testimonial-images",
       "name": "Testimonial Images",
       "settings": [
-              {
+        {
           "type": "range",
           "id": "image_size",
           "label": "Image Bar Size",
-          "min":       0.5,
-          "max":        2,
-          "step":       0.1,
+          "min": 0.5,
+          "max": 2,
+          "step": 0.1,
           "default": 1
-          },
+        },
         {
           "type": "range",
           "id": "image_space",
           "label": "Image Space",
-          "min":       -30,
-          "max":        10,
-          "step":       1,
+          "min": -30,
+          "max": 10,
+          "step": 1,
           "default": -18
-          },
-             {
-              "type": "image_picker",
-              "id": "image",
-              "label": "Image"
-            },
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_2",
@@ -799,32 +800,32 @@
           "default": false
         },
         {
-              "type": "image_picker",
-              "id": "image_2",
-              "label": "Image"
-            },
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_3",
           "label": "Hide Image 3",
           "default": false
         },
-         {
-              "type": "image_picker",
-              "id": "image_3",
-              "label": "Image"
-            },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_4",
           "label": "Hide Image 4",
           "default": false
         },
-         {
-              "type": "image_picker",
-              "id": "image_4",
-              "label": "Image"
-            },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_5",
@@ -832,25 +833,25 @@
           "default": false
         },
         {
-              "type": "image_picker",
-              "id": "image_5",
-              "label": "Image"
-            },
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image"
+        },
         {
           "type": "richtext",
           "id": "text",
           "default": "<p>★★★★★ Excellent 4.8</p>",
           "label": "t:sections.image-with-text.blocks.text.settings.text.label"
         },
-           {
+        {
           "type": "range",
           "id": "text_size",
           "label": "Text Size",
-          "min":       8,
-          "max":        30,
-          "step":       1,
+          "min": 8,
+          "max": 30,
+          "step": 1,
           "default": 13
-          },
+        },
         {
           "type": "select",
           "id": "text_style",
@@ -950,11 +951,11 @@
           "type": "range",
           "id": "block_size",
           "label": "Timer Size",
-          "min":       0.3,
-          "max":        1.5,
-          "step":       0.1,
+          "min": 0.3,
+          "max": 1.5,
+          "step": 0.1,
           "default": 1
-          },
+        },
         {
           "type": "select",
           "id": "timezone",
@@ -1501,7 +1502,7 @@
           "type": "checkbox",
           "id": "hide_days",
           "label": "Hide Days",
-          "default":false
+          "default": false
         },
         {
           "type": "text",
@@ -2073,7 +2074,7 @@
         }
       ]
     },
-     {
+    {
       "type": "feature_range",
       "name": "Feature range",
       "settings": [
@@ -2182,7 +2183,7 @@
         }
       ]
     },
-     {
+    {
       "type": "newsletter",
       "name": "Newsletter form",
       "limit": 1,
@@ -2278,7 +2279,7 @@
         }
       ]
     },
-      {
+    {
       "type": "image",
       "name": "Image",
       "settings": [
@@ -2298,15 +2299,15 @@
           "unit": "%"
         },
         {
-        "type": "range",
-        "id": "inset_image_radius",
-        "min": 0,
-        "max": 40,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.corner_radius.label",
-        "default": 0
-      },
+          "type": "range",
+          "id": "inset_image_radius",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "t:settings_schema.global.settings.corner_radius.label",
+          "default": 0
+        },
         {
           "type": "select",
           "id": "image_alignment",
@@ -2333,7 +2334,7 @@
         }
       ]
     },
-        {
+    {
       "type": "video",
       "name": "Video",
       "settings": [
@@ -2378,7 +2379,7 @@
           "id": "block_heading_color",
           "label": "Heading color"
         },
-         {
+        {
           "type": "range",
           "id": "block_heading_size",
           "min": 8,
@@ -2474,7 +2475,7 @@
         }
       ]
     },
-     {
+    {
       "type": "text_columns",
       "name": "Text columns",
       "settings": [
@@ -2630,26 +2631,26 @@
       "type": "icons",
       "name": "Icons",
       "settings": [
-         {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 12
-    },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 12
+        },
         {
           "type": "range",
           "id": "gap",
@@ -2759,10 +2760,10 @@
           "type": "header",
           "content": "Icon 1"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_1",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -2968,10 +2969,10 @@
           "type": "header",
           "content": "Icon 2"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_2",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -3177,10 +3178,10 @@
           "type": "header",
           "content": "Icon 3"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_3",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -3386,10 +3387,10 @@
           "type": "header",
           "content": "Icon 4"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_4",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -3595,10 +3596,10 @@
           "type": "header",
           "content": "Icon 5"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_5",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -3790,9 +3791,9 @@
           "label": "Heading 5"
         },
         {
-        "type": "inline_richtext",
-        "id": "text_5",
-        "label": "Text 5"
+          "type": "inline_richtext",
+          "id": "text_5",
+          "label": "Text 5"
         },
         {
           "type": "url",
@@ -3803,10 +3804,10 @@
           "type": "header",
           "content": "Icon 6"
         },
-          {
+        {
           "type": "select",
           "id": "icon_old_6",
-           "options": [
+          "options": [
             {
               "value": "none",
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
@@ -3998,9 +3999,9 @@
           "label": "Heading 6"
         },
         {
-        "type": "inline_richtext",
-        "id": "text_6",
-        "label": "Text 6"
+          "type": "inline_richtext",
+          "id": "text_6",
+          "label": "Text 6"
         },
         {
           "type": "url",
@@ -4009,25 +4010,26 @@
         }
       ]
     },
-    { "type": "add-to-cart-button",
+    {
+      "type": "add-to-cart-button",
       "name": "Add To Cart Button",
       "settings": [
         {
           "type": "paragraph",
           "content": "⚠️ Work Only On product Page"
-      },
-    {
-      "type": "inline_richtext",
-      "id": "custom_text",
-      "label": "Button Text",
-      "default": "Add To Cart"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "custom_text_small",
-      "label": "Small Button Text"
-    },
-    {
+        },
+        {
+          "type": "inline_richtext",
+          "id": "custom_text",
+          "label": "Button Text",
+          "default": "Add To Cart"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "custom_text_small",
+          "label": "Small Button Text"
+        },
+        {
           "type": "checkbox",
           "id": "button_style_secondary",
           "default": false,
@@ -4045,7 +4047,7 @@
   ],
   "presets": [
     {
-      "name": "Lumin Mega Section",
+      "name": "t:sections.names.image_with_text_custom",
       "blocks": [
         {
           "type": "heading"

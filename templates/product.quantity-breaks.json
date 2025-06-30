@@ -1,7 +1,7 @@
 {
   "sections": {
     "lumin_scrolling_text_66GYew": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "announcement_R4U6J3": {
           "type": "announcement",
@@ -502,7 +502,7 @@
       }
     },
     "a1098323-9921-48ef-9777-4dd2323c4c96": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--20863348932914__a1098323-9921-48ef-9777-4dd2323c4c96-announcement-1": {
           "type": "announcement",
@@ -600,7 +600,7 @@
       }
     },
     "lumin_grids_gXTLwh": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "image_xJkFrY": {
           "type": "image",
@@ -718,7 +718,7 @@
       }
     },
     "c6fe4350-552b-41d0-a767-21a6520e0695": {
-      "type": "lumin-hero",
+      "type": "hero",
       "blocks": {
         "template--21513975431475__c6fe4350-552b-41d0-a767-21a6520e0695-hero-1": {
           "type": "hero",
@@ -922,7 +922,7 @@
       }
     },
     "96be040c-0828-498a-bae0-77a723676bd3": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "f8de5d4d-fc2b-45d3-b455-bc17206e8428": {
           "type": "heading",
@@ -994,7 +994,7 @@
       }
     },
     "e0aed494-cfe3-4019-aa56-e5ab74232359": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "5e4d20aa-80dc-46c9-b92a-40ce260d57bc": {
           "type": "heading",
@@ -1306,7 +1306,7 @@
       }
     },
     "8712c492-42c9-4dfb-bad3-7f1bf1fdb00a": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "template--21513975431475__8712c492-42c9-4dfb-bad3-7f1bf1fdb00a-text-1": {
           "type": "text",
@@ -1588,7 +1588,7 @@
       }
     },
     "a01c5f32-f95e-4385-bc9d-c20e0c511a05": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "template--21513975431475__a01c5f32-f95e-4385-bc9d-c20e0c511a05-text-1": {
           "type": "text",

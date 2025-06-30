@@ -107,7 +107,7 @@
     }
   }
 
-  .lumin-shoppable-videos .swiper-button-prev, 
+  .lumin-shoppable-videos .swiper-button-prev,
   .lumin-shoppable-videos .swiper-button-next {
     width: 32px;
     height: 32px;
@@ -119,13 +119,13 @@
     color: rgba(var(--color-background));
   }
 
-  .lumin-shoppable-videos .swiper-navigation-disabled .swiper-button-next, 
+  .lumin-shoppable-videos .swiper-navigation-disabled .swiper-button-next,
   .lumin-shoppable-videos .swiper-navigation-disabled .swiper-button-prev {
     display: none !important;
-  } 
+  }
 
   @media (max-width: 575px) {
-    .lumin-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-prev, 
+    .lumin-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-prev,
     .lumin-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-next {
       display: none !important;
     }
@@ -341,18 +341,17 @@
    #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-badge {
     border-radius: {{ section.settings.badge_border_radius }}px;
   }
-  
+
   #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-product img {
     border-radius: {{ section.settings.card_border_radius | divided_by: 1.5 | round }}px;
   }
-
 {%- endstyle -%}
 
 {%- javascript -%}
-class KsShoppableVideos extends HTMLElement {
-  constructor () {
-    super()
-/*
+  class KsShoppableVideos extends HTMLElement {
+    constructor() {
+      super();
+      /*
     if (!document.querySelector('#swiper-stylesheet')) {
       const stylesheet = document.createElement('link')
       stylesheet.setAttribute('href', 'https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css')
@@ -372,125 +371,126 @@ class KsShoppableVideos extends HTMLElement {
       document.head.appendChild(script)
     }
 */
-    setTimeout(() => {
-      const slider = new window.Swiper(this.querySelector('.swiper'), this.splideOptions())
+      setTimeout(() => {
+        const slider = new window.Swiper(this.querySelector('.swiper'), this.splideOptions());
 
-      slider.on('slideChange', () => {
-        this.querySelector('.swiper').classList.add('swiper-is-changing')
-        this.onSlideChange()
-      })
+        slider.on('slideChange', () => {
+          this.querySelector('.swiper').classList.add('swiper-is-changing');
+          this.onSlideChange();
+        });
 
-      slider.on('slideChangeTransitionEnd', () => {
-        this.querySelector('.swiper').classList.remove('swiper-is-changing')
-      })
-    }, 500)
-    
-    this.querySelectorAll('.lumin-shoppable-videos-btn-play').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const video = btn.closest('.lumin-shoppable-videos-video-wrapper').querySelector('video')
-        this.onVideoPlay(video)
-      })
-    })
+        slider.on('slideChangeTransitionEnd', () => {
+          this.querySelector('.swiper').classList.remove('swiper-is-changing');
+        });
+      }, 500);
 
-    this.querySelectorAll('video').forEach(video => {
-      video.addEventListener('click', () => {
-        this.onVideoPlay(video)
-      })
-    })
+      this.querySelectorAll('.lumin-shoppable-videos-btn-play').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const video = btn.closest('.lumin-shoppable-videos-video-wrapper').querySelector('video');
+          this.onVideoPlay(video);
+        });
+      });
 
-    const lazyVideosObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.play()
-        }
-      })
-    }, { rootMargin: '0px 0px 300px 0px' })
-    
-    this.querySelectorAll('video[data-autoplay="true"]').forEach((el) => {
-      lazyVideosObserver.observe(el)
-    })
-  }
+      this.querySelectorAll('video').forEach((video) => {
+        video.addEventListener('click', () => {
+          this.onVideoPlay(video);
+        });
+      });
 
-  splideOptions () {
-    const partialSlidesMobile = this.dataset.partialSlidesMobile === 'true' ? 1.2 : 1
+      const lazyVideosObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play();
+            }
+          });
+        },
+        { rootMargin: '0px 0px 300px 0px' }
+      );
 
-    /** @type {SwiperOptions} */
-    const options = {
-      rewind: true,
-      speed: Number(this.dataset.sliderSpeed),
-      breakpoints: {
-        0: { slidesPerView: Number(this.dataset.breakpointXs) * partialSlidesMobile },
-        576: { slidesPerView: Number(this.dataset.breakpointSm) },
-        768: { slidesPerView: Number(this.dataset.breakpointMd) },
-        992: { slidesPerView: Number(this.dataset.breakpointLg) },
-        1200: { slidesPerView: Number(this.dataset.breakpointXl) },
-        1400: { slidesPerView: Number(this.dataset.breakpointXxl) }
-      },
-      navigation: {
-        enabled: this.dataset.sliderNav === 'true',
-        nextEl: this.querySelector('.swiper-button-next'),
-        prevEl: this.querySelector('.swiper-button-prev')
-      },
-      pagination: {
-        enabled: this.dataset.sliderPagination === 'true',
-        type: this.dataset.sliderPaginationType,
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        dynamicMainBullets: 2,
-        renderFraction: function (currentClass, totalClass) {
-          return `<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`
-        }
-      },
-      scrollbar: {
-        enabled: this.dataset.sliderScrollbar === 'true',
-        el: this.querySelector('.swiper-scrollbar'),
-        draggable: true
-        // hide: true
-      },
-      autoplay: this.dataset.sliderAutoplay !== '0'
-        ? { delay: Number(this.dataset.sliderAutoplay) * 1000 }
-        : undefined,
-      watchSlidesProgress: true, 
-      mousewheel: {
-        enabled: true,
-        forceToAxis: true
-      },
+      this.querySelectorAll('video[data-autoplay="true"]').forEach((el) => {
+        lazyVideosObserver.observe(el);
+      });
     }
-    return options
-  }
 
-  onSlideChange () {
-    this.querySelectorAll('.lumin-shoppable-videos-card').forEach(elem => {
-      elem.setAttribute('data-is-playing', 'false')
-      elem.querySelector('video')?.pause()
-    })
-  }
+    splideOptions() {
+      const partialSlidesMobile = this.dataset.partialSlidesMobile === 'true' ? 1.2 : 1;
 
-  onVideoPlay (video) {
-    const card = video.closest('.lumin-shoppable-videos-card')
+      /** @type {SwiperOptions} */
+      const options = {
+        rewind: true,
+        speed: Number(this.dataset.sliderSpeed),
+        breakpoints: {
+          0: { slidesPerView: Number(this.dataset.breakpointXs) * partialSlidesMobile },
+          576: { slidesPerView: Number(this.dataset.breakpointSm) },
+          768: { slidesPerView: Number(this.dataset.breakpointMd) },
+          992: { slidesPerView: Number(this.dataset.breakpointLg) },
+          1200: { slidesPerView: Number(this.dataset.breakpointXl) },
+          1400: { slidesPerView: Number(this.dataset.breakpointXxl) },
+        },
+        navigation: {
+          enabled: this.dataset.sliderNav === 'true',
+          nextEl: this.querySelector('.swiper-button-next'),
+          prevEl: this.querySelector('.swiper-button-prev'),
+        },
+        pagination: {
+          enabled: this.dataset.sliderPagination === 'true',
+          type: this.dataset.sliderPaginationType,
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+          dynamicMainBullets: 2,
+          renderFraction: function (currentClass, totalClass) {
+            return `<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`;
+          },
+        },
+        scrollbar: {
+          enabled: this.dataset.sliderScrollbar === 'true',
+          el: this.querySelector('.swiper-scrollbar'),
+          draggable: true,
+          // hide: true
+        },
+        autoplay:
+          this.dataset.sliderAutoplay !== '0' ? { delay: Number(this.dataset.sliderAutoplay) * 1000 } : undefined,
+        watchSlidesProgress: true,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: true,
+        },
+      };
+      return options;
+    }
 
-    this.querySelectorAll('.lumin-shoppable-videos-card').forEach(elem => {
-      if (elem.dataset.index !== card.dataset.index) {
-        elem.setAttribute('data-is-playing', 'false')
-        elem.querySelector('video')?.pause()
+    onSlideChange() {
+      this.querySelectorAll('.lumin-shoppable-videos-card').forEach((elem) => {
+        elem.setAttribute('data-is-playing', 'false');
+        elem.querySelector('video')?.pause();
+      });
+    }
+
+    onVideoPlay(video) {
+      const card = video.closest('.lumin-shoppable-videos-card');
+
+      this.querySelectorAll('.lumin-shoppable-videos-card').forEach((elem) => {
+        if (elem.dataset.index !== card.dataset.index) {
+          elem.setAttribute('data-is-playing', 'false');
+          elem.querySelector('video')?.pause();
+        }
+      });
+
+      if (card.dataset.isPlaying === 'true') {
+        card.setAttribute('data-is-playing', 'false');
+        video.pause();
+      } else {
+        card.setAttribute('data-is-playing', 'true');
+        video.muted = false;
+        video.play();
       }
-    })
-    
-    if (card.dataset.isPlaying === 'true') {
-      card.setAttribute('data-is-playing', 'false')
-      video.pause()
-    } else {
-      card.setAttribute('data-is-playing', 'true')
-      video.muted = false
-      video.play()
     }
   }
-}
-customElements.define('lumin-shoppable-videos', KsShoppableVideos)
-
+  customElements.define('lumin-shoppable-videos', KsShoppableVideos);
 {%- endjavascript -%}
- 
-<lumin-shoppable-videos 
+
+<lumin-shoppable-videos
   id="lumin-shoppable-videos-{{ section.id }}"
   class="lumin-shoppable-videos color-{{ section.settings.color_scheme }} gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
   data-slider-speed="{{ section.settings.slider_speed }}"
@@ -505,8 +505,8 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
   data-breakpoint-md="{{ section.settings.breakpoint_md }}"
   data-breakpoint-lg="{{ section.settings.breakpoint_lg }}"
   data-breakpoint-xl="{{ section.settings.breakpoint_xl }}"
-  data-breakpoint-xxl="{{ section.settings.breakpoint_xxl }}">
-  
+  data-breakpoint-xxl="{{ section.settings.breakpoint_xxl }}"
+>
   <div class="section-header page-width">
     {%- if section.settings.heading != blank -%}
       <h2 class="title inline-richtext {{ section.settings.heading_size }}">
@@ -521,90 +521,100 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
   </div>
 
   <div class="lumin-shoppable-videos-container {% if section.settings.container %}page-width{% endif %}">
-
     <div class="swiper">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           <div class="swiper-slide" {{ block.shopify_attributes }}>
-            <div 
+            <div
               class="lumin-shoppable-videos-card"
               data-is-playing="false"
-              data-index="{{ forloop.index0 }}">
+              data-index="{{ forloop.index0 }}"
+            >
               {% if block.settings.video != blank %}
                 <div class="lumin-shoppable-videos-video-wrapper">
-                  {{- 
-                    block.settings.video | video_tag: 
+                  {{-
+                    block.settings.video
+                    | video_tag:
                       class: '',
-                      image_size: '600x', 
-                      autoplay: false, 
-                      loop: true, 
-                      muted: true, 
+                      image_size: '600x',
+                      autoplay: false,
+                      loop: true,
+                      muted: true,
                       controls: false,
                       loading: 'lazy',
                       preload: 'none',
                       data-autoplay: block.settings.video_autoplay
                   -}}
                   <button class="lumin-shoppable-videos-btn-play" aria-label="Play video">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      class="bi bi-play-fill"
+                      viewBox="0 0 16 16"
+                    >
                       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
                     </svg>
                   </button>
                 </div>
               {% else %}
-                  <div class="lumin-shoppable-videos-card-fake-bg"></div>
+                <div class="lumin-shoppable-videos-card-fake-bg"></div>
               {% endif %}
               <div class="lumin-shoppable-videos-card-inner">
                 {% unless block.settings.badge == blank %}
-                  <div 
+                  <div
                     class="lumin-shoppable-videos-card-badge"
-                    style="color: {{ block.settings.badge_color }}; background-color: {{ block.settings.badge_bg_color }};">
+                    style="color: {{ block.settings.badge_color }}; background-color: {{ block.settings.badge_bg_color }};"
+                  >
                     {{ block.settings.badge }}
                   </div>
                 {% endunless %}
                 {% unless block.settings.views == blank %}
-                  <div 
+                  <div
                     class="lumin-shoppable-videos-card-views"
-                    style="color: {{ block.settings.views_color }}; background-color: {{ block.settings.views_bg_color | color_modify: 'alpha', 0.65  }};">
+                    style="color: {{ block.settings.views_color }}; background-color: {{ block.settings.views_bg_color | color_modify: 'alpha', 0.65  }};"
+                  >
                     {% render 'icon-accordion', icon: block.settings.icon %}
                     {% comment %}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Views">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Views">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>
+                      </svg>
                     {% endcomment %}
-                    
-                    
+
                     {{ block.settings.views }}
                   </div>
                 {% endunless %}
                 {% unless block.settings.product == blank %}
-                  <a 
+                  <a
                     class="lumin-shoppable-videos-card-product"
                     href="{{ block.settings.product.url }}"
                     style="
                       background-color: {{ block.settings.product_bg_color | color_modify: 'alpha', 0.75  }};
                       color: {{ block.settings.product_text_color }};
-                    ">
+                    "
+                  >
                     <img
                       src="{{ block.settings.product.featured_image | image_url: width: 150, height: 150, crop: 'center' }}"
                       alt="{{ block.settings.product.featured_image.alt }}"
                       width="75"
                       height="75"
-                      loading="lazy">
+                      loading="lazy"
+                    >
                     <div class="lumin-shoppable-videos-card-product-content">
                       <h3 class="lumin-shoppable-videos-card-product-title">
-                        {{ block.settings.product.title }} <span>→</span>
+                        {{ block.settings.product.title }}
+                        <span>→</span>
                       </h3>
                       <div class="lumin-shoppable-videos-card-product-price">
                         {% if block.settings.product.compare_at_price > block.settings.product.price %}
                           <span class="">
-                            <span class="visually-hidden visually-hidden--inline">
-                              Regular price
-                            </span>
+                            <span class="visually-hidden visually-hidden--inline"> Regular price </span>
                             <s>{{ block.settings.product.compare_at_price | money }}</s>
                           </span>
                         {% endif %}
                         <span class="product-item-price-final">
-                            {{ block.settings.product.price | money }}
+                          {{ block.settings.product.price | money }}
                         </span>
                       </div>
                     </div>
@@ -623,18 +633,16 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
         <div class="swiper-pagination"></div>
         <div class="swiper-scrollbar"></div>
       </div>
-
     </div>
   </div>
-
 </lumin-shoppable-videos>
 
 {% schema %}
 {
-  "name": "Shoppable videos",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "name": "t:sections.names.shopable_videos",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "tag": "section",
   "class": "section",
   "settings": [
@@ -713,7 +721,7 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
       "type": "select",
       "id": "slider_pagination_type",
       "label": "Pagination type",
-      "default": "bullets", 
+      "default": "bullets",
       "options": [
         { "value": "bullets", "label": "Bullets" },
         { "value": "fraction", "label": "Fraction" }
@@ -941,190 +949,190 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
           "label": "Badge Text Color",
           "default": "#000000"
         },
-         {
-        "type": "select",
-        "id": "icon",
-        "options": [
-          {
-            "value": "none",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__1.label"
-          },
-          {
-            "value": "apple",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__2.label"
-          },
-          {
-            "value": "banana",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__3.label"
-          },
-          {
-            "value": "bottle",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__4.label"
-          },
-          {
-            "value": "box",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__5.label"
-          },
-          {
-            "value": "carrot",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__6.label"
-          },
-          {
-            "value": "chat_bubble",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__7.label"
-          },
-          {
-            "value": "check_mark",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__8.label"
-          },
-          {
-            "value": "clipboard",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__9.label"
-          },
-          {
-            "value": "dairy",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__10.label"
-          },
-          {
-            "value": "dairy_free",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__11.label"
-          },
-          {
-            "value": "dryer",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__12.label"
-          },
-          {
-            "value": "eye",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__13.label"
-          },
-          {
-            "value": "fire",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__14.label"
-          },
-          {
-            "value": "gluten_free",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__15.label"
-          },
-          {
-            "value": "heart",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__16.label"
-          },
-          {
-            "value": "iron",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__17.label"
-          },
-          {
-            "value": "leaf",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__18.label"
-          },
-          {
-            "value": "leather",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__19.label"
-          },
-          {
-            "value": "lightning_bolt",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__20.label"
-          },
-          {
-            "value": "lipstick",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__21.label"
-          },
-          {
-            "value": "lock",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__22.label"
-          },
-          {
-            "value": "map_pin",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__23.label"
-          },
-          {
-            "value": "nut_free",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__24.label"
-          },
-          {
-            "value": "pants",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__25.label"
-          },
-          {
-            "value": "paw_print",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__26.label"
-          },
-          {
-            "value": "pepper",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__27.label"
-          },
-          {
-            "value": "perfume",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__28.label"
-          },
-          {
-            "value": "plane",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__29.label"
-          },
-          {
-            "value": "plant",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__30.label"
-          },
-          {
-            "value": "price_tag",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__31.label"
-          },
-          {
-            "value": "question_mark",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__32.label"
-          },
-          {
-            "value": "recycle",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__33.label"
-          },
-          {
-            "value": "return",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__34.label"
-          },
-          {
-            "value": "ruler",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__35.label"
-          },
-          {
-            "value": "serving_dish",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__36.label"
-          },
-          {
-            "value": "shirt",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__37.label"
-          },
-          {
-            "value": "shoe",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__38.label"
-          },
-          {
-            "value": "silhouette",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__39.label"
-          },
-          {
-            "value": "snowflake",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__40.label"
-          },
-          {
-            "value": "star",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__41.label"
-          },
-          {
-            "value": "stopwatch",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__42.label"
-          },
-          {
-            "value": "truck",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__43.label"
-          },
-          {
-            "value": "washing",
-            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__44.label"
-          }
-        ],
-        "default": "eye",
-        "label": "Select Icon"
-      },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__1.label"
+            },
+            {
+              "value": "apple",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__2.label"
+            },
+            {
+              "value": "banana",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__3.label"
+            },
+            {
+              "value": "bottle",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__4.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__5.label"
+            },
+            {
+              "value": "carrot",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__6.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__7.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__8.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__9.label"
+            },
+            {
+              "value": "dairy",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__10.label"
+            },
+            {
+              "value": "dairy_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__11.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__12.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__13.label"
+            },
+            {
+              "value": "fire",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__14.label"
+            },
+            {
+              "value": "gluten_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__15.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__16.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__17.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__18.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__19.label"
+            },
+            {
+              "value": "lightning_bolt",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__20.label"
+            },
+            {
+              "value": "lipstick",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__21.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__22.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__23.label"
+            },
+            {
+              "value": "nut_free",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__24.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__25.label"
+            },
+            {
+              "value": "paw_print",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__26.label"
+            },
+            {
+              "value": "pepper",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__27.label"
+            },
+            {
+              "value": "perfume",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__28.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__29.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__30.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__31.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__32.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__33.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__34.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__35.label"
+            },
+            {
+              "value": "serving_dish",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__36.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__37.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__38.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__39.label"
+            },
+            {
+              "value": "snowflake",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__40.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__41.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__42.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__43.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__44.label"
+            }
+          ],
+          "default": "eye",
+          "label": "Select Icon"
+        },
         {
           "type": "text",
           "id": "views",
@@ -1170,7 +1178,7 @@ customElements.define('lumin-shoppable-videos', KsShoppableVideos)
   ],
   "presets": [
     {
-      "name": "Shoppable videos",
+      "name": "t:sections.names.shopable_videos",
       "blocks": [
         { "type": "item" },
         { "type": "item" },

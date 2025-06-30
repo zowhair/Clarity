@@ -252,7 +252,7 @@
       }
     },
     "lumin_grids_aYtRRX": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "video_JJzpEW": {
           "type": "video",
@@ -409,7 +409,7 @@
       }
     },
     "24a76f3a-b24e-4495-9798-d8787a0b9e94": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "9d919ae0-3f90-4ad8-958a-2568b6eff62d": {
           "type": "video",
@@ -695,7 +695,7 @@
       }
     },
     "5ba491c9-db08-4028-9406-07c41d9279e4": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--15124687650899__5ba491c9-db08-4028-9406-07c41d9279e4-announcement-1": {
           "type": "announcement",
@@ -835,7 +835,7 @@
       }
     },
     "f6aa73dd-735c-463c-a915-039d2a5a8dd1": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "template--15124687650899__f6aa73dd-735c-463c-a915-039d2a5a8dd1-heading-1": {
           "type": "heading",
@@ -884,7 +884,7 @@
       }
     },
     "35e708a4-3807-4690-bb69-e7e9455455c9": {
-      "type": "lumin-gallery",
+      "type": "gallery",
       "blocks": {
         "928e9a99-e04b-4319-ba3c-4eb815e0752c": {
           "type": "image",
@@ -1042,7 +1042,7 @@
       }
     },
     "6ebadc41-e77e-4aa7-a089-cf7dd87bbee0": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "template--14588686860384__6ebadc41-e77e-4aa7-a089-cf7dd87bbee0-image-1": {
           "type": "image",

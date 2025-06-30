@@ -62,12 +62,16 @@
             <span id="hourss" class="l-font-{{ section.settings.number_size }}">--</span>
             <span class="timer-clock">{{ section.settings.timer_hrs }}</span>
           </div>
-          <div style="color:rgba(var(--color-foreground));" class=""><span class="l-font-{{ section.settings.number_size }}">:</span></div>
+          <div style="color:rgba(var(--color-foreground));" class="">
+            <span class="l-font-{{ section.settings.number_size }}">:</span>
+          </div>
           <div class="count">
             <span id="minutess" class="l-font-{{ section.settings.number_size }}">--</span>
             <span class="timer-clock">{{ section.settings.timer_min }}</span>
           </div>
-          <div style="color:rgba(var(--color-foreground));" class=""><span class="l-font-{{ section.settings.number_size }}">:</span></div>
+          <div style="color:rgba(var(--color-foreground));" class="">
+            <span class="l-font-{{ section.settings.number_size }}">:</span>
+          </div>
           <div class="count">
             <span id="secondss" class="l-font-{{ section.settings.number_size }}">--</span>
             <span class="timer-clock">{{ section.settings.timer_sec }}</span>
@@ -87,7 +91,7 @@
 
   // Helper function to pad numbers with a leading zero if needed
   function pad(value) {
-    return value < 10 ? "0" + value : value;
+    return value < 10 ? '0' + value : value;
   }
 
   // Function to update the timercount
@@ -106,20 +110,19 @@
       document.getElementById('hourss').innerHTML = pad(hourss);
       document.getElementById('minutess').innerHTML = pad(minutess);
       document.getElementById('secondss').innerHTML = pad(secondss);
-      
+
       // Update every second
       setTimeout(updatetimercount1, 1000);
     } else {
       // If the target date has passed, hide the timercount
-      document.getElementById("timercount-1").style.display = "none";
-      document.getElementById("expired-1").style.display = "block";
+      document.getElementById('timercount-1').style.display = 'none';
+      document.getElementById('expired-1').style.display = 'block';
     }
   }
 
   // Initial call to start the timercount
   updatetimercount1();
 </script>
-
 
 <style>
     .timer-wrapper  {
@@ -235,301 +238,301 @@
 </style>
 
 {% schema %}
-  {
-    "name": "Countdown Timer",
-     "enabled_on": {
-  "groups": ["header"]
-   },
-    "limit": 1,
-    "settings": [
-      {
-          "type": "color_scheme",
-          "id": "color_scheme",
-          "label": "t:sections.all.colors.label",
-          "default": "background-1"
+{
+  "name": "t:sections.names.countdown_timer",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "limit": 1,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "full_bleed",
+          "label": "Full Width"
         },
-           {
-    "type": "select",
-    "id": "layout",
-    "options": [
-      {
-        "value": "full_bleed",
-        "label": "Full Width"
-      },
-      {
-        "value": "grid",
-        "label": "Grid"
-      }
-    ],
-    "default": "full_bleed",
-    "label": "Layout"
-  },
-      {
-    "type": "range",
-    "id": "max_width",
-    "min": 580,
-    "max": 1600,
-    "step": 20,
-    "unit": "px",
-    "label": "Container Width",
-    "default": 600,
-    "info": "Work on grid layout only"
-  },
-            {
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "full_bleed",
+      "label": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 580,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Container Width",
+      "default": 600,
+      "info": "Work on grid layout only"
+    },
+    {
       "type": "checkbox",
       "id": "show_border",
       "label": "Show Border",
       "default": false
     },
-      {
-        "type": "color",
-        "id": "timer_border",
-        "label": "Border Color",
-        "default": "#eeeeee"
-      },
     {
-    "type": "range",
-    "id": "video_border",
-    "min": 0,
-    "max": 100,
-    "step": 2,
-    "unit": "px",
-    "label": "Corner Radius",
-    "default": 0,
-    "info": "Work on grid layout only"
-  },
-      {
-          "type": "richtext",
-          "id": "message_main",
-          "label": "Massage",
-          "info": "timercount Massage",
-          "default": "<p>Our Sale Ends In</p>"
-        },
-       {
-          "type": "range",
-          "id": "timer_text_size",
-          "min": 8,
-          "max": 30,
-          "step": 1,
-          "label": "Text Size on Desktop",
-          "default": 15
-        },
-      {
-          "type": "range",
-          "id": "timer_text_size_mb",
-          "min": 8,
-          "max": 30,
-          "step": 1,
-          "label": "Text Size on Mobile",
-          "default": 14
-        },
-              {
-    "type": "select",
-    "id": "text_layout",
-    "info": "Desktop Text Alignment",
-    "options": [
-      {
-        "value": "left",
-        "label": "Left"
-      },
-      {
-        "value": "center",
-        "label": "Center"
-      }
-    ],
-    "default": "left",
-    "label": "Left"
-  },
-                 {
-    "type": "select",
-    "id": "text_layout_mb",
-    "info": "Mobile Text Alignment",
-    "options": [
-      {
-        "value": "left",
-        "label": "Left"
-      },
-      {
-        "value": "center",
-        "label": "Center"
-      }
-    ],
-    "default": "center",
-    "label": "Center"
-  },
-      {
-        "type": "header",
-        "content": "Timer"
-      },
-         {
-          "type": "text",
-          "id": "date",
-          "default": "2025-12-31",
-          "label": "t:sections.countdown.settings.date.label",
-          "info": "Format: yyyy-mm-dd (Save after every change to take effect)"
-        },
-        {
-          "type": "select",
-          "id": "number_size",
-          "options": [
-            {
-              "value": "small",
-              "label": "t:sections.countdown.settings.number_size.options__1.label"
-            },
-            {
-              "value": "medium",
-              "label": "t:sections.countdown.settings.number_size.options__2.label"
-            },
-            {
-              "value": "large",
-              "label": "t:sections.countdown.settings.number_size.options__3.label"
-            }
-          ],
-          "default": "small",
-          "label": "t:sections.countdown.settings.number_size.label"
-        },
-          {
-        "type": "select",
-        "id": "font_style",
-        "options": [
-          {
-            "value": "normal",
-            "label": "Normal"
-          },
-          {
-            "value": "bold",
-            "label": "Bold"
-          }
-        ],
-        "default": "normal",
-        "label": "Font Style"
-      },
-          {
-          "type": "range",
-          "id": "timer_size",
-          "min": 0.5,
-          "max": 2,
-          "step": 0.1,
-          "label": "Timer Size on Desktop",
-          "default": 1
-        },
-      {
-          "type": "range",
-          "id": "timer_size_mb",
-          "min": 0.5,
-          "max": 2,
-          "step": 0.1,
-          "label": "Timer Size on Mobile",
-          "default": 0.8
-        },
-      {
-          "type": "text",
-          "id": "timer_days",
-          "label": "Days text"
-        },
-      {
-        "type": "checkbox",
-        "id": "hide_days",
-        "label": "Hide Days",
-        "default": false
-      },
-        {
-          "type": "text",
-          "id": "timer_hrs",
-          "label": "Hours text"
-        },
-        {
-          "type": "text",
-          "id": "timer_min",
-          "label": "Minutes text"
-        },
-        {
-          "type": "text",
-          "id": "timer_sec",
-          "label": "Seconds text"
-        },
-       {
-        "type": "checkbox",
-        "id": "head_font",
-        "label": "Use Heading Fonts",
-        "default": false
-      },
-      {
-        "type": "color",
-        "id": "timer_color",
-        "label": "timercount Color",
-        "default": "#212121"
-      },
-      {
-        "type": "color",
-        "id": "timer_bg",
-        "label": "timercount Background",
-        "default": "#ffffff"
-      },
-        {
-          "type": "richtext",
-          "id": "message",
-          "default": "<p>Sale is end!</p>",
-          "label": "t:sections.countdown.settings.message.label",
-          "info": "t:sections.countdown.settings.message.info"
-        },
-        {
-    "type":      "range",
-    "id":        "message_size",
-    "min":       10,
-    "max":        50,
-    "step":       1,
-    "unit":       "px",
-    "label": "t:sections.countdown.settings.message_size.label",
-    "default":   20
-},
-      {
-    "type": "range",
-    "id": "padding_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Padding Top",
-    "default": 8
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Padding Bottom",
-    "default": 8
-  },
+      "type": "color",
+      "id": "timer_border",
+      "label": "Border Color",
+      "default": "#eeeeee"
+    },
     {
-    "type": "range",
-    "id": "margin_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Top",
-    "default": 0
-  },
-  {
-    "type": "range",
-    "id": "margin_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Bottom",
-    "default": 0
-  }
+      "type": "range",
+      "id": "video_border",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Corner Radius",
+      "default": 0,
+      "info": "Work on grid layout only"
+    },
+    {
+      "type": "richtext",
+      "id": "message_main",
+      "label": "Massage",
+      "info": "timercount Massage",
+      "default": "<p>Our Sale Ends In</p>"
+    },
+    {
+      "type": "range",
+      "id": "timer_text_size",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "label": "Text Size on Desktop",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "timer_text_size_mb",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "label": "Text Size on Mobile",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "text_layout",
+      "info": "Desktop Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
       ],
-     "presets": [
+      "default": "left",
+      "label": "Left"
+    },
     {
-      "name": "Countdown Timer"
+      "type": "select",
+      "id": "text_layout_mb",
+      "info": "Mobile Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center",
+      "label": "Center"
+    },
+    {
+      "type": "header",
+      "content": "Timer"
+    },
+    {
+      "type": "text",
+      "id": "date",
+      "default": "2025-12-31",
+      "label": "t:sections.countdown.settings.date.label",
+      "info": "Format: yyyy-mm-dd (Save after every change to take effect)"
+    },
+    {
+      "type": "select",
+      "id": "number_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.countdown.settings.number_size.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.countdown.settings.number_size.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.countdown.settings.number_size.options__3.label"
+        }
+      ],
+      "default": "small",
+      "label": "t:sections.countdown.settings.number_size.label"
+    },
+    {
+      "type": "select",
+      "id": "font_style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "bold",
+          "label": "Bold"
+        }
+      ],
+      "default": "normal",
+      "label": "Font Style"
+    },
+    {
+      "type": "range",
+      "id": "timer_size",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "label": "Timer Size on Desktop",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "timer_size_mb",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "label": "Timer Size on Mobile",
+      "default": 0.8
+    },
+    {
+      "type": "text",
+      "id": "timer_days",
+      "label": "Days text"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_days",
+      "label": "Hide Days",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "timer_hrs",
+      "label": "Hours text"
+    },
+    {
+      "type": "text",
+      "id": "timer_min",
+      "label": "Minutes text"
+    },
+    {
+      "type": "text",
+      "id": "timer_sec",
+      "label": "Seconds text"
+    },
+    {
+      "type": "checkbox",
+      "id": "head_font",
+      "label": "Use Heading Fonts",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "timer_color",
+      "label": "timercount Color",
+      "default": "#212121"
+    },
+    {
+      "type": "color",
+      "id": "timer_bg",
+      "label": "timercount Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "default": "<p>Sale is end!</p>",
+      "label": "t:sections.countdown.settings.message.label",
+      "info": "t:sections.countdown.settings.message.info"
+    },
+    {
+      "type": "range",
+      "id": "message_size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.countdown.settings.message_size.label",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.names.countdown_timer"
     }
   ]
-  }
+}
 {% endschema %}
 
 {% stylesheet %}

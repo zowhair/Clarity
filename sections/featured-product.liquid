@@ -1227,9 +1227,9 @@ function updateCountdown() {
                       -%}
                         <style>
                           .product__inventory {
-                             color: #e72a2a;
-                             background-color: #fff2ee;
-                            }
+                            color: #e72a2a;
+                            background-color: #fff2ee;
+                          }
                         </style>
                         <svg
                           class="icon icon-check"
@@ -1252,9 +1252,9 @@ function updateCountdown() {
                       {%- else -%}
                         <style>
                           .product__inventory {
-                                  color: #548028;
-                                   background-color: #ecf4e8;
-                            }
+                            color: #548028;
+                            background-color: #ecf4e8;
+                          }
                         </style>
                         <svg
                           class="icon icon-check"
@@ -1512,9 +1512,9 @@ function updateCountdown() {
   "name": "t:sections.featured-product.name",
   "tag": "section",
   "class": "section section-featured-product",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "blocks": [
     {
       "type": "@app"
@@ -1627,13 +1627,13 @@ function updateCountdown() {
           "default": "#131313",
           "info": "Work on Style 2"
         },
-         {
+        {
           "type": "color",
           "id": "badge_price",
           "label": "Sale badge Color",
           "default": "#8b8d8f"
         },
-         {
+        {
           "type": "color",
           "id": "badge_bg",
           "label": "Sale badge Background",
@@ -1644,7 +1644,7 @@ function updateCountdown() {
           "id": "badge_border",
           "label": "Sale badge Border",
           "default": "#f2f2f2",
-           "info": "Work on Style 1"
+          "info": "Work on Style 1"
         },
         {
           "type": "checkbox",
@@ -1676,26 +1676,26 @@ function updateCountdown() {
           "label": "Hide Shipping Info",
           "default": false
         },
-          {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 4
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 4
-    }
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 4
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 4
+        }
       ]
     },
     {
@@ -1752,78 +1752,78 @@ function updateCountdown() {
           "label": "t:sections.featured-product.blocks.variant_picker.settings.picker_type.label"
         },
         {
-        "type": "select",
-        "id": "swatchType",
-        "label": "Swatch type",
-        "options": [
-          {
-            "value": "color",
-            "label": "Color"
-          },
-          {
-            "value": "variantImage",
-            "label": "Variant image"
-          }
-        ],
-        "default": "color"
-      },
+          "type": "select",
+          "id": "swatchType",
+          "label": "Swatch type",
+          "options": [
+            {
+              "value": "color",
+              "label": "Color"
+            },
+            {
+              "value": "variantImage",
+              "label": "Variant image"
+            }
+          ],
+          "default": "color"
+        },
         {
-        "type": "text",
-        "id": "optionName",
-        "label": "Swatch option name",
-        "default": "Color",
-        "info": "Exact match is required, including capitalization."
-      },
+          "type": "text",
+          "id": "optionName",
+          "label": "Swatch option name",
+          "default": "Color",
+          "info": "Exact match is required, including capitalization."
+        },
         {
-        "type": "paragraph",
-        "content": "If you have a multilingual store, please enter multiple options separated with commas. Example: Color,Colour,Fabre,Couleur"
-      },
+          "type": "paragraph",
+          "content": "If you have a multilingual store, please enter multiple options separated with commas. Example: Color,Colour,Fabre,Couleur"
+        },
         {
-        "type": "select",
-        "id": "swatchStyle",
-        "label": "Swatch style",
-        "options": [
-          {
-            "value": "round",
-            "label": "Round"
-          },
-          {
-            "value": "square",
-            "label": "Square"
-          },
-          {
-            "value": "square-round-corners",
-            "label": "Square round corners"
-          },
-          {
-            "value": "portrait",
-            "label": "Portrait"
-          }
-        ],
-        "default": "round",
-        "info": "Portrait mode is only available for the variant image type."
-      },
+          "type": "select",
+          "id": "swatchStyle",
+          "label": "Swatch style",
+          "options": [
+            {
+              "value": "round",
+              "label": "Round"
+            },
+            {
+              "value": "square",
+              "label": "Square"
+            },
+            {
+              "value": "square-round-corners",
+              "label": "Square round corners"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            }
+          ],
+          "default": "round",
+          "info": "Portrait mode is only available for the variant image type."
+        },
         {
-        "type": "range",
-        "id": "swatchSize",
-        "min": 20,
-        "max": 120,
-        "step": 2,
-        "unit": "px",
-        "label": "Swatch size",
-        "default": 30
-      },
-      {
-        "type": "range",
-        "id": "swatchHeight",
-        "min": 20,
-        "max": 120,
-        "step": 2,
-        "unit": "px",
-        "label": "Swatch Height",
-        "default": 30,
-        "info": "Work on portrait swatches."
-      }
+          "type": "range",
+          "id": "swatchSize",
+          "min": 20,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "label": "Swatch size",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "swatchHeight",
+          "min": 20,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "label": "Swatch Height",
+          "default": 30,
+          "info": "Work on portrait swatches."
+        }
       ]
     },
     {
@@ -1847,38 +1847,38 @@ function updateCountdown() {
         }
       ]
     },
-        {
+    {
       "type": "image",
       "name": "Image",
       "settings": [
-             {
-              "type": "image_picker",
-              "id": "image",
-              "label": "Image"
-            },
-               {
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
           "type": "range",
           "id": "image_size",
           "label": "Feature Image Size",
-          "min":       20,
-          "max":        100,
-          "step":       1,
-          "unit":       "%",
+          "min": 20,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
 
           "default": 100
-          },
-           {
+        },
+        {
           "type": "range",
           "id": "image_border",
           "label": "Image corner radius",
-          "min":       0,
-          "max":        40,
-          "step":       1,
-          "unit":       "px",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
 
           "default": 0
-          },
-         {
+        },
+        {
           "type": "select",
           "id": "img_position",
           "options": [
@@ -1899,25 +1899,25 @@ function updateCountdown() {
           "label": "Left"
         },
         {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 36
+        }
       ]
     },
     {
@@ -2583,99 +2583,98 @@ function updateCountdown() {
       "type": "fomo",
       "name": "Fomo Block",
       "limit": 1,
-       "settings": [
-
-         {
+      "settings": [
+        {
           "type": "header",
           "content": "Text"
         },
-         {
+        {
           "type": "inline_richtext",
           "id": "fomo_text_before",
           "label": "Fomo Text",
           "default": "Hurry! (x) are viewing this!",
           "info": "Use the special character '(x)' as a placeholder for the 'Radom Number'"
         },
-           {
-      "type": "range",
-      "id": "text_size",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Text Size",
-      "default": 14
-    },
-         {
-            "type": "select",
-            "id": "text_alignment",
-            "label": "Text Alignment",
-            "options": [
-              {
-                "value": "flex-start",
-                "label": "Left"
-              },
-              {
-                "value": "center",
-                "label": "Center"
-              },
-              {
-                "value": "flex-end",
-                "label": "Right"
-              }
-            ]
-         },
-         {
-        "type": "header",
-        "content": "Look"
-      },
-          {
-              "type": "image_picker",
-              "id": "icon",
-              "label": "Image"
+        {
+          "type": "range",
+          "id": "text_size",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Text Size",
+          "default": 14
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "flex-start",
+              "label": "Left"
             },
             {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "flex-end",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Look"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Image"
+        },
+        {
           "type": "range",
           "id": "icon_size",
           "label": "Feature Image Size",
-          "min":       8,
-          "max":        100,
-          "step":       1,
-          "unit":       "px",
+          "min": 8,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
 
           "default": 20
-          },
-          {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
-       {
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "background-1"
+        },
+        {
           "type": "checkbox",
           "id": "fomo_border_activate",
           "label": "Show Border",
           "default": false
         },
-         {
-      "type": "range",
-      "id": "fomo_border",
-      "min": 0,
-      "max": 20,
-      "step": 2,
-      "unit": "px",
-      "label": "Corner Radius",
-      "default": 0,
-      "info": "Work on grid layout only"
-    },
-         {
+        {
+          "type": "range",
+          "id": "fomo_border",
+          "min": 0,
+          "max": 20,
+          "step": 2,
+          "unit": "px",
+          "label": "Corner Radius",
+          "default": 0,
+          "info": "Work on grid layout only"
+        },
+        {
           "type": "color",
           "id": "fomo_border_color",
           "label": "Border Color",
           "default": "#efefef"
         },
 
-         {
+        {
           "type": "range",
           "id": "fomo_min",
           "label": "Number Minimum",
@@ -2685,7 +2684,7 @@ function updateCountdown() {
           "info": "Minimum number",
           "default": 128
         },
-            {
+        {
           "type": "range",
           "id": "fomo_max",
           "label": "Number Maximum",
@@ -2707,90 +2706,90 @@ function updateCountdown() {
           "default": 3
         },
 
-       {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top-Bottom",
-      "default": 12
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top-Bottom",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Left-Right",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 12
+        }
+      ]
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Left-Right",
-      "default": 0
-    },
-      {
-      "type": "range",
-      "id": "margin_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Margin Top",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "margin_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Margin Bottom",
-      "default": 12
-    }
-       ]
-    },
-      {
       "type": "shipping",
       "limit": 1,
       "name": "Shipping Info",
       "settings": [
-         {
-        "type":      "range",
-        "id":        "ship_days",
-        "min":       0,
-        "max":        40,
-        "step":       1,
-        "unit":       "D",
-        "label":     "Delivery Days",
-        "default":   2,
-        "info": "Weekend will be skip"
-     },
-         {
-        "type":      "range",
-        "id":        "cut_off_time",
-        "min":       1,
-        "max":        24,
-        "step":       0.5,
-        "unit":       "hrs",
-        "label":     "Shipping Cut-Off Time",
-        "default":   16
-     },
-             {
-              "type": "image_picker",
-              "id": "icon",
-              "label": "Image"
-            },
-               {
+        {
+          "type": "range",
+          "id": "ship_days",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "D",
+          "label": "Delivery Days",
+          "default": 2,
+          "info": "Weekend will be skip"
+        },
+        {
+          "type": "range",
+          "id": "cut_off_time",
+          "min": 1,
+          "max": 24,
+          "step": 0.5,
+          "unit": "hrs",
+          "label": "Shipping Cut-Off Time",
+          "default": 16
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Image"
+        },
+        {
           "type": "range",
           "id": "icon_size",
           "label": "Feature Image Size",
-          "min":       8,
-          "max":        100,
-          "step":       1,
-          "unit":       "px",
+          "min": 8,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
 
           "default": 20
-          },
+        },
         {
           "type": "select",
           "id": "image_ani",
@@ -2830,17 +2829,17 @@ function updateCountdown() {
           ],
           "default": "none",
           "label": "Image Animation"
-    },
-               {
+        },
+        {
           "type": "range",
           "id": "text_size",
           "label": "text Size",
-          "min":       8,
-          "max":        20,
-          "step":       1,
-          "unit":       "px",
+          "min": 8,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
           "default": 14
-          },
+        },
         {
           "type": "select",
           "id": "text_style",
@@ -2860,7 +2859,7 @@ function updateCountdown() {
           ],
           "default": "body",
           "label": "t:sections.main-product.blocks.sku.settings.text_style.label"
-    },
+        },
         {
           "type": "inline_richtext",
           "id": "text",
@@ -2874,78 +2873,78 @@ function updateCountdown() {
           "default": "en-US",
           "label": "Date Language",
           "info": "ISO Language Code for Date. For exmaple 'en-US' (Default), fr-FR (French), de-DE (German) ecc.  [See Table](http:\/\/www.lingoes.net\/en\/translator\/langcode.htm)"
-           },
+        },
         {
-        "type": "color",
-        "id": "ship_bg",
-        "label": "Background Color",
-        "default": "#ffffff"
-      },
-  {
-        "type": "checkbox",
-        "id": "show_border",
-        "label": "Show Border",
-        "default": false
-      },
-{
-        "type": "color",
-        "id": "ship_border",
-        "label": "Border",
-        "default": "#f2f2f2"
-      },
-   {
-    "type":      "range",
-    "id":        "border_radius",
-    "min":       0,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Corner Radius",
-    "default":   0
-},
-          {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top-Bottom",
-      "default": 8
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Left-Right",
-      "default": 0
-    },
-      {
-      "type": "range",
-      "id": "margin_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Margin Top",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "margin_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Margin Bottom",
-      "default": 12
-    }
+          "type": "color",
+          "id": "ship_bg",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border",
+          "label": "Show Border",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "ship_border",
+          "label": "Border",
+          "default": "#f2f2f2"
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Corner Radius",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top-Bottom",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Left-Right",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 12
+        }
       ]
     },
-     {
+    {
       "type": "inventory",
       "name": "t:sections.main-product.blocks.inventory.name",
       "limit": 1,
@@ -2988,12 +2987,11 @@ function updateCountdown() {
         }
       ]
     },
-         {
+    {
       "type": "payment",
       "name": "Payment Icons",
       "limit": 1,
-      "settings": [
-      ]
+      "settings": []
     }
   ],
   "settings": [
@@ -3079,7 +3077,7 @@ function updateCountdown() {
       "label": "t:sections.featured-product.settings.media_position.label",
       "info": "t:sections.featured-product.settings.media_position.info"
     },
-      {
+    {
       "type": "select",
       "id": "desktop_content_position",
       "options": [

@@ -16,36 +16,35 @@
 {%- endstyle -%}
 
 <style>
-  .testimonial-card img {
-    width: 100%;
-    height: 100%;
-}
-  .testimonial-stars {
-    color: {{ section.settings.color_star }};
-    gap: 0px;
-}
-  .testimonial-stars svg {
-    height: 1.4em;
-    fill: {{ section.settings.color_star }};
-}
-  .background-none .testimonial-card.multicolumn-card__image-wrapper+.multicolumn-card__info {
-    padding-top: 0rem;
-}
-  {% if section.settings.image_ratio == 'circle' %}
-  .testimonial-card img {
-    border-radius:100%;
-}
-  {% endif %}
-   .testimonial-name {
-    margin-top: 0;
-}
-  .testimonial-city {
-    margin-top: 0;
-    font-size: 70%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
+    .testimonial-card img {
+      width: 100%;
+      height: 100%;
+  }
+    .testimonial-stars {
+      color: {{ section.settings.color_star }};
+      gap: 0px;
+  }
+    .testimonial-stars svg {
+      height: 1.4em;
+      fill: {{ section.settings.color_star }};
+  }
+    .background-none .testimonial-card.multicolumn-card__image-wrapper+.multicolumn-card__info {
+      padding-top: 0rem;
+  }
+    {% if section.settings.image_ratio == 'circle' %}
+    .testimonial-card img {
+      border-radius:100%;
+  }
+    {% endif %}
+     .testimonial-name {
+      margin-top: 0;
+  }
+    .testimonial-city {
+      margin-top: 0;
+      font-size: 70%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
 </style>
 
 {%- liquid
@@ -64,12 +63,19 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin"
-           style="justify-content: {{ section.settings.heading_center }};text-align: {{ section.settings.heading_center }};">
+      <div
+        class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin"
+        style="justify-content: {{ section.settings.heading_center }};text-align: {{ section.settings.heading_center }};"
+      >
         <h2 class="title inline-richtext {{ section.settings.collection_text_alignment }} {{ section.settings.heading_size }}">
-          {{ section.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{
+            section.settings.title
+            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: ']', '</span>'
+            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '))', '</span>'
+          }}
         </h2>
-        
       </div>
     {%- endunless -%}
     <slider-component class="slider-mobile-gutter">
@@ -101,19 +107,22 @@
             class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
             style="
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              --animation-order: {{ forloop.index }};
-            {% endif %}
-             padding: 2rem 0.5rem; border-radius: 6px;"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                --animation-order: {{ forloop.index }};
+              {% endif %}
+               padding: 2rem 0.5rem; border-radius: 6px;
+            "
           >
             <div class="multicolumn-card content-container">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="testimonial-card multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
-                  style="display:none;">
+                <div
+                  class="testimonial-card multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
+                  style="display:none;"
+                >
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
@@ -156,18 +165,47 @@
                 </div>
               {%- endif -%}
               <div class="multicolumn-card__info">
-                <span class="testimonial-stars" style="display:flex !important;{% if section.settings.column_alignment == 'center' %} justify-content: center; {% endif %}">
-                        <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/></svg>
-                        <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/></svg>
-                        <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/></svg>
-                        <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/></svg>
-                        <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/></svg>              
-                      </span>
+                <span
+                  class="testimonial-stars"
+                  style="display:flex !important;{% if section.settings.column_alignment == 'center' %} justify-content: center; {% endif %}"
+                >
+                  <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/>
+                  </svg>
+                  <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/>
+                  </svg>
+                  <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/>
+                  </svg>
+                  <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/>
+                  </svg>
+                  <svg class="svg text-secondary " version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.488 13.184 6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"/>
+                  </svg>
+                </span>
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</h3>
+                  <h3 class="inline-richtext">
+                    {{
+                      block.settings.title
+                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
+                  </h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</div>
+                  <div class="rte">
+                    {{
+                      block.settings.text
+                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
+                  </div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
@@ -183,26 +221,33 @@
                   >
                 {%- endif -%}
               </div>
-           <div class="multicolumn-card__info testimonial-card" 
-                style="display: flex;align-items: center;gap: 20px;{% if section.settings.column_alignment == 'center' %} justify-content: center; {% endif %}{% if section.settings.background_style == 'none' %} padding-top:20px; {% else %}padding-top:0;{% endif %}">
-             {% if block.settings.image != blank %}
-             <div>
-       {% capture sizes %}
+              <div
+                class="multicolumn-card__info testimonial-card"
+                style="display: flex;align-items: center;gap: 20px;{% if section.settings.column_alignment == 'center' %} justify-content: center; {% endif %}{% if section.settings.background_style == 'none' %} padding-top:20px; {% else %}padding-top:0;{% endif %}"
+              >
+                {% if block.settings.image != blank %}
+                  <div>
+                    {% capture sizes %}
                       (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
                       (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
                       (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
                       calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
-                    {% endcapture %}                                
-      {{
+                    {% endcapture %}
+                    {{
                       block.settings.image
                       | image_url: width: 3200
                       | image_tag:
                         widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
                         sizes: sizes,
                         class: 'testimonial-card'
-                    }}</div>
-             {% endif %}
-             <div style="margin-top: 0;"><span class="testimonial-name">{{ block.settings.customer_name }}</span><br><span class="testimonial-city">{{ block.settings.city_name }}</span></div></div>
+                    }}
+                  </div>
+                {% endif %}
+                <div style="margin-top: 0;">
+                  <span class="testimonial-name">{{ block.settings.customer_name }}</span><br>
+                  <span class="testimonial-city">{{ block.settings.city_name }}</span>
+                </div>
+              </div>
             </div>
           </li>
         {%- endfor -%}
@@ -210,17 +255,18 @@
 
       {%- if show_mobile_slider -%}
         {%- if show_mobile_slider and section.settings.navigation_on_mobile -%}
-        <style>
-          
-           @media screen and (max-width: 749px) {
-            .multicolumn .title-wrapper-with-link {
+          <style>
+            @media screen and (max-width: 749px) {
+              .multicolumn .title-wrapper-with-link {
                 max-width: 70%;
+              }
             }
-        }
-        </style>
-          {% endif %}
-        <div class="slider-buttons no-js-hidden medium-hide large-up-hide {% unless section.settings.navigation_on_mobile %} hidden {% endunless %}"
-          style="position: absolute;top: -60px;right: 15px;gap: 5px;">
+          </style>
+        {% endif %}
+        <div
+          class="slider-buttons no-js-hidden medium-hide large-up-hide {% unless section.settings.navigation_on_mobile %} hidden {% endunless %}"
+          style="position: absolute;top: -60px;right: 15px;gap: 5px;"
+        >
           <button
             type="button"
             class="testimonial-slider-buttons slider-button   slider-button--prev"
@@ -246,28 +292,28 @@
         </div>
       {%- endif -%}
     </slider-component>
-   {% comment %} 
-    <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
-      {%- if section.settings.button_label != blank -%}
-        <a
-          class="button button--primary"
-          {% if section.settings.button_link == blank %}
-            role="link" aria-disabled="true"
-          {% else %}
-            href="{{ section.settings.button_link }}"
-          {% endif %}
-        >
-          {{ section.settings.button_label | escape }}
-        </a>
-      {%- endif -%}
-    </div>
+    {% comment %}
+      <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
+        {%- if section.settings.button_label != blank -%}
+          <a
+            class="button button--primary"
+            {% if section.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+          >
+            {{ section.settings.button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
     {% endcomment %}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Testimonial",
+  "name": "t:sections.names.testimonial",
   "class": "section",
   "tag": "section",
   "disabled_on": {
@@ -301,25 +347,25 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
-        "type": "select",
-        "id": "heading_center",
-        "options": [
-          {
-            "value": "left",
-            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
-          },
-          {
-            "value": "center",
-            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
-          },
-          {
-            "value": "right",
-            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
-          }
-        ],
-        "default": "left",
-        "label": "t:settings_schema.global.settings.text_alignment.label"
-      },
+      "type": "select",
+      "id": "heading_center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:settings_schema.global.settings.text_alignment.label"
+    },
     {
       "type": "select",
       "id": "image_width",
@@ -506,7 +552,7 @@
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label"
         },
-       {
+        {
           "type": "text",
           "id": "customer_name",
           "label": "Customer Name",
@@ -523,7 +569,7 @@
   ],
   "presets": [
     {
-      "name": "Testimonial",
+      "name": "t:sections.names.testimonial",
       "blocks": [
         {
           "type": "review"

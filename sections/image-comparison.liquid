@@ -28,7 +28,7 @@
     {% if settings.animations_reveal_on_scroll %}
       data-cascade
     {% endif %}
-    >
+  >
     <div
       style="border-radius: {{ section.settings.border_radius }}px;"
     >
@@ -299,9 +299,7 @@
               <script>
                 (function () {
                   function setup() {
-                    const cursor = document.querySelector(
-                      '.section-{{ section.id }} .before-after__cursor'
-                    );
+                    const cursor = document.querySelector('.section-{{ section.id }} .before-after__cursor');
                     const imageWrapper = document.querySelector(
                       '.section-{{ section.id }} .before-after-image-wrapper'
                     );
@@ -310,9 +308,7 @@
                     let xStart, xEnd, xDiff, originalOffset;
                     function dragStart(event) {
                       xStart = event.clientX;
-                      originalOffset = imageWrapper.style
-                        .getPropertyValue('--clip-path-offset')
-                        .slice(0, -2);
+                      originalOffset = imageWrapper.style.getPropertyValue('--clip-path-offset').slice(0, -2);
                       //xStart = imageWrapper.style
                       //  .getPropertyValue('--clip-path-offset')
                       //  .slice(0, -2);
@@ -326,21 +322,20 @@
 
                       // clamp the value to the imageWrapper's 1/2 width
                       let result = xDiff + parseInt(originalOffset);
-                      let cursorOffsetPercent = parseFloat(getComputedStyle(imageWrapper).getPropertyValue('--before-after-initial-drag-position'));
+                      let cursorOffsetPercent = parseFloat(
+                        getComputedStyle(imageWrapper).getPropertyValue('--before-after-initial-drag-position')
+                      );
                       let containerWidth = imageWrapper.offsetWidth;
                       let pixelsOffset = (cursorOffsetPercent / 100) * containerWidth;
-                      
-                      const negativeMax = -1 * (pixelsOffset);
+
+                      const negativeMax = -1 * pixelsOffset;
                       const positiveMax = imageWrapper.offsetWidth - pixelsOffset;
                       if (result < negativeMax) {
                         result = negativeMax;
                       } else if (result > positiveMax) {
                         result = positiveMax;
                       }
-                      imageWrapper.style.setProperty(
-                        '--clip-path-offset',
-                        result + 'px'
-                      );
+                      imageWrapper.style.setProperty('--clip-path-offset', result + 'px');
                     }
 
                     function dragEnd(event) {
@@ -420,13 +415,13 @@
 
 {% schema %}
 {
-  "name": "Image comparison",
+  "name": "t:sections.names.image_comparison",
   "disabled_on": {
     "groups": ["custom.popup", "header"]
-   },
+  },
   "presets": [
     {
-      "name": "Image comparison",
+      "name": "t:sections.names.image_comparison",
       "blocks": [
         {
           "type": "text"
@@ -664,7 +659,7 @@
           "id": "link",
           "label": "Link"
         },
-         {
+        {
           "type": "select",
           "id": "button_position",
           "label": "Button Position",
@@ -694,7 +689,7 @@
           "default": 160,
           "unit": "px"
         },
-         {
+        {
           "type": "range",
           "id": "font_size",
           "label": "Font Size",
@@ -725,8 +720,8 @@
           "unit": "px"
         },
         {
-          "type":"header",
-          "content":"Colors"
+          "type": "header",
+          "content": "Colors"
         },
         {
           "type": "color",

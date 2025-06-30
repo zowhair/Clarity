@@ -82,7 +82,7 @@
  {%- else -%}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
           <span class="deferred-media__poster-button motion-reduce" style="z-index:3;">
-          {%- render 'lumin-play-icon' -%}
+          {%- render 'play-icon' -%}
         </span>
 <!-- <video class="image-with-text__media--placeholder placeholder video-media media video video-playsinline" src="https://cdn.shopify.com/videos/c/o/v/fbb140fd46e3429eba459e1549dbbe38.mp4" playsinline="" autoplay="" muted="" loop=""></video>
 -->{%- endif -%}
@@ -234,7 +234,7 @@
                 
 {% schema %}
 {
-  "name": "Video with Text",
+  "name": "t:sections.names.video_with_text",
   "class": "section",
   "disabled_on": {
   "groups": ["header", "footer", "custom.popup"]
@@ -724,7 +724,7 @@
   ],
   "presets": [
     {
-      "name": "Video with Text",
+      "name": "t:sections.names.video_with_text",
       "blocks": [
         {
           "type": "heading"

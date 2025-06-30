@@ -8,7 +8,7 @@
       }
     },
     "lumin_gallery_ecr6xx": {
-      "type": "lumin-gallery",
+      "type": "gallery",
       "blocks": {
         "text_AaVEpX": {
           "type": "text",

@@ -3,7 +3,7 @@
   "type": "header",
   "sections": {
     "lumin_scrolling_text_BRdDdB": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "announcement_BHiGXK": {
           "type": "announcement",

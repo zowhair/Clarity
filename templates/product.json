@@ -483,7 +483,7 @@
       }
     },
     "e2fe0eca-e002-483a-b480-89fb59bb4de6": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--15124688076883__e2fe0eca-e002-483a-b480-89fb59bb4de6-announcement-1": {
           "type": "announcement",
@@ -516,7 +516,7 @@
       }
     },
     "d10e19d4-d161-4991-8eb0-5fd7695fdbad": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "template--21773862601006__d10e19d4-d161-4991-8eb0-5fd7695fdbad-text-1": {
           "type": "text",
@@ -763,7 +763,7 @@
       }
     },
     "8f065947-747f-4509-983a-3cdf1c2813f8": {
-      "type": "lumin-hero",
+      "type": "hero",
       "blocks": {
         "template--15124688076883__8f065947-747f-4509-983a-3cdf1c2813f8-hero-1": {
           "type": "hero",
@@ -927,7 +927,7 @@
       }
     },
     "229f333e-9e4c-4172-a74b-6e93599e89c3": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "37b1339b-c738-466b-b8d6-abc7c4f4afa9": {
           "type": "caption",
@@ -1046,7 +1046,7 @@
       }
     },
     "2e0412f4-6423-47f7-8cbc-137f12eb8d99": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "f3acb3be-4b85-4e1f-9809-069b11bdc777": {
           "type": "caption",
@@ -1125,7 +1125,7 @@
       }
     },
     "05f459a6-0335-4bab-8d23-ac347077efcc": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--15124688076883__05f459a6-0335-4bab-8d23-ac347077efcc-announcement-1": {
           "type": "announcement",
@@ -1172,7 +1172,7 @@
       }
     },
     "a0df3eca-8a1b-49de-8f51-1e249c35b9f0": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "91817b81-c148-4c6c-8a35-09d6ba380ca5": {
           "type": "announcement",
@@ -1462,7 +1462,7 @@
       }
     },
     "a75de998-117b-40b5-a1eb-153210500d29": {
-      "type": "lumin-gallery",
+      "type": "gallery",
       "blocks": {
         "7a8ecaeb-7f9a-41b2-a621-4c9f3907ea45": {
           "type": "text",

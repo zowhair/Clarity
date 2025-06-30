@@ -1,4 +1,4 @@
-{{ 'lumin-tab.css' | asset_url | stylesheet_tag }}
+{{ 'custom-tab.css' | asset_url | stylesheet_tag }}
 {% assign product = section.settings.product %}
 <style>
      ul.lumin-tab-{{ block.id }} {
@@ -100,25 +100,24 @@
 </div>
 
 <script>
-  tabs= document.querySelectorAll('.custom-tab');
-  tabContents= document.querySelectorAll('.custom__tab-content');
+  tabs = document.querySelectorAll('.custom-tab');
+  tabContents = document.querySelectorAll('.custom__tab-content');
 
-  tabs.forEach(function(tab){
-      tab.addEventListener('click',function(){
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      contentId = this.dataset.contentId;
+      content = document.getElementById(contentId);
 
-          contentId = this.dataset.contentId;
-          content = document.getElementById(contentId);
-
-          tabContents.forEach(function(content){
-              content.classList.remove('active');
-          });
-
-          tabs.forEach(function(tab){
-              tab.classList.remove('active');
-          });
-
-          this.classList.add('active');
-          content.classList.add('active');
+      tabContents.forEach(function (content) {
+        content.classList.remove('active');
       });
+
+      tabs.forEach(function (tab) {
+        tab.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      content.classList.add('active');
+    });
   });
 </script>

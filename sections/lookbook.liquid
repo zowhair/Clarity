@@ -1,10 +1,10 @@
-{% liquid 
+{% liquid
   # Lumin Lookbook
   # © 2025 LuminTheme
   # https://www.lumintheme.com
 %}
 
-{%- style-%}
+{%- style -%}
   .lumin-lookbook {
     display: block
   }
@@ -84,7 +84,7 @@
     border-color: {{ section.settings.point_color }};
   }
 
-  .lumin-lookbook-point-list-item button:hover > span, 
+  .lumin-lookbook-point-list-item button:hover > span,
   .lumin-lookbook-point-list-item button:focus > span {
     background-color: rgba(255, 255, 255, 0.5);
   }
@@ -212,88 +212,85 @@
   }
 {%- endstyle -%}
 
-{%- javascript -%} 
+{%- javascript -%}
   class luminLookBook extends HTMLElement {
-    constructor () {
-      super()
+    constructor() {
+      super();
 
-      this.injectVendorScripts()
+      this.injectVendorScripts();
       this.querySelectorAll('.lumin-lookbook-point-list-item').forEach((elem) => {
-        this.handleTooltip(elem)
-      })
-    } 
-    
-    async injectVendorScripts () {
+        this.handleTooltip(elem);
+      });
+    }
+
+    async injectVendorScripts() {
       if (!window.FloatingUICore) {
-        const script = document.createElement('script')
-        script.setAttribute('src', 'https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.0')
-        document.head.appendChild(script) 
+        const script = document.createElement('script');
+        script.setAttribute('src', 'https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.0');
+        document.head.appendChild(script);
       }
       if (!window.FloatingUIDOM) {
-        await new Promise(r => setTimeout(r, 500))
+        await new Promise((r) => setTimeout(r, 500));
 
-        const script = document.createElement('script')
-        script.setAttribute('src', 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.1')
-        document.head.appendChild(script)
+        const script = document.createElement('script');
+        script.setAttribute('src', 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.1');
+        document.head.appendChild(script);
       }
     }
 
     handleTooltip(elem) {
-      const btn = elem.querySelector('button')
-      const tooltip = elem.querySelector('.lumin-tooltip')
+      const btn = elem.querySelector('button');
+      const tooltip = elem.querySelector('.lumin-tooltip');
 
       function update() {
         window.FloatingUIDOM.computePosition(btn, tooltip, {
-          middleware: [
-            window.FloatingUIDOM.offset(0),
-            window.FloatingUIDOM.autoPlacement()
-          ],
-        }).then(({x, y}) => {
+          middleware: [window.FloatingUIDOM.offset(0), window.FloatingUIDOM.autoPlacement()],
+        }).then(({ x, y }) => {
           Object.assign(tooltip.style, {
             left: `${x}px`,
             top: `${y}px`,
-          })
-        })
+          });
+        });
       }
 
       function showTooltip() {
-        tooltip.classList.add('show')
-        update()
+        tooltip.classList.add('show');
+        update();
       }
-      
+
       function hideTooltip() {
         setTimeout(() => {
-          tooltip.classList.remove('show')
-          tooltip.classList.add('hiding')
+          tooltip.classList.remove('show');
+          tooltip.classList.add('hiding');
           setTimeout(() => {
-            tooltip.classList.remove('hiding')
-          }, 200)
-        }, 100)
+            tooltip.classList.remove('hiding');
+          }, 200);
+        }, 100);
       }
-      
-      if (window.matchMedia("(pointer: coarse)").matches) {
+
+      if (window.matchMedia('(pointer: coarse)').matches) {
         [
           ['mouseenter', showTooltip],
           ['mouseleave', hideTooltip],
           ['focus', showTooltip],
           ['blur', hideTooltip],
         ].forEach(([event, listener]) => {
-          btn.addEventListener(event, listener)
-        })
+          btn.addEventListener(event, listener);
+        });
       } else {
         [
           ['focus', showTooltip],
           ['blur', hideTooltip],
         ].forEach(([event, listener]) => {
-          btn.addEventListener(event, listener)
-        })
+          btn.addEventListener(event, listener);
+        });
       }
     }
   }
-  customElements.define('lumin-lookbook', luminLookBook)
+  customElements.define('lumin-lookbook', luminLookBook);
 {%- endjavascript -%}
 
-<lumin-lookbook 
+<lumin-lookbook
   id="lumin-lookbook-{{ section.id }}"
   class="lumin-lookbook"
   style="
@@ -301,14 +298,17 @@
     color: {{ section.settings.text_color }};
     padding-top: {{ section.settings.pt }}rem;
     padding-bottom: {{ section.settings.pb }}rem;
-  ">
-  <div 
-    class="section-header page-width" 
-    style="text-align: {{ section.settings.header_text_align }};">
+  "
+>
+  <div
+    class="section-header page-width"
+    style="text-align: {{ section.settings.header_text_align }};"
+  >
     {%- if section.settings.heading != blank -%}
-      <h2 
+      <h2
         id="lumin-lookbook-heading"
-        class="title inline-richtext {{ section.settings.heading_size }}">
+        class="title inline-richtext {{ section.settings.heading_size }}"
+      >
         {{ section.settings.heading }}
       </h2>
     {%- endif -%}
@@ -319,14 +319,13 @@
     {% endif %}
   </div>
 
-  <div 
+  <div
     class="{% if section.settings.container %}page-width{% endif %}"
-    style="max-width: {{ section.settings.container_max_width | append: 'px' }}">
-
+    style="max-width: {{ section.settings.container_max_width | append: 'px' }}"
+  >
     <div class="lumin-lookbook-inner">
-
       <div class="img-wrapper img-wrapper-mobile">
-        {% if section.settings.mobile_image == nil %}
+        {% if section.settings.mobile_image == null %}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {% else %}
           <img
@@ -335,11 +334,12 @@
             class=""
             width="800"
             height="{{ 600 | divided_by: section.settings.mobile_image.aspect_ratio | round }}"
-            loading="lazy">
+            loading="lazy"
+          >
         {% endif %}
       </div>
       <div class="img-wrapper img-wrapper-desktop">
-        {% if section.settings.desktop_image == nil %}
+        {% if section.settings.desktop_image == null %}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {% else %}
           <img
@@ -348,25 +348,27 @@
             class=""
             width="1600"
             height="{{ 1600 | divided_by: section.settings.desktop_image.aspect_ratio | round }}"
-            loading="lazy">
+            loading="lazy"
+          >
         {% endif %}
       </div>
 
-      <div 
-        class="lumin-lookbook-point-list" 
+      <div
+        class="lumin-lookbook-point-list"
         aria-labelledby="lumin-lookbook-heading"
-        role="list">
+        role="list"
+      >
         {% for block in section.blocks %}
-          <div 
-            class="lumin-lookbook-point-list-item" 
+          <div
+            class="lumin-lookbook-point-list-item"
             {{ block.shopify_attributes }}
-            role="listitem">
+            role="listitem"
+          >
             {% liquid
-              assign product = block.settings.product 
+              assign product = block.settings.product
             %}
             <button>
-              <span><span>
-              </span></span>
+              <span><span> </span></span>
             </button>
             <div class="lumin-tooltip" role="tooltip">
               {% unless block.settings.title == blank %}
@@ -374,21 +376,20 @@
                   {{ block.settings.title }}
                 </h3>
               {% endunless %}
-              {% if product != nil and block.settings.show_image %} 
-                  <img 
-                    class="lumin-lookbook-product-img" 
-                    src="{{ product.featured_image | image_url: width: 600 }}" 
-                    width="600"
-                    height="{{ 600 | divided_by: product.featured_image.aspect_ratio | round }}" 
-                    loading="lazy">
+              {% if product != null and block.settings.show_image %}
+                <img
+                  class="lumin-lookbook-product-img"
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  width="600"
+                  height="{{ 600 | divided_by: product.featured_image.aspect_ratio | round }}"
+                  loading="lazy"
+                >
               {% endif %}
-              {% if product != nil and block.settings.show_price %} 
+              {% if product != null and block.settings.show_price %}
                 <p class="lumin-lookbook-product-price">
                   {% if product.compare_at_price > product.price %}
                     <span class="lumin-lookbook-product-price-compare">
-                      <span class="visually-hidden visually-hidden--inline">
-                        Regular price
-                      </span>
+                      <span class="visually-hidden visually-hidden--inline"> Regular price </span>
                       <s>{{ product.compare_at_price | money }}</s>
                     </span>
                   {% endif %}
@@ -402,11 +403,12 @@
                   {{ block.settings.description }}
                 </div>
               {% endunless %}
-              {% if product != nil and block.settings.btn_text != blank %} 
-                <a 
+              {% if product != null and block.settings.btn_text != blank %}
+                <a
                   class="button btn button--primary btn-primary"
                   href="{{ product.url }}"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   {{ block.settings.btn_text }}
                 </a>
               {% endif %}
@@ -414,17 +416,16 @@
           </div>
         {% endfor %}
       </div>
-
     </div>
   </div>
 </lumin-lookbook>
 
 {% schema %}
 {
-  "name": "lumin - Lookbook",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "name": "t:sections.names.lookbook",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "tag": "section",
   "class": "section",
   "settings": [
@@ -703,8 +704,8 @@
   ],
   "presets": [
     {
-      "name": "lumin - Lookbook",
-       "blocks": [
+      "name": "t:sections.names.lookbook",
+      "blocks": [
         {
           "type": "point"
         },

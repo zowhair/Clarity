@@ -65,7 +65,7 @@
     border-bottom-right-radius: var(--table-border-radius);
   }
 {%- endstyle -%}
-{{ 'lumin-table.css' | asset_url | stylesheet_tag }}
+{{ 'custom-table.css' | asset_url | stylesheet_tag }}
 
 <div
   id="lumin-table-{{ section.id }}"
@@ -78,12 +78,24 @@
     <div class="section-header">
       {%- if section.settings.heading != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{
+            section.settings.heading
+            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: ']', '</span>'
+            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '))', '</span>'
+          }}
         </h2>
       {%- endif -%}
       {%- if section.settings.description != blank %}
         <div class="description rte">
-          {{ section.settings.description | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{
+            section.settings.description
+            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: ']', '</span>'
+            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '))', '</span>'
+          }}
         </div>
       {% endif %}
     </div>
@@ -103,7 +115,13 @@
       >
         {% unless section.settings.table_caption == blank %}
           <caption class="">
-            {{ section.settings.table_caption | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+            {{
+              section.settings.table_caption
+              | replace: '[', '<span class="lumin-text__fancy1">'
+              | replace: ']', '</span>'
+              | replace: '((', '<span class="lumin-text__fancy2">'
+              | replace: '))', '</span>'
+            }}
           </caption>
         {% endunless %}
         <thead>
@@ -146,7 +164,13 @@
                 {% endunless %}
                 {% unless text == blank or text == '#' %}
                   <span>
-                    {{ text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                    {{
+                      text
+                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
                   </span>
                 {% endunless %}
               </th>
@@ -158,7 +182,13 @@
             {% if block.type == 'row' %}
               <tr>
                 <th scope="row" style="text-align: {{ section.settings.first_col_text_align }}">
-                  {{ block.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                  {{
+                    block.settings.title
+                    | replace: '[', '<span class="lumin-text__fancy1">'
+                    | replace: ']', '</span>'
+                    | replace: '((', '<span class="lumin-text__fancy2">'
+                    | replace: '))', '</span>'
+                  }}
                 </th>
                 {% for count in (2..cols_count) %}
                   {% liquid
@@ -187,24 +217,33 @@
                     {{ block.settings.checkbox }}
                     {% unless checkbox == blank %}
                       {% if checkbox == 'checked-circle' %}
-                  {% comment %}      <svg
+                        {% comment %}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            class="lumin-icon lumin-icon-checked-circle"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                          </svg>
+                        {% endcomment %}
+                        <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
                           height="20"
-                          class="lumin-icon lumin-icon-checked-circle"
-                          viewBox="0 0 24 24"
+                          viewBox="0 0 20 20"
                           fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          class="lumin-icon lumin-icon-checked-circle"
                         >
-                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg> {% endcomment %}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                          class="lumin-icon lumin-icon-checked-circle">
                           <circle cx="10" cy="10" r="9.375" stroke="currentColor" stroke-width="1.25"/>
-                          <path d="M5.55469 9.99995L8.88802 13.3333L14.9991 7.22217" stroke="currentColor" stroke-width="2"/></svg>
+                          <path d="M5.55469 9.99995L8.88802 13.3333L14.9991 7.22217" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                       {% elsif checkbox == 'checked' %}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +278,13 @@
                     {% endunless %}
                     {% unless text == blank %}
                       <span>
-                        {{ text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                        {{
+                          text
+                          | replace: '[', '<span class="lumin-text__fancy1">'
+                          | replace: ']', '</span>'
+                          | replace: '((', '<span class="lumin-text__fancy2">'
+                          | replace: '))', '</span>'
+                        }}
                       </span>
                     {% endunless %}
                   </td>
@@ -255,12 +300,12 @@
 
 {% schema %}
 {
-  "name": "Table Compare Pro",
+  "name": "t:sections.names.table_compare_pro",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "header",
@@ -578,7 +623,7 @@
             { "value": "", "label": "None" },
             { "value": "checked-circle", "label": "Checked circle" },
             { "value": "checked", "label": "Checked" },
-            { "value": "unchecked", "label": "Unchecked" },
+            { "value": "unchecked", "label": "Unchecked" }
           ],
           "default": "checked-circle"
         },
@@ -601,7 +646,7 @@
             { "value": "checked", "label": "Checked" },
             { "value": "unchecked", "label": "Unchecked" }
           ],
-           "default": "unchecked"
+          "default": "unchecked"
         },
         {
           "type": "text",
@@ -622,7 +667,7 @@
             { "value": "checked", "label": "Checked" },
             { "value": "unchecked", "label": "Unchecked" }
           ],
-           "default": "unchecked"
+          "default": "unchecked"
         },
         {
           "type": "text",
@@ -643,7 +688,7 @@
             { "value": "checked", "label": "Checked" },
             { "value": "unchecked", "label": "Unchecked" }
           ],
-           "default": "unchecked"
+          "default": "unchecked"
         },
         {
           "type": "text",
@@ -664,7 +709,7 @@
             { "value": "checked", "label": "Checked" },
             { "value": "unchecked", "label": "Unchecked" }
           ],
-           "default": "unchecked"
+          "default": "unchecked"
         },
         {
           "type": "text",
@@ -685,7 +730,7 @@
             { "value": "checked", "label": "Checked" },
             { "value": "unchecked", "label": "Unchecked" }
           ],
-           "default": "unchecked"
+          "default": "unchecked"
         },
         {
           "type": "text",
@@ -697,7 +742,7 @@
   ],
   "presets": [
     {
-      "name": "Table Compare Pro",
+      "name": "t:sections.names.table_compare_pro",
       "blocks": [
         { "type": "header" },
         { "type": "row" },

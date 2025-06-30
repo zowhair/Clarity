@@ -3,109 +3,174 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     {% if section.settings.fade %}
-    -webkit-mask-box-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
-    mask-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
+      -webkit-mask-box-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
+      mask-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
     {% endif %}
-      }
+  }
 
-  @media screen and (min-width: 750px) {
+   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-  }
+   }
 {%- endstyle -%}
 <div class="section-{{ section.id }}-padding">
   <div
-    class="announcement-bar--inner-{{ section.id }} direction-left color-{{ section.settings.color_scheme }} gradient"
-    style="--marquee-speed: {{ section.settings.scroll_speed | append: 0 }}s"
+    class="announcement-bar--inner-{{ section.id }} {% if section.settings.reverse %} direction-right{% else %} direction-left{% endif %} color-{{ section.settings.color_scheme }} gradient"
+    style="--marquee-speed: {{ section.settings.scroll_speed }}s"
   >
     <div style="display: flex;">
       <div style="display: flex;">
-        {% for item in (1..9) %}
-          {%- for block in section.blocks -%}
-            {% case block.type %}
-              {% when 'image' %}
-                <style>
-                              .announcement-bar-{{ block.id }} img {
-                    width: {{block.settings.logo_image_width}}px;
-                    height:auto;
-                  }
-                               .announcement-bar-{{ block.id }} svg {
-                    width: {{block.settings.logo_image_width}}px;
-                    height:auto;
-                  }
-                </style>
-                <div
-                  class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
-                  role="region"
-                  aria-label="Announcement"
-                  {{ block.shopify_attributes }}
-                >
-                  {% if block.settings.logo_image != blank %}
-                    {{ block.settings.logo_image | image_url: width: 200 | image_tag: loading: 'lazy' }}
-                  {%- else -%}
-                    <p style="font-size: 40px;margin: 0;">LOGO</p>
-                  {%- endif -%}
-                </div>
-
-              {% when 'announcement' %}
-                <style>
-                    .lumin-text-{{ block.id }} {
-                      color: {{ block.settings.announcement_color }};
-                      font-size: {{ block.settings.announcement_size }}px;
-                    }
-                  @media screen and (max-width: 749px) {
-                     .lumin-text-{{ block.id }} {
-                      font-size: {{ block.settings.announcement_size_m }}px;
-                    }
-                </style>
-                <div
-                  class="announcement-bar-{{ section.id }}"
-                  role="region"
-                  aria-label="Announcement"
-                  {{ block.shopify_attributes }}
-                >
-                  <a
-                    {% if block.settings.text_link != blank %}
-                      {{- block.settings.text_link -}}
-                    {% else %}
-                      href="/collections/frontpage"
-                    {% endif %}
-                    class="announcement-bar__link link link--text focus-inset animate-arrow"
-                  >
-                    {% render 'icon-accordion', icon: block.settings.icon %}
-                    <p class="announcement-bar__message h6 lumin-text-{{ block.id }}">
-                      {{ block.settings.Announcement }}
-                    </p>
-                  </a>
-                </div>
-            {% endcase %}
-          {% endfor %}
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'image' %}
+              {% render 'scroll-image-block', block: block, section: section %}
+            {% when 'announcement' %}
+              {% render 'scroll-text-block', block: block, section: section %}
+          {% endcase %}
         {% endfor %}
       </div>
     </div>
   </div>
 </div>
 <style data-shopify>
-         .announcement-bar--inner-{{ section.id }}{
+  .scroll {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .announcement-bar--inner-{{ section.id }}{
     max-width:1440px;
     margin-left:auto;
-    margin-right:auto
+    margin-right:auto;
+    z-index: -1;
+    position: relative;
   }
   @media only screen and (min-width: 768px){
     .announcement-bar--inner-{{ section.id }}{
       padding: {{section.settings.padding_desktop}}px 20px;
     }
   }
-            @media only screen and (max-width: 767px){
+  @media only screen and (max-width: 767px){
     .announcement-bar--inner-{{ section.id }}{
       padding: {{section.settings.padding_mobile}}px 20px;
     }
   }
   .announcement-bar-section{
     position:relative;
-    z-index:52
+    z-index:4
   }
   .announcement-bar--wrap{
     line-height:1;
@@ -121,7 +186,7 @@
   .announcement-bar--inner-{{ section.id }}.direction-left>div{
     animation:marquee-left var(--marquee-speed) linear infinite;
   }
-  .announcement-bar--inner.direction-right>div{
+  .announcement-bar--inner-{{ section.id }}.direction-right>div{
     animation:marquee-right var(--marquee-speed) linear infinite;
   }
   .announcement-bar--inner-{{ section.id }}>div{
@@ -137,19 +202,25 @@
     display:inline-flex;
     align-items:center;
     padding:0 {{section.settings.padding_item_desktop}}px;
-    letter-spacing:.03em;
   }
-             @media only screen and (max-width: 767px){
+   @media only screen and (max-width: 767px){
     .announcement-bar{
-    padding:0 {{section.settings.padding_item_mobile}}px;
+      padding:0 {{section.settings.padding_item_mobile}}px;
+    }
   }
-             }
+  .announcement-bar-{{ section.id }} p{
+    margin:0;
+  }
+  .announcement-bar__message {
+    min-height: 1.8rem;
+  }
   .announcement-bar-{{ section.id }} svg{
     margin-right:12px;
-    height:14px;
-    fill:rgb(var(--color-foreground));
+    /* fill:rgb(var(--color-foreground));*/
   }
-
+  .announcement-bar-{{ section.id }} p{
+    padding:0;
+  }
   .announcement-bar-{{ section.id }} .announcement-bar-{{ section.id }}__link{
     color:rgb(var(--color-foreground));
     display: flex;
@@ -166,7 +237,7 @@
       transform:translate(-100%)
     }
   }
-  @keyframes marquee-right{
+  @keyframes marquee-right {
     0%{
       transform:translate(-100%)
     }
@@ -186,20 +257,26 @@
 
 {% schema %}
 {
-  "name": "t:sections.names.logo_slider",
+  "name": "t:sections.names.marquee",
   "disabled_on": {
-    "groups": ["header", "custom.popup"]
+    "groups": ["custom.popup"]
   },
   "settings": [
     {
       "type": "range",
       "id": "scroll_speed",
-      "min": 0,
+      "min": 1,
       "max": 100,
       "step": 1,
       "unit": "s",
       "label": "Scrolling Speed",
       "default": 15
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse",
+      "default": false
     },
     {
       "type": "checkbox",
@@ -241,7 +318,7 @@
       "step": 4,
       "unit": "px",
       "label": "Item Gap",
-      "default": 36
+      "default": 16
     },
     {
       "type": "range",
@@ -251,9 +328,8 @@
       "step": 4,
       "unit": "px",
       "label": "Item Gap Mobile",
-      "default": 24
+      "default": 8
     },
-
     {
       "type": "range",
       "id": "padding_top",
@@ -293,7 +369,7 @@
           "step": 2,
           "unit": "px",
           "label": "Image Height",
-          "default": 110
+          "default": 34
         }
       ]
     },
@@ -302,10 +378,10 @@
       "name": "Announcement",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "Announcement",
-          "default": "Take 20% Off With Code SAVE20",
-          "label": "Announcement",
+          "default": "<p>Take 20% Off With Code SAVE20</p>",
+          "label": "Announcement- ✨ Fancy enabled",
           "info": "Your Announcement Text"
         },
         {
@@ -316,7 +392,7 @@
           "step": 1,
           "unit": "px",
           "label": "Announcement Size",
-          "default": 16
+          "default": 18
         },
         {
           "type": "range",
@@ -326,7 +402,37 @@
           "step": 1,
           "unit": "px",
           "label": "Announcement Size Mobile",
-          "default": 14
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "text_spacing",
+          "min": -1,
+          "max": 3,
+          "step": 0.5,
+          "unit": "px",
+          "label": "Letter Spacing",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "text_transform",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "Lowercase"
+            }
+          ],
+          "default": "none",
+          "label": "Text transform"
         },
         {
           "type": "color",
@@ -528,21 +634,15 @@
   ],
   "presets": [
     {
-      "name": "t:sections.names.logo_slider",
-      "category": "Clarity Section",
+      "name": "t:sections.names.marquee",
+      "category": "Clarity Sections",
       "settings": {},
       "blocks": [
         {
-          "type": "image"
+          "type": "announcement"
         },
         {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
+          "type": "announcement"
         }
       ]
     }
