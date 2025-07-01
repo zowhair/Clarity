@@ -46,11 +46,11 @@
       <div class="content-container center">
         {%- unless section.settings.title == blank -%}
           <h2 class="title {{ section.settings.heading_size }}">
-            {{ section.settings.title | escape | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+            {{ section.settings.title | escape | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>' }}
           </h2>
         {%- endunless -%}
         {%- unless section.settings.text == blank -%}
-          {{ section.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{ section.settings.text | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>' }}
         {%- endunless -%}
         {%- if section.settings.button_label != blank -%}
           <a

@@ -36,8 +36,10 @@
           aria-label="{{ section.settings.accessibility_info | escape }}"
         >
           {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-            <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}"
-              style="margin-top: 3rem;">
+            <div
+              class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}"
+              style="margin-top: 3rem;"
+            >
               <button
                 type="button"
                 class="slider-button slider-button--prev"
@@ -114,10 +116,11 @@
             data-autoplay="{{ section.settings.auto_rotate }}"
             data-speed="{{ section.settings.change_slides_speed }}"
             style="
-            {% if section.settings.layout == 'grid' %}
-              border-radius:{{section.settings.banner_border}}px;
-            {% endif %}"
-            >
+              {% if section.settings.layout == 'grid' %}
+                border-radius:{{section.settings.banner_border}}px;
+              {% endif %}
+            "
+          >
             {%- for block in section.blocks -%}
               <div
                 class="slideshow__slide grid__item grid--1-col slider__slide {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -131,25 +134,26 @@
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 tabindex="-1"
                 {% if settings.animations_reveal_on_scroll %}
-                      data-cascade
-                      style="--animation-order: {{ forloop.index }}; z-index: 2;"
-                    {% else %}
-                      style="z-index: 2;"
-                    {% endif %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }}; z-index: 2;"
+                {% else %}
+                  style="z-index: 2;"
+                {% endif %}
               >
                 <div style="max-width: {{ section.settings.slide_width | append: 'px' }}; margin:auto;">
                   <p
                     class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}"
-                   >
+                  >
                     {{ block.settings.caption | escape }}
                   </p>
                   <h2
-                    class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}">
+                    class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}"
+                  >
                     {{
                       block.settings.heading
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </h2>
@@ -159,50 +163,54 @@
                   >
                     {{
                       block.settings.text
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </div>
                   <div
-                class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}"
-                    {% if block.settings.button_label != blank or block.settings.button_label_2 != blank %}style="margin-top:3rem;"{% endif %}
-                {{ block.shopify_attributes }}
-              >
-                {%- if block.settings.button_label != blank -%}
-                  <a
-                    {% if block.settings.button_link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.button_link }}"
+                    class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}"
+                    {% if block.settings.button_label != blank or block.settings.button_label_2 != blank %}
+                      style="margin-top:3rem;"
                     {% endif %}
-                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                    {{ block.shopify_attributes }}
                   >
-                    {{- block.settings.button_label | escape -}}
-                  </a>
-                {%- endif -%}
-                {%- if block.settings.button_label_2 != blank -%}
-                  <a
-                    {% if block.settings.button_link_2 == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.button_link_2 }}"
-                    {% endif %}
-                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
-                  >
-                    {{- block.settings.button_label_2 | escape -}}
-                  </a>
-                {%- endif -%}
-              </div>
+                    {%- if block.settings.button_label != blank -%}
+                      <a
+                        {% if block.settings.button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.button_link }}"
+                        {% endif %}
+                        class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                      >
+                        {{- block.settings.button_label | escape -}}
+                      </a>
+                    {%- endif -%}
+                    {%- if block.settings.button_label_2 != blank -%}
+                      <a
+                        {% if block.settings.button_link_2 == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.button_link_2 }}"
+                        {% endif %}
+                        class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                      >
+                        {{- block.settings.button_label_2 | escape -}}
+                      </a>
+                    {%- endif -%}
+                  </div>
                 </div>
               </div>
             {%- endfor -%}
           </div>
 
           {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
-            <div class="slideshow__controls slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}"
-              style="margin-top: 3rem;">
+            <div
+              class="slideshow__controls slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}"
+              style="margin-top: 3rem;"
+            >
               <button
                 type="button"
                 class="slider-button slider-button--prev"
@@ -286,9 +294,9 @@
   "name": "t:sections.names.promo_slider",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "select",
@@ -337,25 +345,25 @@
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
-          "type": "select",
-          "id": "slider_visual",
-          "options": [
-            {
-              "value": "dots",
-              "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_1"
-            },
-            {
-              "value": "counter",
-              "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_2"
-            },
-            {
-              "value": "numbers",
-              "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_3"
-            }
-          ],
-          "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.label",
-          "default": "dots"
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_1"
         },
+        {
+          "value": "counter",
+          "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_2"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.options.option_3"
+        }
+      ],
+      "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.label",
+      "default": "dots"
+    },
     {
       "type": "checkbox",
       "id": "auto_rotate",
@@ -391,9 +399,9 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
-    }, 
+    }
   ],
- "blocks": [
+  "blocks": [
     {
       "type": "testimonial",
       "name": "Testimonial",
@@ -476,7 +484,7 @@
           "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
         },
-           {
+        {
           "type": "text",
           "id": "button_label",
           "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
@@ -512,7 +520,7 @@
         }
       ]
     }
-      ],
+  ],
   "presets": [
     {
       "name": "t:sections.names.promo_slider",

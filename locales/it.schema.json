@@ -81,7 +81,7 @@
         }
       }
     },
-    "lumin-freeshipping-bar": {
+    "freeshipping-bar": {
       "name": "Barra Obiettivo Carrello",
       "settings": {
         "fsb_goal": {

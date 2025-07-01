@@ -1079,7 +1079,7 @@
       }
     },
     "34037d18-7d72-489c-82b9-03de2db445a2": {
-      "type": "lumin-review",
+      "type": "reviews",
       "blocks": {
         "template--21513975431475__34037d18-7d72-489c-82b9-03de2db445a2-review-1": {
           "type": "review",
@@ -1335,7 +1335,7 @@
             "text_color": "#212121",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#LUMINTHEME",
+            "button-text": "#CLARITYTHEME",
             "show_secondary": false,
             "button_link": "",
             "image_content_position": "middle-right",
@@ -1525,7 +1525,7 @@
             "text_color": "#212121",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#LUMINTHEME",
+            "button-text": "#CLARITYTHEME",
             "show_secondary": false,
             "button_link": "",
             "image_content_position": "middle-right",

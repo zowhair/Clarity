@@ -22,7 +22,13 @@
   <div class="page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+        {{
+          section.settings.heading
+          | replace: '[', '<span class="clarity-text__fancy1">'
+          | replace: ']', '</span>'
+          | replace: '((', '<span class="clarity-text__fancy2">'
+          | replace: '))', '</span>'
+        }}
       </h2>
     {%- endif -%}
     <div class="collage{% if section.settings.mobile_layout == 'collage' %} collage--mobile{% endif %}">
@@ -249,9 +255,9 @@
   "name": "t:sections.collage.name",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "inline_richtext",

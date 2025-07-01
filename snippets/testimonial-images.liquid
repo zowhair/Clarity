@@ -71,9 +71,9 @@
   <span class="{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
     {{
       block.settings.text_block
-      | replace: '[', '<span class="lumin-text__fancy1">'
+      | replace: '[', '<span class="clarity-text__fancy1">'
       | replace: ']', '</span>'
-      | replace: '((', '<span class="lumin-text__fancy2">'
+      | replace: '((', '<span class="clarity-text__fancy2">'
       | replace: '))', '</span>'
     -}}
   </span>

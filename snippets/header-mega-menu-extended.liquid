@@ -16,8 +16,8 @@
     object-fit: cover;
     object-position: center center;
   }
-  .lumin-mega img {
-    max-width:150px; 
+  .clarity-mega img {
+    max-width:150px;
     height: auto;
   }
 
@@ -90,7 +90,7 @@
                   role="list"
                 >
                   {%- for childlink in link.links -%}
-                    <li class="featured-mega-item lumin-mega">
+                    <li class="featured-mega-item clarity-mega">
                       {% comment %} Put a Featured Image Here {% endcomment %}
                       {% if settings['extended-megamenu-show-imgs'] == 'yes' %}
                         <a href="{{ childlink.url }}">
@@ -103,7 +103,7 @@
                           {% elsif childlink.object.image %}
                             {{
                               childlink.object.image
-                              | image_url: width:250, height: auto
+                              | image_url: width: 250, height: auto
                               | image_tag: class: 'curved-borders'
                             }}
                           {% endif %}

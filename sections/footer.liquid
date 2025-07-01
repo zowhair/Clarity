@@ -39,7 +39,7 @@
         cursor: pointer;
       }
       .grid .footer-block__heading::after {
-        content: "+";
+        content: '+';
         position: absolute;
         right: 0;
         top: calc(50% + 1rem);
@@ -49,7 +49,7 @@
         font-size: 2.4rem;
       }
       .grid .footer-block__heading:not(.block-collapsed)::after {
-        content: "-";
+        content: '-';
       }
       .grid .footer-block__heading.block-collapsed + .footer-block__details-content {
         visibility: hidden;
@@ -57,67 +57,65 @@
         height: 0;
         margin: 0;
         padding: 0;
-        transition: all .2s ease-out;
+        transition: all 0.2s ease-out;
         overflow: hidden;
       }
       .grid .footer-block__heading + .footer-block__details-content {
         visibility: visible;
         opacity: 1;
         height: auto;
-        transition: all .2s ease-out;
+        transition: all 0.2s ease-out;
         overflow: hidden;
         margin-bottom: 3rem;
       }
-
     }
   </style>
   <script>
-window.addEventListener('DOMContentLoaded', () => {
-  const headings = document.querySelectorAll('.grid .footer-block__heading');
+    window.addEventListener('DOMContentLoaded', () => {
+      const headings = document.querySelectorAll('.grid .footer-block__heading');
 
-  const handleCollapse = (heading) => {
-    const content = heading.nextElementSibling;
+      const handleCollapse = (heading) => {
+        const content = heading.nextElementSibling;
 
-    // Skip if content doesn't exist
-    if (!content) return;
+        // Skip if content doesn't exist
+        if (!content) return;
 
-    if (heading.classList.contains('block-collapsed')) {
-      heading.classList.remove('block-collapsed');
-      heading.setAttribute('aria-expanded', 'true');
-      content.style.display = 'block'; // or any other preferred display property
-    } else {
-      heading.classList.add('block-collapsed');
-      heading.setAttribute('aria-expanded', 'false');
-      content.style.display = 'none';
-    }
-  };
+        if (heading.classList.contains('block-collapsed')) {
+          heading.classList.remove('block-collapsed');
+          heading.setAttribute('aria-expanded', 'true');
+          content.style.display = 'block'; // or any other preferred display property
+        } else {
+          heading.classList.add('block-collapsed');
+          heading.setAttribute('aria-expanded', 'false');
+          content.style.display = 'none';
+        }
+      };
 
-  headings.forEach((heading, index) => {
-    heading.classList.add('block-collapsed');
-    heading.setAttribute('role', 'button');
-    heading.setAttribute('aria-expanded', 'false');
-    heading.setAttribute('tabindex', '0');
+      headings.forEach((heading, index) => {
+        heading.classList.add('block-collapsed');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('aria-expanded', 'false');
+        heading.setAttribute('tabindex', '0');
 
-    const content = heading.nextElementSibling;
+        const content = heading.nextElementSibling;
 
-    // If no content exists, skip setup for that heading
-    if (!content) return;
+        // If no content exists, skip setup for that heading
+        if (!content) return;
 
-    content.setAttribute('id', `footer-block-index-${index}`);
-    heading.setAttribute('aria-controls', `footer-block-index-${index}`);
+        content.setAttribute('id', `footer-block-index-${index}`);
+        heading.setAttribute('aria-controls', `footer-block-index-${index}`);
 
-    heading.addEventListener('click', () => {
-      handleCollapse(heading);
+        heading.addEventListener('click', () => {
+          handleCollapse(heading);
+        });
+
+        heading.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            handleCollapse(heading);
+          }
+        });
+      });
     });
-
-    heading.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        handleCollapse(heading);
-      }
-    });
-  });
-});
-
   </script>
 {% endif %}
 <style>
@@ -189,9 +187,9 @@ window.addEventListener('DOMContentLoaded', () => {
                   <h2 class="footer-block__heading inline-richtext">
                     {{-
                       block.settings.heading
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '(', '<span class="lumin-text__fancy2">'
+                      | replace: '(', '<span class="clarity-text__fancy2">'
                       | replace: ')', '</span>'
                     -}}
                   </h2>
@@ -204,9 +202,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     <div class="footer-block__details-content rte">
                       {{
                         block.settings.subtext
-                        | replace: '[', '<span class="lumin-text__fancy1">'
+                        | replace: '[', '<span class="clarity-text__fancy1">'
                         | replace: ']', '</span>'
-                        | replace: '((', '<span class="lumin-text__fancy2">'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
                         | replace: '))', '</span>'
                       }}
                     </div>
@@ -250,9 +248,9 @@ window.addEventListener('DOMContentLoaded', () => {
                         <h2 class="footer-block__heading rte">
                           {{
                             settings.brand_headline
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           }}
                         </h2>
@@ -261,9 +259,9 @@ window.addEventListener('DOMContentLoaded', () => {
                         <div class="rte">
                           {{
                             settings.brand_description
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           }}
                         </div>
@@ -335,9 +333,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 <h2 class="footer-block__heading inline-richtext">
                   {{
                     section.settings.newsletter_heading
-                    | replace: '[', '<span class="lumin-text__fancy1">'
+                    | replace: '[', '<span class="clarity-text__fancy1">'
                     | replace: ']', '</span>'
-                    | replace: '((', '<span class="lumin-text__fancy2">'
+                    | replace: '((', '<span class="clarity-text__fancy2">'
                     | replace: '))', '</span>'
                   }}
                 </h2>
@@ -508,7 +506,7 @@ window.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="footer__column footer__column--info">
         {%- if section.settings.payment_enable -%}
-              {% render 'payment-icons-footer' block: block  %}
+          {% render 'payment-icons-footer', block: block %}
         {%- endif -%}
       </div>
     </div>
@@ -521,9 +519,9 @@ window.addEventListener('DOMContentLoaded', () => {
           {%- unless section.settings.hide_shopify %}{{ powered_by_link }}{% endunless %}
           {{
             section.settings.copyright
-            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: '[', '<span class="clarity-text__fancy1">'
             | replace: ']', '</span>'
-            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '((', '<span class="clarity-text__fancy2">'
             | replace: '))', '</span>'
           -}}
         </small>
@@ -545,9 +543,9 @@ window.addEventListener('DOMContentLoaded', () => {
           <small class="copyright__content" style="color:{{ section.settings.color_bottom_text }};">
             {{-
               section.settings.bottom_text
-              | replace: '[', '<span class="lumin-text__fancy1">'
+              | replace: '[', '<span class="clarity-text__fancy1">'
               | replace: ']', '</span>'
-              | replace: '((', '<span class="lumin-text__fancy2">'
+              | replace: '((', '<span class="clarity-text__fancy2">'
               | replace: '))', '</span>'
             -}}
           </small>
@@ -663,38 +661,38 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       ]
     },
-     {
+    {
       "type": "big_image",
       "name": "Ancher Image",
       "settings": [
         {
-              "type": "image_picker",
-              "id": "image_drawer",
-              "label": "Image"
-            },
-               {
+          "type": "image_picker",
+          "id": "image_drawer",
+          "label": "Image"
+        },
+        {
           "type": "range",
           "id": "image_size",
           "label": "Feature Image Size",
-          "min":       20,
-          "max":        100,
-          "step":       1,
-          "unit":       "%",
+          "min": 20,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
 
           "default": 100
-          },
-           {
+        },
+        {
           "type": "range",
           "id": "image_border",
           "label": "Image corner radius",
-          "min":       0,
-          "max":        40,
-          "step":       1,
-          "unit":       "px",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
 
           "default": 0
-          },
-         {
+        },
+        {
           "type": "select",
           "id": "img_position",
           "options": [
@@ -715,27 +713,27 @@ window.addEventListener('DOMContentLoaded', () => {
           "label": "Image Position"
         },
         {
-      "type": "range",
-      "id": "padding_top_image",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_image",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 16
-    }
+          "type": "range",
+          "id": "padding_top_image",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_image",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 16
+        }
       ]
-     }
+    }
   ],
   "settings": [
     {
@@ -843,29 +841,29 @@ window.addEventListener('DOMContentLoaded', () => {
       "default": true,
       "label": "t:sections.footer.settings.payment_enable.label"
     },
-      {
+    {
       "type": "select",
       "id": "original",
       "options": [
-          {
-            "value": "original",
-            "label": "Original"
-          },
-          {
-            "value": "custom",
-            "label": "Custom"
-          }
-        ],
-        "default": "custom",
-        "label": "Icon style"
+        {
+          "value": "original",
+          "label": "Original"
         },
         {
-         "type": "textarea",
-          "id": "payment_icon",
-          "label": "Payment Methods (Custom)",
-          "default": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
-          "info": "Add the payment method keys separated by (,) commas. (e.g., visa,master,paypal,apple_pay). You can find all payment methods [here](https://lumintheme.com/pages/payment-method-list)."
-        },
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "custom",
+      "label": "Icon style"
+    },
+    {
+      "type": "textarea",
+      "id": "payment_icon",
+      "label": "Payment Methods (Custom)",
+      "default": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
+      "info": "Add the payment method keys separated by (,) commas. (e.g., visa,master,paypal,apple_pay). You can find all payment methods [here](clarity.com)."
+    },
     {
       "type": "image_picker",
       "id": "custom_icon_1",
@@ -896,7 +894,7 @@ window.addEventListener('DOMContentLoaded', () => {
       "label": "Icon Size",
       "default": 34
     },
-     {
+    {
       "type": "image_picker",
       "id": "custom_icon_3",
       "label": "Extra Icon 3"
@@ -934,18 +932,18 @@ window.addEventListener('DOMContentLoaded', () => {
       "default": false,
       "label": "Show Bottom Text"
     },
-     {
+    {
       "type": "inline_richtext",
       "id": "bottom_text",
       "default": "Some text",
       "label": "Bottom Text"
     },
-     {
-            "type": "color",
-            "id": "color_bottom_text",
-            "label": "Text Color",
-            "default": "#868686"
-          },
+    {
+      "type": "color",
+      "id": "color_bottom_text",
+      "label": "Text Color",
+      "default": "#868686"
+    },
     {
       "type": "header",
       "content": "t:sections.footer.settings.header__8.content",

@@ -31,10 +31,18 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin"
-           style="justify-content: {{ section.settings.heading_center }};text-align: {{ section.settings.heading_center }};">
+      <div
+        class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin"
+        style="justify-content: {{ section.settings.heading_center }};text-align: {{ section.settings.heading_center }};"
+      >
         <h2 class="title inline-richtext {{ section.settings.collection_text_alignment }} {{ section.settings.heading_size }}">
-          {{ section.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{
+            section.settings.title
+            | replace: '[', '<span class="clarity-text__fancy1">'
+            | replace: ']', '</span>'
+            | replace: '((', '<span class="clarity-text__fancy2">'
+            | replace: '))', '</span>'
+          }}
         </h2>
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
@@ -125,10 +133,26 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</h3>
+                  <h3 class="inline-richtext">
+                    {{
+                      block.settings.title
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
+                  </h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</div>
+                  <div class="rte">
+                    {{
+                      block.settings.text
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
+                  </div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
@@ -229,25 +253,25 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
-        "type": "select",
-        "id": "heading_center",
-        "options": [
-          {
-            "value": "left",
-            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
-          },
-          {
-            "value": "center",
-            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
-          },
-          {
-            "value": "right",
-            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
-          }
-        ],
-        "default": "left",
-        "label": "t:settings_schema.global.settings.text_alignment.label"
-      },
+      "type": "select",
+      "id": "heading_center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:settings_schema.global.settings.text_alignment.label"
+    },
     {
       "type": "select",
       "id": "image_width",

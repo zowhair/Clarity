@@ -61,7 +61,7 @@
 {% endcomment %}
 
 {% assign scheme1 = settings.color_schemes | first %}
-<section id="LM--{{ section.id }}" class="LM--{{ section.id }} lumin-section__main lumin-section__section">
+<section id="LM--{{ section.id }}" class="LM--{{ section.id }} custom-section__main clarity-section__wrapper">
   <div class="color-{{ section.settings.color_scheme_main }} gradient">
     <div class="lm-image-mega image-with-text {% unless section.settings.full-width  %} page-width{% endunless %} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == scheme1 and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding section-{{ section.id }}-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
@@ -116,9 +116,9 @@
                   >
                     {{
                       block.settings.heading
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </h2>
@@ -137,9 +137,9 @@
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
                     {{
                       block.settings.text
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </div>
@@ -176,7 +176,7 @@
                 {%- when 'icons' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__block--{{ block.type }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'icons-block', block: block %}
@@ -184,7 +184,7 @@
                 {%- when 'collapsible_content' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__block--{{ block.type }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'collapsible-row-block', block: block, section: section %}
@@ -192,7 +192,7 @@
                 {%- when 'countdown_timer', block:block -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__block--{{ block.type }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'countdown-timer-block', block: block, section: section %}
@@ -200,7 +200,7 @@
                 {%- when 'newsletter' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__block--{{ block.type }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'newsletter-block', block: block, section: section %}
@@ -208,7 +208,7 @@
                 {%- when 'fancy_heading' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'fancy-heading-block', block: block, section: section %}
@@ -216,7 +216,7 @@
                 {%- when 'text_columns' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__block--{{ block.type }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'text-columns-block', block: block, section: section %}
@@ -224,7 +224,7 @@
                 {%- when 'image' -%}
                   <div
                     id="LM--{{ block.id }}"
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }}"
                     {{ block.shopify_attributes }}
                   >
                     {% render 'image-block', block: block, section: section %}
@@ -233,7 +233,7 @@
                   {% render 'video-block', block: block, section: section %}
                 {%- when 'divider' -%}
                   <div
-                    class="lumin-section-block lumin-section__block-id-{{ block.id }}"
+                    class="clarity-section-block clarity-section__block-id-{{ block.id }}"
                     style="margin:0;"
                     {{ block.shopify_attributes }}
                   >
@@ -254,18 +254,18 @@
                     <span>
                       {{-
                         block.settings.custom_text
-                        | replace: '[', '<span class="lumin-text__fancy1">'
+                        | replace: '[', '<span class="clarity-text__fancy1">'
                         | replace: ']', '</span>'
-                        | replace: '((', '<span class="lumin-text__fancy2">'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
                         | replace: '))', '</span>'
                       -}}
                     </span>
                     <span style="font-size: 74%;">
                       {{-
                         block.settings.custom_text_small
-                        | replace: '[', '<span class="lumin-text__fancy1">'
+                        | replace: '[', '<span class="clarity-text__fancy1">'
                         | replace: ']', '</span>'
-                        | replace: '((', '<span class="lumin-text__fancy2">'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
                         | replace: '))', '</span>'
                       -}}
                     </span>
@@ -2513,7 +2513,7 @@
           "type": "html",
           "id": "custom_css",
           "label": "CSS",
-          "info": "Target the text in the square brackets with the class .lumin-section__fancy"
+          "info": "Target the text in the square brackets with the class .clarity-section__fancy"
         }
       ]
     },

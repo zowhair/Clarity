@@ -81,11 +81,25 @@
               {%- endif -%}
               {%- if block.settings.heading -%}
                 <h2 class="image-with-text__heading {{ section.settings.heading_size }} rte">
-                  {{ block.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                  {{
+                    block.settings.heading
+                    | replace: '[', '<span class="clarity-text__fancy1">'
+                    | replace: ']', '</span>'
+                    | replace: '((', '<span class="clarity-text__fancy2">'
+                    | replace: '))', '</span>'
+                  }}
                 </h2>
               {%- endif -%}
               {%- if block.settings.text -%}
-                <div class="image-with-text__text rte {{ section.settings.text_style }}">{{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</div>
+                <div class="image-with-text__text rte {{ section.settings.text_style }}">
+                  {{
+                    block.settings.text
+                    | replace: '[', '<span class="clarity-text__fancy1">'
+                    | replace: ']', '</span>'
+                    | replace: '((', '<span class="clarity-text__fancy2">'
+                    | replace: '))', '</span>'
+                  }}
+                </div>
               {%- endif -%}
               {%- if block.settings.button_label != blank -%}
                 <a
@@ -112,7 +126,7 @@
   "name": "t:sections.multirow.name",
   "class": "section",
   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
+    "groups": ["header", "footer", "custom.popup"]
   },
   "settings": [
     {

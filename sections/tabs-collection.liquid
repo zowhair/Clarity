@@ -51,11 +51,11 @@
 {% endstyle %}
 {% if section.settings.show_scroll_tags %}
   <style>
-        /*.lumin-card-slide> .card-wrapper> #scroll-container {
+        /*.clarity-card-slide> .card-wrapper> #scroll-container {
             height: calc( 100% + 20px + var(--tag-fonts));
         }*/
 
-    /* ul.lumin-grid {
+    /* ul.clarity-grid {
                row-gap: calc({{ settings.card_tag_font }}px + 20px + var(--grid-desktop-vertical-spacing));
                margin-top: 4rem;
              }*/
@@ -100,9 +100,9 @@
             {%- else -%}
               {{-
                 block.settings.heading
-                | replace: '[', '<span class="lumin-text__fancy1">'
+                | replace: '[', '<span class="clarity-text__fancy1">'
                 | replace: ']', '</span>'
-                | replace: '((', '<span class="lumin-text__fancy2">'
+                | replace: '((', '<span class="clarity-text__fancy2">'
                 | replace: '))', '</span>'
               }}
             {%- endif %}
@@ -139,9 +139,9 @@
             {%- else -%}
               {{
                 block.settings.description
-                | replace: '[', '<span class="lumin-text__fancy1">'
+                | replace: '[', '<span class="clarity-text__fancy1">'
                 | replace: ']', '</span>'
-                | replace: '((', '<span class="lumin-text__fancy2">'
+                | replace: '((', '<span class="clarity-text__fancy2">'
                 | replace: '))', '</span>'
               }}
             {%- endif %}
@@ -407,7 +407,7 @@
       "id": "show_scroll_tags",
       "default": false,
       "label": "Show Scrolling tags",
-      "info": "You can adjust colors, speed or font style under 'Theme settings>Product Cards'. Use [this](https://help.lumintheme.com/lumin-theme-documentation/how-to-setup-product-cards-scrolling-tags-and-custom-badges) guide to add product tags."
+      "info": "You can adjust colors, speed or font style under 'Theme settings>Product Cards'. Use [this](clarity.com) guide to add product tags."
     },
     {
       "type": "checkbox",

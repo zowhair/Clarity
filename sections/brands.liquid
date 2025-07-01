@@ -51,12 +51,12 @@
 
               {% when 'announcement' %}
                 <style>
-                    .lumin-text-{{ block.id }} {
+                    .clarity-text-{{ block.id }} {
                       color: {{ block.settings.announcement_color }};
                       font-size: {{ block.settings.announcement_size }}px;
                     }
                   @media screen and (max-width: 749px) {
-                     .lumin-text-{{ block.id }} {
+                     .clarity-text-{{ block.id }} {
                       font-size: {{ block.settings.announcement_size_m }}px;
                     }
                 </style>
@@ -75,7 +75,7 @@
                     class="announcement-bar__link link link--text focus-inset animate-arrow"
                   >
                     {% render 'icon-accordion', icon: block.settings.icon %}
-                    <p class="announcement-bar__message h6 lumin-text-{{ block.id }}">
+                    <p class="announcement-bar__message h6 clarity-text-{{ block.id }}">
                       {{ block.settings.Announcement }}
                     </p>
                   </a>

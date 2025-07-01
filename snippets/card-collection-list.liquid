@@ -35,10 +35,9 @@
     padding: 0.5rem 2rem !important;
   }
   .lumin-card__content h3 {
-    Font-size: 14px;
+    font-size: 14px;
   }
 </style>
-
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
   <div
@@ -53,7 +52,7 @@
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
-      class="lumin-collection-card-{{ section.id }} card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      class="clarity-collection-card-{{ section.id }} card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       {%- if card_collection.featured_image -%}
@@ -138,17 +137,17 @@
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
               {%- if card_collection.featured_image or card_collection.description == blank -%}
-                {% if section.settings.show_arrow %} 
+                {% if section.settings.show_arrow %}
                   <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-                  {% endif %}
+                {% endif %}
               {%- endif %}
             </a>
           </h3>
           {%- if card_collection.featured_image == null and card_collection.description != blank -%}
             <p class="card__caption">
               {{- card_collection.description | strip_html | truncatewords: 12 -}}
-              {% if section.settings.show_arrow %} 
-              <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+              {% if section.settings.show_arrow %}
+                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
               {% endif %}
             </p>
           {%- endif -%}
@@ -161,8 +160,8 @@
           <h3 class="card__heading card__heading--placeholder{% if section.settings.subtitle_center %} text-center{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
               {{ 'onboarding.collection_title' | t }}
-              {% if section.settings.show_arrow %} 
-              <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+              {% if section.settings.show_arrow %}
+                <span class="icon-wrap">{% render 'icon-arrow' %}</span>
               {% endif %}
             </a>
           </h3>

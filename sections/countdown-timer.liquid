@@ -32,9 +32,9 @@
       <span class="rte ct-text">
         {{-
           section.settings.message_main
-          | replace: '[', '<span class="lumin-text__fancy1">'
+          | replace: '[', '<span class="clarity-text__fancy1">'
           | replace: ']', '</span>'
-          | replace: '((', '<span class="lumin-text__fancy2">'
+          | replace: '((', '<span class="clarity-text__fancy2">'
           | replace: '))', '</span>'
         }}
       </span>
@@ -124,67 +124,67 @@
   updatetimercount1();
 </script>
 
-<style>
-    .timer-wrapper  {
-      {% if section.settings.layout == 'grid' %}
-        border-radius:{{ section.settings.video_border }}px;
-      {% endif %}
-      {% if section.settings.show_border %}
-        border:1px solid {{ section.settings.timer_border }};
-      {% endif %}
-       {% unless section.settings.layout == 'grid' %}
-        border-left:none; border-right:none;border-radius:0;
-      {% endunless %}
+{% style %}
+   .timer-wrapper  {
+     {% if section.settings.layout == 'grid' %}
+       border-radius:{{ section.settings.video_border }}px;
+     {% endif %}
+     {% if section.settings.show_border %}
+       border:1px solid {{ section.settings.timer_border }};
+     {% endif %}
+      {% unless section.settings.layout == 'grid' %}
+       border-left:none; border-right:none;border-radius:0;
+     {% endunless %}
 
-    }
+   }
 
-    .timer-width {
-      max-width: {{section.settings.max_width}}px;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-      line-height: 1.1;
-      align-items: center;
-      padding-left: 40px;
-      padding-right: 40px;
-      row-gap:10px;
-      column-gap: 5px;
-    }
+   .timer-width {
+     max-width: {{section.settings.max_width}}px;
+     margin: auto;
+     display: flex;
+     justify-content: center;
+     flex-wrap: nowrap;
+     line-height: 1.1;
+     align-items: center;
+     padding-left: 40px;
+     padding-right: 40px;
+     row-gap:10px;
+     column-gap: 5px;
+   }
 
-    @media screen and (max-width: 740px) {
-    .timer-width {
-      flex-direction: row;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-      .ct-text{
-      text-align:{{ section.settings.text_layout }};
-      align-items:{{ section.settings.text_layout }};
-     /* width: calc(50% - 20px);*/
-      font-size: {{section.settings.timer_text_size}}px;
-      display: flex;
-      row-gap: 10px;
-  }
+   @media screen and (max-width: 740px) {
+     .timer-width {
+       flex-direction: row;
+       padding-left: 10px;
+       padding-right: 10px;
+     }
+   }
+   .ct-text{
+     text-align:{{ section.settings.text_layout }};
+     align-items:{{ section.settings.text_layout }};
+    /* width: calc(50% - 20px);*/
+     font-size: {{section.settings.timer_text_size}}px;
+     display: flex;
+     row-gap: 10px;
+   }
 
-    @media screen and (max-width: 740px){
-       .ct-text {
-      text-align:{{ section.settings.text_layout_mb }};
-      align-items:{{ section.settings.text_layout_mb }};
-      font-size: {{section.settings.timer_text_size_mb}}px;
-  }
-    }
+   @media screen and (max-width: 740px){
+     .ct-text {
+       text-align:{{ section.settings.text_layout_mb }};
+       align-items:{{ section.settings.text_layout_mb }};
+       font-size: {{section.settings.timer_text_size_mb}}px;
+     }
+   }
 
-     .ct-text h1, .ct-text h2, .ct-text h3, .ct-text p, .ct-text h4, .ct-text h5, .ct-text h6  {
-      margin: 0;
-  }
+   .ct-text h1, .ct-text h2, .ct-text h3, .ct-text p, .ct-text h4, .ct-text h5, .ct-text h6  {
+     margin: 0;
+   }
    .timer-clock {
-      font-size: 10px;
-      font-weight: bold;
-  }
+    font-size: 10px;
+    font-weight: bold;
+   }
 
-     .timer {
+   .timer {
       display: flex;
       align-items: center;
       color:{{section.settings.timer_color}};
@@ -194,48 +194,48 @@
       flex-wrap: wrap;
       zoom:{{section.settings.timer_size}};
       min-width: max-content;
-  }
-      @media screen and (max-width: 740px){
-      .timer {
-       column-gap: 6px;
-        zoom:{{section.settings.timer_size_mb}};
-    }
-      }
+   }
+   @media screen and (max-width: 740px){
+     .timer {
+      column-gap: 6px;
+      zoom:{{section.settings.timer_size_mb}};
+     }
+   }
 
-   .expired {
-        display:none;
-        font-size: 20px;
-        margin:0;
-      }
-    .expired p {
-        margin:0;
-      }
-    .count {
-      display: flex;
-      background: {{section.settings.timer_bg}};
-      {% if section.settings.head_font %} font-family: var(--font-heading-family);{% endif %}
-      flex-direction: column;
-      align-content: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 0.1rem 0.6rem;
-      border-radius: 2px;
-      line-height: 1.1;
-  }
-  .l-font-small {
-      font-size: 16px;
-      font-weight: {{section.settings.font_style}};
-  }
-    .l-font-medium {
-      font-size: 24px;
-      font-weight: {{section.settings.font_style}};
-  }
-    .l-font-large {
-      font-size: 40px;
-      font-weight: {{section.settings.font_style}};
-  }
-</style>
+  .expired {
+    display:none;
+    font-size: 20px;
+    margin:0;
+   }
+   .expired p {
+     margin:0;
+   }
+   .count {
+     display: flex;
+     background: {{section.settings.timer_bg}};
+     {% if section.settings.head_font %} font-family: var(--font-heading-family);{% endif %}
+     flex-direction: column;
+     align-content: flex-start;
+     justify-content: center;
+     flex-wrap: wrap;
+     align-items: center;
+     padding: 0.1rem 0.6rem;
+     border-radius: 2px;
+     line-height: 1.1;
+   }
+   .l-font-small {
+     font-size: 16px;
+     font-weight: {{section.settings.font_style}};
+   }
+   .l-font-medium {
+     font-size: 24px;
+     font-weight: {{section.settings.font_style}};
+   }
+   .l-font-large {
+     font-size: 40px;
+     font-weight: {{section.settings.font_style}};
+   }
+{% endstyle %}
 
 {% schema %}
 {

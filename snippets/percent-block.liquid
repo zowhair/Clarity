@@ -1,11 +1,11 @@
 <script>
-    let c1 = document.getElementById('c1');
-    let t1 = document.getElementById('t1');
-    document.forms.form01.range.addEventListener('change', e => {
+  let c1 = document.getElementById('c1');
+  let t1 = document.getElementById('t1');
+  document.forms.form01.range.addEventListener('change', (e) => {
     let value = parseInt(e.target.value);
     c1.style.strokeDasharray = `${value} 100`;
     t1.textContent = `${value}%`;
-    });
+  });
 </script>
 <style>
     .qa-feature-{{ block.id }} circle#c1 {
@@ -55,17 +55,17 @@
     <h4>
       {{
         block.settings.heading
-        | replace: '[', '<span class="lumin-text__fancy1">'
+        | replace: '[', '<span class="clarity-text__fancy1">'
         | replace: ']', '</span>'
-        | replace: '((', '<span class="lumin-text__fancy2">'
+        | replace: '((', '<span class="clarity-text__fancy2">'
         | replace: '))', '</span>'
       }}
     </h4>
     {{
       block.settings.text
-      | replace: '[', '<span class="lumin-text__fancy1">'
+      | replace: '[', '<span class="clarity-text__fancy1">'
       | replace: ']', '</span>'
-      | replace: '((', '<span class="lumin-text__fancy2">'
+      | replace: '((', '<span class="clarity-text__fancy2">'
       | replace: '))', '</span>'
     }}
   </div>

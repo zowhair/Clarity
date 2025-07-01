@@ -1,11 +1,11 @@
-.lumin-text__fancy1 { 
+.clarity-text__fancy1 { 
       position: relative;                
       background-clip: text;
       -webkit-background-clip: text;
       background-image: var(--fancy-gradient);
       color: transparent;
     }
-.lumin-text__fancy2 {      
+.clarity-text__fancy2 {      
       padding-left: var(--fancy-padding-left);
       padding-right: var(--fancy-padding-left);
       padding-top: var(--fancy-padding-top);

@@ -38,7 +38,7 @@
   {%- if block.settings.icon != blank -%}
     <img
       src="{{ block.settings.icon | img_url: '100x' }}"
-      class="lumin-ani-{{ block.settings.image_ani }} is--infinite"
+      class="clarity-anim-{{ block.settings.image_ani }} is--infinite"
     >
   {%- else -%}
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -65,9 +65,9 @@
       ship_text
       | replace: '(timer)', countdown
       | replace: '(date)', result
-      | replace: '[', '<span class="lumin-text__fancy1">'
+      | replace: '[', '<span class="clarity-text__fancy1">'
       | replace: ']', '</span>'
-      | replace: '(', '<span class="lumin-text__fancy2">'
+      | replace: '(', '<span class="clarity-text__fancy2">'
       | replace: ')', '</span>'
     }}
   </p>

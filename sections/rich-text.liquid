@@ -29,7 +29,13 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                {{
+                  block.settings.heading
+                  | replace: '[', '<span class="clarity-text__fancy1">'
+                  | replace: ']', '</span>'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
+                  | replace: '))', '</span>'
+                }}
               </h2>
             {%- when 'caption' -%}
               <p
@@ -51,7 +57,13 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                {{
+                  block.settings.text
+                  | replace: '[', '<span class="clarity-text__fancy1">'
+                  | replace: ']', '</span>'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
+                  | replace: '))', '</span>'
+                }}
               </div>
             {%- when 'button' -%}
               <div
@@ -99,9 +111,9 @@
   "name": "t:sections.rich-text.name",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "select",

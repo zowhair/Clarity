@@ -488,7 +488,7 @@
         "template--15124688076883__e2fe0eca-e002-483a-b480-89fb59bb4de6-announcement-1": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive<\/strong> Theme by <a href=\"https:\/\/lumintheme.com\/\" target=\"_blank\" title=\"https:\/\/lumintheme.com\/\">Lumin<em>Themes<\/em><\/a>. These products are not for sale.<\/p>",
+            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive<\/strong> Theme by <a href=\"https:\/\/clarity.com\/\" target=\"_blank\" title=\"https:\/\/clarity.com\/\">Lumin<em>Themes<\/em><\/a>. These products are not for sale.<\/p>",
             "announcement_size": 22,
             "announcement_size_m": 20,
             "text_spacing": 0,
@@ -1242,7 +1242,7 @@
       }
     },
     "3475a8f9-021f-4acd-8e57-163ef2a26740": {
-      "type": "lumin-review",
+      "type": "reviews",
       "blocks": {
         "f57735f1-30a6-4538-8c95-bfe08674506b": {
           "type": "review",
@@ -1489,8 +1489,8 @@
             "text_color": "#ffffff",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#lumintheme",
-            "button_link": "https:\/\/lumintheme.com\/",
+            "button-text": "#claritytheme",
+            "button_link": "https:\/\/clarity.com\/",
             "image_content_position": "middle-right",
             "desktop_content_alignment": "right",
             "grid-url": ""
@@ -1671,8 +1671,8 @@
             "text_color": "#212121",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#lumintheme",
-            "button_link": "https:\/\/lumintheme.com\/",
+            "button-text": "#clarity",
+            "button_link": "https:\/\/clarity.com\/",
             "image_content_position": "middle-right",
             "desktop_content_alignment": "right",
             "grid-url": ""

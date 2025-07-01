@@ -180,9 +180,9 @@
   {% if show_quantity_label %}
     {% if block.settings.quantity_style == 'horizontal-nogap' and block.settings.show_head_border %}
       <style>
-         .tiered-option-wrapper:first-of-type .tiered-option {
-             border-top-left-radius: 0;
-             border-top-right-radius: 0;
+        .tiered-option-wrapper:first-of-type .tiered-option {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
         }
       </style>
     {% endif %}
@@ -192,9 +192,9 @@
         <div class="tiered-heading">
           {{
             quantity_label_text
-            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: '[', '<span class="clarity-text__fancy1">'
             | replace: ']', '</span>'
-            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '((', '<span class="clarity-text__fancy2">'
             | replace: '))', '</span>'
           }}
         </div>
@@ -265,7 +265,6 @@
         {% capture per_unit_price_formatted %}{{ per_unit_cents | money }}{% endcapture %}
 
         {% comment %}
-
           {% assign compare_total_cents = quantity | times: product.selected_or_first_available_variant.price %}
           {% assign compare_total_cents_2 = quantity | times: product.selected_or_first_available_variant.compare_at_price %}
           {% assign discount_multiplier = 100 | minus: discount_number %}
@@ -428,9 +427,11 @@
 </div>
 
 <script>
-   document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     function initializeTieredOptions() {
-      var container = document.querySelector('.tiered-quantity-options[data-quantity-input-id="Quantity-{{ section.id }}"]');
+      var container = document.querySelector(
+        '.tiered-quantity-options[data-quantity-input-id="Quantity-{{ section.id }}"]'
+      );
       if (!container) return;
       var quantityInput = document.getElementById(container.dataset.quantityInputId);
       var buttons = container.querySelectorAll('.tiered-option');
@@ -440,7 +441,8 @@
       if (!isNaN(activeOptionIndex) && activeOptionIndex >= 0 && activeOptionIndex < buttons.length) {
         var activeButton = buttons[activeOptionIndex];
         activeButton.classList.add('tiered-option--active');
-        activeButton.style.background = getComputedStyle(activeButton).getPropertyValue('--selected-bg-color') || '#000';
+        activeButton.style.background =
+          getComputedStyle(activeButton).getPropertyValue('--selected-bg-color') || '#000';
         activeButton.style.color = 'var(--text-color-selected)';
         var qty = parseInt(activeButton.getAttribute('data-quantity'), 10);
         if (quantityInput && !isNaN(qty)) {
@@ -451,7 +453,7 @@
 
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          buttons.forEach(b => {
+          buttons.forEach((b) => {
             b.classList.remove('tiered-option--active');
             b.style.background = 'var(--back-color-unselected)';
             b.style.color = 'var(--text-color-unselected)';
@@ -474,7 +476,9 @@
     // Listen for theme editor events to reload the script
     document.addEventListener('shopify:section:load', initializeTieredOptions);
     document.addEventListener('shopify:section:unload', function () {
-      var container = document.querySelector('.tiered-quantity-options[data-quantity-input-id="Quantity-{{ section.id }}"]');
+      var container = document.querySelector(
+        '.tiered-quantity-options[data-quantity-input-id="Quantity-{{ section.id }}"]'
+      );
       if (container) container.innerHTML = ''; // Clear to ensure reinitialization
     });
   });

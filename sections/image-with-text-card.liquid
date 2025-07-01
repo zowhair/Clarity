@@ -66,7 +66,7 @@
                   }
                 }
 
-                .lumin-text-container-{{ block.id }} {
+                .clarity-text-container-{{ block.id }} {
                    margin: 0;
                    background: {{ block.settings.bg_color }};
                    position: relative;
@@ -74,7 +74,7 @@
                    overflow: hidden;
                  }
 
-                .lumin-text-container-{{ block.id }}:before {
+                .clarity-text-container-{{ block.id }}:before {
                    content:"";
                    position: absolute;
                    width: 100%;
@@ -84,27 +84,27 @@
                  }
 
                  @media screen and (max-width: 600px) {
-                  .lumin-text-container-{{ block.id }} {
+                  .clarity-text-container-{{ block.id }} {
                    position: relative;
                  }
                }
 
-                 .lumin-content-{{ block.id }} {
+                 .clarity-content-{{ block.id }} {
                    padding: {{block.settings.padding_size}}px;
                  }
 
                  @media screen and (max-width: 600px) {
-                   .lumin-content-{{ block.id }} {
+                   .clarity-content-{{ block.id }} {
                    padding: {{block.settings.padding_size_mobile}}px {{block.settings.padding_left_mobile}}px;
                    }
                  }
 
-                 .lumin-text-{{ block.id }} {
+                 .clarity-text-{{ block.id }} {
                    background: {{ block.settings.bg_color }};
                    text-align: {{block.settings.desktop_content_alignment}};
                    color: {{ block.settings.text_color }};
                  }
-                .lumin-card-{{ block.id }} {
+                .clarity-card-{{ block.id }} {
                      width: {{block.settings.icon_size}}% !important;
                      height: 100%;
                      position: relative;
@@ -126,13 +126,13 @@
                      background-repeat: no-repeat;background-position: 50% 50%;
                  }
 
-                 .lumin-head-{{ block.id }} svg {
+                 .clarity-head-{{ block.id }} svg {
                      width: 100%;
                      height: 100%;
                      border-radius: {{block.settings.icon_corner}}%;
                      background: rgb(229 229 229 / 57%);
                  }
-                 .lumin-text-{{ block.id }} .wbs-pck__fancy {
+                 .clarity-text-{{ block.id }} .wbs-pck__fancy {
                      padding-left: {{ block.settings.padding-left-fancy }}px;
                      padding-right: {{ block.settings.padding-left-fancy }}px;
                      padding-top: {{ block.settings.padding-fancy }}px;
@@ -146,24 +146,24 @@
                      color: transparent;
                    }
 
-                 .lumin-head-{{ block.id }} h2 {
+                 .clarity-head-{{ block.id }} h2 {
                    color:{{ block.settings.head_color }};
                    {% if block.settings.use_body_font %}font-family: var(--font-body-family);{% endif %}
                    font-size: {{ block.settings.head_size_d }}px;
                    margin:0;
                  }
                @media screen and (max-width: 749px) {
-                  .lumin-head-{{ block.id }} h2 {
+                  .clarity-head-{{ block.id }} h2 {
                    font-size: {{ block.settings.head_size_m }}px;
                  }
                }
-                 .lumin-text-{{ block.id }} p {
+                 .clarity-text-{{ block.id }} p {
                    color: {{ block.settings.text_color }};
                    font-size: {{ block.settings.text_size_d }}px;
                    margin:0;
                  }
                @media screen and (max-width: 749px) {
-                  .lumin-text-{{ block.id }} p {
+                  .clarity-text-{{ block.id }} p {
                    font-size: {{ block.settings.text_size_m }}px;
                  }
                }
@@ -177,18 +177,18 @@
                }
           </style>
           <div
-            class="column-{{ block.id }} lumin-text-{{ section.id }}{% if block.settings.small_hide %} small-hide{% endif %}{% if block.settings.medium_hide %} medium-hide{% endif %}{% if block.settings.large_up_hide %} large-up-hide{% endif %}"
+            class="column-{{ block.id }} clarity-text-{{ section.id }}{% if block.settings.small_hide %} small-hide{% endif %}{% if block.settings.medium_hide %} medium-hide{% endif %}{% if block.settings.large_up_hide %} large-up-hide{% endif %}"
             {{ block.shopify_attributes }}
           >
-            <div class="lumin-text-container-{{ block.id }} lumin-head-{{ block.id }}">
+            <div class="clarity-text-container-{{ block.id }} clarity-head-{{ block.id }}">
               {%- if block.settings.icon != blank and block.settings.use_video != true -%}
                 <div
                   id="Image-{{ image.id }}-{{ responsive_image_counter }}"
-                  class="lumin-card-{{ block.id }} blur-up responsive-image__image lazyload"
+                  class="clarity-card-{{ block.id }} blur-up responsive-image__image lazyload"
                   style="display:block;background-image:url({{ block.settings.icon | img_url: '1000x' }});"
                 ></div>
               {%- elsif block.settings.video != blank and block.settings.use_video -%}
-                <div class="lumin-card-{{ block.id }}" style="display:block;">
+                <div class="clarity-card-{{ block.id }}" style="display:block;">
                   {{
                     block.settings.video
                     | video_tag:
@@ -203,7 +203,7 @@
                   }}
                 </div>
               {% else %}
-                <div class="lumin-card-{{ block.id }}">
+                <div class="clarity-card-{{ block.id }}">
                   <svg class="video-card-grid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5">
                     <path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path>
                   </svg>
@@ -214,30 +214,30 @@
                 and block.settings.subtitle == blank
                 and block.settings['button-text'] == blank
               %}
-                <div class="lumin-content-{{ block.id }}">
+                <div class="clarity-content-{{ block.id }}">
                   {% if block.settings.head != blank %}
                     <div
-                      class="lumin-text-{{ block.id }}"
+                      class="clarity-text-{{ block.id }}"
                       style=" margin-top:0; margin-bottom: {{ block.settings.margin_bottom }}px;"
                     >
                       <h2>
                         {{
                           block.settings.head
-                          | replace: '[', '<span class="lumin-text__fancy1">'
+                          | replace: '[', '<span class="clarity-text__fancy1">'
                           | replace: ']', '</span>'
-                          | replace: '((', '<span class="lumin-text__fancy2">'
+                          | replace: '((', '<span class="clarity-text__fancy2">'
                           | replace: '))', '</span>'
                         }}
                       </h2>
                     </div>
                   {% endif %}
                   {% if block.settings.subtitle != blank %}
-                    <div class="lumin-text-{{ block.id }} rte">
+                    <div class="clarity-text-{{ block.id }} rte">
                       {{
                         block.settings.subtitle
-                        | replace: '[', '<span class="lumin-text__fancy1">'
+                        | replace: '[', '<span class="clarity-text__fancy1">'
                         | replace: ']', '</span>'
-                        | replace: '((', '<span class="lumin-text__fancy2">'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
                         | replace: '))', '</span>'
                       }}
                     </div>
@@ -291,23 +291,23 @@
   .column img {
     vertical-align: middle;
   }
-  .lumin-image-{{ section.id }} {
+  .clarity-image-{{ section.id }} {
     position: relative;
     overflow: hidden;
     border-radius:{{ section.settings.video_border }}px;
   }
   {% if section.settings.zoom_hover %}
     @media screen and (min-width: 750px) {
-      .lumin-image-{{ section.id }} img:hover {
+      .clarity-image-{{ section.id }} img:hover {
         transform: scale(1.2);
         transition: all 0.5s ease-in;
       }
-        .lumin-text-{{ section.id }}:hover {
+        .clarity-text-{{ section.id }}:hover {
           transition: background-color 0.3s ease;
       }
     }
   {% endif %}
-  .lumin-image-{{ section.id }}--p {
+  .clarity-image-{{ section.id }}--p {
     opacity: 1;
     position: absolute;
     pointer-events: none;
@@ -319,25 +319,25 @@
     letter-spacing: 0;
   }
 
-  .lumin-text-{{ section.id }} {
+  .clarity-text-{{ section.id }} {
     border-radius:{{ section.settings.video_border }}px;
     margin-bottom: {{ section.settings.grid_space }}px;
   }
 
-  .lumin-text-{{ section.id }} a {
+  .clarity-text-{{ section.id }} a {
     margin-top: 15px;
     }
-  .lumin-image-{{ section.id }} img {
+  .clarity-image-{{ section.id }} img {
     transition: all 0.5s ease-in;
     margin-bottom: -8px;
     border-radius:{{ section.settings.video_border }}px;
     }
   {% if section.settings.zoom_hover %}
-    .lumin-image-{{ section.id }}:hover img {
+    .clarity-image-{{ section.id }}:hover img {
       transform: scale(1.2);
     }
   {% endif %}
-  .lumin-image-{{ section.id }} svg {
+  .clarity-image-{{ section.id }} svg {
     transition: all 0.5s ease-in;
     margin-bottom: -8px;
     width: 100%;
@@ -346,7 +346,7 @@
     background: #f2f2f2;
   }
   @media screen and (max-width: 749px) {
-    .lumin-text-{{ section.id }}  {
+    .clarity-text-{{ section.id }}  {
       transition: all 0.5s ease-in;
     }
   }

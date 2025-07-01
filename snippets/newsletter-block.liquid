@@ -1,7 +1,7 @@
 <style>
   {%- assign button_alpha = block.settings.button_background_color | color_extract: 'alpha' -%}
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__form {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__form {
     --form-gap: 5px;
     width: 100%;
     display: flex;
@@ -9,19 +9,19 @@
     gap: calc(var(--form-gap) * 2);
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__form-text {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__form-text {
     color: inherit;
     font-size: 1.5rem;
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__form input {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__form input {
     margin: unset;
     padding: 0.8em;
     font-size: 1.5rem;
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__form input[type="text"],
-  .lumin-section__block-id-{{ block.id }} .lumin-section__form input[type="email"] {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__form input[type="text"],
+  .clarity-section__block-id-{{ block.id }} .lumin-section__form input[type="email"] {
     padding: 0.8em;
     background: transparent;
     border: thin solid rgba(var(--color-foreground));
@@ -47,12 +47,12 @@
     width: calc(30% - var(--form-gap));
   }
 
-  .lumin-section__block-id-{{ block.id }} input::placeholder {
+  .clarity-section__block-id-{{ block.id }} input::placeholder {
     opacity: 0.6;
     color: rgba(var(--color-foreground));
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__button {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__button {
     justify-content: center;
     text-align: center;
     transition: all 0.3s ease-in-out;
@@ -64,7 +64,7 @@
     background-color: {{ block.settings.button_background_color }};
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__button:hover {
+  .clarity-section__block-id-{{ block.id }} .lumin-section__button:hover {
     opacity: 1;
     {%- if button_alpha != 0 -%}
     background-color: {{ block.settings.button_background_color | color_darken: 10 }};
@@ -75,7 +75,7 @@
   }
 </style>
 {%- capture form_id -%}lumin-section__form-{{ section_id }}{%- endcapture -%}
-{%- form 'customer',id: form_id -%}
+{%- form 'customer', id: form_id -%}
   {%- comment -%} Error and success messages for submitted form {%- endcomment -%}
   <div class="lumin-section__form-response lumin-section__text">
     {%- if form.posted_successfully? -%}
@@ -94,7 +94,7 @@
   <input type="hidden" name="contact[tags]" value="newsletter">
   <input type="hidden" name="challenge" value="false">
 
-  <div class="lumin-section__block-id-{{ block.id }} lumin-section__form lumin-section__form--{{ block.id }} lumin-section__form--{{ block.id }}-{{ block.settings.layout }}">
+  <div class="clarity-section__block-id-{{ block.id }} lumin-section__form lumin-section__form--{{ block.id }} lumin-section__form--{{ block.id }}-{{ block.settings.layout }}">
     {%- if block.settings.show_first_name -%}
       <label class="lumin-section__visually-hidden visually-hidden" for="first-name-{{ block.id }}">
         {{- block.settings.first_name_label -}}
@@ -119,7 +119,9 @@
         placeholder="{{ block.settings.last_name_label }}"
       >
     {%- endif -%}
-    <label class="lumin-section__visually-hidden visually-hidden" for="email-{{ block.id }}">{{ block.settings.email_label }}</label>
+    <label class="lumin-section__visually-hidden visually-hidden" for="email-{{ block.id }}">
+      {{- block.settings.email_label -}}
+    </label>
     <input
       class="lumin-section__newsletter_email"
       type="email"

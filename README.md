@@ -6,13 +6,13 @@ also secion file name changed from lumin-gallery to gallery.liquid
 
 
 ** Lumin Grid section is now Image With Text Grids
-also section file name changed from lumin-grid.liquid to image-with-text-grids.liquid
+also section file name changed from clarity-grid.liquid to image-with-text-grids.liquid
 
 ** Lumin Hero section is now Hero
 also section file name changed from lumin-hero.liquid to hero.liquid
 
 ** Lumin Mega is now Image With Text Custom
-also section file name changed from lumin-mega.liquid to image-with-text-custom.liquid
+also section file name changed from clarity-mega.liquid to image-with-text-custom.liquid
 
 ** Lumin Pro Section is now Image With Text Pro
 also section file name changed from lumin-pro.liquid to image-with-text-pro.liquid
@@ -34,7 +34,7 @@ also section file name changed from lumin-slidshow-pro.liquid to pro-slideshow.l
 
 *** Assets
 lumin.js -> custom.js  -> not in use anywhere
-lumin-mega-bkp.css -> mega-bkp.css -> not in use anywhere
+clarity-mega-bkp.css -> mega-bkp.css -> not in use anywhere
 lumin-quantity-breaks-2.css -> quantity-breaks-2.css -> not in use anywhere
 lumin-qty-breaks.css -> quantity-breaks.css -> used in qty-breaks.liquid asset
 lumin-sticky-cart.css -> sticky-cart.css -> in use
@@ -52,3 +52,7 @@ lumin-sticky-cart.liquid -> sticky-cart.liquid -> not in use
 
 
 sections names and presets are localized by adding names via localize json file
+
+
+**  lumin-section__main -> custom-section__main
+    lumin-section__section -> clarity-section__section

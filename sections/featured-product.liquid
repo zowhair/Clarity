@@ -187,12 +187,12 @@
                 </h2>
               {%- when 'price' -%}
                 <style>
-                    .lumin-price {
+                    .clarity-price {
                           display: flex;
                           align-items: center;
                           flex-wrap: wrap;
                       }
-                  .lumin-price-{{section.id}} {
+                  .clarity-price-{{section.id}} {
                           font-size: {{block.settings.price_size}}px !important;
                           color: {{block.settings.sale_price_color}} !important;
                           padding: {{block.settings.padding_top}}px 0 {{block.settings.padding_bottom}}px 0;
@@ -257,28 +257,28 @@
                       product: product,
                       use_variant: true,
                       show_badges: false,
-                      price_class: 'lumin-price'
+                      price_class: 'clarity-price'
                     -%}
                   {% elsif block.settings.price_style == 'price' %}
                     {%- render 'price-feature-product',
                       product: product,
                       use_variant: true,
                       show_badges: true,
-                      price_class: 'lumin-price'
+                      price_class: 'clarity-price'
                     -%}
                   {% elsif block.settings.price_style == 'price_2' and block.settings.badge_hide %}
                     {%- render 'price-2-feature-product',
                       product: product,
                       use_variant: true,
                       show_badges: false,
-                      price_class: 'lumin-price'
+                      price_class: 'clarity-price'
                     -%}
                   {% elsif block.settings.price_style == 'price_2' %}
                     {%- render 'price-2-feature-product',
                       product: product,
                       use_variant: true,
                       show_badges: true,
-                      price_class: 'lumin-price'
+                      price_class: 'clarity-price'
                     -%}
                   {% endif %}
                 </div>
@@ -1044,9 +1044,9 @@
                     {{
                       before_text
                       | replace: '(x)', randomNumber
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </p>
@@ -1131,7 +1131,7 @@
                     {%- if block.settings.icon != blank -%}
                       <img
                         src="{{ block.settings.icon | img_url: '100x' }}"
-                        class="lumin-ani-{{ block.settings.image_ani }} is--infinite"
+                        class="clarity-anim-{{ block.settings.image_ani }} is--infinite"
                       >
                     {%- else -%}
                       <svg
@@ -1149,9 +1149,9 @@
                       ship_text
                       | replace: '(timer)', countdown
                       | replace: '(date)', result
-                      | replace: '[', '<span class="lumin-text__fancy1">'
+                      | replace: '[', '<span class="clarity-text__fancy1">'
                       | replace: ']', '</span>'
-                      | replace: '((', '<span class="lumin-text__fancy2">'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
                       | replace: '))', '</span>'
                     }}
                   </p>
