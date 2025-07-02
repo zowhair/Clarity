@@ -1,17 +1,17 @@
-<style>
+{% style %}
   .section-{{ section.id }}-wrapper {
-    padding-top: var(--pt);
-    padding-bottom: var(--pb);
-    direction: ltr;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-wrapper {
-      padding-top: var(--pt-desktop);
-      padding-bottom: var(--pb-desktop);
+      padding-top: var(--pt);
+      padding-bottom: var(--pb);
+      direction: ltr;
     }
-  }
-</style>
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-wrapper {
+        padding-top: var(--pt-desktop);
+        padding-bottom: var(--pb-desktop);
+      }
+    }
+{% endstyle %}
 <div
   class="section-{{ section.id }}-wrapper"
   style="
