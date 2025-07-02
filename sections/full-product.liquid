@@ -1401,8 +1401,8 @@
                    }
                 </style>
                 {%- capture size_chart_title -%}
-                        {{ block.settings.chart_id }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-size-chart" viewBox="0 0 64 64" style="width: 24px;height: 24px;vertical-align: text-top;"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class="a" d="M22.39 33.53c-7.46 0-13.5-3.9-13.5-8.72s6-8.72 13.5-8.72 13.5 3.9 13.5 8.72a12 12 0 0 1-.22 1.73"></path><ellipse cx="22.39" cy="24.81" rx="3.28" ry="2.12"></ellipse><path class="a" d="M8.89 24.81V38.5c0 7.9 6.4 9.41 14.3 9.41h31.92V33.53H22.39M46.78 33.53v7.44M38.65 33.53v7.44M30.52 33.53v7.44M22.39 33.53v7.44"></path></svg>
-                      {%- endcapture -%}
+                  {{ block.settings.chart_id }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-size-chart" viewBox="0 0 64 64" style="width: 24px;height: 24px;vertical-align: text-top;"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class="a" d="M22.39 33.53c-7.46 0-13.5-3.9-13.5-8.72s6-8.72 13.5-8.72 13.5 3.9 13.5 8.72a12 12 0 0 1-.22 1.73"></path><ellipse cx="22.39" cy="24.81" rx="3.28" ry="2.12"></ellipse><path class="a" d="M8.89 24.81V38.5c0 7.9 6.4 9.41 14.3 9.41h31.92V33.53H22.39M46.78 33.53v7.44M38.65 33.53v7.44M30.52 33.53v7.44M22.39 33.53v7.44"></path></svg>
+                {%- endcapture -%}
 
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
@@ -1978,27 +1978,27 @@
                   </style>
                 {% endif %}
                 <style>
-                              :root {
-                                 --lm-button-box: {{ block.settings.lm_main_button.red }},{{ block.settings.lm_main_button.green }},{{ block.settings.lm_main_button.blue }};
-                           }
-                             .product-form__buttons .full-button {
-                                display: block;
-                             }
-                           .lm-main-button {
-                               background-color: {{block.settings.lm_main_button}};
-                               background: {{block.settings.lm_main_button_gr}};
-                               color: {{block.settings.lm_main_text}};
-                           }
-                             .lm-main-button::after {
-                               box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-                               rgba(var(--color-button-text), var(--border-opacity)),
-                               0 0 0 var(--buttons-border-width) rgb(255 204 4 / 0%);
-                             }
-                            .lm-main-button:not([disabled]):hover:after {
-                                box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-                               rgba(var(--color-button-text), var(--border-opacity)),
-                               0 0 0 var(--buttons-border-width) rgb(255 204 4 / 0%);
-                             }
+                  :root {
+                    --lm-button-box: {{ block.settings.lm_main_button.red }},{{ block.settings.lm_main_button.green }},{{ block.settings.lm_main_button.blue }};
+                  }
+                  .product-form__buttons .full-button {
+                    display: block;
+                  }
+                  .lm-main-button {
+                    background-color: {{block.settings.lm_main_button}};
+                    background: {{block.settings.lm_main_button_gr}};
+                    color: {{block.settings.lm_main_text}};
+                  }
+                  .lm-main-button::after {
+                    box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+                    rgba(var(--color-button-text), var(--border-opacity)),
+                    0 0 0 var(--buttons-border-width) rgb(255 204 4 / 0%);
+                  }
+                  .lm-main-button:not([disabled]):hover:after {
+                      box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+                      rgba(var(--color-button-text), var(--border-opacity)),
+                      0 0 0 var(--buttons-border-width) rgb(255 204 4 / 0%);
+                    }
                             {% unless block.settings.lm_button_animation == 'none' %}
                              {% if block.settings.lm_button_animation == 'soft' %}
                              .lm-main-button {
@@ -2178,11 +2178,11 @@
                                  box-shadow: 0 0 10px {{block.settings.lm_main_button}}, 0 0 20px {{block.settings.lm_main_button}};
                              }
                              20%, 24%, 55% {
-                                 opacity: 0.8;
-                                 box-shadow: 0 0 5px {{block.settings.lm_main_button}}, 0 0 10px {{block.settings.lm_main_button}};
+                              opacity: 0.8;
+                              box-shadow: 0 0 5px {{block.settings.lm_main_button}}, 0 0 10px {{block.settings.lm_main_button}};
                              }
                          }
-                  {% elsif block.settings.lm_button_animation == 'slide' %}
+                          {% elsif block.settings.lm_button_animation == 'slide' %}
                               .lm-main-button {
                                background:{{block.settings.lm_main_button_gr}};
                                background-size: 200% 200%;
@@ -2209,7 +2209,7 @@
                            }
 
                       {% endif %}
-                       {% endunless %}}
+                    {% endunless %}
                 </style>
                 {%- render 'buy-buttons',
                   block: block,

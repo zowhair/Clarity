@@ -7,7 +7,7 @@
     t1.textContent = `${value}%`;
   });
 </script>
-<style>
+{% style %}
     .qa-feature-{{ block.id }} circle#c1 {
       stroke-width: {{block.settings.circle_width}};
       stroke: {{block.settings.percent_bg}};
@@ -37,12 +37,12 @@
         height: auto;
         margin-right: 20px;
     }
-            .qa-feature-{{ block.id }} svg {
-        width: {{block.settings.icon_size}}px !important;
-        height: auto;
-        margin-right: 20px;
-    }
-</style>
+  .qa-feature-{{ block.id }} svg {
+    width: {{block.settings.icon_size}}px !important;
+    height: auto;
+    margin-right: 20px;
+  }
+{% endstyle %}
 <div class="qa-feature-{{ block.id }}" {{ block.shopify_attributes }}>
   <form name="form01">
     <input name="range" type="range" value="{{ block.settings.circle_value_1 }}" min="0" max="100" class="hidden">

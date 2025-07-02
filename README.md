@@ -40,7 +40,7 @@ lumin-qty-breaks.css -> quantity-breaks.css -> used in qty-breaks.liquid asset
 lumin-sticky-cart.css -> sticky-cart.css -> in use
 lumin-sticky-cart.js -> sticky-cart.js -> in use
 lumin-tab.css -> custom-tab.css -> in use
-clarity-table.css -> custom-table.css -> in use
+lumin-table.css -> custom-table.css -> in use
 
 *** snippets 
 lumin-qty-breaks.liquid  -> qty-breaks.liquid -> not rendered anywhere

@@ -940,44 +940,44 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <style>
-                    .clarity-price {
-                          font-size: {{block.settings.price_size}}px !important;
-                          display: flex;
-                          align-items: center;
-                          flex-wrap: wrap;
-                          padding: {{block.settings.padding_top}}px 0 {{block.settings.padding_bottom}}px 0;
-                          color: {{block.settings.regular_price_color}} !important;
-                    {% if block.settings.price_bold %}
-                          font-weight: 600;
-                          display: flex;
-                          align-content: center;
-                          align-items: center;
-                          flex-wrap: wrap;
-                      {% endif %}
-                      }
-                     .product__info-container .price--on-sale .price-item--regular {
-                          font-size: {{block.settings.price_size}}px !important;
-                          color: {{block.settings.sale_price_color}} !important;
-                          letter-spacing: 0;
-                      }
-                    .lm-badge {
-                      font-size: {{block.settings.badge_text_1}}px;
-                      line-height: 1;
-                      color: {{block.settings.badge_price_1}};
-                      background: {{block.settings.badge_bg_1}};
-                      {% if block.settings.price_style == 'price_2' %}
-                      font-size: 15px;
-                      color: {{block.settings.badge_price}};
-                      background:none;
-                      padding:0;
-                      {% endif %}
-                      {% if block.settings.price_bold_2 %}
-                      font-weight: 600;
-                      {% else %}
-                      font-weight:400;
-                      {% endif %}
-                    }
+                {% style %}
+                  .clarity-price {
+                    font-size: {{block.settings.price_size}}px !important;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding: {{block.settings.padding_top}}px 0 {{block.settings.padding_bottom}}px 0;
+                    color: {{block.settings.regular_price_color}} !important;
+                    {% if block.settings.price_bold != blank %}
+                    font-weight: 600;
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    {% endif %}
+                  }
+                  .product__info-container .price--on-sale .price-item--regular {
+                    font-size: {{block.settings.price_size}}px !important;
+                    color: {{block.settings.sale_price_color}} !important;
+                    letter-spacing: 0;
+                  }
+                  .lm-badge {
+                    font-size: {{block.settings.badge_text_1}}px;
+                    line-height: 1;
+                    color: {{block.settings.badge_price_1}};
+                    background: {{block.settings.badge_bg_1}};
+                    {% if block.settings.price_style == 'price_2' %}
+                    font-size: 15px;
+                    color: {{block.settings.badge_price}};
+                    background:none;
+                    padding:0;
+                    {% endif %}
+                    {% if block.settings.price_bold_2 %}
+                    font-weight: 600;
+                    {% else %}
+                    font-weight:400;
+                    {% endif %}
+                  }
                   .lm-badge-soldout {
                     font-size: {{block.settings.badge_text_1}}px;
                     line-height: 1;
@@ -994,27 +994,27 @@
                     zoom: {{ block.settings.price_size_2 }};
                   }
                   {%- if block.settings.badge_hide -%}
-                    .price--on-sale .price__badge-sale {
-                      display: none !important;
-                    }
+                  .price--on-sale .price__badge-sale {
+                    display: none !important;
+                  }
                   {%- endif -%}
                   {% if block.settings.price_style == 'price_2' %}
-                    .price--on-sale .price-item--regular:before {
-                      content: "";
-                      max-width: 34px;
-                      border-bottom: 0.2rem solid currentColor;
-                    }
+                  .price--on-sale .price-item--regular:before {
+                    content: "";
+                    max-width: 34px;
+                    border-bottom: 0.2rem solid currentColor;
+                  }
                   {% endif %}
-                   {% if block.settings.price_first and block.settings.price_style != 'price_2' %}
-                   .price--on-sale .price__sale {
-                      display: flex !important;
-                      flex-direction: row-reverse !important;
-                    }
-                    .price:not(.price--show-badge) .price-item--last:last-of-type {
-                      margin:0 1rem 0 0!important;
-                    }
+                  {% if block.settings.price_first and block.settings.price_style != 'price_2' %}
+                  .price--on-sale .price__sale {
+                    display: flex !important;
+                    flex-direction: row-reverse !important;
+                  }
+                  .price:not(.price--show-badge) .price-item--last:last-of-type {
+                    margin:0 1rem 0 0!important;
+                  }
                   {% endif %}
-                </style>
+                {% endstyle %}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {% if block.settings.price_style == 'price' %}
                     {%- render 'price',
@@ -1387,25 +1387,25 @@
                 {% render 'product-grouping-picker-custom', product: product, block: block %}
 
               {%- when 'variant_picker' -%}
-                <style>
-                       .form__label-{{block.id}} {
-                       font-weight: {{block.settings.font_style}};
-                       font-size: {{block.settings.font_size}}px;
-                   }
+                {% style %}
+                  .form__label-{{block.id}} {
+                    font-weight: {{block.settings.font_style}};
+                    font-size: {{block.settings.font_size}}px;
+                  }
                   .form__label-{{block.id}} span {
-                     padding-left: 5px;
-                     border-left: 1px solid rgb(var(--color-foreground), 0.1);
-                     margin-left: 6px;
-                   }
-                   .form__label-variant_picker {
-                      font-size: {{block.settings.font_size}}px;
-                      font-weight: {{block.settings.font_style}};
-                      min-height: 0.5rem;margin-bottom: 0;color: currentColor;
-                   }
-                </style>
+                    padding-left: 5px;
+                    border-left: 1px solid rgb(var(--color-foreground), 0.1);
+                    margin-left: 6px;
+                  }
+                  .form__label-variant_picker {
+                    font-size: {{block.settings.font_size}}px;
+                    font-weight: {{block.settings.font_style}};
+                    min-height: 0.5rem;margin-bottom: 0;color: currentColor;
+                  }
+                {% endstyle %}
                 {%- capture size_chart_title -%}
-                        {{ block.settings.chart_id }} {% render 'size-icons', block:block, size_icons: block.settings.size_icon %}
-                              {%- endcapture -%}
+                  {{ block.settings.chart_id }} {% render 'size-icons', block:block, size_icons: block.settings.size_icon %}
+                {%- endcapture -%}
 
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
@@ -1511,12 +1511,11 @@
                               assign variants_option3_arr = product.variants | map: 'option3'
 
                               assign product_form_id = 'product-form-' | append: section.id
-
-                              assign swatchType = block.settings.swatchType
-                              assign swatchStyle = block.settings.swatchStyle
-                              assign swatchSize = block.settings.swatchSize
-                              assign swatchHeight = block.settings.swatchHeight
-                              assign swatchColors = settings.swatchColors | newline_to_br | split: '<br />'
+                              assign swatch_type = block.settings.swatch_type
+                              assign swatch_style = block.settings.swatch_style
+                              assign swatch_size = block.settings.swatch_size
+                              assign swatch_height = block.settings.swatch_height
+                              assign swatch_colors = settings.swatch_colors | newline_to_br | split: '<br />'
                             -%}
 
                             <style>
@@ -1537,8 +1536,8 @@
                                 }
                                 .product-form__input input[type='radio'] + label.color-swatch{
                                   border:1px rgb(214,214,214) solid;
-                                  width: {{swatchSize}}px;
-                                  height: {{swatchSize}}px;
+                                  width: {{swatch_size}}px;
+                                  height: {{swatch_size}}px;
                                   background-repeat: no-repeat;
                                   background-position: center;
                                   background-size: cover;
@@ -1565,7 +1564,7 @@
                                   width: 100%;
                                   height: 100%;
                                   z-index: 1;
-                                  {%- if settings.dark or swatchType == "variantImage" -%}
+                                  {%- if settings.dark or swatch_type == "variantImage" -%}
                                      border: none;
                                   {%- else -%}
                                     border: 0px rgb(48 48 48) solid;
@@ -1590,8 +1589,8 @@
                                 }
                                 .product-form__input input[type='radio'] + label.color-swatch.variant-swatch{
                                   background-color:white;
-                                  {%- if swatchStyle == "portrait" -%}
-                                  height: {{swatchHeight}}px;
+                                  {%- if swatch_style == "portrait" -%}
+                                  height: {{swatch_height}}px;
                                   {%- endif -%}
                                 }
                                 .product-form__input input[type='radio'].disabled+label.color-swatch:before {
@@ -1604,7 +1603,7 @@
                                   box-shadow: none;
                                   border-color: #acacac;
                               }
-                                /* {%- if settings.dark or swatchType == "variantImage" -%}
+                                /* {%- if settings.dark or swatch_type == "variantImage" -%}
                                 .product-form__input input[type=radio]:checked+.color-swatch {
                                      box-shadow: none !important;
                                 }
@@ -1647,7 +1646,7 @@
                                     class="disabled"
                                   {% endif %}
                                 >
-                                {%- if swatchType == 'variantImage' -%}
+                                {%- if swatch_type == 'variantImage' -%}
                                   <label
                                     data-{{ option.name | downcase | replace: ' ', '-' }}="{{value}}"
                                     style="
@@ -1656,7 +1655,7 @@
                                           assign optionIndex = option.position | minus: 1
                                           for variant in product.variants
                                               if variant.options[optionIndex] == value
-                                                assign swatchSizePortrait = swatchSize | times: 2
+                                                assign swatchSizePortrait = swatch_size | times: 2
                                                 echo variant.image | image_url: width: swatchSizePortrait
                                                 break
                                               endif
@@ -1664,7 +1663,7 @@
                                       -%}
                                          );
                                     "
-                                    class="color-swatch variant-swatch {% case swatchStyle %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
+                                    class="color-swatch variant-swatch {% case swatch_style %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
                                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   >
                                     <span class="visually-hidden">
@@ -1673,7 +1672,7 @@
                                   </label>
                                 {%- else -%}
                                   {%- liquid
-                                    for colorData in swatchColors
+                                    for colorData in swatch_colors
                                       assign colorDataArr = colorData | split: ':'
                                       assign ruleName = colorDataArr[0] | strip
                                       assign colorImg = value | append: '.png'
@@ -1700,7 +1699,7 @@
                                               background-image:url({{ colorImg | downcase | replace: ' ', '-' | file_img_url }});
                                           {%- endcase -%}
                                     "
-                                    class="color-swatch {% case swatchStyle %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
+                                    class="color-swatch {% case swatch_style %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
                                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   >
                                     <span class="visually-hidden">
@@ -5828,7 +5827,7 @@
         },
         {
           "type": "select",
-          "id": "swatchType",
+          "id": "swatch_type",
           "label": "Swatch type",
           "options": [
             {
@@ -5855,7 +5854,7 @@
         },
         {
           "type": "select",
-          "id": "swatchStyle",
+          "id": "swatch_style",
           "label": "Swatch style",
           "options": [
             {
@@ -5880,7 +5879,7 @@
         },
         {
           "type": "range",
-          "id": "swatchSize",
+          "id": "swatch_size",
           "min": 20,
           "max": 120,
           "step": 2,
@@ -5890,7 +5889,7 @@
         },
         {
           "type": "range",
-          "id": "swatchHeight",
+          "id": "swatch_height",
           "min": 20,
           "max": 120,
           "step": 2,

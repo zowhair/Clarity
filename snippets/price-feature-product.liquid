@@ -58,7 +58,7 @@
   endif
 -%}
 {% if settings.sup_enabled %}
-  <style>
+  {% style %}
     .price--on-sale .price-item--regular {
       text-decoration: none !important;
       position: relative;
@@ -76,7 +76,7 @@
     sup {
       font-size: 65%;
     }
-  </style>
+  {% endstyle %}
 {% endif %}
 
 <div
