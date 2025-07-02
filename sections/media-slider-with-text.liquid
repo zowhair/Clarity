@@ -33,7 +33,7 @@
 %}
 
 <div class="gradient color-{{ section.settings.color_scheme }}">
-  <div class="lumin-new-section page-width section-{{ section.id }}-padding">
+  <div class="clarity-new-section page-width section-{{ section.id }}-padding">
     <div class="swiper reviewSwiper review-swiper-{{section.id}}">
       <div class="swiper-wrapper" style="width: 6000px; transition-timing-function: linear;">
         {% for block in section.blocks %}
@@ -100,10 +100,10 @@
       </div>
       {% if section.settings.show_navigation %}
         {% unless section.settings.auto_play %}
-          <div class="swiper-button-next slider-button--next lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-next slider-button--next clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
-          <div class="swiper-button-prev slider-button--prev lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-prev slider-button--prev clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
           <div class="swiper-pagination"></div>
@@ -180,7 +180,7 @@
 </script>
 
 {% style %}
-  .lumin-slider-button-{{section.id}} {
+  .clarity-slider-button-{{section.id}} {
     color: {{section.settings.navigation_color}} !important;
   }
 
@@ -234,7 +234,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    .lumin-new-section {
+    .clarity-new-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;

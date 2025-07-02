@@ -60,7 +60,7 @@
            }
              {% endif %}
 
-          .lumin-slider.slider.slider--mobile {
+          .clarity-slider.slider.slider--mobile {
              scroll-padding-left: 0rem !important;
             }
            .grid--peek.slider--mobile {
@@ -118,7 +118,7 @@
        {% if section.settings.show_container %}
 
         @media screen and (min-width: 601px) {
-      .lumin-container {
+      .clarity-container {
       border: 1px solid {{section.settings.container_border_color}};
       border-radius: {{section.settings.container_radius}}px;
       background: {{section.settings.container_color}};
@@ -128,7 +128,7 @@
           {% endif %}
       {% if section.settings.show_container_mb %}
       @media screen and (max-width: 600px){
-      .lumin-container-mb {
+      .clarity-container-mb {
         border-radius: {{section.settings.container_radius_mb}}px;
         {% if section.settings.show_container_mb %}
         border: 1px solid {{section.settings.container_border_color_mb}};
@@ -193,7 +193,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} {% if section.settings.gallery_layout == 'vertical_right' or section.settings.gallery_layout == 'vertical_left' %} product--thumbnail{% else %} product--{{ section.settings.gallery_layout }}{% endif %} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide lumin-quick-add-show{% endif %}">
+      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide clarity-quick-add-show{% endif %}">
         {% if section.settings.gallery_layout == 'vertical_right'
           or section.settings.gallery_layout == 'vertical_left'
         %}
@@ -217,8 +217,8 @@
                {% else %}
              {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
              {% endif %}
-          {% if section.settings.show_container_mb %}lumin-container-mb{% endif %}
-          {% if section.settings.show_container and section.settings.enable_sticky_info == false %} lumin-container{% endif %}
+          {% if section.settings.show_container_mb %}clarity-container-mb{% endif %}
+          {% if section.settings.show_container and section.settings.enable_sticky_info == false %} clarity-container{% endif %}
         "
         {% if section.settings.show_container and section.settings.enable_sticky_info == false %}
           style="--clarity-container-margin: 5rem;"
@@ -230,7 +230,7 @@
           data-url="{{ product.url }}"
           class="
             product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}
-            {% if section.settings.show_container and section.settings.enable_sticky_info %} lumin-container{% endif %}
+            {% if section.settings.show_container and section.settings.enable_sticky_info %} clarity-container{% endif %}
           "
         >
           {% if section.settings.show_container and section.settings.container_text != blank %}
@@ -1463,7 +1463,7 @@
                                   >
                                     <button
                                       id="ProductPopup-{{ block.id }}"
-                                      class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                      class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
                                       type="button"
                                       style="padding: 0;text-decoration: none;border-bottom: 1px solid;"
                                       aria-haspopup="dialog"
@@ -1764,7 +1764,7 @@
                                   >
                                     <button
                                       id="ProductPopup-{{ block.id }}"
-                                      class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                      class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
                                       type="button"
                                       style="padding: 0;"
                                       aria-haspopup="dialog"
@@ -1857,7 +1857,7 @@
                                 >
                                   <button
                                     id="ProductPopup-{{ block.id }}"
-                                    class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                    class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
                                     type="button"
                                     aria-haspopup="dialog"
                                   >
@@ -2282,7 +2282,7 @@
                        padding: 0 7rem 0 0;
                        font-size:{{block.settings.head_size}}px;
                    }
-                   .lumin-slider-buttons {
+                   .clarity-slider-buttons {
                          gap: 1rem;
                         /* margin-top: var(--lm-slide-padding);*/
                          z-index: 1;
@@ -2291,7 +2291,7 @@
                          top:calc(5px + var(--lm-slide-padding));
                          zoom:0.8;
                      }
-                   .lumin-slider-button {
+                   .clarity-slider-button {
                         /* background: rgba(var(--color-button), 0.3) !important;*/
                          border: 1px solid rgba(var(--color-foreground)) !important;
                          width: 30px !important;
@@ -2419,10 +2419,10 @@
                     </div>
 
                     {%- if number_of_block > 1 -%}
-                      <div class="slider-buttons no-js-hidden lumin-slider-buttons color-{{ block.settings.color_scheme }} gradient ">
+                      <div class="slider-buttons no-js-hidden clarity-slider-buttons color-{{ block.settings.color_scheme }} gradient ">
                         <button
                           type="button"
-                          class="slider-button slider-button--prev lumin-slider-button"
+                          class="slider-button slider-button--prev clarity-slider-button"
                           name="previous"
                           aria-label="{{ 'general.slider.previous_slide' | t }}"
                         >
@@ -2456,7 +2456,7 @@
 
                         <button
                           type="button"
-                          class="slider-button slider-button--next lumin-slider-button"
+                          class="slider-button slider-button--next clarity-slider-button"
                           name="next"
                           aria-label="{{ 'general.slider.next_slide' | t }}"
                         >
@@ -2614,7 +2614,7 @@
       </div>
       {%- if section.settings.media_position == 'right' -%}
         {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
-        <div class="grid__item product__media-wrapper small-hide lumin-quick-add-hide">
+        <div class="grid__item product__media-wrapper small-hide clarity-quick-add-hide">
           {% if section.settings.gallery_layout == 'vertical_right'
             or section.settings.gallery_layout == 'vertical_left'
           %}

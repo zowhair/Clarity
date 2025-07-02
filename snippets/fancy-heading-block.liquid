@@ -13,7 +13,7 @@
   {%- assign highlight_background_text_color_alpha = block.settings.highlight_background_color | color_extract: 'alpha' -%}
   {%- assign highlight_text_color_alpha = block.settings.highlight_text_color | color_extract: 'alpha' -%}
   {%- assign block_heading_alpha = block.settings.block_heading_color | color_extract: 'alpha' -%}
-  .clarity-section__block-id-{{ block.id }} .lumin-section__heading {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__heading {
     margin: 0;
     line-height: normal;
     {%- if block_heading_alpha != 0 -%}
@@ -45,7 +45,7 @@
 
 
   @media (max-width: 480px) {
-    .clarity-section__block-id-{{ block.id }} .lumin-section__heading {
+    .clarity-section__block-id-{{ block.id }} .clarity-section__heading {
       {%- if block.settings.block_heading_size != blank -%}
         font-size: min({{ block.settings.block_heading_size }}, 50px);
       {%- endif -%}
@@ -53,7 +53,7 @@
   }
 </style>
 {%- if block.settings.title != blank -%}
-  <{{ block.settings.heading_level }} class="lumin-section__heading">
+  <{{ block.settings.heading_level }} class="clarity-section__heading">
     {{ block.settings.title | replace: '[', '<span class="clarity-section__fancy">' | replace: ']', '</span>' }}
   </{{ block.settings.heading_level }}>
 {%- endif -%}

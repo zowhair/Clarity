@@ -1,5 +1,5 @@
 {% assign dummy_image = 'lifestyle-2'
-  | placeholder_svg_tag: 'placeholder-svg LuminSlideshow-image LuminSlideshow-image--dummy'
+  | placeholder_svg_tag: 'placeholder-svg ClaritySlideshow-image ClaritySlideshow-image--dummy'
 %}
 {% assign loader_background_color = section.settings.loader_background_color %}
 
@@ -109,14 +109,14 @@
 {% assign parallax_speed_mobile = section.settings.parallax_speed_mobile %}
 
 <style>
-  .LuminSlideshow-container--loading * {
+  .ClaritySlideshow-container--loading * {
     opacity: 0;
   }
 </style>
 
 <div
-  class="LuminSlideshowOptions"
-  data-Lumin-slideshow-section-id="{{ section.id }}"
+  class="ClaritySlideshowOptions"
+  data-Clarity-slideshow-section-id="{{ section.id }}"
   data-autoplay="{{ autoplay }}"
   data-autoplay-speed="{{ autoplay_speed }}"
   data-enable-parallax="{{ parallax }}"
@@ -139,12 +139,12 @@
 ></div>
 
 <div
-  data-Lumin-slideshow-section-id="{{ section.id }}"
+  data-Clarity-slideshow-section-id="{{ section.id }}"
   class="
-    LuminSlideshow-container
-    LuminSlideshow-container--loading
-    LuminSlideshow-container--dots-style-{{ dots_style }}
-    LuminSlideshow-container--{{ section.id }}
+    ClaritySlideshow-container
+    ClaritySlideshow-container--loading
+    ClaritySlideshow-container--dots-style-{{ dots_style }}
+    ClaritySlideshow-container--{{ section.id }}
   "
 
   data-arrows-style="{{ arrows_style }}"
@@ -155,11 +155,11 @@
   <div
     data-slideshow-section-id="{{ section.id }}"
     class="
-      LuminSlideshow--loading
-      LuminSlideshow
-      LuminSlideshow--{{ section.id }}
-      {% if natural_height %}LuminSlideshow-cell--natural-desktop{% endif %}
-      {% if natural_mobile_height %} LuminSlideshow-cell--natural-mobile{% endif %}
+      ClaritySlideshow--loading
+      ClaritySlideshow
+      ClaritySlideshow--{{ section.id }}
+      {% if natural_height %}ClaritySlideshow-cell--natural-desktop{% endif %}
+      {% if natural_mobile_height %} ClaritySlideshow-cell--natural-mobile{% endif %}
     "
   >
     {% for block in section.blocks %}
@@ -208,7 +208,7 @@
       {% assign image_link = block.settings.image_link %}
       {% assign image_link_size = image_link | size %}
 
-      <div class="LuminSlideshow-cell LuminSlideshow-cell--{{block.id}}">
+      <div class="ClaritySlideshow-cell ClaritySlideshow-cell--{{block.id}}">
         {% assign is_empty = true %}
         {% assign image_desktop = '' %}
         {% assign image_mobile = '' %}
@@ -245,13 +245,13 @@
             <div class="Parallax-parent Parallax-parent--desktop">
               <div class="Parallax-animation">
                 <div
-                  class="LuminSlideshow-parallax LuminSlideshow-parallax--desktop LuminSlideshow-parallax--lazy"
+                  class="ClaritySlideshow-parallax ClaritySlideshow-parallax--desktop ClaritySlideshow-parallax--lazy"
                   data-sizes="auto"
                 >
           {% endif %}
 
           <img
-            class="LuminSlideshow-image--lazy LuminSlideshow-image LuminSlideshow-image--desktop "
+            class="ClaritySlideshow-image--lazy ClaritySlideshow-image ClaritySlideshow-image--desktop "
             src="{{ image_desktop | img_url: '300x' }}"
 
             data-srcset="
@@ -282,11 +282,11 @@
           {% if parallax_mobile %}
             <div class="Parallax-parent Parallax-parent--mobile">
               <div class="Parallax-animation">
-                <div class="LuminSlideshow-parallax LuminSlideshow-parallax--mobile LuminSlideshow-parallax--lazy">
+                <div class="ClaritySlideshow-parallax ClaritySlideshow-parallax--mobile ClaritySlideshow-parallax--lazy">
           {% endif %}
 
           <img
-            class="LuminSlideshow-image--lazy LuminSlideshow-image LuminSlideshow-image--mobile"
+            class="ClaritySlideshow-image--lazy ClaritySlideshow-image ClaritySlideshow-image--mobile"
             loading="lazy"
             src="{{ image_mobile | img_url: '300x' }}"
             data-src="{{ image_mobile | img_url: '800x' }}"
@@ -305,7 +305,7 @@
 
         {% if image_link_size > 0 %}
           <a
-            class="LuminSlideshow-clickable"
+            class="ClaritySlideshow-clickable"
             {% if clickable_image_new_tab %}
               target="_blank"
             {% endif %}
@@ -314,24 +314,24 @@
         {% endif %}
 
         <div
-          class="LuminSlideshow-textbox-container--parent"
+          class="ClaritySlideshow-textbox-container--parent"
           data-cell-text="{{ button_text }}{{ button_text_2 }}{{ title }}{{ subtitle }}"
         >
-          <div class="LuminSlideshow-textbox-container--child">
-            <div class="LuminSlideshow-textbox {{ block.settings.text_align }}">
-              <div class="LuminSlideshow-textbox-container--alignment">
-                <div class="LuminSlideshow-title-container">
-                  <h2 class="LuminSlideshow-title">{{ title | newline_to_br }}</h2>
+          <div class="ClaritySlideshow-textbox-container--child">
+            <div class="ClaritySlideshow-textbox {{ block.settings.text_align }}">
+              <div class="ClaritySlideshow-textbox-container--alignment">
+                <div class="ClaritySlideshow-title-container">
+                  <h2 class="ClaritySlideshow-title">{{ title | newline_to_br }}</h2>
                 </div>
 
-                <div class="LuminSlideshow-subtitle-container">
-                  <p class="LuminSlideshow-subtitle">{{ subtitle | newline_to_br }}</p>
+                <div class="ClaritySlideshow-subtitle-container">
+                  <p class="ClaritySlideshow-subtitle">{{ subtitle | newline_to_br }}</p>
                 </div>
 
-                <div class="LuminSlideshow-buttons">
+                <div class="ClaritySlideshow-buttons">
                   {% if button_text != '' %}
                     <a
-                      class="LuminSlideshow-button LuminSlideshow-button--1"
+                      class="ClaritySlideshow-button ClaritySlideshow-button--1"
                       href="{%if button_link != blank %}{{ button_link }}{% else %}{{ shop.url }}{% endif %}"
                     >
                       {{- button_text -}}
@@ -339,7 +339,7 @@
                   {% endif %}
                   {% if button_text_2 != '' %}
                     <a
-                      class="LuminSlideshow-button LuminSlideshow-button--2"
+                      class="ClaritySlideshow-button ClaritySlideshow-button--2"
                       href="{%if button_link_2 != blank %}{{ button_link_2}}{% else %}{{ shop.url }}{% endif %}"
                     >
                       {{- button_text_2 -}}
@@ -352,7 +352,7 @@
         </div>
 
         <style>
-                  .LuminSlideshow-cell--{{block.id}}:after{
+                  .ClaritySlideshow-cell--{{block.id}}:after{
                       content:'';
                       width: 100%;
                       height: 100%;
@@ -368,7 +368,7 @@
 
                   }
 
-                  .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-image{
+                  .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-image{
 
                     {% if block.settings.focal_point == 'full_width' %}
                       {% if parallax %}
@@ -382,7 +382,7 @@
                   }
 
                   {% if block.settings.focal_point == 'full_width' %}
-                   .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-parallax--desktop{
+                   .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-parallax--desktop{
                         {% if parallax %}
           /*                 object-fit: auto;  */
                       {% else %}
@@ -392,27 +392,27 @@
                   }
                   {% endif %}
 
-                  .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-parallax--desktop{
+                  .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-parallax--desktop{
           /*         	background-position: {{ block.settings.focal_point }}; */
                   }
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-title{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-title{
                     font-size: {{ block.settings.title_font_size }}px;
                   }
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-top-text,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-subtitle{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-top-text,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-subtitle{
                     font-size: {{ block.settings.subtitle_font_size }}px;
                   }
 
-                  .LuminSlideshow-cell--{{ block.id }} .LuminSlideshow-button{
+                  .ClaritySlideshow-cell--{{ block.id }} .ClaritySlideshow-button{
                     font-size: {{ block.settings.button_text_size }}px;
                   }
 
 
                   @media (max-width: 749px){
 
-                    .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-image{
+                    .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-image{
                     {% if block.settings.focal_point_mobile == 'full_width' %}
           			object-fit: contain;
                       object-position: center;
@@ -426,7 +426,7 @@
 
 
 
-                   .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-parallax--mobile{
+                   .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-parallax--mobile{
 
                      {% if is_full_width == false %}
               background-position: initial;
@@ -443,20 +443,20 @@
 
 
 
-                     .LuminSlideshow-cell--{{block.id}} .LuminSlideshow-parallax--mobile{
+                     .ClaritySlideshow-cell--{{block.id}} .ClaritySlideshow-parallax--mobile{
           /*         	background-position: {{ block.settings.focal_point_mobile }}; */
                   	}
 
-                    .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-title{
+                    .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-title{
                       font-size: {{ block.settings.title_font_size_mobile }}px;
                     }
 
-                    .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-top-text,
-                    .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-subtitle{
+                    .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-top-text,
+                    .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-subtitle{
                     	font-size: {{ block.settings.subtitle_font_size_mobile }}px;
                     }
 
-                    .LuminSlideshow-cell--{{ block.id }} .LuminSlideshow-button{
+                    .ClaritySlideshow-cell--{{ block.id }} .ClaritySlideshow-button{
                       font-size: {{ block.settings.button_text_size_mobile }}px;
                     }
                   }
@@ -466,7 +466,7 @@
                   {% assign text_shadow = block.settings.text_shadow %}
 
                   {% if text_shadow != 0  %}
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-textbox-container--parent:not([data-cell-text=""]) .LuminSlideshow-textbox-container--alignment:after {
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-textbox-container--parent:not([data-cell-text=""]) .ClaritySlideshow-textbox-container--alignment:after {
                       content: "";
                       position: absolute;
                       top: 0px;
@@ -486,30 +486,30 @@
                   {% comment %} Button {% endcomment %}
 
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--1,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--1:active,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--1:hover,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--1:focus{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--1,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--1:active,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--1:hover,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--1:focus{
                     background-color: {{ button_background_color }};
                     color: {{ button_text_color }};
                     border-color: {{ button_border_color }};
                   }
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--2,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--2:active,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--2:hover,
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-button--2:focus{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--2,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--2:active,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--2:hover,
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-button--2:focus{
                     background-color: {{ button_background_color_2 }};
                     color: {{ button_text_color_2 }};
                     border-color: {{ button_border_color_2 }};
                   }
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-title{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-title{
                     color: {{ block.settings.title_color }} !important;
                   }
 
-                  .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-top-text,
-                          .LuminSlideshow-cell--{{ block.id}} .LuminSlideshow-subtitle{
+                  .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-top-text,
+                          .ClaritySlideshow-cell--{{ block.id}} .ClaritySlideshow-subtitle{
                     color: {{ block.settings.subtitle_color }} !important;
                   }
 
@@ -521,14 +521,14 @@
       </div>
     {% endfor %}
 
-    <div class="LuminSlideshow-progress-container">
-      <div class="LuminSlideshow-progress"></div>
+    <div class="ClaritySlideshow-progress-container">
+      <div class="ClaritySlideshow-progress"></div>
     </div>
   </div>
 </div>
-<div class="LuminSlideshow-arrows">
+<div class="ClaritySlideshow-arrows">
   <button
-    class="LuminSlideshow-prev flickity-button flickity-prev-next-button previous"
+    class="ClaritySlideshow-prev flickity-button flickity-prev-next-button previous"
     type="button"
     aria-label="Previous"
   >
@@ -536,7 +536,7 @@
       <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
     </svg>
   </button>
-  <button class="LuminSlideshow-next flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+  <button class="ClaritySlideshow-next flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
     <svg class="flickity-button-icon" viewBox="0 0 100 100">
       <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
     </svg>
@@ -549,18 +549,18 @@
     .pv-container{overflow:hidden}.pv-container .pv-block{will-change:transform;background-repeat:no-repeat;background-position:50%;background-size:cover}.pv-container .pv-block video{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover}.pv-container .audio-icon{height:30px;width:30px;position:absolute;top:10px;left:10px}.pv-container .audio-icon span{display:block;width:8px;height:8px;background:#fff;margin:11px 0 0 2px}.pv-container .audio-icon span:after{content:"";position:absolute;width:0;height:0;border-color:transparent #fff transparent transparent;border-style:solid;border-width:10px 14px 10px 15px;left:-13px;top:5px}.pv-container .audio-icon span:before{transform:rotate(45deg);border-radius:0 50px 0 0;content:"";position:absolute;width:13px;height:13px;border-color:#fff;border-style:double;border-width:7px 7px 0 0;left:18px;top:9px;transition:all .2s ease-out}.pv-container .audio-icon:hover span:before{transform:scale(.8) translate(-3px) rotate(42deg)}.pv-container .audio-icon.mute span:before{transform:scale(.5) translate(-15px) rotate(36deg);opacity:0}
 
 
-      .LuminSlideshow-container--loaded *{
+      .ClaritySlideshow-container--loaded *{
     	opacity: 1;
     }
 
-    .Lumin-slideshow-section{
+    .Clarity-slideshow-section{
     	position: relative;
     }
 
 
 
 
-    .LuminSlideshow-container{
+    .ClaritySlideshow-container{
       max-width: 100%;
       width: 100%;
       position: relative;
@@ -569,7 +569,7 @@
 
 
 
-    .LuminSlideshow-container{
+    .ClaritySlideshow-container{
           position: relative;
           display: block;
     }
@@ -577,10 +577,10 @@
 
     @media (min-width: 750px){
           {% if natural_height %}
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-textbox-container--parent,
-          [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-container,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-parallax{
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-textbox-container--parent,
+          [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-container,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-parallax{
          height: 0 !important;
 
 
@@ -589,17 +589,17 @@
 
     }
 
-      .LuminSlideshow-cell{
+      .ClaritySlideshow-cell{
       	height: 100%;
       }
 
-  	[data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-parallax{
+  	[data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-parallax{
                height: 0 !important;
        	padding-bottom: calc(100% / {{ natural_height_ratio  }});
       }
 
 
-      .LuminSlideshow-textbox-container--child {
+      .ClaritySlideshow-textbox-container--child {
       display: table;
       width: 100%;
       height: 100%;
@@ -615,12 +615,12 @@
     {% else %}
 
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-parallax,
-    [data-Lumin-slideshow-section-id="{{ section.id }}"] .flickity-viewport,
-        [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container,
-    	  [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-cell,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-image,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-textbox-container--parent{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-parallax,
+    [data-Clarity-slideshow-section-id="{{ section.id }}"] .flickity-viewport,
+        [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container,
+    	  [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-cell,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-image,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-textbox-container--parent{
 
             height: {{ section_height }} !important;
         max-height: {{ section_height }} !important;
@@ -637,9 +637,9 @@
 
 
 
-      [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-container,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-parallax{
+      [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-container,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-parallax{
          	height: 0 !important;
 
 
@@ -648,19 +648,19 @@
     	}
 
 
-      .LuminSlideshow-cell{
+      .ClaritySlideshow-cell{
       	height: 100%;
       }
 
 
 
     {% else %}
-     [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-parallax--mobile,
-    [data-Lumin-slideshow-section-id="{{ section.id }}"] .flickity-viewport,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container,
-    	[data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-cell,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-image,
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-textbox-container--parent{
+     [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-parallax--mobile,
+    [data-Clarity-slideshow-section-id="{{ section.id }}"] .flickity-viewport,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container,
+    	[data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-cell,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-image,
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-textbox-container--parent{
           height: {{ section_height_mobile }} !important;
         	max-height: {{ section_height_mobile }};
     	}
@@ -671,7 +671,7 @@
     /* Pre-loader
     ============================= */
 
-  [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container--loading:before{
+  [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container--loading:before{
       left: 0;
       right: 0;
       content: '';
@@ -685,7 +685,7 @@
     }
 
 
-    .LuminSlideshow-container--loading:after{
+    .ClaritySlideshow-container--loading:after{
       opacity: 0;
       animation: preloading .5s ease .3s infinite;
       animation-delay: 1s;
@@ -701,7 +701,7 @@
     }
 
     {% if request.design_mode %}
-      .LuminSlideshow-container--loading:after{
+      .ClaritySlideshow-container--loading:after{
 
         content: "";
 
@@ -726,8 +726,8 @@
 
 
 
-    .LuminSlideshow-container--loaded:after,
-    .LuminSlideshow-container--loaded:before{
+    .ClaritySlideshow-container--loaded:after,
+    .ClaritySlideshow-container--loaded:before{
       opacity: 0 !important;
       transition: all .3s ease;
       z-index: 0;
@@ -740,18 +740,18 @@
     ============================= */
 
 
-    .LuminSlideshow-cell{
+    .ClaritySlideshow-cell{
       width: 100%;
       position: relative;
       display: table;
     }
 
-    .LuminSlideshow-cell:not(.is-selected) .lazyload{
+    .ClaritySlideshow-cell:not(.is-selected) .lazyload{
     	display: none;
     }
 
-    .LuminSlideshow-cell:nth-child(1) .lazyload,
-    .LuminSlideshow-cell.is-selected + .LuminSlideshow-cell .lazyload{
+    .ClaritySlideshow-cell:nth-child(1) .lazyload,
+    .ClaritySlideshow-cell.is-selected + .ClaritySlideshow-cell .lazyload{
     	display: block;
     }
 
@@ -762,14 +762,14 @@
       height: 100%;
     }
 
-    .LuminSlideshow-image-wrapper{
+    .ClaritySlideshow-image-wrapper{
       position: relative;
 
       width: 100%;
       height: 100%;
   }
 
-    .LuminSlideshow-image{
+    .ClaritySlideshow-image{
       object-fit: cover;
       width: 100%;
 
@@ -781,8 +781,8 @@
 
 
         {% if zoom_animation == true %}
-    [id*="{{ section.id }}"] .LuminSlideshow-container--loaded .LuminSlideshow-cell:nth-child(1) img.LuminSlideshow--lazy-entered,
-    [id*='{{ section.id }}'] .LuminSlideshow-container--loaded .LuminSlideshow-cell:nth-child(1) .Parallax-animation{
+    [id*="{{ section.id }}"] .ClaritySlideshow-container--loaded .ClaritySlideshow-cell:nth-child(1) img.ClaritySlideshow--lazy-entered,
+    [id*='{{ section.id }}'] .ClaritySlideshow-container--loaded .ClaritySlideshow-cell:nth-child(1) .Parallax-animation{
       animation: zoom-fade 2.3s cubic-bezier(.26,.54,.32,1) 0s forwards;
   /*     	  animation-delay: .5s; */
   }
@@ -790,28 +790,28 @@
       {% endif %}
 
     @media only screen and (min-width: 750px){
-      .LuminSlideshow-image--desktop,
-      .LuminSlideshow-parallax--desktop{
+      .ClaritySlideshow-image--desktop,
+      .ClaritySlideshow-parallax--desktop{
       	display: block;
       }
-      .LuminSlideshow-image--mobile,
-      .LuminSlideshow-parallax--mobile{
+      .ClaritySlideshow-image--mobile,
+      .ClaritySlideshow-parallax--mobile{
       	display: none;
       }
     }
 
     @media only screen and (max-width: 749px){
-      .LuminSlideshow-image--desktop,
-      .LuminSlideshow-parallax--desktop{
+      .ClaritySlideshow-image--desktop,
+      .ClaritySlideshow-parallax--desktop{
       	display: none;
       }
-      .LuminSlideshow-image--mobile,
-      .LuminSlideshow-parallax--mobile{
+      .ClaritySlideshow-image--mobile,
+      .ClaritySlideshow-parallax--mobile{
       	display: block;
       }
     }
 
-    .LuminSlideshow-image--dummy {
+    .ClaritySlideshow-image--dummy {
       position: absolute;
       top: 0;
       left: 0;
@@ -827,7 +827,7 @@
 
     }
 
-    .LuminSlideshow ol li{
+    .ClaritySlideshow ol li{
       list-style-type: none;
     }
 
@@ -839,42 +839,42 @@
 
 
 
-    .LuminSlideshow-parallax{
+    .ClaritySlideshow-parallax{
   /*     background-attachment: fixed; */
   /*     transform-style: preserve-3d;  */
          transform: translate3D(0, 0px, 0) scale({{ parallax_zoom }});
     }
 
     @media (max-width: 749px){
-      .LuminSlideshow-parallax{
+      .ClaritySlideshow-parallax{
          transform: translate3D(0, 0px, 0) scale({{ parallax_zoom_mobile }});
     }
     }
 
-  /*     [data-enable-parallax="true"] + div .LuminSlideshow-cell.is-selected .LuminSlideshow-parallax{
+  /*     [data-enable-parallax="true"] + div .ClaritySlideshow-cell.is-selected .ClaritySlideshow-parallax{
       background-attachment: fixed;
     }
      */
 
-      .LuminSlideshow-parallax{
+      .ClaritySlideshow-parallax{
     background-repeat: no-repeat;
     background-size: cover;
       min-height: 100%;
     }
 
 
-    .LuminSlideshow-parallax > img{
+    .ClaritySlideshow-parallax > img{
   /*   	display: none; */
     }
 
       @media (max-width: 749px){
-      .Lumin-slideshow-section--loaded .LuminSlideshow-parallax--desktop{
+      .Clarity-slideshow-section--loaded .ClaritySlideshow-parallax--desktop{
     	display: none !important;
     }
     }
 
           @media (min-width: 750px){
-      .Lumin-slideshow-section--loaded .LuminSlideshow-parallax--mobile{
+      .Clarity-slideshow-section--loaded .ClaritySlideshow-parallax--mobile{
     	display: none !important;
     }
     }
@@ -884,7 +884,7 @@
     /* Text
     ============================= */
 
-    .LuminSlideshow-textbox-container--parent{
+    .ClaritySlideshow-textbox-container--parent{
 
       position: absolute;
       top: 0;
@@ -896,7 +896,7 @@
 
     }
 
-     .LuminSlideshow-textbox-container--child{
+     .ClaritySlideshow-textbox-container--child{
 
      	display: table;
       width: 100%;
@@ -904,7 +904,7 @@
 
     }
 
-    .LuminSlideshow-textbox{
+    .ClaritySlideshow-textbox{
   /* 	position: absolute;
       top: 50%;
       left: 50%;
@@ -921,31 +921,31 @@
       padding: 0 17px;
     }
 
-    .LuminSlideshow-textbox *{
+    .ClaritySlideshow-textbox *{
     text-transform: unset !important;
       letter-spacing: normal !important;
     }
 
     @media only screen and (min-width: 750px){
-         .LuminSlideshow-textbox{
+         .ClaritySlideshow-textbox{
             padding: 0 40px;
       }
     }
 
 
-    .LuminSlideshow-textbox *{
+    .ClaritySlideshow-textbox *{
     	/*color: white;*/
     }
 
-    .LuminSlideshow-top-text-container,
-    .LuminSlideshow-title-container,
-    .LuminSlideshow-subtitle-container{
+    .ClaritySlideshow-top-text-container,
+    .ClaritySlideshow-title-container,
+    .ClaritySlideshow-subtitle-container{
     	overflow: hidden;
     }
 
-    .LuminSlideshow-top-text,
-    .LuminSlideshow-title,
-    .LuminSlideshow-subtitle{
+    .ClaritySlideshow-top-text,
+    .ClaritySlideshow-title,
+    .ClaritySlideshow-subtitle{
       text-align: center;
       margin: 0;
       opacity: 0;
@@ -954,21 +954,21 @@
       padding-bottom: 10px;
     }
 
-    .LuminSlideshow-title{
+    .ClaritySlideshow-title{
         font-weight: 500;
     }
 
-    .LuminSlideshow-top-text,
-    .LuminSlideshow-subtitle{
+    .ClaritySlideshow-top-text,
+    .ClaritySlideshow-subtitle{
     	font-weight: 300;
     }
 
-    .LuminSlideshow-top-text-container,
-    .LuminSlideshow-subtitle-container{
+    .ClaritySlideshow-top-text-container,
+    .ClaritySlideshow-subtitle-container{
     	margin-top: 10px;
     }
 
-    .LuminSlideshow-top-text{
+    .ClaritySlideshow-top-text{
     	padding-bottom: 0;
     }
 
@@ -982,29 +982,29 @@
     {% comment %} ## Text Animations {% endcomment %}
 
 
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .LuminSlideshow-container--loaded  .LuminSlideshow-cell.is-selected .LuminSlideshow-title{
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .ClaritySlideshow-container--loaded  .ClaritySlideshow-cell.is-selected .ClaritySlideshow-title{
         animation: .8s cubic-bezier(.26,.54,.32,1) .3s forwards;
       animation-name: rise-up;
     }
 
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .LuminSlideshow-container--loaded  .LuminSlideshow-cell.is-selected .LuminSlideshow-top-text,
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .LuminSlideshow-container--loaded  .LuminSlideshow-cell.is-selected .LuminSlideshow-subtitle{
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .ClaritySlideshow-container--loaded  .ClaritySlideshow-cell.is-selected .ClaritySlideshow-top-text,
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .ClaritySlideshow-container--loaded  .ClaritySlideshow-cell.is-selected .ClaritySlideshow-subtitle{
           animation: 1s cubic-bezier(.26,.54,.32,1) .7s forwards;
       animation-name: rise-up;
     }
 
-      [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .LuminSlideshow-container--loaded  .LuminSlideshow-cell.is-selected .LuminSlideshow-button--1{
+      [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .ClaritySlideshow-container--loaded  .ClaritySlideshow-cell.is-selected .ClaritySlideshow-button--1{
       animation: fade-in 2s ease 1.3s forwards;
     }
-      [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .LuminSlideshow-container--loaded .LuminSlideshow-cell.is-selected .LuminSlideshow-button--2{
+      [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='true']  + .ClaritySlideshow-container--loaded .ClaritySlideshow-cell.is-selected .ClaritySlideshow-button--2{
        animation: fade-in 2s ease 1.6s forwards;
     }
 
 
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .LuminSlideshow-container--loaded .LuminSlideshow-cell.is-selected .LuminSlideshow-title,
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .LuminSlideshow-container--loaded .LuminSlideshow-cell.is-selected .LuminSlideshow-subtitle,
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .LuminSlideshow-container--loaded .LuminSlideshow-cell.is-selected .LuminSlideshow-top-text,
-    [data-Lumin-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .LuminSlideshow-container--loaded .LuminSlideshow-cell.is-selected .LuminSlideshow-button{
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .ClaritySlideshow-container--loaded .ClaritySlideshow-cell.is-selected .ClaritySlideshow-title,
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .ClaritySlideshow-container--loaded .ClaritySlideshow-cell.is-selected .ClaritySlideshow-subtitle,
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .ClaritySlideshow-container--loaded .ClaritySlideshow-cell.is-selected .ClaritySlideshow-top-text,
+    [data-Clarity-slideshow-section-id='{{ section.id }}'][data-text-animation='false']  + .ClaritySlideshow-container--loaded .ClaritySlideshow-cell.is-selected .ClaritySlideshow-button{
     	opacity: 1;
       animation: unset;
     }
@@ -1012,36 +1012,36 @@
 
 
 
-    .LuminSlideshow-container:focus,
-    .LuminSlideshow-container *:focus{
+    .ClaritySlideshow-container:focus,
+    .ClaritySlideshow-container *:focus{
       outline: unset !important;
       box-shadow: unset !important;
     }
 
-    .LuminSlideshow-container .simpleParallax{
+    .ClaritySlideshow-container .simpleParallax{
   /*       overflow: unset !important; */
     }
 
 
     {% comment %} ## Buttons {% endcomment %}
 
-    .LuminSlideshow-button{
+    .ClaritySlideshow-button{
     	opacity: 0;
       transition: none;
     }
 
-    .LuminSlideshow-button:hover{
+    .ClaritySlideshow-button:hover{
         color: unset;
     }
 
-    .LuminSlideshow-button--1 + .LuminSlideshow-button--2{
+    .ClaritySlideshow-button--1 + .ClaritySlideshow-button--2{
         margin-left: 15px;
     }
 
 
 
 
-    .LuminSlideshow-button{
+    .ClaritySlideshow-button{
       display: block;
       line-height: 1.42;
       text-decoration: none;
@@ -1074,23 +1074,23 @@
 
 
 
-  .LuminSlideshow-textbox[class*='left'] .LuminSlideshow-button{
+  .ClaritySlideshow-textbox[class*='left'] .ClaritySlideshow-button{
       width: auto;
       margin: auto auto;
       margin-top: 10px;
   }
 
-  .LuminSlideshow-textbox[class*='left'] .LuminSlideshow-button:nth-child(1){
+  .ClaritySlideshow-textbox[class*='left'] .ClaritySlideshow-button:nth-child(1){
       margin-top: 10px;
   }
 
-  .LuminSlideshow-textbox[class*='left'] .LuminSlideshow-button:nth-child(2){
+  .ClaritySlideshow-textbox[class*='left'] .ClaritySlideshow-button:nth-child(2){
       margin-top: 10px;
     margin-left: 15px;
   }
 
 
-  .LuminSlideshow-clickable{
+  .ClaritySlideshow-clickable{
       position: absolute;
       left: 0;
       height: 100%;
@@ -1102,13 +1102,13 @@
     display: block !important;
   }
 
-    .LuminSlideshow-arrows > button{
+    .ClaritySlideshow-arrows > button{
         -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
     }
 
     @media (max-width: 768px){
-        .LuminSlideshow-button{
+        .ClaritySlideshow-button{
             padding: 9px 17px;
         }
 
@@ -1116,14 +1116,14 @@
     }
 
     @media (max-width: 370px){
-  /*     .LuminSlideshow-buttons{
+  /*     .ClaritySlideshow-buttons{
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
       }
 
-          .LuminSlideshow-button{
+          .ClaritySlideshow-button{
               width: auto;
               display: block;
               margin-left: 0 !important;
@@ -1143,17 +1143,17 @@
     z-index: 0;
   }
 
-  [id*='{{ section.id }}']  .flickity-enabled.is-fade .flickity-slider > .LuminSlideshow-cell.is-selected {
+  [id*='{{ section.id }}']  .flickity-enabled.is-fade .flickity-slider > .ClaritySlideshow-cell.is-selected {
     pointer-events: auto;
     z-index: 1;
   }
 
-    [id*='{{ section.id }}']  .LuminSlideshow-container .flickity-slider {
+    [id*='{{ section.id }}']  .ClaritySlideshow-container .flickity-slider {
       transform: none !important;
     }
 
 
-    [id*='{{ section.id }}']  .LuminSlideshow-cell {
+    [id*='{{ section.id }}']  .ClaritySlideshow-cell {
       left: 0 !important;
       opacity: 0;
       transition: transform .7s ease,opacity .2s ease;
@@ -1161,22 +1161,22 @@
 
     }
 
-    [id*='{{ section.id }}']  .LuminSlideshow-cell.is-selected {
+    [id*='{{ section.id }}']  .ClaritySlideshow-cell.is-selected {
       opacity: 1;
       z-index: 0;
     }
 
-    [id*='{{ section.id }}']  .LuminSlideshow-cell {
+    [id*='{{ section.id }}']  .ClaritySlideshow-cell {
         opacity: 0 !important;
         transition: opacity 1s ease !important;
       }
 
-      .LuminSlideshow-cell.is-selected {
+      .ClaritySlideshow-cell.is-selected {
         opacity: 1 !important;
       }
 
     /* This adds a subtle movement for the image */
-    [id*='{{ section.id }}']  .LuminSlideshow-cell:not(.is-selected){
+    [id*='{{ section.id }}']  .ClaritySlideshow-cell:not(.is-selected){
   /* 	    transform: translateX(10%) !important;   */
     }
 
@@ -1185,60 +1185,60 @@
 
     {% comment %} ## Alignments {% endcomment %}
 
-    .LuminSlideshow-textbox-container--alignment{
+    .ClaritySlideshow-textbox-container--alignment{
     	display: table;
       position: relative;
     }
 
-    .LuminSlideshow-textbox[class$='bottom-center'] .LuminSlideshow-textbox-container--alignment,
-    .LuminSlideshow-textbox[class$='--center'] .LuminSlideshow-textbox-container--alignment{
+    .ClaritySlideshow-textbox[class$='bottom-center'] .ClaritySlideshow-textbox-container--alignment,
+    .ClaritySlideshow-textbox[class$='--center'] .ClaritySlideshow-textbox-container--alignment{
     	margin: 0 auto;
     }
 
-    .LuminSlideshow-textbox[class*='right'] .LuminSlideshow-textbox-container--alignment{
+    .ClaritySlideshow-textbox[class*='right'] .ClaritySlideshow-textbox-container--alignment{
     	margin: 0 0 0 auto;
     }
 
-    .LuminSlideshow-textbox--center-left *{
+    .ClaritySlideshow-textbox--center-left *{
         text-align: left;
     }
 
-    .LuminSlideshow-textbox--center *{
+    .ClaritySlideshow-textbox--center *{
         text-align: center;
     }
 
-    .LuminSlideshow-textbox--center-right *{
+    .ClaritySlideshow-textbox--center-right *{
         text-align: right;
     }
 
-    [class*='LuminSlideshow-textbox--bottom']{
+    [class*='ClaritySlideshow-textbox--bottom']{
       	padding-bottom: 50px;
       padding-top: 40px;
          vertical-align: bottom;
     }
 
-    .LuminSlideshow-textbox--bottom-right *{
+    .ClaritySlideshow-textbox--bottom-right *{
        text-align: right;
     }
 
-    .LuminSlideshow-textbox--bottom-center *{
+    .ClaritySlideshow-textbox--bottom-center *{
        text-align: center;
     }
 
-    .LuminSlideshow-textbox--bottom-left *{
+    .ClaritySlideshow-textbox--bottom-left *{
        text-align: left;
     }
 
     {% comment %} ## Buttons {% endcomment %}
 
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-button{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-button{
       letter-spacing: {{ button_letter_spacing }}px !important;
     border-radius: {{ button_border_radius }}px !important;
     }
 
     @media (max-width: 749px){
-      [data-Lumin-slideshow-section-id="{{ section.id }}"] .LuminSlideshow-button{
+      [data-Clarity-slideshow-section-id="{{ section.id }}"] .ClaritySlideshow-button{
       letter-spacing: {{ button_letter_spacing_mobile }}px !important;
       border-radius: {{ button_border_radius_mobile }}px !important;
     }
@@ -1246,21 +1246,21 @@
 
     {% comment %} ## Dots {% endcomment %}
 
-    .Lumin-slideshow-section .flickity-page-dots{
+    .Clarity-slideshow-section .flickity-page-dots{
   	z-index: 1;
     }
 
 
-     .LuminSlideshow-container[data-dots-style='dots'] .flickity-page-dots{
+     .ClaritySlideshow-container[data-dots-style='dots'] .flickity-page-dots{
         bottom: 20px;
     }
 
-    .LuminSlideshow-container[data-dots-style='dots'] .LuminSlideshow-textbox-container--child{
+    .ClaritySlideshow-container[data-dots-style='dots'] .ClaritySlideshow-textbox-container--child{
       padding-bottom: 20px;
     }
 
 
-  [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='dots'] .flickity-page-dots .dot.is-selected{
+  [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='dots'] .flickity-page-dots .dot.is-selected{
         opacity: 1;
         background-color: white;
         width: {{ dot_size_selected }}px;
@@ -1268,7 +1268,7 @@
     }
 
 
-  [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='dots'] .flickity-page-dots .dot {
+  [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='dots'] .flickity-page-dots .dot {
         display: inline-block;
         vertical-align: middle;
         width: {{ dot_size }}px;
@@ -1280,16 +1280,16 @@
         opacity: 0.4;
     }
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='dots'] .LuminSlideshow-textbox[class*='--bottom']{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='dots'] .ClaritySlideshow-textbox[class*='--bottom']{
     	padding-bottom: 60px;
     }
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars']  .flickity-page-dots{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars']  .flickity-page-dots{
     	bottom: 0;
       line-height: 0px;
     }
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot{
         position: relative;
         border-radius: 0;
         width: 120px;
@@ -1301,12 +1301,12 @@
         opacity: 1;
      }
 
-     [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:not(.is-selected){
+     [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:not(.is-selected){
         opacity: .4;
      }
 
-     	[data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:before,
-    	[data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:after{
+     	[data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:before,
+    	[data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:after{
         content: "";
         display: block;
         position: absolute;
@@ -1316,12 +1316,12 @@
         background-color: {{ dots_color }};
   	}
 
-    [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:before{
+    [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot:before{
     	opacity: .4;
     }
 
 
-  [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot.is-selected:after {
+  [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot.is-selected:after {
     	  animation: slideRight 0s linear forwards;
         transform: translate3d(-100%, 0, 0);
         transition: none;
@@ -1331,14 +1331,14 @@
 
 
     @media (max-width:749px){
-   [data-Lumin-slideshow-section-id="{{ section.id }}"].LuminSlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot{
+   [data-Clarity-slideshow-section-id="{{ section.id }}"].ClaritySlideshow-container[data-dots-style='bars'] .flickity-page-dots .dot{
      width: 45px;
     }
   }
 
     {% comment %} ## Arrows {% endcomment %}
 
-    .LuminSlideshow-arrows{
+    .ClaritySlideshow-arrows{
       max-width: 100%;
       width: 100%;
       display: flex;
@@ -1354,23 +1354,23 @@
     }
 
     {% if request.design_mode %}
-      .LuminSlideshow-arrows{
+      .ClaritySlideshow-arrows{
   /*    opacity: 1; */
     }
   {% endif %}
 
-    .LuminSlideshow-arrows *{
+    .ClaritySlideshow-arrows *{
     	pointer-events: auto;
     }
 
-    .LuminSlideshow-next{
+    .ClaritySlideshow-next{
     	margin-right: 30px;
     }
-      .LuminSlideshow-prev{
+      .ClaritySlideshow-prev{
     	margin-left: 30px;
     }
 
-    .LuminSlideshow-arrows button{
+    .ClaritySlideshow-arrows button{
       {% if arrow_background_color != 'rgba(0,0,0,0)' %}
         box-shadow: rgb(0 0 0 / 10%) 0px 5px 5px;
       {% endif %}
@@ -1379,11 +1379,11 @@
         height: {{ arrow_size }}px;
     }
 
-    .LuminSlideshow-prev{
+    .ClaritySlideshow-prev{
     left: 0;
     }
 
-    .LuminSlideshow-arrows button svg{
+    .ClaritySlideshow-arrows button svg{
       width: {{ arrow_chevron_size }}px !important;
         height: {{ arrow_chevron_size }}px !important;
         left: 50% !important;
@@ -1393,20 +1393,20 @@
     }
 
     @media (max-width: 767px){
-      .LuminSlideshow-arrows button{
+      .ClaritySlideshow-arrows button{
       width: {{ arrow_size_mobile }}px;
         height: {{ arrow_size_mobile }}px;
     }
 
-        .LuminSlideshow-arrows button svg{
+        .ClaritySlideshow-arrows button svg{
       width: {{ arrow_chevron_size_mobile }}px !important;
         height: {{ arrow_chevron_size_mobile }}px !important;
     }
     }
 
-       .LuminSlideshow-arrows button:hover,
-     .LuminSlideshow-arrows button:focus,
-    .LuminSlideshow-arrows button:active{
+       .ClaritySlideshow-arrows button:hover,
+     .ClaritySlideshow-arrows button:focus,
+    .ClaritySlideshow-arrows button:active{
 
       {% if arrow_background_color != 'rgba(0,0,0,0)' %}
         box-shadow: rgb(0 0 0 / 10%) 0px 5px 5px !important;
@@ -1416,19 +1416,19 @@
 
     }
 
-    .LuminSlideshow-container .flickity-button:focus{
+    .ClaritySlideshow-container .flickity-button:focus{
     	    {% if arrow_background_color != 'rgba(0,0,0,0)' %}
         box-shadow: rgb(0 0 0 / 10%) 0px 5px 5px !important;
       {% endif %}
     }
 
 
-    .LuminSlideshow-arrows .LuminSlideshow-prev{
+    .ClaritySlideshow-arrows .ClaritySlideshow-prev{
       margin-right: calc({{ arrow_size }}px + 45px) !important;
     }
 
 
-    .Lumin-slideshow-section--loaded .LuminSlideshow-arrows{
+    .Clarity-slideshow-section--loaded .ClaritySlideshow-arrows{
       animation: fade-in .8s ease 0s forwards;
       animation-delay: .2s;
     }
@@ -1436,21 +1436,21 @@
 
 
 
-      [data-arrows-style-mobile="side"] + .LuminSlideshow-arrows,
-    [data-arrows-style="side"] + .LuminSlideshow-arrows{
+      [data-arrows-style-mobile="side"] + .ClaritySlideshow-arrows,
+    [data-arrows-style="side"] + .ClaritySlideshow-arrows{
           top: 50%;
       	transform: translateY(-50%);
   /*       pointer-events: none; */
     }
 
-    [data-arrows-style-mobile="side"] + .LuminSlideshow-arrows button,
-    [data-arrows-style="side"] + .LuminSlideshow-arrows button{
+    [data-arrows-style-mobile="side"] + .ClaritySlideshow-arrows button,
+    [data-arrows-style="side"] + .ClaritySlideshow-arrows button{
         pointer-events: auto;
     }
 
     @media (min-width: 768px){
 
-      [data-arrows-style="bottom"] + .LuminSlideshow-arrows{
+      [data-arrows-style="bottom"] + .ClaritySlideshow-arrows{
           top: unset !important;
       transform: unset !important;
         bottom: -16px;
@@ -1458,34 +1458,34 @@
         right: -40px;
       }
 
-    [data-arrows-style="bottom"] + .LuminSlideshow-arrows button{
+    [data-arrows-style="bottom"] + .ClaritySlideshow-arrows button{
       top: unset !important;
       transform: unset !important;
     }
 
 
-      [data-arrows-style="none"] + .LuminSlideshow-arrows{
+      [data-arrows-style="none"] + .ClaritySlideshow-arrows{
       	display: none;
       }
 
     }
 
     @media (max-width: 767px){
-      [data-arrows-style="bottom"] + .LuminSlideshow-arrows{
+      [data-arrows-style="bottom"] + .ClaritySlideshow-arrows{
   /*       display: none; */
       }
 
-      [data-arrows-style-mobile="side"] + .LuminSlideshow-arrows{
+      [data-arrows-style-mobile="side"] + .ClaritySlideshow-arrows{
       	display: block;
       }
 
-      [data-arrows-style-mobile="side"] + .LuminSlideshow-arrows{
+      [data-arrows-style-mobile="side"] + .ClaritySlideshow-arrows{
           top: 50%;
       	transform: translateY(-50%);
           pointer-events: none;
     	}
 
-      [data-arrows-style-mobile="none"] + .LuminSlideshow-arrows{
+      [data-arrows-style-mobile="none"] + .ClaritySlideshow-arrows{
       	display: none;
       }
 
@@ -1495,8 +1495,8 @@
     {% comment %} ## Remove all dots and arrows if only 1 slide {% endcomment %}
 
 
-     .Lumin-slideshow-section [data-slides-quantity='1'] + * .flickity-page-dots,
-    .Lumin-slideshow-section [data-slides-quantity='1'] + * + .LuminSlideshow-arrows{
+     .Clarity-slideshow-section [data-slides-quantity='1'] + * .flickity-page-dots,
+    .Clarity-slideshow-section [data-slides-quantity='1'] + * + .ClaritySlideshow-arrows{
     	display: none !important;
     }
 
@@ -1557,38 +1557,38 @@
     }
   }
 
-  /* [class*='Lumin'] .flickity-viewport{
+  /* [class*='Clarity'] .flickity-viewport{
       height: 1013px !important;
   }
      */
 </style>
 
-<script data-Lumin-slideshow-script>
+<script data-Clarity-slideshow-script>
   var sectionID;
 
   try {
     sectionID = document.currentScript.parentNode
-      .querySelector(`[data-Lumin-slideshow-section-id]`)
-      .getAttribute(`data-Lumin-slideshow-section-id`);
+      .querySelector(`[data-Clarity-slideshow-section-id]`)
+      .getAttribute(`data-Clarity-slideshow-section-id`);
   } catch (err) {
     sectionID = `{{ section.id }}`.trim();
   }
 
-  var slideshowID = `LuminSlideshowPro${sectionID}`;
+  var slideshowID = `ClaritySlideshowPro${sectionID}`;
   var flickitySlider = `slideshow-${sectionID}`;
 
-  window.LuminTempSectionID = sectionID;
-  window.LuminTempSlideshowID = slideshowID;
+  window.ClarityTempSectionID = sectionID;
+  window.ClarityTempSlideshowID = slideshowID;
 
   window[slideshowID] = window[slideshowID] || {};
 
   window[slideshowID] = (function () {
-    const sectionID = window.LuminTempSectionID;
-    const slideshowID = window.LuminTempSlideshowID;
+    const sectionID = window.ClarityTempSectionID;
+    const slideshowID = window.ClarityTempSlideshowID;
     const flickitySlider = window.flickitySlider;
 
-    const $this = document.querySelector(`.LuminSlideshow-container[data-Lumin-slideshow-section-id*='${sectionID}']`);
-    const $thisSection = $this.closest(`.Lumin-slideshow-section`);
+    const $this = document.querySelector(`.ClaritySlideshow-container[data-Clarity-slideshow-section-id*='${sectionID}']`);
+    const $thisSection = $this.closest(`.Clarity-slideshow-section`);
 
     function loadOptions() {
       return {
@@ -1616,7 +1616,7 @@
         imagesLoaded: true,
         fade: options.fade,
         adaptiveHeight: false,
-        cellSelector: '.LuminSlideshow-cell',
+        cellSelector: '.ClaritySlideshow-cell',
         wrapAround: true,
         prevNextButtons: false,
         lazyLoad: true,
@@ -1633,11 +1633,11 @@
     let options = loadOptions();
     let sliderOptions = loadSliderOptions();
     const lazyLoadOptions = {
-      elements_selector: '.LuminSlideshow-image--lazy,.LuminSlideshow-parallax--lazy',
-      class_applied: 'LuminSlideshow--lazy-applied',
-      class_loaded: 'LuminSlideshow--lazy-loaded',
-      class_loading: 'LuminSlideshow--lazy-loading',
-      class_entered: 'LuminSlideshow--lazy-entered',
+      elements_selector: '.ClaritySlideshow-image--lazy,.ClaritySlideshow-parallax--lazy',
+      class_applied: 'ClaritySlideshow--lazy-applied',
+      class_loaded: 'ClaritySlideshow--lazy-loaded',
+      class_loading: 'ClaritySlideshow--lazy-loading',
+      class_entered: 'ClaritySlideshow--lazy-entered',
     };
 
     const PARALLAX_SPEED = options.parallaxSpeed / 100;
@@ -1673,7 +1673,7 @@
     }
 
     function _getAttributeOption(dataAttribute) {
-      const element = document.querySelector(`.LuminSlideshowOptions[data-Lumin-slideshow-section-id*='${sectionID}']`);
+      const element = document.querySelector(`.ClaritySlideshowOptions[data-Clarity-slideshow-section-id*='${sectionID}']`);
 
       if (!element) {
         return null;
@@ -4594,7 +4594,7 @@
     }
 
     function loadFlickity() {
-      if (window.hasOwnProperty('LuminSlideshowLibrary')) {
+      if (window.hasOwnProperty('ClaritySlideshowLibrary')) {
         return true;
       }
 
@@ -4609,7 +4609,7 @@
 
         await loadFlickityFade();
 
-        window['LuminSlideshowLibrary'] = true;
+        window['ClaritySlideshowLibrary'] = true;
 
         resolve(true);
       });
@@ -4784,23 +4784,23 @@
 
       const id = $id.getAttribute(`data-slideshow-section-id`);
 
-      const $slider = document.querySelector(`.LuminSlideshow-container--${id}`); /* `*/
+      const $slider = document.querySelector(`.ClaritySlideshow-container--${id}`); /* `*/
 
       if (!$slider) {
         return;
       }
 
       function parallax() {
-        const $parent = $slider.closest('.Lumin-slideshow-section');
+        const $parent = $slider.closest('.Clarity-slideshow-section');
 
         var offset = $parent.getBoundingClientRect().top;
         var _scrolled = window.scrollY - (window.scrollY + offset);
         var scrolled = _isMobile() ? _scrolled : _scrolled;
 
         var parallax = $slider.querySelectorAll(
-          `.LuminSlideshow-cell.is-selected ${
+          `.ClaritySlideshow-cell.is-selected ${
             _isMobile() ? `.Parallax-parent--mobile` : `.Parallax-parent--desktop`
-          } .LuminSlideshow-parallax`
+          } .ClaritySlideshow-parallax`
         );
 
         var zoom = _isMobile() ? PARALLAX_ZOOM_MOBILE : PARALLAX_ZOOM;
@@ -4820,13 +4820,13 @@
         ...sliderOptions,
         on: {
           ready: async function () {
-            const $section = $slider.closest(`.Lumin-slideshow-section`);
+            const $section = $slider.closest(`.Clarity-slideshow-section`);
 
             window[`LazyLoad--${sectionID}`].update();
 
             let $image;
             if (!options.parallax) {
-              $image = $this.querySelector(`.LuminSlideshow-cell:nth-child(1) .LuminSlideshow-image:last-of-type`);
+              $image = $this.querySelector(`.ClaritySlideshow-cell:nth-child(1) .ClaritySlideshow-image:last-of-type`);
             }
 
             await _sleep(50);
@@ -4893,7 +4893,7 @@
     async function checkIfSelectedImageHasLoaded() {
       return new Promise(async (resolve, reject) => {
         const $image = await _waitForElement(
-          `.LuminSlideshow-container[data-Lumin-slideshow-section-id*='${sectionID}'] .is-selected .LuminSlideshow--lazy-loaded`
+          `.ClaritySlideshow-container[data-Clarity-slideshow-section-id*='${sectionID}'] .is-selected .ClaritySlideshow--lazy-loaded`
         );
 
         if ($image) {
@@ -4911,35 +4911,35 @@
 
       const id = $id.getAttribute(`data-slideshow-section-id`);
 
-      const $slider = document.querySelector(`.LuminSlideshow-container--${id}`);
+      const $slider = document.querySelector(`.ClaritySlideshow-container--${id}`);
 
       if (!$slider) {
         return;
       }
 
-      const $section = $slider.closest(`.Lumin-slideshow-section`);
+      const $section = $slider.closest(`.Clarity-slideshow-section`);
 
       if (!$section) {
         return;
       }
 
       if (
-        $slider.classList.contains('LuminSlideshow-container--loaded') ||
-        $section.classList.contains('Lumin-slideshow-section--loaded')
+        $slider.classList.contains('ClaritySlideshow-container--loaded') ||
+        $section.classList.contains('Clarity-slideshow-section--loaded')
       ) {
         return;
       }
 
-      $slider.classList.add('LuminSlideshow-container--loaded');
-      $section.classList.add('Lumin-slideshow-section--loaded');
+      $slider.classList.add('ClaritySlideshow-container--loaded');
+      $section.classList.add('Clarity-slideshow-section--loaded');
     }
 
     function removeLoaderForCustomizePage($slider) {
-      if ($slider.classList.contains('LuminSlideshow-container--loaded')) {
+      if ($slider.classList.contains('ClaritySlideshow-container--loaded')) {
         return;
       }
 
-      $slider.classList.add('LuminSlideshow-container--loaded');
+      $slider.classList.add('ClaritySlideshow-container--loaded');
     }
 
     function lazyloadBackgroundImageForParallax() {
@@ -4948,7 +4948,7 @@
           return;
         }
 
-        let selector = _isMobile() ? 'LuminSlideshow-parallax--mobile' : 'LuminSlideshow-parallax--desktop';
+        let selector = _isMobile() ? 'ClaritySlideshow-parallax--mobile' : 'ClaritySlideshow-parallax--desktop';
 
         const $parallax = e.target;
 
@@ -4979,8 +4979,8 @@
     }
 
     function handleArrows() {
-      const $prev = $thisSection.querySelector(`.LuminSlideshow-prev`);
-      const $next = $thisSection.querySelector(`.LuminSlideshow-next`);
+      const $prev = $thisSection.querySelector(`.ClaritySlideshow-prev`);
+      const $next = $thisSection.querySelector(`.ClaritySlideshow-next`);
 
       if (!$prev || !$next) {
         return;
@@ -5038,7 +5038,7 @@
         return;
       }
 
-      const $slide = $slider.querySelector(`.LuminSlideshow-cell.is-selected`);
+      const $slide = $slider.querySelector(`.ClaritySlideshow-cell.is-selected`);
 
       if (!$slide) {
         return;
@@ -5056,16 +5056,16 @@
         );
         _addStyle(`
 
-[data-Lumin-slideshow-section-id="${sectionID}"].LuminSlideshow-container,
-              [data-Lumin-slideshow-section-id="${sectionID}"] .LuminSlideshow-container, 
-              [data-Lumin-slideshow-section-id="${sectionID}"] .LuminSlideshow-parallax{
+[data-Clarity-slideshow-section-id="${sectionID}"].ClaritySlideshow-container,
+              [data-Clarity-slideshow-section-id="${sectionID}"] .ClaritySlideshow-container, 
+              [data-Clarity-slideshow-section-id="${sectionID}"] .ClaritySlideshow-parallax{
 padding-bottom: calc(100% / ${aspectRatio}) !important;
 }
 `);
 
         const height = parseInt(window.innerWidth) / Number(aspectRatio);
 
-        const $text = $slide.querySelector(`.LuminSlideshow-textbox-container--parent`);
+        const $text = $slide.querySelector(`.ClaritySlideshow-textbox-container--parent`);
 
         if ($text) {
           $text.setAttribute('style', `height:${height}px;`);
@@ -5074,10 +5074,10 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
         aspectRatio = Number($slide.querySelector(`[data-image-aspect-ratio]`).getAttribute('data-image-aspect-ratio'));
 
         _addStyle(`
-[data-Lumin-slideshow-section-id="${sectionID}"] .LuminSlideshow-textbox-container--parent,
-[data-Lumin-slideshow-section-id="${sectionID}"].LuminSlideshow-container,
-              [data-Lumin-slideshow-section-id="${sectionID}"] .LuminSlideshow-container, 
-              [data-Lumin-slideshow-section-id="${sectionID}"] .LuminSlideshow-parallax{
+[data-Clarity-slideshow-section-id="${sectionID}"] .ClaritySlideshow-textbox-container--parent,
+[data-Clarity-slideshow-section-id="${sectionID}"].ClaritySlideshow-container,
+              [data-Clarity-slideshow-section-id="${sectionID}"] .ClaritySlideshow-container, 
+              [data-Clarity-slideshow-section-id="${sectionID}"] .ClaritySlideshow-parallax{
 padding-bottom: calc(100% / ${aspectRatio}) !important;
 }
 `);
@@ -5098,16 +5098,16 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
       $slider = $slider ? $slider : $this;
 
       function parallax() {
-        const $parent = $slider.closest('.Lumin-slideshow-section');
+        const $parent = $slider.closest('.Clarity-slideshow-section');
 
         var offset = $parent.getBoundingClientRect().top;
         var _scrolled = window.scrollY - (window.scrollY + offset);
         var scrolled = _isMobile() ? _scrolled : _scrolled;
 
         var parallax = $slider.querySelectorAll(
-          `.LuminSlideshow-cell.is-selected ${
+          `.ClaritySlideshow-cell.is-selected ${
             _isMobile() ? `.Parallax-parent--mobile` : `.Parallax-parent--desktop`
-          } .LuminSlideshow-parallax`
+          } .ClaritySlideshow-parallax`
         );
 
         var zoom = _isMobile() ? PARALLAX_ZOOM_MOBILE : PARALLAX_ZOOM;
@@ -5129,11 +5129,11 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
 
     function initVanillaLazyLoad() {
       window[`LazyLoad--${sectionID}`] = new LazyLoad({
-        elements_selector: '.is-selected .LuminSlideshow-image--lazy,.is-selected .LuminSlideshow-parallax--lazy',
-        class_applied: 'LuminSlideshow--lazy-applied',
-        class_loaded: 'LuminSlideshow--lazy-loaded',
-        class_loading: 'LuminSlideshow--lazy-loading',
-        class_entered: 'LuminSlideshow--lazy-entered',
+        elements_selector: '.is-selected .ClaritySlideshow-image--lazy,.is-selected .ClaritySlideshow-parallax--lazy',
+        class_applied: 'ClaritySlideshow--lazy-applied',
+        class_loaded: 'ClaritySlideshow--lazy-loaded',
+        class_loading: 'ClaritySlideshow--lazy-loading',
+        class_entered: 'ClaritySlideshow--lazy-entered',
         threshold: 50,
       });
     }
@@ -5169,7 +5169,7 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
 
     async function updateSlidersAtCustomizePage() {
       var $sliders = document.querySelectorAll(
-        `[class*='LuminSlideshow-container--'][data-Lumin-slideshow-section-id]`
+        `[class*='ClaritySlideshow-container--'][data-Clarity-slideshow-section-id]`
       );
 
       for (var each of $sliders) {
@@ -5192,11 +5192,11 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
 
         if (Shopify.designMode) {
           var myLazyLoad = new LazyLoad({
-            elements_selector: '.LuminSlideshow-image--lazy,.LuminSlideshow-parallax--lazy',
-            class_applied: 'LuminSlideshow--lazy-applied',
-            class_loaded: 'LuminSlideshow--lazy-loaded',
-            class_loading: 'LuminSlideshow--lazy-loading',
-            class_entered: 'LuminSlideshow--lazy-entered',
+            elements_selector: '.ClaritySlideshow-image--lazy,.ClaritySlideshow-parallax--lazy',
+            class_applied: 'ClaritySlideshow--lazy-applied',
+            class_loaded: 'ClaritySlideshow--lazy-loaded',
+            class_loading: 'ClaritySlideshow--lazy-loading',
+            class_entered: 'ClaritySlideshow--lazy-entered',
           });
 
           myLazyLoad.loadAll();
@@ -5250,7 +5250,7 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
 {% schema %}
 {
   "name": "t:sections.names.pro_slideshow",
-  "class": "Lumin-slideshow-section",
+  "class": "Clarity-slideshow-section",
   "disabled_on": {
     "groups": ["header", "footer", "custom.popup"]
   },
@@ -5969,30 +5969,30 @@ padding-bottom: calc(100% / ${aspectRatio}) !important;
           "type": "select",
           "id": "text_align",
           "label": "Text alignment",
-          "default": "LuminSlideshow-textbox--center",
+          "default": "ClaritySlideshow-textbox--center",
           "options": [
             {
-              "value": "LuminSlideshow-textbox--center-left",
+              "value": "ClaritySlideshow-textbox--center-left",
               "label": "Center left"
             },
             {
-              "value": "LuminSlideshow-textbox--center",
+              "value": "ClaritySlideshow-textbox--center",
               "label": "Center"
             },
             {
-              "value": "LuminSlideshow-textbox--center-right",
+              "value": "ClaritySlideshow-textbox--center-right",
               "label": "Center right"
             },
             {
-              "value": "LuminSlideshow-textbox--bottom-left",
+              "value": "ClaritySlideshow-textbox--bottom-left",
               "label": "Bottom left"
             },
             {
-              "value": "LuminSlideshow-textbox--bottom-center",
+              "value": "ClaritySlideshow-textbox--bottom-center",
               "label": "Bottom center"
             },
             {
-              "value": "LuminSlideshow-textbox--bottom-right",
+              "value": "ClaritySlideshow-textbox--bottom-right",
               "label": "Bottom right"
             }
           ]

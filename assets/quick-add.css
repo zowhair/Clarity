@@ -256,10 +256,10 @@ quick-add-modal .product-media-container.constrain-height {
   quick-add-modal .product-media-container.constrain-height {
     --constrained-min-height: 400px;
   }
-  quick-add-modal .lumin-quick-add-hide {
+  quick-add-modal .clarity-quick-add-hide {
     display:none;
   }
-  quick-add-modal .lumin-quick-add-show {
+  quick-add-modal .clarity-quick-add-show {
     display:block !important;
   }
 }

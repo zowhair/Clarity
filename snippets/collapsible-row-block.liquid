@@ -24,16 +24,16 @@ url("data:image/svg+xml,%3Csvg clip-rule='evenodd' fill-rule='evenodd' stroke-li
     margin-top: 0;
   }
 
-  #LM--{{ section.id }} .clarity-section__block--collapsible_content + .clarity-section__block--collapsible_content .lumin-section__accordion {
+  #LM--{{ section.id }} .clarity-section__block--collapsible_content + .clarity-section__block--collapsible_content .clarity-section__accordion {
     border-top: 0;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__accordion {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__accordion {
     border-top: thin solid rgba(var(--color-foreground));
     border-bottom: thin solid rgba(var(--color-foreground));
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__question {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__question {
     position: relative;
     cursor: pointer;
     display: block;
@@ -41,20 +41,20 @@ url("data:image/svg+xml,%3Csvg clip-rule='evenodd' fill-rule='evenodd' stroke-li
     color: rgba(var(--color-foreground));
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__small-heading {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__small-heading {
     margin: 0;
     font-size: 20px;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__question::-webkit-details-marker {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__question::-webkit-details-marker {
     display: none;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__accordion[open] > .lumin-section__question:after {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__accordion[open] > .clarity-section__question:after {
     background-image: {{ open_icon }};
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__question:after {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__question:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -66,27 +66,27 @@ url("data:image/svg+xml,%3Csvg clip-rule='evenodd' fill-rule='evenodd' stroke-li
     background-size: contain;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__answer {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__answer {
     padding-top: 10px;
     margin-bottom: 0;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__inner-answer {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__inner-answer {
     padding: 10px;
     padding-top: 0;
   }
 </style>
 <details
-  class="clarity-section-block clarity-section__block-id-{{ block.id }} lumin-section__accordion lumin-section__icon-style-{{ block.settings.icon_style }}"
+  class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__accordion clarity-section__icon-style-{{ block.settings.icon_style }}"
   {%- if block.settings.show_open == true -%}
     open
   {%- endif -%}
 >
-  <summary class="clarity-section__block-id-{{ block.id }} lumin-section__question">
-    <h3 class="lumin-section__small-heading">{{ block.settings.title }}</h3>
+  <summary class="clarity-section__block-id-{{ block.id }} clarity-section__question">
+    <h3 class="clarity-section__small-heading">{{ block.settings.title }}</h3>
   </summary>
-  <div class="lumin-section__answer">
-    <div class="lumin-section__inner-answer lumin-section__text lumin-section__rte">
+  <div class="clarity-section__answer">
+    <div class="clarity-section__inner-answer clarity-section__text clarity-section__rte">
       {{ block.settings.text }}
     </div>
   </div>

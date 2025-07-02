@@ -1,5 +1,5 @@
 <style>
-    .lumin-text-{{ block.id }} {
+    .clarity-text-{{ block.id }} {
       color: {{ block.settings.announcement_color }};
       font-size: {{ block.settings.announcement_size }}px;
       letter-spacing: {{ block.settings.text_spacing }}px;
@@ -7,24 +7,24 @@
       margin:0;
     }
   @media screen and (max-width: 749px) {
-     .lumin-text-{{ block.id }} {
+     .clarity-text-{{ block.id }} {
       font-size: {{ block.settings.announcement_size_m }}px;
     }
   }
-     .lumin-text-{{ block.id }} svg{
+     .clarity-text-{{ block.id }} svg{
        fill: {{ block.settings.announcement_color }};
       width:calc({{ block.settings.announcement_size }}px + 2px);
       height:calc({{ block.settings.announcement_size }}px + 2px);
     }
    @media screen and (max-width: 749px) {
-    .lumin-text-{{ block.id }} svg{
+    .clarity-text-{{ block.id }} svg{
       width:{{ block.settings.announcement_size_m }}px;
       height:{{ block.settings.announcement_size_m }}px;
     }
   }
 </style>
 <div
-  class="lumin-text-{{ block.id }} announcement-bar-{{ section.id }}"
+  class="clarity-text-{{ block.id }} announcement-bar-{{ section.id }}"
   role="region"
   aria-label="Announcement"
   {{ block.shopify_attributes }}

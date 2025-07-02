@@ -18,7 +18,7 @@
       color: var(--fancy-text);
       font-size: var(--fancy-text-size);
     }
-.lumin-text__fancy3 {      
+.clarity-text__fancy3 {      
       padding-left: {{ block.settings.padding-left-fancy }}px;
       padding-right: {{ block.settings.padding-left-fancy }}px;
       padding-top: {{ block.settings.padding-fancy }}px;

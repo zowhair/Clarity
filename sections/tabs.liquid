@@ -13,36 +13,36 @@
 {%- endstyle -%}
 {{ 'custom-tab.css' | asset_url | stylesheet_tag }}
 <style>
-    ul.lumin-tab-{{ section.id }} {
+    ul.clarity-tab-{{ section.id }} {
                justify-content: {{ section.settings.tab_font_align }};
       {% if section.settings.show_border %} border-bottom: .1rem solid rgba(var(--color-foreground), .08);{% endif %}
       padding-left:0;
           }
 
-    .lumin-tab-{{section.id}} h4 {
+    .clarity-tab-{{section.id}} h4 {
       font-size: {{section.settings.tab_font}}px;
     }
 
-    .lumin-tab-content-{{ section.id }} {
+    .clarity-tab-content-{{ section.id }} {
                 text-align: {{ section.settings.tab_content_align }};
           }
 
   @media only screen and (max-width: 576px){
-     .lumin-tab-{{section.id}} h4 {
+     .clarity-tab-{{section.id}} h4 {
       font-size: {{section.settings.tab_font_mb}}px;
     }
-     ul.lumin-tab-{{ section.id }} {
+     ul.clarity-tab-{{ section.id }} {
     justify-content: {{ section.settings.tab_font_mb_align }};
     }
-   .lumin-tab-content-{{ section.id }} {
+   .clarity-tab-content-{{ section.id }} {
      text-align: {{ section.settings.tab_content_align_mb }};
       }
     }
 </style>
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.tabs_color_scheme }}">
   <div class="page-width color-{{ section.settings.tabs_color_scheme }} gradient">
-    <div class="{% if section.settings.layout == 'section' %}lumin-tab-width isolate content-container color-{{ section.settings.container_color_scheme }} gradient {% endif %}">
-      <ul class="lumin-tab-{{section.id}} custom--tabs">
+    <div class="{% if section.settings.layout == 'section' %}clarity-tab-width isolate content-container color-{{ section.settings.container_color_scheme }} gradient {% endif %}">
+      <ul class="clarity-tab-{{section.id}} custom--tabs">
         {% for block in section.blocks %}
           {% if block.type == 'tab' %}
             <li class="tab__list {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
@@ -67,7 +67,7 @@
         {% if block.type == 'tab' %}
           <div
             id="content--{{ block.id }}--{{ section.id }}"
-            class="custom__tab-content lumin-tab-content-{{ section.id }} {% if forloop.first %}active{% endif %}"
+            class="custom__tab-content clarity-tab-content-{{ section.id }} {% if forloop.first %}active{% endif %}"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.description %}

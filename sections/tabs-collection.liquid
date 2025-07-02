@@ -24,30 +24,32 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% style %}
-    ul.lumin-tab-{{ section.id }} {
-               justify-content: {{ section.settings.tab_font_align }};
-      {% if section.settings.show_border %} border-bottom: .1rem solid rgba(var(--color-foreground), .08);{% endif %}
-          }
+  ul.clarity-tab-{{ section.id }} {
+    justify-content: {{ section.settings.tab_font_align }};
+    {% if section.settings.show_border %}
+      border-bottom: .1rem solid rgba(var(--color-foreground), .08);
+    {% endif %}
+  }
 
-    .lumin-tab-{{ section.id }} h4 {
-      font-size: {{section.settings.tab_font}}px;
-    }
+  .clarity-tab-{{ section.id }} h4 {
+    font-size: {{section.settings.tab_font}}px;
+  }
 
-    .lumin-tab-content-{{ section.id }} {
-                text-align: {{ section.settings.tab_content_align }};
-          }
+  .clarity-tab-content-{{ section.id }} {
+    text-align: {{ section.settings.tab_content_align }};
+  }
 
   @media only screen and (max-width: 576px){
-     .lumin-tab-{{ section.id }} h4 {
+    .clarity-tab-{{ section.id }} h4 {
       font-size: {{section.settings.tab_font_mb}}px;
     }
-     ul.lumin-tab-{{ section.id }} {
-    justify-content: {{ section.settings.tab_font_mb_align }};
+    ul.clarity-tab-{{ section.id }} {
+      justify-content: {{ section.settings.tab_font_mb_align }};
     }
-   .lumin-tab-content-{{ section.id }} {
-     text-align: {{ section.settings.tab_content_align_mb }};
-      }
+    .clarity-tab-content-{{ section.id }} {
+      text-align: {{ section.settings.tab_content_align_mb }};
     }
+  }
 {% endstyle %}
 {% if section.settings.show_scroll_tags %}
   <style>
@@ -86,13 +88,13 @@
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.tabs_color_scheme }}"
   style="--quick-description-size: {{ section.settings.quick_desc_size }}px;"
 >
-  <ul class="custom--tabs page-width lumin-tab-{{ section.id }}">
+  <ul class="custom--tabs page-width clarity-tab-{{ section.id }}">
     {% for block in section.blocks %}
       {% assign collection = collections[block.settings.collection] %}
       {% if block.type == 'tab' %}
         <li class="tab__list {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
           <h4
-            class="lumin-custom-tab custom-tab {% if forloop.first %}active{% endif %}"
+            class="clarity-custom-tab custom-tab {% if forloop.first %}active{% endif %}"
             data-content-id="content--{{ block.id }}--{{ section.id }}"
           >
             {% if block.settings.heading == blank -%}
@@ -123,7 +125,7 @@
       -%}
       <div
         id="content--{{ block.id }}--{{ section.id }}"
-        class="custom__tab-content lumin-custom__tab-content page-width {% if forloop.first %}active{% endif %}"
+        class="custom__tab-content clarity-custom__tab-content page-width {% if forloop.first %}active{% endif %}"
         {{ block.shopify_attributes }}
       >
         {%- if block.settings.description != blank
@@ -213,8 +215,8 @@
 
 <script>
   function initializeTabs() {
-    const tabs = document.querySelectorAll('.lumin-custom-tab');
-    const tabContents = document.querySelectorAll('.lumin-custom__tab-content');
+    const tabs = document.querySelectorAll('.clarity-custom-tab');
+    const tabContents = document.querySelectorAll('.clarity-custom__tab-content');
 
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {

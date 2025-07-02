@@ -142,7 +142,7 @@
           <div
             id="cart-progress-bar"
             {% if settings.show_progress_bar_animation %}
-            class="lm-progress-bar-striped lm-progress-bar-animated"
+              class="lm-progress-bar-striped lm-progress-bar-animated"
             {% endif %}
             style="width: {{ progress_percentage }}%;"
             data-initial-width="{{ progress_percentage }}%"
@@ -502,22 +502,22 @@
           background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
           background-size: {{ settings.cart_bar_height }}px {{ settings.cart_bar_height }}px;
         }
-    
+
         .lm-progress-bar-animated {
           animation: 1s linear infinite lm-progress-bar-stripes;
         }
-    
+
         @media (prefers-reduced-motion: reduce) {
           .lm-progress-bar-animated {
             animation: none;
           }
         }
-      
+
           @keyframes lm-progress-bar-stripes {
             0% { background-position-x: 1rem; }
           }
 
-      
+
         #cart-progress-wrapper.full #cart-progress-bar {
           --progress-bar-color: {{ settings.cart_progress_bar_full_color }};
           --progress-bar-border-color: {{ settings.cart_progress_bar_full_color }};
@@ -616,11 +616,11 @@
             padding: 4px;
               {% endif %}
             {% if settings.enable_icon_animation %}
-              animation: lumin_goal_icon 1s linear alternate both infinite;
+              animation: clarity_goal_icon 1s linear alternate both infinite;
             {% endif %}
       }
 
-      @keyframes lumin_goal_icon {
+      @keyframes clarity_goal_icon {
         from { transform: translateX(-2px); }
         to { transform: translateX(2px); }
       }

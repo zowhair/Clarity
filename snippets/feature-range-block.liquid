@@ -9,7 +9,7 @@
     width:100%;
   }
 
-  .clarity-section__block-id-{{ block.id }} .lumin-section__feature-range {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__feature-range {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     gap: 12px;
@@ -17,7 +17,7 @@
     justify-content: center;
     padding: {{block.settings.padding_top}}px 0 {{block.settings.padding_bottom}}px 0;
   }
-  .clarity-section__block-id-{{ block.id }} .lumin-section__feature-range p {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__feature-range p {
     margin:0;
   }
 
@@ -52,14 +52,14 @@
     }
 </style>
 <div
-  class="clarity-section-block clarity-section__block-id-{{ block.id }} lumin-section__feature-range-container lumin-section__justify-{{ section.settings.text_alignment }}"
+  class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__feature-range-container clarity-section__justify-{{ section.settings.text_alignment }}"
   {{ block.shopify_attributes }}
 >
-  <div class="lumin-section__feature-range-title">
-    <h3 class="lumin-section__small-heading">{{ block.settings.title }}</h3>
+  <div class="clarity-section__feature-range-title">
+    <h3 class="clarity-section__small-heading">{{ block.settings.title }}</h3>
   </div>
-  <div class="lumin-section__feature-range">
-    <div class="lumin-section__text lumin-section__rte">
+  <div class="clarity-section__feature-range">
+    <div class="clarity-section__text clarity-section__rte">
       <p>{{ block.settings.low_range_label }}</p>
     </div>
     <input
@@ -72,7 +72,7 @@
       max="10"
       value="{{ block.settings.level }}"
     >
-    <div class="lumin-section__text lumin-section__rte">
+    <div class="clarity-section__text clarity-section__rte">
       <p>{{ block.settings.high_range_label }}</p>
     </div>
   </div>

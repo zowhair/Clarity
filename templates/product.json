@@ -488,7 +488,7 @@
         "template--15124688076883__e2fe0eca-e002-483a-b480-89fb59bb4de6-announcement-1": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive<\/strong> Theme by <a href=\"https:\/\/clarity.com\/\" target=\"_blank\" title=\"https:\/\/clarity.com\/\">Lumin<em>Themes<\/em><\/a>. These products are not for sale.<\/p>",
+            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive<\/strong> Theme by <a href=\"https:\/\/clarity.com\/\" target=\"_blank\" title=\"https:\/\/clarity.com\/\">Clarity<em>Themes<\/em><\/a>. These products are not for sale.<\/p>",
             "announcement_size": 22,
             "announcement_size_m": 20,
             "text_spacing": 0,

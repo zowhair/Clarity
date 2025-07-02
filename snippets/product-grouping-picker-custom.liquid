@@ -1,5 +1,4 @@
 {%- if collections[block.settings.option_type_collection_handle] -%}
-
   <style>
          .form__label-{{block.id}} {
          font-weight: {{block.settings.font_style}};
@@ -15,10 +14,10 @@
         font-weight: {{block.settings.font_style}};
         min-height: 0.5rem;margin-bottom: 0;color: currentColor;
      }
-    .lumin-sibling input[type=radio]+ label{
+    .clarity-sibling input[type=radio]+ label{
       border: none !important;
     }
-    .lumin-sibling input[type=radio]:checked+label{
+    .clarity-sibling input[type=radio]:checked+label{
       border: var(--variant-pills-border-width) solid rgb(var(--color-foreground)) !important;
       outline:none;
     }
@@ -30,7 +29,9 @@
   {% if block.settings.picker_type == 'button' -%}
     {% if block.settings.use_swatch_custom == false %}
       <fieldset class="js product-form__input product-form__input--pill js product-form__input product-form__input--swatch">
-        <legend class="form__label form__label-{{block.id}} form__label-variant_picker-{{block.id}} {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">{{ block.settings.grouping_label }}</legend>
+        <legend class="form__label form__label-{{block.id}} form__label-variant_picker-{{block.id}} {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
+          {{ block.settings.grouping_label }}
+        </legend>
 
         {% assign custom_names = block.settings.names | split: ',' %}
         {% for related_product in related_products %}
@@ -69,7 +70,7 @@
           {% assign thumb_image = block.settings.combined_listing_swatch_size | times: 2 | append: 'x' %}
           {% assign variant_image_url = related_product.featured_image | img_url: thumb_image %}
 
-          <div class="product-form__swatch lumin-sibling">
+          <div class="product-form__swatch clarity-sibling">
             <input
               type="radio"
               id="related_product-{{ related_product.id }}-{{ block.id }}"

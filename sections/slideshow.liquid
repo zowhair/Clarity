@@ -32,7 +32,7 @@
 {% endif %}
 
 <style>
-    .lumin-slide {
+    .clarity-slide {
        z-index:2;
        margin-top: 5px;
        max-width: 240px;
@@ -40,12 +40,12 @@
       {% if section.settings.hide_navigation %} display:none !important;{% endif %}
            }
   @media screen and (max-width: 749px){
-    .lumin-slide {
+    .clarity-slide {
        max-width: 100%;
        left: 0;
            }
   }
-   .lumin-slide .slider-button {
+   .clarity-slide .slider-button {
        height:40px;
            }
 </style>
@@ -57,7 +57,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top lumin-slide slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slideshow__controls--top clarity-slide slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -286,7 +286,7 @@
   </div>
 
   {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
-    <div class="slideshow__controls slider-buttons lumin-slide no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slider-buttons clarity-slide no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"

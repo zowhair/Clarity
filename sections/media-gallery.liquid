@@ -27,13 +27,13 @@
 %}
 
 <div class="gradient color-{{ section.settings.color_scheme }}">
-  <div class="lumin-slider page-width section-{{ section.id }}-padding">
-    <div class="swiper luminSliderSwiper">
+  <div class="clarity-slider page-width section-{{ section.id }}-padding">
+    <div class="swiper claritySliderSwiper">
       <div class="swiper-wrapper" style=" transition-timing-function: linear;">
         {% for block in section.blocks %}
           {% if block.type == 'review_image' %}
             <div
-              class="swiper-slide-lumin swiper-slide"
+              class="swiper-slide-clarity swiper-slide"
               style=" width: auto"
               {{ block.shopify_attributes }}
             >
@@ -47,7 +47,7 @@
                     controls: false,
                     muted: true,
                     playsinline: true,
-                    class: 'lumin-slider-image'
+                    class: 'clarity-slider-image'
                 }}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,12 +81,12 @@
                 <img
                   src="{{ block.settings.review_image | image_url: width: 600 }}"
                   alt="{{ block.settings.review_image.alt | escape }}"
-                  class="lumin-slider-image"
+                  class="clarity-slider-image"
                   width="600"
                   height="{{ height | round }}"
                 >
               {% else %}
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg, lumin-slider-image' }}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg, clarity-slider-image' }}
               {% endif %}
             </div>
           {% endif %}
@@ -94,16 +94,16 @@
       </div>
       {% if section.settings.show_navigation %}
         {% unless section.settings.auto_play == 'smooth' %}
-          <div class="swiper-button-next slider-button--next lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-next slider-button--next clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
-          <div class="swiper-button-prev slider-button--prev lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-prev slider-button--prev clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
         {% endunless %}
       {% endif %}
       {% if section.settings.show_pagination %}
-        <div class="swiper-pagination lumin-pagination"></div>
+        <div class="swiper-pagination clarity-pagination"></div>
       {% endif %}
     </div>
   </div>
@@ -112,8 +112,8 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function initializeVideoControls() {
-      document.querySelectorAll('.swiper-slide-lumin video').forEach((video) => {
-        let slide = video.closest('.swiper-slide-lumin');
+      document.querySelectorAll('.swiper-slide-clarity video').forEach((video) => {
+        let slide = video.closest('.swiper-slide-clarity');
         let playButton = slide ? slide.querySelector('.icon-play') : null;
 
         if (!playButton) return;
@@ -152,12 +152,12 @@
 </script>
 
 <style>
-  .lumin-slider-button-{{section.id}} {
+  .clarity-slider-button-{{section.id}} {
     color: {{section.settings.navigation_color}} !important;
     top: {% if section.settings.show_pagination %}calc(50% - 18px) !important{% else %}50%{% endif %};
   }
 
-  .luminSliderSwiper {
+  .claritySliderSwiper {
     width: 100%;
     /* margin-bottom: 25px;*/
     margin-top: 0;
@@ -165,12 +165,12 @@
     overflow: hidden;
   }
 
-  .swiper-slide-lumin {
+  .swiper-slide-clarity {
     width: calc(100% / {{ slide_count_mb }});
     margin-right: 20px;
     height: auto;
   }
-  .lumin-slider-image {
+  .clarity-slider-image {
     width: 100%;
     {% if section.settings.custom_height %}height: {{ image-height_mb }};{% else %}height:100%;{% endif %}
     object-fit: cover;
@@ -178,24 +178,24 @@
     background: #f6f6f6;
     /* padding: 0 10px;*/
   }
-  .luminSliderSwiper .swiper-wrapper {
+  .claritySliderSwiper .swiper-wrapper {
     transition-timing-function: linear !important;
     will-change: transform;
     margin-bottom: {% if section.settings.show_pagination %}36px !important{% else %} 0{% endif %};
 
   }
-  .lumin-pagination .swiper-pagination-bullet {
+  .clarity-pagination .swiper-pagination-bullet {
     background: rgb(var(--color-badge-foreground));
   }
-  .lumin-pagination .swiper-pagination-bullet-active {
+  .clarity-pagination .swiper-pagination-bullet-active {
     background: rgb(var(--color-badge-foreground));
   }
   @media screen and (min-width: 768px) {
-    .lumin-slider-image {
+    .clarity-slider-image {
       width: 100%;
       {% if section.settings.custom_height %}height: {{ image-height }};{% else %}height:100%;{% endif %}
     }
-    .swiper-slide-lumin {
+    .swiper-slide-clarity {
       width: calc(100% / {{ slide_count }});
     }
   }
@@ -412,7 +412,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       function initSwiper() {
-        var reviewSlides = document.querySelectorAll('.swiper-slide-lumin');
+        var reviewSlides = document.querySelectorAll('.swiper-slide-clarity');
         var swiperWrapper = document.querySelector('.swiper-wrapper');
 
         if (reviewSlides.length < 6 && swiperWrapper) {
@@ -422,11 +422,11 @@
           });
         }
 
-        if (window.luminSliderSwiper) {
-          window.luminSliderSwiper.destroy(true, true); // Destroy previous instance before reinitializing
+        if (window.claritySliderSwiper) {
+          window.claritySliderSwiper.destroy(true, true); // Destroy previous instance before reinitializing
         }
 
-        window.luminSliderSwiper = new Swiper(".luminSliderSwiper", {
+        window.claritySliderSwiper = new Swiper(".claritySliderSwiper", {
           {% if section.settings.auto_play == 'smooth' %}
           speed: {{scroll_speed}},
           autoplay: {delay: 0,
@@ -478,8 +478,8 @@
     });
 
     document.addEventListener('shopify:section:unload', function(event) {
-      if (window.luminSliderSwiper) {
-        window.luminSliderSwiper.destroy(true, true);
+      if (window.claritySliderSwiper) {
+        window.claritySliderSwiper.destroy(true, true);
       }
     });
   }

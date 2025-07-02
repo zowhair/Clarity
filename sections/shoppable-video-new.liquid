@@ -5,7 +5,7 @@
 %}
 
 {%- style -%}
-  #lumin-shoppable-videos-{{ section.id }} {
+  #clarity-shoppable-videos-{{ section.id }} {
     display: block;
     overflow: hidden;
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -13,7 +13,7 @@
    /* margin-bottom: {% if section.settings.slider_scrollbar %} 15px; {% else %} 5px;{% endif %}*/
   }
 
-  #lumin-shoppable-videos-{{ section.id }} .swiper {
+  #clarity-shoppable-videos-{{ section.id }} .swiper {
     --swiper-theme-color: rgba(var(--color-foreground), 0.75);
     --swiper-navigation-size: 16px;
     --swiper-navigation-sides-offset: -4px;
@@ -26,75 +26,75 @@
     margin-right: -{{ section.settings.gap | times: 0.75 | round: 0 }}px;
   }
 
-  .lumin-shoppable-videos .section-header .title {
+  .clarity-shoppable-videos .section-header .title {
     margin: 0 0 .5rem;
   }
 
-  .lumin-shoppable-videos .section-header .description {
+  .clarity-shoppable-videos .section-header .description {
     margin-bottom: 1.75rem;
   }
 
   @media (min-width: 750px) {
-    #lumin-shoppable-videos-{{ section.id }} {
+    #clarity-shoppable-videos-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-    #lumin-shoppable-videos-{{ section.id }} .swiper {
+    #clarity-shoppable-videos-{{ section.id }} .swiper {
       --swiper-pagination-bottom: -30px;
       --swiper-scrollbar-bottom: -46px;
       margin-left: -{{ section.settings.gap }}px;
       margin-right: -{{ section.settings.gap }}px;
     }
-    .lumin-shoppable-videos .section-header .title {
+    .clarity-shoppable-videos .section-header .title {
       margin: 0 0 1rem;
     }
-    .lumin-shoppable-videos .section-header .description {
+    .clarity-shoppable-videos .section-header .description {
       margin-bottom: 2.25rem;
     }
   }
 
-  .lumin-shoppable-videos div:empty {
+  .clarity-shoppable-videos div:empty {
     display: block;
   }
 
-  .lumin-shoppable-videos .section-header {
+  .clarity-shoppable-videos .section-header {
     text-align: center;
   }
 
-  .lumin-shoppable-videos .swiper {
+  .clarity-shoppable-videos .swiper {
     opacity: 0;
     transition: all .2s ease-out;
     transition-delay: .2s;
     overflow: visible;
   }
 
-  .lumin-shoppable-videos .swiper.swiper-initialized {
+  .clarity-shoppable-videos .swiper.swiper-initialized {
     opacity: 1;
   }
 
-  .lumin-shoppable-videos .swiper .swiper-slide {
+  .clarity-shoppable-videos .swiper .swiper-slide {
     display: flex;
     opacity: .25;
     transform: scale(.9);
     transition: all .2s ease-out;
   }
 
-  #lumin-shoppable-videos-{{ section.id }} .swiper .swiper-slide {
+  #clarity-shoppable-videos-{{ section.id }} .swiper .swiper-slide {
     {% if section.settings.card_equal_height %}
       height: auto;
     {% endif %}
   }
 
-  .lumin-shoppable-videos .swiper .swiper-slide-visible {
+  .clarity-shoppable-videos .swiper .swiper-slide-visible {
     transform: scale(1);
     opacity: 1;
   }
 
-  .lumin-shoppable-videos .swiper-pagination {
+  .clarity-shoppable-videos .swiper-pagination {
    /* bottom: -5px !important;*/
   }
 
-  .lumin-shoppable-videos .swiper-scrollbar {
+  .clarity-shoppable-videos .swiper-scrollbar {
    /* max-width: 600px;
     left: 50%;
     bottom: -14px !important;
@@ -102,13 +102,13 @@
   }
 
   @media (max-width: 575px) {
-    .lumin-shoppable-videos .swiper-scrollbar {
+    .clarity-shoppable-videos .swiper-scrollbar {
       max-width: 70vw;
     }
   }
 
-  .lumin-shoppable-videos .swiper-button-prev,
-  .lumin-shoppable-videos .swiper-button-next {
+  .clarity-shoppable-videos .swiper-button-prev,
+  .clarity-shoppable-videos .swiper-button-next {
     width: 32px;
     height: 32px;
     display: flex !important;
@@ -119,41 +119,41 @@
     color: rgba(var(--color-background));
   }
 
-  .lumin-shoppable-videos .swiper-navigation-disabled .swiper-button-next,
-  .lumin-shoppable-videos .swiper-navigation-disabled .swiper-button-prev {
+  .clarity-shoppable-videos .swiper-navigation-disabled .swiper-button-next,
+  .clarity-shoppable-videos .swiper-navigation-disabled .swiper-button-prev {
     display: none !important;
   }
 
   @media (max-width: 575px) {
-    .lumin-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-prev,
-    .lumin-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-next {
+    .clarity-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-prev,
+    .clarity-shoppable-videos[data-partial-slides-mobile="true"] .swiper-button-next {
       display: none !important;
     }
   }
 
-  .lumin-shoppable-videos .swiper-pagination-fraction {
+  .clarity-shoppable-videos .swiper-pagination-fraction {
     margin-bottom: -4px;
   }
 
-  .lumin-shoppable-videos-container {
+  .clarity-shoppable-videos-container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
   @media (min-width: 750px) {
-    .lumin-shoppable-videos-container {
+    .clarity-shoppable-videos-container {
       padding: 0 3rem;
     }
   }
 
-  .lumin-shoppable-videos-card-fake-bg {
+  .clarity-shoppable-videos-card-fake-bg {
     background: #eee;
     width: 100%;
     height: 100%;
     min-height: 500px;
   }
 
-  .lumin-shoppable-videos-card {
+  .clarity-shoppable-videos-card {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -162,10 +162,10 @@
   }
 
 
-  .lumin-shoppable-videos-card-inner {
+  .clarity-shoppable-videos-card-inner {
   }
 
-  #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card {
+  #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card {
     border-width: {{ section.settings.card_border_width }}px;
     border-radius: {{ section.settings.card_border_radius }}px;
     margin: {{ section.settings.gap | times: 0.75 | round: 0 }}px;
@@ -177,17 +177,17 @@
   }
 
   @media (min-width: 750px) {
-    #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card {
+    #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card {
       margin: {{ section.settings.gap }}px;
       margin-bottom: {{ section.settings.gap | plus: 15 }}px;
     }
   }
 
-  .lumin-shoppable-videos-video-wrapper {
+  .clarity-shoppable-videos-video-wrapper {
     height: 100%;
   }
 
-  .lumin-shoppable-videos-card video {
+  .clarity-shoppable-videos-card video {
     display: flex;
     width: 100%;
     height: 100%;
@@ -196,15 +196,15 @@
     cursor: pointer;
   }
 
-  .swiper-is-changing .lumin-shoppable-videos-card video {
+  .swiper-is-changing .clarity-shoppable-videos-card video {
     z-index: -1;
   }
 
-  .lumin-shoppable-videos [data-is-playing="true"] video {
+  .clarity-shoppable-videos [data-is-playing="true"] video {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='10' y1='15' x2='10' y2='9'%3E%3C/line%3E%3Cline x1='14' y1='15' x2='14' y2='9'%3E%3C/line%3E%3C/svg%3E"), auto;
   }
 
-  .lumin-shoppable-videos-btn-play {
+  .clarity-shoppable-videos-btn-play {
     width: 40px;
     height: 40px;
     display: flex;
@@ -225,17 +225,17 @@
     transition: all .2s ease-out;
   }
 
-  .lumin-shoppable-videos-btn-play:hover,
-  .lumin-shoppable-videos-btn-play:focus {
+  .clarity-shoppable-videos-btn-play:hover,
+  .clarity-shoppable-videos-btn-play:focus {
     background: rgba(var(--color-foreground), .75);
   }
 
-  [data-is-playing="true"] .lumin-shoppable-videos-btn-play {
+  [data-is-playing="true"] .clarity-shoppable-videos-btn-play {
     opacity: 0;
     visibility: hidden;
   }
 
-  .lumin-shoppable-videos-card-views {
+  .clarity-shoppable-videos-card-views {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -251,7 +251,7 @@
     align-items: center;
   }
 
-  .lumin-shoppable-videos-card-views svg {
+  .clarity-shoppable-videos-card-views svg {
     margin-right: 4px;
     transform: translateY(1px);
     fill: currentColor;
@@ -259,7 +259,7 @@
     width: 17px;
   }
 
-  .lumin-shoppable-videos-card-badge {
+  .clarity-shoppable-videos-card-badge {
     position: absolute;
     top: 12px;
     left: 12px;
@@ -274,7 +274,7 @@
     align-items: center;
   }
 
-  .lumin-shoppable-videos-card-product {
+  .clarity-shoppable-videos-card-product {
     position: absolute;
     bottom: 10px;
     left: 12px;
@@ -291,58 +291,58 @@
     transition: all .2s ease-out;
   }
 
-  [data-is-playing="true"] .lumin-shoppable-videos-card-product {
+  [data-is-playing="true"] .clarity-shoppable-videos-card-product {
     bottom: 20px;
     opacity: 1;
   }
 
-  .lumin-shoppable-videos-card-product:hover,
-  .lumin-shoppable-videos-card-product:focus {
+  .clarity-shoppable-videos-card-product:hover,
+  .clarity-shoppable-videos-card-product:focus {
     opacity: 1;
   }
 
-  .lumin-shoppable-videos-card-product img {
+  .clarity-shoppable-videos-card-product img {
     margin-right: 8px;
     flex-shrink: 0;
   }
 
-  .lumin-shoppable-videos-card-product-content {
+  .clarity-shoppable-videos-card-product-content {
     line-height: normal;
   }
 
-  .lumin-shoppable-videos-card-product-title {
+  .clarity-shoppable-videos-card-product-title {
     font-size: 15px;
     line-height: 1.2;
     margin: 0 0 4px;
     color: inherit;
   }
 
-  .lumin-shoppable-videos-card-product-title span {
+  .clarity-shoppable-videos-card-product-title span {
     display: inline-block;
     transition: all .2s ease-out;
   }
 
-  .lumin-shoppable-videos-card-product:hover .lumin-shoppable-videos-card-product-title span {
+  .clarity-shoppable-videos-card-product:hover .clarity-shoppable-videos-card-product-title span {
     transform: translateX(3px);
   }
 
-  .lumin-shoppable-videos-card-product-price {
+  .clarity-shoppable-videos-card-product-price {
     font-size: 15px;
   }
 
-  .lumin-shoppable-videos-card-product-price s {
+  .clarity-shoppable-videos-card-product-price s {
     opacity: .5;
   }
 
-  #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-product {
+  #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card-product {
     border-radius: {{ section.settings.card_border_radius }}px;
   }
-   #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-views,
-   #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-badge {
+   #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card-views,
+   #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card-badge {
     border-radius: {{ section.settings.badge_border_radius }}px;
   }
 
-  #lumin-shoppable-videos-{{ section.id }} .lumin-shoppable-videos-card-product img {
+  #clarity-shoppable-videos-{{ section.id }} .clarity-shoppable-videos-card-product img {
     border-radius: {{ section.settings.card_border_radius | divided_by: 1.5 | round }}px;
   }
 {%- endstyle -%}
@@ -384,9 +384,9 @@
         });
       }, 500);
 
-      this.querySelectorAll('.lumin-shoppable-videos-btn-play').forEach((btn) => {
+      this.querySelectorAll('.clarity-shoppable-videos-btn-play').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const video = btn.closest('.lumin-shoppable-videos-video-wrapper').querySelector('video');
+          const video = btn.closest('.clarity-shoppable-videos-video-wrapper').querySelector('video');
           this.onVideoPlay(video);
         });
       });
@@ -461,16 +461,16 @@
     }
 
     onSlideChange() {
-      this.querySelectorAll('.lumin-shoppable-videos-card').forEach((elem) => {
+      this.querySelectorAll('.clarity-shoppable-videos-card').forEach((elem) => {
         elem.setAttribute('data-is-playing', 'false');
         elem.querySelector('video')?.pause();
       });
     }
 
     onVideoPlay(video) {
-      const card = video.closest('.lumin-shoppable-videos-card');
+      const card = video.closest('.clarity-shoppable-videos-card');
 
-      this.querySelectorAll('.lumin-shoppable-videos-card').forEach((elem) => {
+      this.querySelectorAll('.clarity-shoppable-videos-card').forEach((elem) => {
         if (elem.dataset.index !== card.dataset.index) {
           elem.setAttribute('data-is-playing', 'false');
           elem.querySelector('video')?.pause();
@@ -487,12 +487,12 @@
       }
     }
   }
-  customElements.define('lumin-shoppable-videos', KsShoppableVideos);
+  customElements.define('clarity-shoppable-videos', KsShoppableVideos);
 {%- endjavascript -%}
 
-<lumin-shoppable-videos
-  id="lumin-shoppable-videos-{{ section.id }}"
-  class="lumin-shoppable-videos color-{{ section.settings.color_scheme }} gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+<clarity-shoppable-videos
+  id="clarity-shoppable-videos-{{ section.id }}"
+  class="clarity-shoppable-videos color-{{ section.settings.color_scheme }} gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
   data-slider-speed="{{ section.settings.slider_speed }}"
   data-slider-nav="{{ section.settings.slider_nav }}"
   data-slider-pagination="{{ section.settings.slider_pagination }}"
@@ -520,18 +520,18 @@
     {% endif %}
   </div>
 
-  <div class="lumin-shoppable-videos-container {% if section.settings.container %}page-width{% endif %}">
+  <div class="clarity-shoppable-videos-container {% if section.settings.container %}page-width{% endif %}">
     <div class="swiper">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           <div class="swiper-slide" {{ block.shopify_attributes }}>
             <div
-              class="lumin-shoppable-videos-card"
+              class="clarity-shoppable-videos-card"
               data-is-playing="false"
               data-index="{{ forloop.index0 }}"
             >
               {% if block.settings.video != blank %}
-                <div class="lumin-shoppable-videos-video-wrapper">
+                <div class="clarity-shoppable-videos-video-wrapper">
                   {{-
                     block.settings.video
                     | video_tag:
@@ -545,7 +545,7 @@
                       preload: 'none',
                       data-autoplay: block.settings.video_autoplay
                   -}}
-                  <button class="lumin-shoppable-videos-btn-play" aria-label="Play video">
+                  <button class="clarity-shoppable-videos-btn-play" aria-label="Play video">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -559,12 +559,12 @@
                   </button>
                 </div>
               {% else %}
-                <div class="lumin-shoppable-videos-card-fake-bg"></div>
+                <div class="clarity-shoppable-videos-card-fake-bg"></div>
               {% endif %}
-              <div class="lumin-shoppable-videos-card-inner">
+              <div class="clarity-shoppable-videos-card-inner">
                 {% unless block.settings.badge == blank %}
                   <div
-                    class="lumin-shoppable-videos-card-badge"
+                    class="clarity-shoppable-videos-card-badge"
                     style="color: {{ block.settings.badge_color }}; background-color: {{ block.settings.badge_bg_color }};"
                   >
                     {{ block.settings.badge }}
@@ -572,7 +572,7 @@
                 {% endunless %}
                 {% unless block.settings.views == blank %}
                   <div
-                    class="lumin-shoppable-videos-card-views"
+                    class="clarity-shoppable-videos-card-views"
                     style="color: {{ block.settings.views_color }}; background-color: {{ block.settings.views_bg_color | color_modify: 'alpha', 0.65  }};"
                   >
                     {% render 'icon-accordion', icon: block.settings.icon %}
@@ -587,7 +587,7 @@
                 {% endunless %}
                 {% unless block.settings.product == blank %}
                   <a
-                    class="lumin-shoppable-videos-card-product"
+                    class="clarity-shoppable-videos-card-product"
                     href="{{ block.settings.product.url }}"
                     style="
                       background-color: {{ block.settings.product_bg_color | color_modify: 'alpha', 0.75  }};
@@ -601,12 +601,12 @@
                       height="75"
                       loading="lazy"
                     >
-                    <div class="lumin-shoppable-videos-card-product-content">
-                      <h3 class="lumin-shoppable-videos-card-product-title">
+                    <div class="clarity-shoppable-videos-card-product-content">
+                      <h3 class="clarity-shoppable-videos-card-product-title">
                         {{ block.settings.product.title }}
                         <span>→</span>
                       </h3>
-                      <div class="lumin-shoppable-videos-card-product-price">
+                      <div class="clarity-shoppable-videos-card-product-price">
                         {% if block.settings.product.compare_at_price > block.settings.product.price %}
                           <span class="">
                             <span class="visually-hidden visually-hidden--inline"> Regular price </span>
@@ -635,7 +635,7 @@
       </div>
     </div>
   </div>
-</lumin-shoppable-videos>
+</clarity-shoppable-videos>
 
 {% schema %}
 {
