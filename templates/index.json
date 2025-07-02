@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow_EVKABK": {
@@ -6,18 +15,18 @@
         "slide_QbRz6a": {
           "type": "slide",
           "settings": {
-            "caption": "Revive",
+            "caption": "Lorem ipsum",
             "block_cap_size": 33,
-            "cap_color": "#fbeedf",
-            "heading": "For Skin as Unique as You Are",
+            "cap_color": "#231a10",
+            "heading": "Lorem ipsum dolor sit amet,",
             "block_head_size-2": 58,
             "block_head_size-mobile": 34,
             "block_head_line": 1.1,
             "heading_size": "h1",
             "subheading": "",
             "button_label": "Shop Now",
-            "link": "shopify:\/\/collections\/all",
-            "link-2": "shopify:\/\/collections\/all",
+            "link": "shopify://collections/all",
+            "link-2": "shopify://collections/all",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
@@ -299,22 +308,21 @@
             "padding_left_mobile": 40,
             "text_border": 0,
             "bg_color": "#f1e0cb",
-            "icon": "shopify:\/\/shop_images\/Untitled_design_24.svg",
             "icon_size": 50,
             "icon_corner": 0,
-            "head": "Glow from Within",
+            "head": "Lorem ipsum dolor sit",
             "use_body_font": false,
             "head_color": "#000000",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "subtitle": "<p>Elevate your skincare game and achieve radiant, healthy skin with a routine that’s as unique as you are.<\/p>",
+            "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing el</p>",
             "text_color": "#000000",
             "text_size_d": 16,
             "text_size_m": 14,
             "button-text": "Shop Collection",
             "show_secondary": false,
-            "button_link": "shopify:\/\/collections",
+            "button_link": "shopify://collections",
             "image_content_position": "middle-center",
             "desktop_content_alignment": "center",
             "grid-url": ""
@@ -335,12 +343,12 @@
             "padding_size_in": 10,
             "text_border": 8,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "Timeless Beauty, Ageless Skin.",
+            "head": "Lorem ipsum dolor",
             "head_color": "#ffffff",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 10,
-            "text": "Radiance in Every Drop.",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing el",
             "text_color": "#ffffff",
             "text_size_d": 16,
             "text_size_m": 14,
@@ -375,7 +383,7 @@
         "95cd312d-868a-41cb-ba80-25ac4c47391b": {
           "type": "caption",
           "settings": {
-            "caption": "OUR PRODUCT PHILOSOPHY",
+            "caption": "Lorem ipsum dolor",
             "text_style": "caption-with-letter-spacing",
             "text_size": "large"
           }
@@ -383,14 +391,14 @@
         "template--15124687650899__7c49854d-841e-4486-a518-217b88181104-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "We sustainably and ethically source our ingredients, to [create clean and sustainable products] that are good for your skin and good for the planet.",
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma",
             "heading_size": "h1"
           }
         },
         "template--15124687650899__7c49854d-841e-4486-a518-217b88181104-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"\/collections\/all\" title=\"All products\">Learn More<\/a><\/p>"
+            "text": "<p><a href=\"/collections/all\" title=\"All products\">Learn More</a></p>"
           }
         }
       },
@@ -426,11 +434,11 @@
             "padding_size_in": 10,
             "text_border": 0,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "Hydrate your skin with a suitable moisturizer.",
+            "head": "Lorem ipsum dolor sit amet,",
             "head_color": "#ffffff",
             "head_size_d": 30,
             "head_size_m": 24,
-            "text": "Moisturize Daily",
+            "text": "Lorem ipsum dolor",
             "text_color": "#ffffff",
             "text_size_d": 16,
             "text_size_m": 14,
@@ -458,7 +466,7 @@
             "bg_color": "rgba(0,0,0,0)",
             "head": "",
             "head_color": "#212121",
-            "head_size_d": 30,
+            "head_size_d": 46,
             "head_size_m": 24,
             "margin_bottom": 15,
             "text": "",
@@ -489,19 +497,19 @@
             "bg_color": "#dbdbc4",
             "icon_size": 30,
             "icon_corner": 0,
-            "head": "Benefits and Features",
+            "head": "Lorem ipsum dolor sit amet",
             "use_body_font": false,
             "head_color": "#000000",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "subtitle": "<p>Highlight the key benefits and features of your product<\/p>",
+            "subtitle": "<p>Lorem ipsum dolor sit amet, cons</p>",
             "text_color": "#000000",
             "text_size_d": 16,
             "text_size_m": 16,
             "button-text": "Shop Collactions",
             "show_secondary": false,
-            "button_link": "shopify:\/\/collections",
+            "button_link": "shopify://collections",
             "image_content_position": "middle-center",
             "desktop_content_alignment": "left",
             "grid-url": ""
@@ -575,7 +583,7 @@
         "row_UgwAPk": {
           "type": "row",
           "settings": {
-            "title": "Treatment Time",
+            "title": "Lorem ipsum",
             "cell_2_checkbox": "",
             "cell_2_text": "3 Minutes",
             "cell_3_checkbox": "",
@@ -593,7 +601,7 @@
         "row_Fpp7cj": {
           "type": "row",
           "settings": {
-            "title": "Prtable",
+            "title": "Lorem ipsum",
             "cell_2_checkbox": "checked-circle",
             "cell_2_text": "",
             "cell_3_checkbox": "unchecked",
@@ -611,7 +619,7 @@
         "row_nEmCWi": {
           "type": "row",
           "settings": {
-            "title": "FDA - cleared",
+            "title": "Lorem ipsum",
             "cell_2_checkbox": "checked-circle",
             "cell_2_text": "",
             "cell_3_checkbox": "unchecked",
@@ -629,7 +637,7 @@
         "row_ymccRR": {
           "type": "row",
           "settings": {
-            "title": "Customizable treatments",
+            "title": "Lorem ipsum",
             "cell_2_checkbox": "checked-circle",
             "cell_2_text": "",
             "cell_3_checkbox": "unchecked",
@@ -647,7 +655,7 @@
         "row_mJPkWF": {
           "type": "row",
           "settings": {
-            "title": "Price $$$",
+            "title": "Lorem ipsum",
             "cell_2_checkbox": "",
             "cell_2_text": "$19",
             "cell_3_checkbox": "",
@@ -675,9 +683,9 @@
         "color_scheme": "",
         "container": true,
         "container_max_width": "",
-        "heading": "What makes [<strong>Us<\/strong>] right for you?",
+        "heading": "Lorem [ipsum dolor] sit amet",
         "heading_size": "h0",
-        "description": "<h3>(Here’s a comparison, but there is really no comparison)<\/h3>",
+        "description": "<p>(Lorem ipsum dolor sit amet )</p>",
         "table_min_width": "700",
         "table_first_col_width": 30,
         "first_col_text_align": "center",
@@ -700,7 +708,7 @@
         "template--15124687650899__5ba491c9-db08-4028-9406-07c41d9279e4-announcement-1": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p><strong>EARLY BLACK FRIDAY SALE<\/strong><\/p>",
+            "Announcement": "<p>Lorem ipsum dolor sit </p>",
             "announcement_size": 18,
             "announcement_size_m": 16,
             "text_spacing": 2,
@@ -713,7 +721,7 @@
         "template--15124687650899__5ba491c9-db08-4028-9406-07c41d9279e4-announcement-2": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p><strong>40% OFF + FREE SHIPPING<\/strong><\/p>",
+            "Announcement": "<p><strong>Lorem ipsum dolor sit amet</strong></p>",
             "announcement_size": 18,
             "announcement_size_m": 16,
             "text_spacing": 1.5,
@@ -757,11 +765,11 @@
         "mobile_content_position": "middle",
         "color_scheme": "inverse",
         "desktop_content_alignment": "center",
-        "heading": "<strong>Because Your Skin Deserves the Best.<\/strong>",
+        "heading": "Lorem ipsum dolor sit amet, consectetur",
         "heading_size": "h0",
         "text": "",
         "button_label_1": "Shop Now",
-        "button_link_1": "shopify:\/\/collections\/frontpage",
+        "button_link_1": "shopify://collections/frontpage",
         "button_style_secondary_1": false,
         "padding_top": 0,
         "padding_bottom": 0
@@ -782,7 +790,7 @@
         "big_text": 28,
         "big_text_mb": 16,
         "url": "#",
-        "timer": "12\/31\/2024 12:00",
+        "timer": "12/31/2024 12:00",
         "timer_days": "D",
         "timer_text": 16,
         "timer_text_mb": 16,
@@ -799,8 +807,8 @@
           "type": "text",
           "settings": {
             "subheading": "",
-            "heading": "Image comparison",
-            "content": "<p>See the stunning transformations our products deliver — real results from real customers.<\/p>",
+            "heading": "Lorem ipsum",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>",
             "text_position": "center",
             "color": "#000000"
           }
@@ -840,14 +848,14 @@
         "template--15124687650899__f6aa73dd-735c-463c-a915-039d2a5a8dd1-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Why Us?",
+            "heading": "Lorem Ipsum",
             "heading_size": "h1"
           }
         },
         "template--15124687650899__f6aa73dd-735c-463c-a915-039d2a5a8dd1-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma<br/><br/></p>",
             "text_style": "body"
           }
         },
@@ -855,7 +863,7 @@
           "type": "button",
           "settings": {
             "button_label": "Learn More",
-            "button_link": "shopify:\/\/collections\/skin-care",
+            "button_link": "shopify://collections/skin-care",
             "button_style_secondary": false
           }
         }
@@ -900,7 +908,7 @@
             "padding_size": 13,
             "padding_size_in": 10,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "@reviveskincare",
+            "head": "Lorem Ipsum",
             "head_color": "#ffffff",
             "head_size_d": 26,
             "head_size_m": 24,
@@ -1016,6 +1024,7 @@
       "settings": {
         "layout": "full_bleed",
         "color_scheme": "",
+        "zoom_hover": true,
         "padding_top": 36,
         "padding_bottom": 36,
         "margin_top": 36,
@@ -1059,17 +1068,17 @@
             "padding_size_in": 10,
             "text_border": 0,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "BUY NOW OR CRY LATER",
+            "head": "Lorem ipsum dolor sit amet",
             "head_color": "#000000",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "text": "These stocks won't last forever.",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "text_color": "#000000",
             "text_size_d": 16,
             "text_size_m": 14,
             "button-text": "EXPLORE",
-            "button_link": "shopify:\/\/collections\/frontpage",
+            "button_link": "shopify://collections/frontpage",
             "desktop_content_alignment": "left",
             "image_content_position": "top-left",
             "grid-url": ""
@@ -1090,17 +1099,17 @@
             "padding_size_in": 10,
             "text_border": 0,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "BE FREE. BE BEAUTIFUL.",
+            "head": "Lorem ipsum dolor sit amet,",
             "head_color": "#000000",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "text": "Express your wild side with these shirts.",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
             "text_color": "#000000",
             "text_size_d": 16,
             "text_size_m": 14,
             "button-text": "EXPLORE",
-            "button_link": "shopify:\/\/collections\/frontpage",
+            "button_link": "shopify://collections/frontpage",
             "desktop_content_alignment": "left",
             "image_content_position": "top-left",
             "grid-url": ""
@@ -1117,6 +1126,124 @@
         "loading_color": "#f2f2f2",
         "grid_gap": 20,
         "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "margin_top": 36,
+        "margin_bottom": 36
+      }
+    },
+    "media_gallery_iVM7pw": {
+      "type": "media-gallery",
+      "blocks": {
+        "review_image_k3eK8T": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_jybL8L": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_XBBdbR": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_Wq7dfW": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_Dah9wy": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_7A8YHz": {
+          "type": "review_image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "review_image_k3eK8T",
+        "review_image_jybL8L",
+        "review_image_XBBdbR",
+        "review_image_Wq7dfW",
+        "review_image_Dah9wy",
+        "review_image_7A8YHz"
+      ],
+      "name": "t:sections.names.media_slider",
+      "settings": {
+        "color_scheme": "",
+        "button_color": "#212121",
+        "navigation_color": "#212121",
+        "auto_play": "none",
+        "show_navigation": true,
+        "show_pagination": true,
+        "scroll_speed": 4,
+        "slide_count": 4,
+        "slide_count_mb": 2,
+        "slide_count_tb": 3,
+        "custom_height": true,
+        "slide_height": 300,
+        "slide_height_mb": 210,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "media_slider_with_text_VRrKAe": {
+      "type": "media-slider-with-text",
+      "blocks": {
+        "review_image_qnj8CQ": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_Nb9afM": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_KFRejB": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_74Cexm": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_E6MdGJ": {
+          "type": "review_image",
+          "settings": {}
+        },
+        "review_image_8dDFix": {
+          "type": "review_image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "review_image_qnj8CQ",
+        "review_image_Nb9afM",
+        "review_image_KFRejB",
+        "review_image_74Cexm",
+        "review_image_E6MdGJ",
+        "review_image_8dDFix"
+      ],
+      "name": "t:sections.names.media_slider_with_text",
+      "settings": {
+        "content_alignment": "center",
+        "layout": "1",
+        "heading": "Lorem ipsum dolor sit amet",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma",
+        "button_text": "LOREM",
+        "button_link": "",
+        "rating_text": "Rated 4.8/5 by 1,319+ Happy Customers",
+        "color_scheme": "",
+        "button_color": "#212121",
+        "star_color": "#ffd700",
+        "navigation_color": "#212121",
+        "auto_play": true,
+        "show_navigation": false,
+        "scroll_speed": 4,
+        "head_size": 42,
+        "head_size_mb": 32,
+        "subhead_size": 18,
+        "subhead_size_mb": 16,
+        "review_size": 10,
         "padding_top": 36,
         "padding_bottom": 36,
         "margin_top": 36,
@@ -1141,6 +1268,8 @@
     "f6aa73dd-735c-463c-a915-039d2a5a8dd1",
     "35e708a4-3807-4690-bb69-e7e9455455c9",
     "7ac15ddf-2ba5-42fc-bdeb-400fd4438378",
-    "6ebadc41-e77e-4aa7-a089-cf7dd87bbee0"
+    "6ebadc41-e77e-4aa7-a089-cf7dd87bbee0",
+    "media_gallery_iVM7pw",
+    "media_slider_with_text_VRrKAe"
   ]
 }
