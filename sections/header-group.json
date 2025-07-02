@@ -2,7 +2,7 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "lumin_scrolling_text_BRdDdB": {
+    "clarity_scrolling_text_BRdDdB": {
       "type": "marquee",
       "blocks": {
         "announcement_BHiGXK": {
@@ -118,7 +118,7 @@
     }
   },
   "order": [
-    "lumin_scrolling_text_BRdDdB",
+    "clarity_scrolling_text_BRdDdB",
     "announcement_bar_GFUcVz",
     "header"
   ]

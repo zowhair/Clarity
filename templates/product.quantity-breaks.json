@@ -1,6 +1,6 @@
 {
   "sections": {
-    "lumin_scrolling_text_66GYew": {
+    "clarity_scrolling_text_66GYew": {
       "type": "marquee",
       "blocks": {
         "announcement_R4U6J3": {
@@ -599,7 +599,7 @@
         "padding_bottom": 36
       }
     },
-    "lumin_grids_gXTLwh": {
+    "clarity_grids_gXTLwh": {
       "type": "image-with-text-grids",
       "blocks": {
         "image_xJkFrY": {
@@ -1781,11 +1781,11 @@
     }
   },
   "order": [
-    "lumin_scrolling_text_66GYew",
+    "clarity_scrolling_text_66GYew",
     "main",
     "a1098323-9921-48ef-9777-4dd2323c4c96",
     "tabs_fn6FhH",
-    "lumin_grids_gXTLwh",
+    "clarity_grids_gXTLwh",
     "c6fe4350-552b-41d0-a767-21a6520e0695",
     "comparison_table_tfMG3t",
     "e80cb7bb-7295-4d49-bbf9-cb8f0fdd2f92",

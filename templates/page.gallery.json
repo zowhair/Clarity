@@ -7,7 +7,7 @@
         "padding_bottom": 0
       }
     },
-    "lumin_gallery_ecr6xx": {
+    "clarity_gallery_ecr6xx": {
       "type": "gallery",
       "blocks": {
         "text_AaVEpX": {
@@ -215,6 +215,6 @@
   },
   "order": [
     "main",
-    "lumin_gallery_ecr6xx"
+    "clarity_gallery_ecr6xx"
   ]
 }
