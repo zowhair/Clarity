@@ -1134,57 +1134,11 @@
     },
     "media_gallery_iVM7pw": {
       "type": "media-gallery",
-      "blocks": {
-        "review_image_k3eK8T": {
-          "type": "review_image",
-          "settings": {}
-        },
-        "review_image_jybL8L": {
-          "type": "review_image",
-          "settings": {}
-        },
-        "review_image_XBBdbR": {
-          "type": "review_image",
-          "settings": {}
-        },
-        "review_image_Wq7dfW": {
-          "type": "review_image",
-          "settings": {}
-        },
-        "review_image_Dah9wy": {
-          "type": "review_image",
-          "settings": {}
-        },
-        "review_image_7A8YHz": {
-          "type": "review_image",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "review_image_k3eK8T",
-        "review_image_jybL8L",
-        "review_image_XBBdbR",
-        "review_image_Wq7dfW",
-        "review_image_Dah9wy",
-        "review_image_7A8YHz"
-      ],
       "name": "t:sections.names.media_slider",
       "settings": {
-        "color_scheme": "",
-        "button_color": "#212121",
-        "navigation_color": "#212121",
-        "auto_play": "none",
-        "show_navigation": true,
-        "show_pagination": true,
-        "scroll_speed": 4,
-        "slide_count": 4,
-        "slide_count_mb": 2,
-        "slide_count_tb": 3,
-        "custom_height": true,
-        "slide_height": 300,
-        "slide_height_mb": 210,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "",
+        "description": "",
+        "revert_view": false
       }
     },
     "media_slider_with_text_VRrKAe": {
@@ -1249,6 +1203,56 @@
         "margin_top": 36,
         "margin_bottom": 36
       }
+    },
+    "media_gallery_4ALnJm": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_LrwE39": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/purple-t-shirt.jpg",
+            "title": "Lorem Ipsum",
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+          }
+        },
+        "image_qnCPFf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/green-t-shirt.jpg",
+            "title": "Lorem Ipsum",
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+          }
+        },
+        "image_aFXBhA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/grey-t-shirt.jpg",
+            "title": "Lorem Ipsum",
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+          }
+        },
+        "image_rQY8dk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/purple-t-shirt.jpg",
+            "title": "Lorem Ipsum",
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_LrwE39",
+        "image_qnCPFf",
+        "image_aFXBhA",
+        "image_rQY8dk"
+      ],
+      "name": "t:sections.names.media_gallery",
+      "settings": {
+        "title": "Gallery",
+        "description": "<p>Indulge in delicious, naturally sweet snacks made with wholesome ingredients. Experience the perfect blend of taste and nutrition.</p>",
+        "main_image": "shopify://shop_images/woman-puts-hand-in-pocket.jpg",
+        "revert_view": true
+      }
     }
   },
   "order": [
@@ -1270,6 +1274,7 @@
     "7ac15ddf-2ba5-42fc-bdeb-400fd4438378",
     "6ebadc41-e77e-4aa7-a089-cf7dd87bbee0",
     "media_gallery_iVM7pw",
-    "media_slider_with_text_VRrKAe"
+    "media_slider_with_text_VRrKAe",
+    "media_gallery_4ALnJm"
   ]
 }

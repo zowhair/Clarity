@@ -607,7 +607,25 @@
       "image_banner_count_timer": "Image Banner Count Timer",
       "image_comparison":"Image comparison",
       "brand_slider": "Brand Slider",
-      "lookbook": "Lookbook"
+      "lookbook": "Lookbook",
+      "media_gallery": "Media Gallery"
+    },
+    "media_gallery": {
+      "settings": {
+        "header":"Media Gallery",
+        "title":"Title",
+        "description":"Description",
+        "main_image":"Main Image",
+        "revert_view": "Revert View"
+      },
+      "blocks" : {
+        "image": {
+          "name": "Select Images",
+          "label": "Image",
+          "title": "Title",
+          "description": "Description"
+        }
+      }
     },
     "countdown": {
       "name": "countdown",

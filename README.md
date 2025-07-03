@@ -1,58 +1,114 @@
-**lumin cards section is now Image With Text Card
-also section file name changed from lumin-cards.liquid to image-with-text-card.liquid
+# 🛍️ Clarity Shopify Theme
 
-**Lumin Gallery section is now Gallery 
-also secion file name changed from lumin-gallery to gallery.liquid
+> Clarity is a modern, flexible Shopify theme (v1.0) designed for merchants who want a clean, customizable storefront. It’s built for ease of use, fast performance, and beautiful presentation.
+
+## 📖 About
+
+Clarity provides a suite of dynamic sections and features to help you build a unique, conversion-focused online store. It’s ideal for a wide range of e-commerce businesses looking for a professional and user-friendly theme.
+
+## ✨ Sections
+
+- 🧩 **Announcement Bar**  
+  Fully customizable announcement-bar section. Which have multiple customizable options.
+
+- 🛒 **Marquee**
+
+- 📚 **Media Slider** 
+
+- 🎞️ **Media Slider With Text**  
+
+- 🛍️ **Auto-Scrolling promotion**
+    Marquee , text with logos and icons
+    
+- 📧 **Image With Text Grids**
+
+- 📚 **Media gallery** 
+
+- 📚 **Brand Slider** 
+
+- 📚 **Hero** 
+
+- 📚 **Collection List** 
+
+- 📚 **Rich Text** 
+
+- 📚 **Tabs Collection** 
+
+- 📚 **Image Width text Grid** 
+
+- 📚 **Video Text Overlay** 
+
+- 📚 **Image comparison** 
+
+- 📚 **Image With Text Custom** 
+
+- 📚 **Gallery**
+
+- 📚 **Image With Text Card** 
+
+- 📚 **Image With Text Pro** 
+
+- 📚 **Slideshow** 
+
+- 📚 **Pro Slideshow** 
+
+- 📚 **Promo slider** 
+
+- 📚 **Scroll to Top Button** 
+
+- 📚 **Wave** 
+
+- 📚 **Waves** 
 
 
-** Lumin Grid section is now Image With Text Grids
-also section file name changed from clarity-grid.liquid to image-with-text-grids.liquid
+- 📚 **Video With Text** 
 
-** Lumin Hero section is now Hero
-also section file name changed from lumin-hero.liquid to hero.liquid
+- 📚 **Video Banner** 
 
-** Lumin Mega is now Image With Text Custom
-also section file name changed from clarity-mega.liquid to image-with-text-custom.liquid
+- 📚 **Feature Blocks** 
 
-** Lumin Pro Section is now Image With Text Pro
-also section file name changed from lumin-pro.liquid to image-with-text-pro.liquid
+- 📚 **Countdown Timer Banner** 
 
-** Lumin Review Section is now Reviews
-also section file name changed from lumin-reviews.liquid to reviews.liquid
+- 📚 **Testimonial Slider** 
 
-** Scrolling Text section is now Marquee
-also section file name changed from lumin-scrolling-text.liquid to marquee.liquid
+- 📚 **Tabs** 
 
-** Lumin Slider #1 section is now Media Slider
-also section file name changed from lumin-slider-1.liquid to media-slider.liquid
+- 📚 **Shoppable videos** 
 
-** Lumin slider #2 section is now Media Slider With Text
-also section file name changed from lumin-slider-2.liquid to media-slider-with-text.liquid
+- 📚 **Auto-scrolling promotion** 
 
-** Lumin Slideshow Pro section is now Pro Slideshow
-also section file name changed from lumin-slidshow-pro.liquid to pro-slideshow.liquid
+- 📚 **Testimonials** 
 
-*** Assets
-lumin.js -> custom.js  -> not in use anywhere
-clarity-mega-bkp.css -> mega-bkp.css -> not in use anywhere
-lumin-quantity-breaks-2.css -> quantity-breaks-2.css -> not in use anywhere
-lumin-qty-breaks.css -> quantity-breaks.css -> used in qty-breaks.liquid asset
-lumin-sticky-cart.css -> sticky-cart.css -> in use
-lumin-sticky-cart.js -> sticky-cart.js -> in use
-lumin-tab.css -> custom-tab.css -> in use
-lumin-table.css -> custom-table.css -> in use
+- 📚 **Fomo Numbers** 
 
-*** snippets 
-lumin-qty-breaks.liquid  -> qty-breaks.liquid -> not rendered anywhere
-lumin-placeholder.liquid -> image-placeholder.liquid
-lumin-play-icon.liquid -> play-icon.liquid
-lumin-sticky-cart.liquid -> sticky-cart.liquid -> not in use
+- 📚 **Promo Popup** 
 
-**section categories are changed from Lumin Section, Lumin Slidshow to Clarity Sections, Clarity Slideshow
+- 📚 **Before & After** 
+
+- 📚 **LOGO Slider** 
+
+- 📚 **"Breadcrumbs** 
+
+- 📚 **Comparison table** 
+
+- 📚 **Countdown Timer** 
+
+- 📚 **Custom Fonts** 
+
+- 📚 **Extra Button** 
+
+- 📚 **Image Banner Count Timer** 
+
+- 📚 **Image comparison** 
+
+- 📚 **Brand Slider** 
+
+- 📚 **Lookbook** 
+
+- 📚 **Media Gallery** 
+
+- 📚 **Reviews** 
 
 
-sections names and presets are localized by adding names via localize json file
-
-
-**  lumin-section__main -> custom-section__main
-    lumin-section__section -> clarity-section__section
+- **Table Compare Pro**
+For more details, see the Shopify [Theme Customization Guide](https://help.shopify.com/en/manual/online-store/themes/customizing-themes).
