@@ -1,0 +1,83 @@
+{{ 'parallax.css' | asset_url | stylesheet_tag }}
+{% if section.settings.bg_color != blank %}
+  {% style %}
+    parallax-section {
+        background: {{ section.settings.bg_color }};
+    }
+  {% endstyle %}
+{% endif %}
+<parallax-section data-rotation="6">
+  <div class="parallax__text-background">
+    <div class="parallax__text-content">
+      <h1 class="parallax__title">{{ section.settings.title }}</h1>
+      <span class="description">
+        {{ section.settings.description }}
+      </span>
+      <a class="parallax__link" href="{{ section.settings.btn_url }}">
+        {{ section.settings.btn_label }}
+      </a>
+    </div>
+  </div>
+
+  <div class="parallax__wrapper">
+    {% for block in section.blocks %}
+      <div class="parallax__gallery__item">
+        <img
+          src="{{ block.settings.image |  image_url: width: 300 }}"
+          class="parallax__img"
+        >
+      </div>
+    {% endfor %}
+  </div>
+</parallax-section>
+<script src="{{ 'parallax.js' |  asset_url }}"></script>
+{% schema %}
+{
+  "name": "t:sections.parallax-section.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.parallax-section.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.parallax-section.description.label"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "t:sections.parallax-section.btn_label.label"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "t:sections.parallax-section.btn_url.label"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "t:sections.parallax-section.bg_clr.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.parallax-section.image.label",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "t:sections.parallax-section.image_picker.label",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.parallax-section.name"
+    }
+  ]
+}
+{% endschema %}

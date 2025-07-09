@@ -167,6 +167,105 @@
         "padding_bottom": 36
       }
     },
+    "animated_image_with_text_4qbbNc": {
+      "type": "animated-image-with-text",
+      "blocks": {
+        "image_text_VN6pC7": {
+          "type": "image-text",
+          "settings": {
+            "image": "shopify://shop_images/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "radius_image": 16,
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "desktop_content_position": "top",
+            "desktop_content_alignment": "left",
+            "content_layout": "no-overlap",
+            "section_color_scheme": "background-1",
+            "color_scheme": "background-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "left",
+            "margin_bottom": 28,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "heading": "(*Image*) with text",
+            "text_svg": "<svg viewbox=\"0 0 120 20\" class=\"underline-svg\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M0,15 C20,5 40,25 60,10 80,-5 100,15 120,10\" stroke=\"#6f5df4\" stroke-width=\"3\" fill=\"transparent\" style=\"stroke-dashoffset: 0px; stroke-dasharray: 124.037;\"></path>\n  </svg>",
+            "target_text": "Image",
+            "heading_size": "h1",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "caption": "Add a tagline",
+            "text_size": "medium"
+          }
+        },
+        "image_text_fdtXUd": {
+          "type": "image-text",
+          "settings": {
+            "radius_image": 0,
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "desktop_content_position": "top",
+            "desktop_content_alignment": "left",
+            "content_layout": "no-overlap",
+            "section_color_scheme": "background-1",
+            "color_scheme": "background-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "left",
+            "margin_bottom": 36,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "heading": "Image (* with *) text",
+            "text_svg": "<svg class=\"svg-marker svg-marker--style2\" width=\"192\" height=\"28\" viewbox=\"0 0 192 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" preserveaspectratio=\"none\">\n<path d=\"M3 11.9994C56 8.99939 167.626 -0.217816 187 4.99939C201 8.76949 83.5 14.9993 56 24.9997\" stroke=\"#37eb5c\" stroke-width=\"6\" stroke-linecap=\"round\" style=\"stroke-dashoffset: 0; stroke-dasharray: none;\"></path>\n</svg>",
+            "target_text": "",
+            "heading_size": "h1",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "caption": "Add a tagline",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_VN6pC7",
+        "image_text_fdtXUd"
+      ],
+      "name": "Animate Image with Text",
+      "settings": {}
+    },
+    "parallax_section_iEFmyp": {
+      "type": "parallax-section",
+      "blocks": {
+        "image_nmpc6m": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/blue-men-3.webp"
+          }
+        },
+        "image_XnVjbK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/capsule-hair.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_nmpc6m",
+        "image_XnVjbK"
+      ],
+      "name": "t:sections.parallax-section.name",
+      "settings": {
+        "title": "Lorem Ipsum",
+        "description": "<p>Lorem ispum treats made from high-quality ingredients for a guilt-free indulgence. Experience the rich flavor without compromising your health goals.</p>",
+        "btn_label": "Lorem",
+        "btn_url": "#",
+        "bg_color": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)"
+      }
+    },
     "rich_text_GdMTUM": {
       "type": "rich-text",
       "blocks": {
@@ -1259,6 +1358,8 @@
     "slideshow_EVKABK",
     "logo_scroll_3VKwJ8",
     "collection_list_Yh74nL",
+    "animated_image_with_text_4qbbNc",
+    "parallax_section_iEFmyp",
     "rich_text_GdMTUM",
     "tabs_collection_dKd6ex",
     "clarity_grids_aYtRRX",

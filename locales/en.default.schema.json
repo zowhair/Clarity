@@ -688,6 +688,9 @@
         "padding_top": "Top padding",
         "padding_bottom": "Bottom padding"
       },
+      "margin": {
+        "margin_bottom": "Margin Bottom"
+      },
       "spacing": "Spacing",
       "colors": {
         "label": "Color scheme",
@@ -1921,6 +1924,9 @@
           },
           "options__3": {
             "label": "Drawer"
+          },
+          "options__4": {
+            "label": "Mega Tabs"
           }
         },
         "show_line_separator": {
@@ -2136,11 +2142,38 @@
         "name": "Image banner"
       }
     },
+    "parallax-section":{
+      "name": "Parallax ",
+      "title": {
+        "label": "Title"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "btn_label": {
+        "label": "Button Label"
+      },
+      "btn_url": {
+        "label": "Button URL"
+      },
+      "image": {
+        "label": "Image"
+      },
+      "image_picker": {
+        "label": "Select an Image"
+      },
+      "bg_clr": {
+        "label": "Background Color"
+      }
+    },
     "image-with-text": {
       "name": "Image with text",
       "settings": {
         "image": {
           "label": "Image"
+        },
+        "image_radius":{
+          "label": "Image Radius"
         },
         "height": {
           "options__1": {
@@ -2232,6 +2265,12 @@
           "settings": {
             "heading": {
               "label": "Heading"
+            },
+            "text_svg": {
+              "label": "Text SVG"
+            },
+            "target_text": {
+              "label": "Target Text"
             }
           }
         },

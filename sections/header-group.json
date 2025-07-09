@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -8,7 +17,7 @@
         "announcement_BHiGXK": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p><strong>[✦ Midseason Sale: Shop Now]<\/strong><\/p>",
+            "Announcement": "<p><strong>[✦ Midseason Sale: Shop Now]</strong></p>",
             "announcement_size": 15,
             "announcement_size_m": 15,
             "text_spacing": 0,
@@ -21,7 +30,7 @@
         "announcement_BXripM": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p><strong>[Fast worldwide shipping on every order]<\/strong><\/p>",
+            "Announcement": "<p><strong>[Fast worldwide shipping on every order]</strong></p>",
             "announcement_size": 15,
             "announcement_size_m": 15,
             "text_spacing": 0,
@@ -84,11 +93,45 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_image_y7BcrL": {
+          "type": "menu-image",
+          "settings": {
+            "link_name": "test 1",
+            "link_image": "shopify://shop_images/woman-puts-hand-in-pocket.jpg",
+            "img_radius": 0,
+            "mega_heading": "",
+            "link_title": "",
+            "link_url": "",
+            "img_radius_2": 0,
+            "mega_heading_2": "",
+            "link_title_2": "",
+            "link_url_2": "",
+            "product": "",
+            "img_radius_3": 0
+          }
+        },
+        "mega_tab_XCnTTE": {
+          "type": "mega-tab",
+          "settings": {
+            "tab_collection": [
+              "collection-1",
+              "collection-2",
+              "collection-3"
+            ],
+            "tab_link": "test 2"
+          }
+        }
+      },
+      "block_order": [
+        "menu_image_y7BcrL",
+        "mega_tab_XCnTTE"
+      ],
       "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
         "hide_search": false,
-        "menu": "main-menu",
+        "menu": "test-menu",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": false,
         "transparent_header": "transparent_header_home",
