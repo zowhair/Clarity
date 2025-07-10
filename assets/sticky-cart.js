@@ -1,5 +1,5 @@
   window.addEventListener('DOMContentLoaded', (event) => {
-  const stickyATC = document.querySelector('#lumin-sticky-atc')
+  const stickyATC = document.querySelector('#clarity-sticky-atc')
   const img = stickyATC.querySelector('.product-content img')
   const price = stickyATC.querySelector('#price-sticky')
   const btn = stickyATC.querySelector('[name="add"]')

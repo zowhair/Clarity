@@ -16,193 +16,204 @@
   }
 {%- endstyle -%}
 <div class="section-{{ section.id }}-padding">
-<div class="announcement-bar--inner-{{ section.id }} direction-left color-{{ section.settings.color_scheme }} gradient" style="--marquee-speed: {{ section.settings.scroll_speed | append: 0 }}s">
-     <div style="display: flex;">
-       <div style="display: flex;">
-          {% for item in (1..9) %}
-        {%- for block in section.blocks -%}
-          {% case block.type %}
-          {% when 'image' %}
-            <style>
-              .announcement-bar-{{ block.id }} img {
-    width: {{block.settings.logo_image_width}}px;
-    height:auto;
-  }
-               .announcement-bar-{{ block.id }} svg {
-    width: {{block.settings.logo_image_width}}px;
-    height:auto;
-  }
-            </style>
-        <div class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}" role="region" aria-label="Announcement" {{ block.shopify_attributes }}>
-          {% if block.settings.logo_image != blank %}
-              {{
-            block.settings.logo_image
-            | image_url: width: 200
-            | image_tag: loading: 'lazy'
-          }}
-             {%- else -%}
-              <p style="font-size: 40px;margin: 0;">LOGO</p>
-            {%- endif -%}
-                  </div>
-            
-           {% when 'announcement' %}
-             <style>
-        .lumin-text-{{ block.id }} {
-          color: {{ block.settings.announcement_color }};
-          font-size: {{ block.settings.announcement_size }}px;
-        }
-      @media screen and (max-width: 749px) {
-         .lumin-text-{{ block.id }} {
-          font-size: {{ block.settings.announcement_size_m }}px;
-        }
-      
-      </style>
-        <div class="announcement-bar-{{ section.id }}" role="region" aria-label="Announcement" {{ block.shopify_attributes }}>
-              <a {% if block.settings.text_link != blank %}{{ block.settings.text_link }}{% else %} href="/collections/frontpage"{% endif %} class="announcement-bar__link link link--text focus-inset animate-arrow">
-                {% render 'icon-accordion', icon: block.settings.icon %}  
-                <p class="announcement-bar__message h6 lumin-text-{{ block.id }}">
-                       {{ block.settings.Announcement }}
-                      </p>
-                </a>
-                  </div>
-          {% endcase %}
+  <div
+    class="announcement-bar--inner-{{ section.id }} direction-left color-{{ section.settings.color_scheme }} gradient"
+    style="--marquee-speed: {{ section.settings.scroll_speed | append: 0 }}s"
+  >
+    <div style="display: flex;">
+      <div style="display: flex;">
+        {% for item in (1..9) %}
+          {%- for block in section.blocks -%}
+            {% case block.type %}
+              {% when 'image' %}
+                <style>
+                              .announcement-bar-{{ block.id }} img {
+                    width: {{block.settings.logo_image_width}}px;
+                    height:auto;
+                  }
+                               .announcement-bar-{{ block.id }} svg {
+                    width: {{block.settings.logo_image_width}}px;
+                    height:auto;
+                  }
+                </style>
+                <div
+                  class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
+                  role="region"
+                  aria-label="Announcement"
+                  {{ block.shopify_attributes }}
+                >
+                  {% if block.settings.logo_image != blank %}
+                    {{ block.settings.logo_image | image_url: width: 200 | image_tag: loading: 'lazy' }}
+                  {%- else -%}
+                    <p style="font-size: 40px;margin: 0;">LOGO</p>
+                  {%- endif -%}
+                </div>
+
+              {% when 'announcement' %}
+                <style>
+                    .clarity-text-{{ block.id }} {
+                      color: {{ block.settings.announcement_color }};
+                      font-size: {{ block.settings.announcement_size }}px;
+                    }
+                  @media screen and (max-width: 749px) {
+                     .clarity-text-{{ block.id }} {
+                      font-size: {{ block.settings.announcement_size_m }}px;
+                    }
+                </style>
+                <div
+                  class="announcement-bar-{{ section.id }}"
+                  role="region"
+                  aria-label="Announcement"
+                  {{ block.shopify_attributes }}
+                >
+                  <a
+                    {% if block.settings.text_link != blank %}
+                      {{- block.settings.text_link -}}
+                    {% else %}
+                      href="/collections/frontpage"
+                    {% endif %}
+                    class="announcement-bar__link link link--text focus-inset animate-arrow"
+                  >
+                    {% render 'icon-accordion', icon: block.settings.icon %}
+                    <p class="announcement-bar__message h6 clarity-text-{{ block.id }}">
+                      {{ block.settings.Announcement }}
+                    </p>
+                  </a>
+                </div>
+            {% endcase %}
+          {% endfor %}
         {% endfor %}
-         {% endfor %}
       </div>
-     </div>
-    
-  
-
-        
-</div>
     </div>
-        <style data-shopify>
-       .announcement-bar--inner-{{ section.id }}{
-  max-width:1440px;
-  margin-left:auto;
-  margin-right:auto
-}
-@media only screen and (min-width: 768px){
+  </div>
+</div>
+<style data-shopify>
+         .announcement-bar--inner-{{ section.id }}{
+    max-width:1440px;
+    margin-left:auto;
+    margin-right:auto
+  }
+  @media only screen and (min-width: 768px){
+    .announcement-bar--inner-{{ section.id }}{
+      padding: {{section.settings.padding_desktop}}px 20px;
+    }
+  }
+            @media only screen and (max-width: 767px){
+    .announcement-bar--inner-{{ section.id }}{
+      padding: {{section.settings.padding_mobile}}px 20px;
+    }
+  }
+  .announcement-bar-section{
+    position:relative;
+    z-index:52
+  }
+  .announcement-bar--wrap{
+    line-height:1;
+  }
   .announcement-bar--inner-{{ section.id }}{
-    padding: {{section.settings.padding_desktop}}px 20px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    max-width:none;
+    white-space:nowrap;
+    overflow:hidden;
   }
-}
-          @media only screen and (max-width: 767px){
-  .announcement-bar--inner-{{ section.id }}{
-    padding: {{section.settings.padding_mobile}}px 20px;
+  .announcement-bar--inner-{{ section.id }}.direction-left>div{
+    animation:marquee-left var(--marquee-speed) linear infinite;
   }
-}
-.announcement-bar-section{
-  position:relative;
-  z-index:52
-}
-.announcement-bar--wrap{
-  line-height:1;
-}
-.announcement-bar--inner-{{ section.id }}{
-  height:100%;
-  display:flex;
-  align-items:center;
-  max-width:none;
-  white-space:nowrap;
-  overflow:hidden;
-}
-.announcement-bar--inner-{{ section.id }}.direction-left>div{
-  animation:marquee-left var(--marquee-speed) linear infinite;
-}
-.announcement-bar--inner.direction-right>div{
-  animation:marquee-right var(--marquee-speed) linear infinite;
-}
-.announcement-bar--inner-{{ section.id }}>div{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-  will-change:transform;
-}
-.announcement-bar--inner-{{ section.id }}:hover>div{
-  animation-play-state:paused;
-}
-.announcement-bar-{{ section.id }}{
-  display:inline-flex;
-  align-items:center;
-  padding:0 {{section.settings.padding_item_desktop}}px;
-  letter-spacing:.03em;
-}
-           @media only screen and (max-width: 767px){
-  .announcement-bar{
-  padding:0 {{section.settings.padding_item_mobile}}px;
-}
-           }
-.announcement-bar-{{ section.id }} svg{
-  margin-right:12px;
-  height:14px;
-  fill:rgb(var(--color-foreground));
-}
-  
-.announcement-bar-{{ section.id }} .announcement-bar-{{ section.id }}__link{
-  color:rgb(var(--color-foreground));
-  display: flex;
-  padding: 0;
-}
-.announcement-bar-{{ section.id }}--item:empty{
-  display:none
-}
-@keyframes marquee-left{
-  0%{
-    transform:translate(0)
+  .announcement-bar--inner.direction-right>div{
+    animation:marquee-right var(--marquee-speed) linear infinite;
   }
-  to{
-    transform:translate(-100%)
+  .announcement-bar--inner-{{ section.id }}>div{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+    will-change:transform;
   }
-}
-@keyframes marquee-right{
-  0%{
-    transform:translate(-100%)
+  .announcement-bar--inner-{{ section.id }}:hover>div{
+    animation-play-state:paused;
   }
-  to{
-    transform:translate(0)
+  .announcement-bar-{{ section.id }}{
+    display:inline-flex;
+    align-items:center;
+    padding:0 {{section.settings.padding_item_desktop}}px;
+    letter-spacing:.03em;
   }
-}
+             @media only screen and (max-width: 767px){
+    .announcement-bar{
+    padding:0 {{section.settings.padding_item_mobile}}px;
+  }
+             }
+  .announcement-bar-{{ section.id }} svg{
+    margin-right:12px;
+    height:14px;
+    fill:rgb(var(--color-foreground));
+  }
 
-.announcement-bar-static{
-  display: block;
-}
-.announcement-bar-static>div{
-  flex-wrap: wrap;
-  justify-content: center;
-}
-        </style>
-       
+  .announcement-bar-{{ section.id }} .announcement-bar-{{ section.id }}__link{
+    color:rgb(var(--color-foreground));
+    display: flex;
+    padding: 0;
+  }
+  .announcement-bar-{{ section.id }}--item:empty{
+    display:none
+  }
+  @keyframes marquee-left{
+    0%{
+      transform:translate(0)
+    }
+    to{
+      transform:translate(-100%)
+    }
+  }
+  @keyframes marquee-right{
+    0%{
+      transform:translate(-100%)
+    }
+    to{
+      transform:translate(0)
+    }
+  }
+
+  .announcement-bar-static{
+    display: block;
+  }
+  .announcement-bar-static>div{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+
 {% schema %}
-  {
-    "name": "LOGO Slider",
-     "disabled_on": {
+{
+  "name": "t:sections.names.logo_slider",
+  "disabled_on": {
     "groups": ["header", "custom.popup"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "s",
+      "label": "Scrolling Speed",
+      "default": 15
     },
-    "settings": [
-      {
-        "type": "range",
-        "id": "scroll_speed",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "s",
-        "label": "Scrolling Speed",
-        "default": 15
-      },
-      {
-        "type": "checkbox",
-        "id": "fade",
-        "label": "Fade on the edges",
-        "default": false
-      },
-      {
+    {
+      "type": "checkbox",
+      "id": "fade",
+      "label": "Fade on the edges",
+      "default": false
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "background-1"
     },
-       {
+    {
       "type": "range",
       "id": "padding_desktop",
       "min": 0,
@@ -222,7 +233,7 @@
       "label": "Bar Height Mobile",
       "default": 8
     },
-      {
+    {
       "type": "range",
       "id": "padding_item_desktop",
       "min": 0,
@@ -242,8 +253,8 @@
       "label": "Item Gap Mobile",
       "default": 24
     },
-      
-      {
+
+    {
       "type": "range",
       "id": "padding_top",
       "min": 0,
@@ -263,30 +274,30 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 0
     }
-    ],
-    "blocks": [
-      {
+  ],
+  "blocks": [
+    {
       "type": "image",
       "name": "Image",
       "settings": [
         {
-      "type": "image_picker",
-      "id": "logo_image",
-      "label": "Image"
-       },
-         {
-      "type": "range",
-      "id": "logo_image_width",
-      "min": 20,
-      "max": 200,
-      "step": 2,
-      "unit": "px",
-      "label": "Image Height",
-      "default": 110
-    }
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "logo_image_width",
+          "min": 20,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Image Height",
+          "default": 110
+        }
       ]
-      },
-      {
+    },
+    {
       "type": "announcement",
       "name": "Announcement",
       "settings": [
@@ -297,33 +308,33 @@
           "label": "Announcement",
           "info": "Your Announcement Text"
         },
-         {
-            "type": "range",
-            "id": "announcement_size",
-            "min": 10,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Announcement Size",
-            "default": 16
-          },
-          {
-            "type": "range",
-            "id": "announcement_size_m",
-            "min": 8,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Announcement Size Mobile",
-            "default": 14
-          },
-          {
-            "type": "color",
-            "id": "announcement_color",
-            "label": "Announcement Color",
-            "default": "#212121"
-          },
-         {
+        {
+          "type": "range",
+          "id": "announcement_size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Announcement Size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "announcement_size_m",
+          "min": 8,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Announcement Size Mobile",
+          "default": 14
+        },
+        {
+          "type": "color",
+          "id": "announcement_color",
+          "label": "Announcement Color",
+          "default": "#212121"
+        },
+        {
           "type": "select",
           "id": "icon",
           "options": [
@@ -507,35 +518,34 @@
           "default": "check_mark",
           "label": "Select Icon"
         },
-       {
+        {
           "type": "url",
           "id": "text_link",
           "label": "Link"
         }
-    ]
-      }
-    ],
-      "presets": [
+      ]
+    }
+  ],
+  "presets": [
     {
-    "name": "LOGO Slider",
-    "category": "Lumin Section",
-    "settings": {
-    },
-    "blocks": [
-      {
-        "type": "image"
-      },
-      {
-        "type": "image"
-      },
-      {
-        "type": "image"
-      },
-      {
-        "type": "image"
-      }
-    ]
-  }
+      "name": "t:sections.names.logo_slider",
+      "category": "Clarity Section",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
   ]
-  }
+}
 {% endschema %}

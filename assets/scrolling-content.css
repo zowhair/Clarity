@@ -1,0 +1,27 @@
+.scroll-stack-wrapper {
+  position: relative;
+  height: 500vh;
+}
+
+.scroll-stack {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scrolling-content--container.image-with-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.scrolling-content--container.image-with-text.active {
+  opacity: 1;
+  pointer-events: auto;
+}

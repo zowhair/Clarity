@@ -1,0 +1,73 @@
+parallax-section {
+    display: block;
+    position: relative;
+}
+
+.parallax__wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 60vh 0;
+    overflow-x: hidden;
+}
+
+.parallax__gallery__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.parallax__img {
+    width: 300px;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+.parallax__text-background {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 0;
+}
+
+.parallax__text-background h1 {
+    font-size: 3rem;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.parallax__gallery__item.odd {
+    justify-content: flex-end;
+}
+
+.parallax__gallery__item.even {
+    justify-content: flex-start;
+}
+.parallax__text-background .parallax__title {
+    font-size: 32px;
+}
+.parallax__text-background .description {
+    font-size: 16px;
+}
+.parallax__text-background .parallax__title {
+    width: 100%;
+    text-wrap: nowrap;
+    margin: 0 auto;
+}
+.parallax__text-background a.parallax__link {
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+@media screen and (min-width: 1200px) {
+    .parallax__text-background .parallax__title {
+        font-size: 92px;
+    }
+}

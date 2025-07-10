@@ -7,7 +7,7 @@ class PromoPopupp extends HTMLElement {
       return;
     }
 
-    this.cookieName = 'lumin:promo-popup-p';
+    this.cookieName = 'clarity:promo-popup-p';
 
     this.classes = {
       bodyClass: 'promo-popup-p--open',

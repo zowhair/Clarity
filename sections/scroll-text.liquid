@@ -409,9 +409,9 @@
                               {% assign return_text = return_text | replace:  item, span_tag %}
                             {% endif %}
                           {% endfor %}
-                          {{ return_text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>'  }}
+                          {{ return_text | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>'  }}
                         {% else %}
-                        {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>'  }}
+                        {{ block.settings.text | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>'  }}
                         {% endif %}
                       {% endif %}
                     </{% if block.settings.url != blank %}a{% else %}p{% endif %}>
@@ -512,9 +512,9 @@
                               {% assign return_text = return_text | replace:  item, span_tag %}
                             {% endif %}
                           {% endfor %}
-                          {{ return_text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>'  }}
+                          {{ return_text | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>'  }}
                         {% else %}
-                        {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>'  }}
+                        {{ block.settings.text | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>'  }}
                         {% endif %}
                       {% endif %}
                     </{% if block.settings.url != blank %}a{% else %}p{% endif %}>
@@ -665,12 +665,11 @@
 
 {% schema %}
   {
-    "name": "Auto-scrolling promotion",
-     "disabled_on": {
-    "groups": ["custom.popup", "header"]
-   },
+    "name": "t:sections.names.auto_scrolling_promotion",
+    "disabled_on": {
+      "groups": ["custom.popup", "header"]
+    },
     "settings": [
-     
       {
         "type": "header",
         "content": "Scrolling settings"
@@ -2186,7 +2185,7 @@
     ],
     "presets": [
       {
-        "name": "Auto-scrolling promotion",
+        "name": "t:sections.names.auto_scrolling_promotion",
         "blocks": [
           {
             "type": "text"

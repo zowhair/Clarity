@@ -1,12 +1,6 @@
-{% comment %}
-  Lumin Sticky add-to-cart
-  © 2023 LuminTheme
-  https://wwww.lumintheme.com
-{% endcomment %}
-
 {% if section.settings.show_sticky_cart_button and request.page_type == 'product' and product.available %}
-  {{ 'lumin-sticky-cart.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'lumin-sticky-cart.js' | asset_url }}" defer="defer"></script>
+  {{ 'sticky-cart.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'sticky-cart.js' | asset_url }}" defer="defer"></script>
 
   {% liquid
     assign current_variant = product.selected_or_first_available_variant
@@ -17,16 +11,18 @@
 
   {% if product.has_only_default_variant and settings.show_quantity_input != true %}
     <style>
-       @media screen and (max-width: 600px) {
-      #lumin-sticky-atc, .product-form, .quantity-input-wrapper {
-       display: block !important;
-       }
-       }
+      @media screen and (max-width: 600px) {
+        #clarity-sticky-atc,
+        .product-form,
+        .quantity-input-wrapper {
+          display: block !important;
+        }
+      }
     </style>
   {% endif %}
   <style>
       {% if settings.show_border %}
-      #lumin-sticky-atc {
+      #clarity-sticky-atc {
       box-shadow: 0 0 1px 0px #a4a3a3;
      }
       {% endif%}
@@ -51,7 +47,7 @@
      }
 
       {% if settings.sticky_position == 'top' %}
-      #lumin-sticky-atc {
+      #clarity-sticky-atc {
       position: fixed;
       top: 0;
       bottom: auto;
@@ -59,7 +55,7 @@
       {% endif%}
       {% if settings.sticky_position_mb == 'top' %}
        @media (max-width: 740px) {
-     #lumin-sticky-atc {
+     #clarity-sticky-atc {
       position: fixed;
       top: 0;
       bottom: auto;
@@ -67,7 +63,7 @@
       }
       {% else %}
         @media (max-width: 740px) {
-     #lumin-sticky-atc {
+     #clarity-sticky-atc {
       position: fixed;
       top: auto;
       bottom: 0;
@@ -84,7 +80,7 @@
   </style>
   {% assign scheme1 = settings.color_schemes | first %}
   <div
-    id="lumin-sticky-atc"
+    id="clarity-sticky-atc"
     class="color-{{ settings.color_scheme_main }} gradient"
     aria-hidden="true"
     data-offset="{{ settings.offset }}"
@@ -135,25 +131,27 @@
           </button>
 
           <script>
+            document.querySelector('.atcbutton').onclick = clickBuyButton;
 
-document.querySelector('.atcbutton').onclick = clickBuyButton;
-
-function clickBuyButton(e) {
-    // Get the current quantity from the input field
-    const quantityInput = document.querySelector('.product-form__quantity');
-    let quantity = 1; // Default quantity value
-    if (quantityInput) {
-        quantity = quantityInput.value;
-    } else {
-        // If the quantity input doesn't exist, create a hidden input with a default quantity value
-        document.querySelector('.product-form__buttons').insertAdjacentHTML('beforebegin', `
+            function clickBuyButton(e) {
+              // Get the current quantity from the input field
+              const quantityInput = document.querySelector('.product-form__quantity');
+              let quantity = 1; // Default quantity value
+              if (quantityInput) {
+                quantity = quantityInput.value;
+              } else {
+                // If the quantity input doesn't exist, create a hidden input with a default quantity value
+                document.querySelector('.product-form__buttons').insertAdjacentHTML(
+                  'beforebegin',
+                  `
             <input class="product-form__quantity" type="hidden" name="quantity" value="${quantity}">
-        `);
-    }
+        `
+                );
+              }
 
-    // Click the submit button
-    document.querySelector('.product-form__submit').click();
-}
+              // Click the submit button
+              document.querySelector('.product-form__submit').click();
+            }
           </script>
         </div>
       </div>

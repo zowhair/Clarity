@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,14 +23,14 @@
         "heading_U4DxMR": {
           "type": "heading",
           "settings": {
-            "heading": "Need Help?",
+            "heading": "Lorem Ipsum!",
             "heading_size": "h0"
           }
         },
         "text_mTa9cV": {
           "type": "text",
           "settings": {
-            "text": "Conact Us",
+            "text": "Lorem",
             "text_style": "subtitle"
           }
         }
@@ -49,14 +58,14 @@
         "template--14588668117088__178d28a7-8c38-4b54-93d3-4f373de515b5-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Get in touch",
+            "heading": "Lorem Ipsum",
             "heading_size": "h1"
           }
         },
         "template--14588668117088__178d28a7-8c38-4b54-93d3-4f373de515b5-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Have a question or comment? Don't be shy: Reach out and say hi!<br\/>Support hours: Monday-Friday, 7am-3pm<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>"
           }
         }
       },

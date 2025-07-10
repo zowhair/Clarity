@@ -74,7 +74,7 @@
       "name": "Siblings Picker",
       "settings": {
         "paragraph": {
-          "content": "The Product Grouping Picker allows you to combine separate products together as variants [Learn More](https://help.lumintheme.com/lumin-theme-documentation/combine-separate-products-together-as-variant-options)."
+          "content": "The Product Grouping Picker allows you to combine separate products together as variants [Learn More]."
           },
         "text": {
           "label": "Product siblings collection name",
@@ -178,7 +178,7 @@
         }
       }
     },
-    "lumin-freeshipping-bar": {
+    "freeshipping-bar": {
       "name": "Cart Goal/Free Shipping Bar",
       "settings": {
         "fsb_goal": {
@@ -566,6 +566,67 @@
     }
   },
   "sections": {
+    "names": {
+      "image_with_text_card": "Image With Text Card",
+      "gallery": "Gallery",
+      "image_with_text_grids": "Image With Text Grids",
+      "hero": "Hero",
+      "image_with_text_custom": "Image With Text Custom",
+      "image_with_text_pro": "Image With Text Pro",
+      "reviews_section": "Reviews",
+      "marquee": "Marquee",
+      "media_slider": "Media Slider",
+      "media_slider_with_text": "Media Slider With Text",
+      "pro_slideshow":"Pro Slideshow",
+      "slideshow": "Slideshow",
+      "promo_slider":"Promo Slider",
+      "scroll_to_top":"Scroll to Top Button",
+      "waves": "Waves",
+      "wave":"Wave",
+      "video_text_overlay":"Video Text Overlay",
+      "video_with_text":"Video with Text",
+      "video_banner":"Video Banner",
+      "feature_blocks":"Feature Blocks",
+      "countdown_timer_banner":"Countdown Timer Banner",
+      "testimonial_slider":"Testimonial Slider",
+      "tabs": "Tabs",
+      "tabs_collection": "Tabs Collection",
+      "table_compare_pro": "Table Compare Pro",
+      "shopable_videos": "Shoppable videos",
+      "auto_scrolling_promotion":"Auto-scrolling promotion",
+      "testimonial":"Testimonials",
+      "fomo_numbers":"Fomo Numbers",
+      "promo_popup":"Promo Popup",
+      "before_after":"Before & After",
+      "logo_slider": "LOGO Slider",
+      "breadcrumbs": "Breadcrumbs",
+      "comparison_table":"Comparison table",
+      "countdown_timer": "Countdown Timer",
+      "custom_fonts": "Custom Fonts",
+      "extra_button":"Extra Button",
+      "image_banner_count_timer": "Image Banner Count Timer",
+      "image_comparison":"Image comparison",
+      "brand_slider": "Brand Slider",
+      "lookbook": "Lookbook",
+      "media_gallery": "Media Gallery"
+    },
+    "media_gallery": {
+      "settings": {
+        "header":"Media Gallery",
+        "title":"Title",
+        "description":"Description",
+        "main_image":"Main Image",
+        "revert_view": "Revert View"
+      },
+      "blocks" : {
+        "image": {
+          "name": "Select Images",
+          "label": "Image",
+          "title": "Title",
+          "description": "Description"
+        }
+      }
+    },
     "countdown": {
       "name": "countdown",
       "settings": {
@@ -626,6 +687,9 @@
         "section_padding_heading": "Section padding",
         "padding_top": "Top padding",
         "padding_bottom": "Bottom padding"
+      },
+      "margin": {
+        "margin_bottom": "Margin Bottom"
       },
       "spacing": "Spacing",
       "colors": {
@@ -1860,6 +1924,9 @@
           },
           "options__3": {
             "label": "Drawer"
+          },
+          "options__4": {
+            "label": "Mega Tabs"
           }
         },
         "show_line_separator": {
@@ -2075,11 +2142,38 @@
         "name": "Image banner"
       }
     },
+    "parallax-section":{
+      "name": "Parallax ",
+      "title": {
+        "label": "Title"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "btn_label": {
+        "label": "Button Label"
+      },
+      "btn_url": {
+        "label": "Button URL"
+      },
+      "image": {
+        "label": "Image"
+      },
+      "image_picker": {
+        "label": "Select an Image"
+      },
+      "bg_clr": {
+        "label": "Background Color"
+      }
+    },
     "image-with-text": {
       "name": "Image with text",
       "settings": {
         "image": {
           "label": "Image"
+        },
+        "image_radius":{
+          "label": "Image Radius"
         },
         "height": {
           "options__1": {
@@ -2171,6 +2265,12 @@
           "settings": {
             "heading": {
               "label": "Heading"
+            },
+            "text_svg": {
+              "label": "Text SVG"
+            },
+            "target_text": {
+              "label": "Target Text"
             }
           }
         },

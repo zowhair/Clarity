@@ -1,15 +1,15 @@
 <style>
-  .lumin-section__block-id-{{ block.id }} {
+  .clarity-section__block-id-{{ block.id }} {
     --dot-color: {{ block.settings.dot_color }};
     --line-color: {{ block.settings.line_color }};
     --dot-size: {{ block.settings.dot_size }}px;
     --line-size: {{ block.settings.line_size }}px;
   }
-  .lumin-section-block {
+  .clarity-section-block {
     width:100%;
   }
 
-  .lumin-section__block-id-{{ block.id }} .lumin-section__feature-range {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__feature-range {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     gap: 12px;
@@ -17,11 +17,11 @@
     justify-content: center;
     padding: {{block.settings.padding_top}}px 0 {{block.settings.padding_bottom}}px 0;
   }
-  .lumin-section__block-id-{{ block.id }} .lumin-section__feature-range p {
+  .clarity-section__block-id-{{ block.id }} .clarity-section__feature-range p {
     margin:0;
   }
 
-  .lumin-section__block-id-{{ block.id }} input[type=range] {
+  .clarity-section__block-id-{{ block.id }} input[type=range] {
     width: 100%;
     appearance: none;
     background: var(--line-color);
@@ -30,7 +30,7 @@
     border: none;
   }
 
-  .lumin-section__block-id-{{ block.id }} input[type=range]::-webkit-slider-thumb   {
+  .clarity-section__block-id-{{ block.id }} input[type=range]::-webkit-slider-thumb   {
     -webkit-appearance: none;
     height: var(--dot-size);
     width: var(--dot-size);
@@ -38,7 +38,7 @@
     background: var(--dot-color);
   }
 
-  .lumin-section__block-id-{{ block.id }} input[type=range]::-moz-range-thumb {
+  .clarity-section__block-id-{{ block.id }} input[type=range]::-moz-range-thumb {
     -webkit-appearance: none;
     height: var(--dot-size);
     width: var(--dot-size);
@@ -51,13 +51,15 @@
     row-gap: 2rem;
     }
 </style>
-<div class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__feature-range-container lumin-section__justify-{{ section.settings.text_alignment }}"
-  {{ block.shopify_attributes }}>
-  <div class="lumin-section__feature-range-title">
-    <h3 class="lumin-section__small-heading">{{ block.settings.title }}</h3>
+<div
+  class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__feature-range-container clarity-section__justify-{{ section.settings.text_alignment }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="clarity-section__feature-range-title">
+    <h3 class="clarity-section__small-heading">{{ block.settings.title }}</h3>
   </div>
-  <div class="lumin-section__feature-range">
-    <div class="lumin-section__text lumin-section__rte">
+  <div class="clarity-section__feature-range">
+    <div class="clarity-section__text clarity-section__rte">
       <p>{{ block.settings.low_range_label }}</p>
     </div>
     <input
@@ -70,7 +72,7 @@
       max="10"
       value="{{ block.settings.level }}"
     >
-    <div class="lumin-section__text lumin-section__rte">
+    <div class="clarity-section__text clarity-section__rte">
       <p>{{ block.settings.high_range_label }}</p>
     </div>
   </div>

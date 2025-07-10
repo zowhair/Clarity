@@ -27,7 +27,6 @@
 {%- endstyle -%}
 {% if section.settings.show_scroll_tags %}
   <style>
-
          {% if settings.card_style == 'card' and section.settings.show_scroll_tags %}
       .card--card.gradient, .card__inner.gradient {
         padding-top: 0;
@@ -158,7 +157,7 @@
               id="product-grid"
               data-id="{{ section.id }}"
               class="
-                grid product-grid lumin-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                grid product-grid clarity-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
               "
             >
@@ -215,7 +214,7 @@
       "type": "range",
       "id": "products_per_page",
       "min": 8,
-      "max":72,
+      "max": 72,
       "step": 4,
       "default": 16,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
@@ -291,33 +290,33 @@
       "default": false,
       "label": "Show Scrolling tags",
       "info": "You can adjust colors, speed or font style under 'Theme settings>Product Cards'. Use [this](https://help.shopify.com/en/manual/products/add-update-products#add-or-remove-tags) guide to add product tags."
-     },
-      {
+    },
+    {
       "type": "checkbox",
       "id": "enable_quick_desc",
       "default": false,
       "label": "Show description"
     },
     {
-        "type": "range",
-        "id": "quick_desc_legth",
-        "min": 30,
-        "max": 300,
-        "step": 10,
-        "unit": "n",
-        "label": "Description Characters Count",
-        "default": 90
-      },
+      "type": "range",
+      "id": "quick_desc_legth",
+      "min": 30,
+      "max": 300,
+      "step": 10,
+      "unit": "n",
+      "label": "Description Characters Count",
+      "default": 90
+    },
     {
-        "type": "range",
-        "id": "quick_desc_size",
-        "min": 8,
-        "max": 40,
-        "step": 1,
-        "unit": "px",
-        "label": "Description size",
-        "default": 18
-      },
+      "type": "range",
+      "id": "quick_desc_size",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 18
+    },
     {
       "type": "checkbox",
       "id": "enable_quick_add",

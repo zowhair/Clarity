@@ -30,7 +30,13 @@
           {% endif %}
           {%- if section.settings.heading != blank -%}
             <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
-              {{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+              {{
+                section.settings.heading
+                | replace: '[', '<span class="clarity-text__fancy1">'
+                | replace: ']', '</span>'
+                | replace: '((', '<span class="clarity-text__fancy2">'
+                | replace: '))', '</span>'
+              }}
             </h2>
           {%- else -%}
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
@@ -83,7 +89,14 @@
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
                     <h3 class="accordion__title inline-richtext">
-                      {{ block.settings.heading | default: block.settings.page.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                      {{
+                        block.settings.heading
+                        | default: block.settings.page.title
+                        | replace: '[', '<span class="clarity-text__fancy1">'
+                        | replace: ']', '</span>'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
+                        | replace: '))', '</span>'
+                      }}
                     </h3>
                     {% render 'icon-caret' %}
                   </summary>
@@ -93,7 +106,13 @@
                     role="region"
                     aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                   >
-                    {{ block.settings.row_content | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                    {{
+                      block.settings.row_content
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
                     {{ block.settings.page.content }}
                   </div>
                 </details>
@@ -111,9 +130,9 @@
   "name": "t:sections.collapsible_content.name",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "text",
@@ -251,7 +270,7 @@
       "label": "t:sections.collapsible_content.settings.desktop_layout.label",
       "info": "t:sections.collapsible_content.settings.desktop_layout.info"
     },
-    
+
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

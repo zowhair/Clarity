@@ -1,17 +1,4 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-<style>
   .star-rating .star {
     width: 24px;
     height: 24px;
@@ -24,13 +11,23 @@
   .zoom-bottom {
     zoom: {{ section.settings.star_size }};
   }
-</style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
 {% if section.settings.star_style == 'star_bg' or section.settings.star_style == 'star_bg_2' %}
-  <style>
+  {% style %}
     .rating {
       margin: 10px 0;
     }
-
     .rating i {
       display: inline-block;
       width: 34px;
@@ -130,7 +127,7 @@
     [data-rating^="4.7"] .star-5 {
       border-left-color: {{ section.settings.feature_svg_color }};
     }
-                          [data-rating^="4.8"] .star-5 {
+    [data-rating^="4.8"] .star-5 {
       border-left-color: {{ section.settings.feature_svg_color }};
     }
     [data-rating^="4.9"] .star-5 {
@@ -141,7 +138,7 @@
       background: {{ section.settings.feature_svg_color }};
       border-color: {{ section.settings.feature_svg_color }};
     }
-  </style>
+  {% endstyle %}
 {% endif %}
 
 {%- if request.design_mode -%}
@@ -161,9 +158,9 @@
       <h1 class="rw-title" style="text-align:center;">
         {{
           section.settings.header_text
-          | replace: '[', '<span class="lumin-text__fancy1">'
+          | replace: '[', '<span class="clarity-text__fancy1">'
           | replace: ']', '</span>'
-          | replace: '((', '<span class="lumin-text__fancy2">'
+          | replace: '((', '<span class="clarity-text__fancy2">'
           | replace: '))', '</span>'
         }}
       </h1>
@@ -182,9 +179,9 @@
               <p style="margin: 0;text-align: center;">
                 {{
                   section.settings.rating_count
-                  | replace: '[', '<span class="lumin-text__fancy1">'
+                  | replace: '[', '<span class="clarity-text__fancy1">'
                   | replace: ']', '</span>'
-                  | replace: '((', '<span class="lumin-text__fancy2">'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
                   | replace: '))', '</span>'
                 }}
               </p>
@@ -208,18 +205,18 @@
                         <span class="rw-text-name h2">
                           {{-
                             block.settings.name_text
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           -}}
                         </span>
                         <span class="rw-date">
                           {{-
                             block.settings.date_text
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           -}}
                         </span>
@@ -245,9 +242,9 @@
                           <span class="verify">
                             {{-
                               section.settings.verify_text
-                              | replace: '[', '<span class="lumin-text__fancy1">'
+                              | replace: '[', '<span class="clarity-text__fancy1">'
                               | replace: ']', '</span>'
-                              | replace: '((', '<span class="lumin-text__fancy2">'
+                              | replace: '((', '<span class="clarity-text__fancy2">'
                               | replace: '))', '</span>'
                             -}}
                           </span>
@@ -258,18 +255,18 @@
                       <div class="rw-text-head h4" style="margin-bottom:10px;">
                         {{
                           block.settings.review_head
-                          | replace: '[', '<span class="lumin-text__fancy1">'
+                          | replace: '[', '<span class="clarity-text__fancy1">'
                           | replace: ']', '</span>'
-                          | replace: '((', '<span class="lumin-text__fancy2">'
+                          | replace: '((', '<span class="clarity-text__fancy2">'
                           | replace: '))', '</span>'
                         }}
                       </div>
                       <div class="rw-text-main">
                         {{
                           block.settings.review_text
-                          | replace: '[', '<span class="lumin-text__fancy1">'
+                          | replace: '[', '<span class="clarity-text__fancy1">'
                           | replace: ']', '</span>'
-                          | replace: '((', '<span class="lumin-text__fancy2">'
+                          | replace: '((', '<span class="clarity-text__fancy2">'
                           | replace: '))', '</span>'
                         }}
                       </div>
@@ -314,9 +311,9 @@
                               <span>
                                 {{-
                                   section.settings.like_text
-                                  | replace: '[', '<span class="lumin-text__fancy1">'
+                                  | replace: '[', '<span class="clarity-text__fancy1">'
                                   | replace: ']', '</span>'
-                                  | replace: '((', '<span class="lumin-text__fancy2">'
+                                  | replace: '((', '<span class="clarity-text__fancy2">'
                                   | replace: '))', '</span>'
                                 -}}
                               </span>
@@ -363,9 +360,9 @@
         <a id="loadMore" class="link-review button">
           {{-
             section.settings.load_text
-            | replace: '[', '<span class="lumin-text__fancy1">'
+            | replace: '[', '<span class="clarity-text__fancy1">'
             | replace: ']', '</span>'
-            | replace: '((', '<span class="lumin-text__fancy2">'
+            | replace: '((', '<span class="clarity-text__fancy2">'
             | replace: '))', '</span>'
           -}}
         </a>
@@ -374,83 +371,82 @@
   </div>
 </div>
 
-
 <script>
-   document.addEventListener("DOMContentLoaded", function() {
-      const products = document.querySelectorAll(".rw-container-contant");
-      const loadMoreBtn = document.getElementById("loadMore");
-      let visibleProductsCount = 0;
-      const productsPerPage = {{ section.settings.review_load }};
+  document.addEventListener("DOMContentLoaded", function() {
+    const products = document.querySelectorAll(".rw-container-contant");
+    const loadMoreBtn = document.getElementById("loadMore");
+    let visibleProductsCount = 0;
+    const productsPerPage = {{ section.settings.review_load }};
 
-      // Function to show products
-      function showProducts() {
-          for (let i = visibleProductsCount; i < visibleProductsCount + productsPerPage; i++) {
-              if (products[i]) {
-                  products[i].style.display = "block";
-              }
-          }
-          visibleProductsCount += productsPerPage;
-
-          // Hide the button if all products are visible
-          if (visibleProductsCount >= products.length) {
-              loadMoreBtn.style.display = "none";
-          }
+    // Function to show products
+    function showProducts() {
+      for (let i = visibleProductsCount; i < visibleProductsCount + productsPerPage; i++) {
+        if (products[i]) {
+          products[i].style.display = "block";
+        }
       }
+      visibleProductsCount += productsPerPage;
 
-      // Initial load
+      // Hide the button if all products are visible
+      if (visibleProductsCount >= products.length) {
+        loadMoreBtn.style.display = "none";
+      }
+    }
+
+    // Initial load
+    showProducts();
+
+    // Load more products on button click
+    loadMoreBtn.addEventListener("click", function() {
       showProducts();
+    });
 
-      // Load more products on button click
-      loadMoreBtn.addEventListener("click", function() {
-          showProducts();
+    // Listen for design mode changes
+    if (typeof Shopify.designMode !== 'undefined' && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', function(event) {
+        // Reload the script or reinitialize the functionality
+        visibleProductsCount = 0;
+        Array.prototype.forEach.call(products, function(product) {
+            product.style.display = 'none';
+        });
+        loadMoreBtn.style.display = 'flex';
+        showProducts();
       });
-
-      // Listen for design mode changes
-      if (typeof Shopify.designMode !== 'undefined' && Shopify.designMode) {
-          document.addEventListener('shopify:section:load', function(event) {
-              // Reload the script or reinitialize the functionality
-              visibleProductsCount = 0;
-              Array.prototype.forEach.call(products, function(product) {
-                  product.style.display = 'none';
-              });
-              loadMoreBtn.style.display = 'flex';
-              showProducts();
-          });
-      }
+    }
   });
 </script>
 
-<style>
-    .checked {
+{% style %}
+  .checked {
     color: orange;
   }
-      .top-review-box {
-        margin-bottom:40px;
-      }
-      lr {
-      border: none;
-      height: 0rem;
-      background-color: {{section.settings.rw_border}};
-      display: block;
-      margin: 0rem auto;
-      width: 90%;
-      }
-         .noContent {
+  .top-review-box {
+    margin-bottom:40px;
+  }
+  lr {
+    border: none;
+    height: 0rem;
+    background-color: {{section.settings.rw_border}};
+    display: block;
+    margin: 0rem auto;
+    width: 90%;
+  }
+  .noContent {
     color: #000 !important;
     background-color: transparent !important;
     pointer-events: none;
   }
-    .rw-percent {
-      color: {{section.settings.feature_svg_color}};
-      font-size: 17px;
-      font-weight: 700;
-      padding: 0px 10px 3px 10px;
-      border: 1px solid {{section.settings.feature_svg_color}};
-      border-radius: 4px;
-    }
-      .rw-container {
-      padding: 0px;
-        -webkit-column-count: {{section.settings.review_column_desk}};
+  .rw-percent {
+    color: {{section.settings.feature_svg_color}};
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0px 10px 3px 10px;
+    border: 1px solid {{section.settings.feature_svg_color}};
+    border-radius: 4px;
+  }
+  .rw-container {
+    padding: 0px;
+    -webkit-column-count: {{section.settings.review_column_desk}};
   	-webkit-column-gap: 15px;
   	-webkit-column-fill: auto;
   	-moz-column-count: {{section.settings.review_column_desk}};
@@ -458,343 +454,342 @@
   	-moz-column-fill: auto;
   	column-count: {{section.settings.review_column_desk}};
   	column-gap: 15px;
-  	    /* column-fill: auto; */
+    /* column-fill: auto; */
+  }
+  @media screen and (max-width: 600px){
+    .rw-container {
+      column-count: {{section.settings.review_column_mobile}};
+      column-gap: 15px;
     }
-    @media screen and (max-width: 600px){
-      .rw-container {
-    column-count: {{section.settings.review_column_mobile}};
-  	column-gap: 15px;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    .rw-container {
+      column-count: {{section.settings.review_column_tab}};
+      column-gap: 15px;
     }
+  }
+  @media only screen and (min-width: 900px) and (max-width: 1150px) {
+    .rw-container {
+      column-count: {{section.settings.review_column_desk}};
+      column-gap: 15px;
     }
-    @media only screen and (min-width: 600px) and (max-width: 900px) {
-     .rw-container {
-    column-count: {{section.settings.review_column_tab}};
-  	column-gap: 15px;
-    }
-    }
-       @media only screen and (min-width: 900px) and (max-width: 1150px) {
-     .rw-container {
-    column-count: {{section.settings.review_column_desk}};
-  	column-gap: 15px;
-    }
-       }
+  }
 
-      .rating-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+  .rating-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-     .link-review {
-      cursor: pointer !important;
-      white-space: nowrap;
+  .link-review {
+    cursor: pointer !important;
+    white-space: nowrap;
   }
-      .review-wrapper {
-      padding: {{section.settings.review_pd}}px;
-      background:{{section.settings.review_bg}};
-      margin-bottom: 0px;
-      border-radius: {{ section.settings.border_radius }}px;
-        {% if section.settings.show_border %}
-      box-shadow: 0 0 0 1px {{section.settings.rw_border}};{% endif %}
+  .review-wrapper {
+    padding: {{section.settings.review_pd}}px;
+    background:{{section.settings.review_bg}};
+    margin-bottom: 0px;
+    border-radius: {{ section.settings.border_radius }}px;
+      {% if section.settings.show_border %}
+    box-shadow: 0 0 0 1px {{section.settings.rw_border}};{% endif %}
   }
-      @media screen and (max-width: 600px){
-      .review-wrapper {
+  @media screen and (max-width: 600px){
+    .review-wrapper {
       padding: {{section.settings.review_pd_m}}px;
+    }
   }
-      }
-      .rw-sub-wrapper{
-        margin-bottom: {{section.settings.rw_margin}}px;
-      }
-      .stars-rw {
-        color: {{section.settings.feature_svg_color}};
-        display: flex !important;
-        gap: 0px;
-      }
-      .stars-rw svg {
-        height: 1.4em;
-        fill:{{section.settings.feature_svg_color}};
-      }
-      .verify-container{
-      display: flex;
-      align-items: center;
-      column-gap: 5px;
-      }
-      .verify {
-      color: {{section.settings.section_bg3}};
-      font-size: 14px;
-      position: relative;
-      white-space: nowrap;
-      line-height: 1;
+  .rw-sub-wrapper{
+    margin-bottom: {{section.settings.rw_margin}}px;
   }
-      .rw-date {
-      font-size: {{ section.settings.date_size }}px;
-      color: #8c8a91;
-      white-space: nowrap;
-      line-height: 1;
-      text-transform: uppercase;
+  .stars-rw {
+    color: {{section.settings.feature_svg_color}};
+    display: flex !important;
+    gap: 0px;
   }
-      .rw-text-name {
-      font-size: {{ section.settings.block_name_size}}px;
-      }
-      .rw-text-head {
-      font-size: {{ section.settings.block_head_size}}px;
-      line-height: 120%;
-      letter-spacing: 0px;
-      padding: 5px 0 5px 0;
-      text-align: center;
-      border: none;
-      text-align: left;
-     }
-      .rw-text-main {
-      font-size: {{ section.settings.block_text_size}}px;
-      /*white-space: pre-wrap;*/
-      margin-bottom:30px;
-      }
-      .rw-text-footer {
-      font-size: 14px;
-      line-height: 1.4;
-      padding: 20px 0 0 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 20px;
-      border-top: 1px solid rgba(var(--color-badge-foreground), 0.03);
-     }
-      .main-review img {
-      width: 100%;
-      max-width: {{ section.settings.rw_img_size}}px;
-      height: auto;
-      border-radius: {{ section.settings.rw_img_radius}}px;
-      text-align: center;
-      margin-right: 10px;
-      margin-bottom:30px;
-      line-height: 0;
-      overflow: hidden;
-     }
-        .rw-container-contant {
-     -webkit-column-break-inside: avoid;
+  .stars-rw svg {
+    height: 1.4em;
+    fill:{{section.settings.feature_svg_color}};
+  }
+  .verify-container{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+  .verify {
+    color: {{section.settings.section_bg3}};
+    font-size: 14px;
+    position: relative;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .rw-date {
+    font-size: {{ section.settings.date_size }}px;
+    color: #8c8a91;
+    white-space: nowrap;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .rw-text-name {
+    font-size: {{ section.settings.block_name_size}}px;
+  }
+  .rw-text-head {
+    font-size: {{ section.settings.block_head_size}}px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    border: none;
+    text-align: left;
+  }
+  .rw-text-main {
+    font-size: {{ section.settings.block_text_size}}px;
+    /*white-space: pre-wrap;*/
+    margin-bottom:30px;
+  }
+  .rw-text-footer {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    border-top: 1px solid rgba(var(--color-badge-foreground), 0.03);
+  }
+  .main-review img {
+    width: 100%;
+    max-width: {{ section.settings.rw_img_size}}px;
+    height: auto;
+    border-radius: {{ section.settings.rw_img_radius}}px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom:30px;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .rw-container-contant {
+    -webkit-column-break-inside: avoid;
   	-moz-column-break-inside: avoid;
   	column-break-inside: avoid;
-      padding-bottom: 15px;
-      border-bottom: 0px solid #f3f3f3;
-      {% if request.design_mode and section.settings.editing %}display:block; {% else %} display: none; {% endif %}
-    }
-
-    @media screen and (max-width: 600px){
-      .rw-container-contant {
     padding-bottom: 15px;
-    }
-    }
-     .rw-container-contant:last-child {
-      border-bottom: 0;
-    }
-  .load-more-container ul {
-     list-style: none;
-     padding:0;
-    }
-       .rw-text-footer {
-      font-size: 13px;
-      font-weight:500;
-      line-height: 1.4;
-      padding: 20px 0 0 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 20px;
-      grid-gap: 10px;
-     }
+    border-bottom: 0px solid #f3f3f3;
+    {% if request.design_mode and section.settings.editing %}display:block; {% else %} display: none; {% endif %}
+  }
 
-     .lm-text-clip {
-      white-space: pre-wrap;
-      width: -webkit-fill-available;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-     }
-</style>
+  @media screen and (max-width: 600px){
+    .rw-container-contant {
+      padding-bottom: 15px;
+    }
+  }
+  .rw-container-contant:last-child {
+    border-bottom: 0;
+  }
+  .load-more-container ul {
+    list-style: none;
+    padding:0;
+  }
+  .rw-text-footer {
+    font-size: 13px;
+    font-weight:500;
+    line-height: 1.4;
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    grid-gap: 10px;
+  }
+
+  .lm-text-clip {
+    white-space: pre-wrap;
+    width: -webkit-fill-available;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+{% endstyle %}
 
 {% schema %}
 {
-  "name": "Lumin Review",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
- "settings": [
-   {
-        "type": "header",
-        "content": "Note",
-        "info": "This review section is for demostration purpose. If you want to collect reviews from customers, please consider installing any review app from Shopify [App Store](https:\/\/apps.shopify.com\/)"
-      },
-   {
-        "type": "checkbox",
-        "id": "editing",
-        "label": "Edit Mode",
-        "default": true,
-        "info": "Save after changing this setting to see effect."
-      },
-   {
+  "name": "t:sections.names.reviews_section",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Note",
+      "info": "This review section is for demostration purpose. If you want to collect reviews from customers, please consider installing any review app from Shopify [App Store](https:\/\/apps.shopify.com\/)"
+    },
+    {
+      "type": "checkbox",
+      "id": "editing",
+      "label": "Edit Mode",
+      "default": true,
+      "info": "Save after changing this setting to see effect."
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "background-1"
     },
-   {
-        "type": "header",
-        "content": "Top Header"
-      },
-{
-        "type": "text",
-        "id": "header_text",
-        "label": "t:sections.image-with-text.blocks.heading.name",
-        "default": "what our customers say about us"
-      },
-   {
-        "type": "checkbox",
-        "id": "show_top",
-        "label": "Show Header Contents",
-        "default": true
-      },
-   {
-        "type": "inline_richtext",
-        "id": "rating_text",
-        "label": "Rating Text",
-        "default": "4.8",
-        "info": "Remove to hide"
-      },
-   {
-        "type":      "range",
-        "id":        "rating_range",
-        "min":       1,
-        "max":        5,
-        "step":       0.5,
-        "label":     "Star Rating",
-        "default":   4.5
-     },
     {
-    "type":      "range",
-    "id":        "star_size_top",
-    "min":       0.5,
-    "max":        2,
-    "step":       0.1,
-    "label":     "Star Size",
-    "default":   1
+      "type": "header",
+      "content": "Top Header"
     },
     {
-        "type": "inline_richtext",
-        "id": "rating_count",
-        "label": "Review count",
-        "default": "Based on 16 Reviews",
-        "info": "Remove to hide"
-      },
-   {
-        "type": "header",
-        "content": "Section Settings"
-      },
-
-{
-        "type": "text",
-        "id": "review_column_mobile",
-        "label": "Review column Mobile",
-        "default": "1"
-      },
-{
-        "type": "text",
-        "id": "review_column_tab",
-        "label": "Review column Tablet",
-        "default": "1"
-      },
-{
-        "type": "text",
-        "id": "review_column_desk",
-        "label": "Review column Desktop",
-        "default": "1"
-      },
-   {
-        "type": "text",
-        "id": "review_load",
-        "label": "Load more",
-        "default": "4",
-        "info": "This setting will work on web browser. Not in shopify theme editor."
-      },
-   {
-        "type": "text",
-        "id": "load_text",
-        "label": "Button Text",
-        "default": "Load More"
-      },
+      "type": "text",
+      "id": "header_text",
+      "label": "t:sections.image-with-text.blocks.heading.name",
+      "default": "what our customers say about us"
+    },
     {
-        "type": "header",
-        "content": "Sizes"
-      },
-      {
-    "type":      "range",
-    "id":        "rw_img_size",
-    "min":       20,
-    "max":        400,
-    "step":       10,
-    "unit":       "px",
-    "label":     "Review Image size",
-    "default":   140
- },
-     {
-    "type":      "range",
-    "id":        "rw_img_radius",
-    "min":       0,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Image Radius",
-    "default":   0
- },
-   {
-    "type":      "range",
-    "id":        "block_name_size",
-    "min":       10,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Customer name size",
-    "default":   20
-},
-        {
-    "type":      "range",
-    "id":        "date_size",
-    "min":       6,
-    "max":        50,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Date size",
-    "default":   16
-},
- {
-    "type":      "range",
-    "id":        "block_head_size",
-    "min":       10,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Review Heading size",
-    "default":   20
-},
+      "type": "checkbox",
+      "id": "show_top",
+      "label": "Show Header Contents",
+      "default": true
+    },
     {
-    "type":      "range",
-    "id":        "block_text_size",
-    "min":       6,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Review text size",
-    "default":   14
-},
-   {
-        "type": "header",
-        "content": "Stars"
-      },
-   {
+      "type": "inline_richtext",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.8",
+      "info": "Remove to hide"
+    },
+    {
+      "type": "range",
+      "id": "rating_range",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "label": "Star Rating",
+      "default": 4.5
+    },
+    {
+      "type": "range",
+      "id": "star_size_top",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "label": "Star Size",
+      "default": 1
+    },
+    {
+      "type": "inline_richtext",
+      "id": "rating_count",
+      "label": "Review count",
+      "default": "Based on 16 Reviews",
+      "info": "Remove to hide"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "review_column_mobile",
+      "label": "Review column Mobile",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "review_column_tab",
+      "label": "Review column Tablet",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "review_column_desk",
+      "label": "Review column Desktop",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "review_load",
+      "label": "Load more",
+      "default": "4",
+      "info": "This setting will work on web browser. Not in shopify theme editor."
+    },
+    {
+      "type": "text",
+      "id": "load_text",
+      "label": "Button Text",
+      "default": "Load More"
+    },
+    {
+      "type": "header",
+      "content": "Sizes"
+    },
+    {
+      "type": "range",
+      "id": "rw_img_size",
+      "min": 20,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Review Image size",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "rw_img_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "block_name_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Customer name size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "date_size",
+      "min": 6,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Date size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "block_head_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Review Heading size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "block_text_size",
+      "min": 6,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Review text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
       "type": "select",
       "id": "star_style",
       "label": "Star Style",
@@ -815,95 +810,94 @@
       "default": "star"
     },
     {
-    "type":      "range",
-    "id":        "star_size",
-    "min":       0.5,
-    "max":        2,
-    "step":       0.1,
-    "label":     "Star Size",
-    "default":   1
-},
+      "type": "range",
+      "id": "star_size",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "label": "Star Size",
+      "default": 1
+    },
     {
-    "type":      "range",
-    "id":        "star_radius",
-    "min":       0,
-    "max":        30,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Star Corner Radius",
-    "default":   0
-},
-   {
-        "type": "color",
-        "id": "feature_svg_color",
-        "label": "Star Color",
-        "default": "#000"
-      },
-   {
-        "type": "color",
-        "id": "inactive_star_color",
-        "label": "Disable Star Color",
-        "default": "#e2e2e2"
-      },
-   {
-        "type": "header",
-        "content": "Colors"
-      },
-   {
-        "type": "checkbox",
-        "id": "show_border",
-        "label": "Show Border",
-        "default": true
-      },
-{
-        "type": "color",
-        "id": "rw_border",
-        "label": "Border",
-        "default": "#f2f2f2"
-      },
-   {
-    "type":      "range",
-    "id":        "border_radius",
-    "min":       0,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Corner Radius",
-    "default":   0
-},
-{
-        "type": "color",
-        "id": "section_bg3",
-        "label": "Verify Text",
-        "default": "#000"
-      },
-{
-        "type": "color",
-        "id": "section_bg2",
-        "label": "Verify Badge",
-        "default": "#000"
-      },
-   {
-        "type": "text",
-        "id": "verify_text",
-        "label": "Verify Text",
-        "default": "Verified Buyer",
-        "info": "Remove to hide"
-      },
-{
-        "type": "color",
-        "id": "review_bg",
-        "label": "Review Background",
-        "default": "#fff"
-      },
-
-   {
-        "type": "color",
-        "id": "feature_acc_color",
-        "label": "Accent Color",
-        "default": "#000"
-      },
-   {
+      "type": "range",
+      "id": "star_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Star Corner Radius",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "feature_svg_color",
+      "label": "Star Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "inactive_star_color",
+      "label": "Disable Star Color",
+      "default": "#e2e2e2"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show Border",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "rw_border",
+      "label": "Border",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Corner Radius",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "section_bg3",
+      "label": "Verify Text",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "section_bg2",
+      "label": "Verify Badge",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "verify_text",
+      "label": "Verify Text",
+      "default": "Verified Buyer",
+      "info": "Remove to hide"
+    },
+    {
+      "type": "color",
+      "id": "review_bg",
+      "label": "Review Background",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "feature_acc_color",
+      "label": "Accent Color",
+      "default": "#000"
+    },
+    {
       "type": "range",
       "id": "review_pd",
       "min": 0,
@@ -913,7 +907,7 @@
       "label": "Review Padding",
       "default": 20
     },
-   {
+    {
       "type": "range",
       "id": "review_pd_m",
       "min": 0,
@@ -923,34 +917,34 @@
       "label": "Review Padding Mobile",
       "default": 20
     },
-   {
-        "type": "header",
-        "content": "Review Footer"
-      },
-     {
-        "type": "checkbox",
-        "id": "show_footer",
-        "label": "Show Review Footer",
-        "default": true
-      },
-     {
-        "type": "checkbox",
-        "id": "show_product",
-        "label": "Show Product",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "like_text",
-        "label": "Like Dislike Text",
-        "default": "Was this helpful?",
-        "info": "Leave blank to hide"
-      },
-   {
+    {
+      "type": "header",
+      "content": "Review Footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Show Review Footer",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product",
+      "label": "Show Product",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "like_text",
+      "label": "Like Dislike Text",
+      "default": "Was this helpful?",
+      "info": "Leave blank to hide"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
-   {
+    {
       "type": "range",
       "id": "rw_margin",
       "min": 0,
@@ -960,7 +954,7 @@
       "label": "Margin bottom",
       "default": 0
     },
-   {
+    {
       "type": "range",
       "id": "padding_top",
       "min": 0,
@@ -980,98 +974,92 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-
-],
-
+  ],
   "max_blocks": 30,
   "blocks": [
-
-
     {
-        "type": "review",
-        "name": "review",
-        "settings": [
-
-{
-        "type": "image_picker",
-        "id": "img_block",
-        "label": "Image"
-      },
-          {
-        "type": "image_picker",
-        "id": "img_block2",
-        "label": "Image"
-      },
-             {
-    "type":      "range",
-    "id":        "star_rating",
-    "min":       1,
-    "max":        5,
-    "step":       0.5,
-    "label":     "Star Rating",
-    "default":   5
- },
-{
-        "type": "text",
-        "id": "name_text",
-        "label": "Name",
-        "default": "Johan D."
-      },
-          {
-        "type": "text",
-        "id": "date_text",
-        "label": "Date",
-        "default": "June 2024"
-      },
-{
-        "type": "text",
-        "id": "review_head",
-        "label": "Review Title",
-        "default": "Nice Product"
-      },
-{
-        "type": "text",
-        "id": "review_text",
-        "label": "Review Text",
-        "default": "Nice Product. I'm happy with my purchase."
-      },
-          {
-    "type":      "range",
-    "id":        "like_size",
-    "min":       0,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Likes",
-    "default":   0
-},
-                  {
-    "type":      "range",
-    "id":        "dislike_size",
-    "min":       0,
-    "max":        100,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Dislikes",
-    "default":   0
-},
-{
-    "type":      "range",
-    "id":        "feature_font_size",
-    "min":       10,
-    "max":        50,
-    "step":       1,
-    "unit":       "px",
-    "label":     "Font size",
-    "default":   16
-}
-]
-}
-],
-
+      "type": "review",
+      "name": "review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img_block",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_block2",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.5,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "name_text",
+          "label": "Name",
+          "default": "Johan D."
+        },
+        {
+          "type": "text",
+          "id": "date_text",
+          "label": "Date",
+          "default": "June 2024"
+        },
+        {
+          "type": "text",
+          "id": "review_head",
+          "label": "Review Title",
+          "default": "Nice Product"
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Nice Product. I'm happy with my purchase."
+        },
+        {
+          "type": "range",
+          "id": "like_size",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Likes",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "dislike_size",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Dislikes",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "feature_font_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Lumin Review",
+      "name": "t:sections.names.reviews_section",
       "blocks": [
         {
           "type": "review"

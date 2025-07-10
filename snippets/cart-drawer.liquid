@@ -34,7 +34,7 @@
             background: {{ settings.note_bg_color_drawer }};
             border-radius: {{settings.cart_note_radius_drawer}}px;
           }
-         
+
         .drawer__heading {
           font-size: {{settings.header_size}}px;
           text-align: {{settings.header_alignment}};
@@ -60,7 +60,9 @@
 </style>
 {% if settings.show_line_separator == false %}
   <style>
-    .drawer__footer {box-shadow: none;}
+    .drawer__footer {
+      box-shadow: none;
+    }
   </style>
 {% endif %}
 
@@ -121,52 +123,46 @@
 
       <div class="drawer__header" style="padding:0;">
         {% if settings.cart_message_below == true %}
-         
-            {% if settings.cart_title != blank %}
-              <h3 class="drawer__heading">
-                {{ settings.cart_title | replace: '[x]', cart.item_count -}}
-              </h3>
-            {% endif %}
-      
+          {% if settings.cart_title != blank %}
+            <h3 class="drawer__heading">
+              {{ settings.cart_title | replace: '[x]', cart.item_count -}}
+            </h3>
+          {% endif %}
         {% endif %}
 
+        {% if settings.head_message != blank %}
+          {% assign cart_head_text = settings.head_message %}
+          <div class="ct-message{% if settings.cart_head_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif settings.cart_head_text_style == 'subtitle' %} subtitle{% endif %}">
+            <span>{{ cart_head_text }}</span>
+          </div>
 
-          {% if settings.head_message != blank %}
-        {% assign cart_head_text = settings.head_message %}
-        <div class="ct-message{% if settings.cart_head_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif settings.cart_head_text_style == 'subtitle' %} subtitle{% endif %}">
-          <span>{{ cart_head_text }}</span>
-        </div>
-     
-        <style>
-          .ct-message {
-            text-align: {{ settings.cart_text_align_2 }};
-            font-size: {{ settings.cart_head_text_size }}px;
-            color: {{ settings.cart_message_text }};
-            padding: 0.6rem 2rem;
-            background: {{ settings.cart_message_bg }};
-          }
-          .ct-message a {
-            color: {{ settings.cart_message_text }};
-            text-underline-offset: 2px;
-          }
-          .ct-message p {
-            margin:0;
-          }
-           #countdown-timer {
-            display: inline-block;
-          }
-        </style>
-      {% endif %}
-  
+          <style>
+            .ct-message {
+              text-align: {{ settings.cart_text_align_2 }};
+              font-size: {{ settings.cart_head_text_size }}px;
+              color: {{ settings.cart_message_text }};
+              padding: 0.6rem 2rem;
+              background: {{ settings.cart_message_bg }};
+            }
+            .ct-message a {
+              color: {{ settings.cart_message_text }};
+              text-underline-offset: 2px;
+            }
+            .ct-message p {
+              margin:0;
+            }
+             #countdown-timer {
+              display: inline-block;
+            }
+          </style>
+        {% endif %}
 
-
-         {% if settings.cart_message_below == false %}
-          
-            {% if settings.cart_title != blank %}
-              <h3 class="drawer__heading">
-                {{ settings.cart_title | replace: '[x]', cart.item_count -}}
-              </h3>
-            {% endif %}
+        {% if settings.cart_message_below == false %}
+          {% if settings.cart_title != blank %}
+            <h3 class="drawer__heading">
+              {{ settings.cart_title | replace: '[x]', cart.item_count -}}
+            </h3>
+          {% endif %}
         {% endif %}
 
         <button
@@ -179,9 +175,6 @@
         </button>
       </div>
 
-    
-
-     
       {% render 'cart-progress-bar-custom' %}
 
       <cart-drawer-items
@@ -235,7 +228,7 @@
                           border-bottom: 1px solid #f2f2f2;
                         }
                         .cart-drawer .cart-item:last-child {
-                           border-bottom: none;
+                          border-bottom: none;
                         }
                       </style>
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
@@ -423,8 +416,11 @@
                                       class="quantity__button no-js-hidden"
                                       name="minus"
                                       type="button"
-                                      style="padding:0 10px;border-right: .1rem solid rgba(var(--color-foreground),var(--inputs-border-opacity));
-                                      height: calc((var(--inputs-border-width)) + 3.2rem);">
+                                      style="
+                                        padding:0 10px;border-right: .1rem solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+                                        height: calc((var(--inputs-border-width)) + 3.2rem);
+                                      "
+                                    >
                                       <span class="visually-hidden">
                                         {{-
                                           'products.product.quantity.decrease'
@@ -457,8 +453,11 @@
                                       class="quantity__button no-js-hidden"
                                       name="plus"
                                       type="button"
-                                      style="padding:0 10px;border-left: .1rem solid rgba(var(--color-foreground),var(--inputs-border-opacity));
-                                             height: calc((var(--inputs-border-width)) + 3.2rem);">
+                                      style="
+                                        padding:0 10px;border-left: .1rem solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+                                        height: calc((var(--inputs-border-width)) + 3.2rem);
+                                      "
+                                    >
                                       <span class="visually-hidden">
                                         {{-
                                           'products.product.quantity.increase'
@@ -622,7 +621,9 @@
         {%- endif -%}
         {%- unless settings.show_cart_note_drawer and settings.enable_cart_upsell -%}
           <style>
-            .cart-upsell-toggle-container {margin-top: 0 !important;}
+            .cart-upsell-toggle-container {
+              margin-top: 0 !important;
+            }
           </style>
         {% endunless %}
         {% render 'cart-upsell-checkbox' %}
@@ -675,7 +676,7 @@
         <!-- CTAs -->
 
         <style>
-              .lumin-cart__ctas {
+              .clarity-cart__ctas {
               display: grid;
                {% if settings.show_cart_button and settings.show_full_button == false %}
               grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -684,16 +685,16 @@
               margin-top: 2rem;
               }
               @media screen and (min-width: 750px) {
-              .lumin-cart__ctas {
+              .clarity-cart__ctas {
                   display: grid !important;
               }
           }
-              .lumin-cart__ctas>*:not(noscript:first-child)+* {
+              .clarity-cart__ctas>*:not(noscript:first-child)+* {
               margin-top: 0rem !important;
               }
         </style>
 
-        <div class="cart__ctas lumin-cart__ctas" {{ shopify_attributes }}>
+        <div class="cart__ctas clarity-cart__ctas" {{ shopify_attributes }}>
           <noscript>
             <button type="submit" class="cart__update-button button button--secondary" form="CartDrawer-Form">
               {{ 'sections.cart.update' | t }}

@@ -13,7 +13,6 @@
     if section.settings.only_visitor and customer
       assign show_promo_popup_p = false
     endif
-
   -%}
 
   {%- if show_promo_popup_p -%}
@@ -66,9 +65,9 @@
                         <span class="popup-p-modal__title__prefix">
                           {{
                             section.settings.heading_prefix
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           }}
                         </span>
@@ -77,9 +76,9 @@
                         <span class="title {{ section.settings.heading_size }}">
                           {{
                             section.settings.heading
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           }}
                         </span>
@@ -88,9 +87,9 @@
                         <span class="popup-p-modal__title__suffix">
                           {{
                             section.settings.heading_suffix
-                            | replace: '[', '<span class="lumin-text__fancy1">'
+                            | replace: '[', '<span class="clarity-text__fancy1">'
                             | replace: ']', '</span>'
-                            | replace: '((', '<span class="lumin-text__fancy2">'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
                             | replace: '))', '</span>'
                           }}
                         </span>
@@ -101,9 +100,9 @@
                     <div class="popup-p-modal__text remove-space">
                       {{
                         section.settings.text
-                        | replace: '[', '<span class="lumin-text__fancy1">'
+                        | replace: '[', '<span class="clarity-text__fancy1">'
                         | replace: ']', '</span>'
-                        | replace: '((', '<span class="lumin-text__fancy2">'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
                         | replace: '))', '</span>'
                       }}
                     </div>
@@ -114,7 +113,6 @@
           </div>
         </div>
       </div>
-
     </promo-popup-p>
 
     {%- unless request.design_mode -%}
@@ -129,8 +127,8 @@
 
 {% schema %}
 {
-  "name": "Promo Popup",
-   "enabled_on": {
+  "name": "t:sections.names.promo_popup",
+  "enabled_on": {
     "groups": ["custom.popup"]
   },
   "settings": [
@@ -249,56 +247,56 @@
       "default": "bottom-right",
       "label": "t:sections.popup.settings.text_box_position.label"
     },
-     {
-            "type": "header",
-            "content": "Content"
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.rich-text.blocks.heading.settings.heading.label",
+      "default": "Popup"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "Extra Small"
         },
         {
-            "type": "text",
-            "id": "heading_prefix",
-            "label": "Heading prefix"
+          "value": "h2",
+          "label": "Small"
         },
         {
-            "type": "text",
-            "id": "heading",
-            "label": "t:sections.rich-text.blocks.heading.settings.heading.label",
-            "default": "Popup"
+          "value": "h1",
+          "label": "Medium"
         },
         {
-            "type": "select",
-            "id": "heading_size",
-            "options": [
-                {
-                    "value": "h3",
-                    "label": "Extra Small"
-                },
-                {
-                    "value": "h2",
-                    "label": "Small"
-                },
-                {
-                    "value": "h1",
-                    "label": "Medium"
-                },
-                {
-                    "value": "h0",
-                    "label": "Large"
-                }
-            ],
-            "default": "h1",
-            "label": "Heading size"
-        },
-        {
-            "type": "text",
-            "id": "heading_suffix",
-            "label": "Heading suffix"
-        },
-        {
-            "type": "richtext",
-            "id": "text",
-            "label": "t:sections.rich-text.blocks.text.settings.text.label",
-            "default": "<p>Share information about your brand with your customers.</p>"
-        },
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading suffix"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.rich-text.blocks.text.settings.text.label",
+      "default": "<p>Share information about your brand with your customers.</p>"
+    },
     {
       "type": "header",
       "content": "Colors"
@@ -316,12 +314,10 @@
       "default": "#1a1b18"
     }
   ],
-   "presets": [
+  "presets": [
     {
-      "name": "Promo Popup"
+      "name": "t:sections.names.promo_popup"
     }
   ]
 }
 {% endschema %}
-
-

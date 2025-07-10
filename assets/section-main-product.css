@@ -62,13 +62,13 @@
   .product--large:not(.product--no-media) .product__info-wrapper {
     padding: 0 0 0 5rem;
     max-width: 40%;
-    width: calc(40% - var(--lumin-container-margin) -  var(--grid-desktop-horizontal-spacing) / 2);
-    margin-left: var(--lumin-container-margin);
+    width: calc(40% - var(--clarity-container-margin) -  var(--grid-desktop-horizontal-spacing) / 2);
+    margin-left: var(--clarity-container-margin);
   }
 
   .product--large:not(.product--no-media).product--right .product__info-wrapper {
     padding: 0 4rem 0 0;
-    margin-right: var(--lumin-container-margin);
+    margin-right: var(--clarity-container-margin);
     margin-left:0 !important;
   }
 
@@ -79,18 +79,18 @@
  
   .product--small:not(.product--no-media) .product__info-wrapper{
     max-width: 55%;
-    width: calc(55% - var(--lumin-container-margin) - var(--grid-desktop-horizontal-spacing) / 2);
-    margin-left: var(--lumin-container-margin);
+    width: calc(55% - var(--clarity-container-margin) - var(--grid-desktop-horizontal-spacing) / 2);
+    margin-left: var(--clarity-container-margin);
   }
   .product--medium:not(.product--no-media).product--right .product__info-wrapper {
-    margin-right: var(--lumin-container-margin);
+    margin-right: var(--clarity-container-margin);
     margin-left:0 !important;
   }
 
   .product--medium:not(.product--no-media) .product__info-wrapper {
     max-width: 45%;
-    width: calc(45% - var(--lumin-container-margin) - var(--grid-desktop-horizontal-spacing) / 2);
-    margin-left: var(--lumin-container-margin);
+    width: calc(45% - var(--clarity-container-margin) - var(--grid-desktop-horizontal-spacing) / 2);
+    margin-left: var(--clarity-container-margin);
   }
   
   .product--small:not(.product--no-media) .product__media-wrapper {
@@ -98,7 +98,7 @@
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
   }
   .product--small:not(.product--no-media).product--right .product__info-wrapper {
-    margin-right: var(--lumin-container-margin);
+    margin-right: var(--clarity-container-margin);
     margin-left:0 !important;
   }
 }

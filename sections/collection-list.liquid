@@ -24,20 +24,20 @@
   endif
 -%}
 <style>
-  .lumin-collection-card-{{section.id}} {
+  .clarity-collection-card-{{section.id}} {
     background: none;
   }
   /*
-   .lumin-collection-card-{{section.id}}:after {
+   .clarity-collection-card-{{section.id}}:after {
     border-radius: {{ section.settings.image_radius | append: '%' }};
   }
-  .card--standard.lumin-collection-card-{{section.id}}:after {
+  .card--standard.clarity-collection-card-{{section.id}}:after {
     border-radius: {{ section.settings.image_radius | append: '%' }} !important;
   }
-  .lumin-collection-card-{{section.id}} img {
+  .clarity-collection-card-{{section.id}} img {
     border-radius: {{ section.settings.image_radius | append: '%' }};
   }*/
-  .lumin-collection-card-{{section.id}} svg {
+  .clarity-collection-card-{{section.id}} svg {
     background: #f2f2f2;
   }
    .collection-slider-buttons {
@@ -53,13 +53,21 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-list-wrapper page-width isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin"
-           style="justify-content: {{ section.settings.collection_text_alignment }};">
+      <div
+        class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin"
+        style="justify-content: {{ section.settings.collection_text_alignment }};"
+      >
         <h2
           id="SectionHeading-{{ section.id }}"
           class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         >
-          {{ section.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+          {{
+            section.settings.title
+            | replace: '[', '<span class="clarity-text__fancy1">'
+            | replace: ']', '</span>'
+            | replace: '((', '<span class="clarity-text__fancy2">'
+            | replace: '))', '</span>'
+          }}
         </h2>
 
         {%- if section.settings.show_view_all and show_mobile_slider -%}
@@ -110,16 +118,18 @@
       </ul>
       {%- if show_mobile_slider -%}
         {%- if show_mobile_slider and section.settings.swipe_on_mobile -%}
-        <style>
-          
-           @media screen and (max-width: 749px) {
-            .title-wrapper-with-link.title-wrapper--self-padded-tablet-down {
+          <style>
+            @media screen and (max-width: 749px) {
+              .title-wrapper-with-link.title-wrapper--self-padded-tablet-down {
                 max-width: 60%;
+              }
             }
-        }
-        </style>
-          {% endif %}
-        <div class="slider-buttons no-js-hidden large-up-hide" style="position: absolute;top: -60px;right: 15px;gap: 5px;">
+          </style>
+        {% endif %}
+        <div
+          class="slider-buttons no-js-hidden large-up-hide"
+          style="position: absolute;top: -60px;right: 15px;gap: 5px;"
+        >
           <button
             type="button"
             class="slider-button slider-button--prev collection-slider-buttons"
@@ -172,9 +182,9 @@
   "tag": "section",
   "class": "section section-collection-list",
   "max_blocks": 15,
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "inline_richtext",

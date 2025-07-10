@@ -1,10 +1,10 @@
 <style>
-  .lumin-section__block-id-{{ block.id }} video {
+  .clarity-section__block-id-{{ block.id }} video {
     width: 100%    !important;
     height: auto   !important;
   }
 </style>
-<div class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__video__wrapper">
+<div class="clarity-section-block clarity-section__block-id-{{ block.id }} clarity-section__video__wrapper">
   {%- assign video = block.settings.video -%}
   <video
     width="{{ video.aspect_ratio | times: 100 }}"

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,6 +15,7 @@
         "breadcrumbs_rpieHJ": {
           "type": "breadcrumbs",
           "settings": {
+            "title_home": "Home",
             "padding_top": 0,
             "padding_top_mb": 20,
             "padding_bottom": 0,
@@ -16,7 +26,7 @@
         "ad73ef22-d96e-41c5-b4e1-ed8d9daf2239": {
           "type": "review",
           "settings": {
-            "lrw_text": "4.8 \/ 3884 Reviews",
+            "lrw_text": "4.8 / 3884 Reviews",
             "text_size": 14,
             "star_style": "star",
             "star_size": 0.7,
@@ -122,7 +132,7 @@
           "settings": {
             "icon": "paw_print",
             "icon_width": 20,
-            "content": "<p>Cruelty Free<\/p>",
+            "content": "<p>Cruelty Free</p>",
             "font_size": 100
           }
         },
@@ -131,7 +141,7 @@
           "settings": {
             "icon": "plant",
             "icon_width": 20,
-            "content": "<p>Eco Friendly<\/p>",
+            "content": "<p>Eco Friendly</p>",
             "font_size": 100
           }
         },
@@ -140,7 +150,7 @@
           "settings": {
             "icon": "truck",
             "icon_width": 20,
-            "content": "<p>Fast Shipping<\/p>",
+            "content": "<p>Fast Shipping</p>",
             "font_size": 100
           }
         },
@@ -149,7 +159,7 @@
           "settings": {
             "icon": "chat_bubble",
             "icon_width": 20,
-            "content": "<p>24\/7 Customer Support<\/p>",
+            "content": "<p>24/7 Customer Support</p>",
             "font_size": 100
           }
         },
@@ -165,7 +175,7 @@
           "type": "review_v1",
           "settings": {
             "name": "Michelle",
-            "text": "and <strong>758<\/strong> people purchased",
+            "text": "and <strong>758</strong> people purchased",
             "background_review": "#ffffff",
             "text_color": "#000000",
             "verified_badge": "#1c9cef",
@@ -192,11 +202,11 @@
             "label_style": "body",
             "font_size": 14,
             "font_style": "normal",
-            "swatchType": "color",
+            "swatch_type": "color",
             "optionName": "Color",
-            "swatchStyle": "round",
-            "swatchSize": 30,
-            "swatchHeight": 30,
+            "swatch_style": "round",
+            "swatch_size": 30,
+            "swatch_height": 30,
             "size_trigger": "",
             "chart_id": "Size Chart",
             "size_page": "",
@@ -228,7 +238,7 @@
             "image_ani": "none",
             "text_size": 12,
             "text_style": "body",
-            "text": "Order in <strong>(timer) <\/strong>to Get By <strong>(date) <\/strong>|<strong> <\/strong>30-day returns on all orders",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "date_locale": "en-US",
             "ship_bg": "#fdfaf5",
             "show_border": false,
@@ -243,14 +253,14 @@
         "promo_slide_PCLGb7": {
           "type": "promo-slide",
           "settings": {
-            "block_heading": "Pairs well with",
-            "text_1": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store. ★★★★★<\/p>",
+            "block_heading": "Lorem Ipsum",
+            "text_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p><p> ★★★★★</p>",
             "show_slide_2": true,
-            "block_heading_2": "Pairs well with",
-            "text_2": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "block_heading_2": "Lorem Ipsum",
+            "text_2": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p><p> ★★★★★</p>",
             "show_slide_3": false,
-            "block_heading_3": "Pairs well with",
-            "text_3": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "block_heading_3": "Lorem Ipsum",
+            "text_3": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p><p> ★★★★★</p>",
             "color_scheme": "accent-2",
             "slide_padding": 20,
             "show_border": false,
@@ -270,7 +280,7 @@
             "icon_size": 38,
             "heading": "",
             "heading_size": 18,
-            "text": "<p>Free shipping on orders of $90 Worldwide<\/p><p>30-day returns on all orders<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>",
             "text_size": 12,
             "padding_top": 8,
             "padding_bottom": 8
@@ -282,7 +292,7 @@
             "icon_size": 38,
             "heading": "",
             "heading_size": 20,
-            "text": "<p>Shop with peace of mind, your personal information is protected.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>",
             "text_size": 13,
             "padding_top": 8,
             "padding_bottom": 8
@@ -294,7 +304,7 @@
             "icon_size": 38,
             "heading": "",
             "heading_size": 26,
-            "text": "<p>Shop with us and contribute to a greener planet.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>",
             "text_size": 13,
             "padding_top": 8,
             "padding_bottom": 8
@@ -306,7 +316,7 @@
             "icon_size": 38,
             "heading": "",
             "heading_size": 20,
-            "text": "<p>Shop more, save more, and enjoy unbeatable value.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>",
             "text_size": 13,
             "padding_top": 8,
             "padding_bottom": 8
@@ -319,11 +329,11 @@
             "color_scheme": "background-1",
             "icon_font_size": 14,
             "icon_1": "heart",
-            "heading_1": "Moarning",
+            "heading_1": "Lorem Ipsum",
             "icon_2": "return",
-            "heading_2": "Day",
+            "heading_2": "Lorem Ipsum",
             "icon_3": "truck",
-            "heading_3": "Night"
+            "heading_3": "Lorem Ipsum"
           }
         },
         "006e6c29-717a-4f58-8fea-cabc7da6316f": {
@@ -343,19 +353,19 @@
           "type": "collapsible_tab",
           "settings": {
             "open_first_collapsible_row": false,
-            "heading": "Shipping Information",
+            "heading": "Lorem Ipsum",
             "icon": "none",
-            "content": "<p>Free 2 Day Shipping on Orders $50+. Returns must be postmarked: within 15 days of delivery for a refund and within 30 days for a Store Credit or Exchange. <\/p><p><a href=\"\/collections\/all\" title=\"All products\">Read our full returns policy in our FAQ page.<\/a><\/p><p>All Sale items are final sale.<\/p>",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>",
             "page": ""
           }
         },
-        "f34ad5c4-50a9-4a95-a561-d8c51d1b76dd": {
+        "collapsible_tab_FDEyJy": {
           "type": "collapsible_tab",
           "settings": {
             "open_first_collapsible_row": false,
-            "heading": "Returns & Refunds",
+            "heading": "Lorem Ipsum",
             "icon": "none",
-            "content": "<p>Free 2 Day Shipping on Orders $50+. Returns must be postmarked: within 15 days of delivery for a refund and within 30 days for a Store Credit or Exchange. <\/p><p><a href=\"\/collections\/all\" title=\"All products\">Read our full returns policy in our FAQ page.<\/a><\/p><p>All Sale items are final sale.<\/p>",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>",
             "page": ""
           }
         },
@@ -390,7 +400,7 @@
         "icon_with_text_e8wfpw",
         "006e6c29-717a-4f58-8fea-cabc7da6316f",
         "9ccffc8d-e4c7-404f-8007-8c5162f22285",
-        "f34ad5c4-50a9-4a95-a561-d8c51d1b76dd",
+        "collapsible_tab_FDEyJy",
         "description_fNEHzf"
       ],
       "custom_css": [],
@@ -437,27 +447,27 @@
         "tab_ALDcWX": {
           "type": "tab",
           "settings": {
-            "heading": "Why Us?",
+            "heading": "Lorem Ipsum",
             "description": false,
-            "tab_content": "<p>✓ Exceptional Quality ✨ Unmatched Customer Service 🌸 Fast and Reliable Shipping <\/p><p><strong>Revive<\/strong>: Our mission is to rejuvenate your skin and spirit with innovative, clean, and effective skincare solutions. We are dedicated to helping you achieve healthy, radiant skin while prioritizing sustainability, self-care, and confidence in every product we create.<\/p>",
+            "tab_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>",
             "page": ""
           }
         },
         "tab_fydHBF": {
           "type": "tab",
           "settings": {
-            "heading": "Description",
+            "heading": "Lorem  Ipsum",
             "description": true,
-            "tab_content": "<p>Some text here<\/p>",
+            "tab_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>",
             "page": ""
           }
         },
         "tab_JcRCNb": {
           "type": "tab",
           "settings": {
-            "heading": "More Info",
+            "heading": "Lorem Ipsum",
             "description": false,
-            "tab_content": "<p><strong>Why Choose Us<\/strong><\/p><p><br\/>Our products are crafted with carefully selected, high-quality ingredients to ensure effective and safe skincare solutions.<br\/><br\/>We are committed to eco-friendly practices, using sustainable packaging and responsibly sourced materials to protect the planet.<br\/><br\/>Backed by science and real customer testimonials, our products are designed to deliver visible and lasting results.<br\/><br\/>Your satisfaction is our priority. We provide personalized support to help you achieve your unique skincare goals.<br\/><br\/>Our brand stands for cruelty-free and ethical production methods, ensuring your skin feels good inside and out.<br\/><br\/>Combining cutting-edge formulations with an easy-to-follow skincare approach, we make achieving radiant skin effortless.<br\/><\/p><p>Choose us for skincare that truly cares — for you and the world around you.<\/p>",
+            "tab_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>",
             "page": "product-info"
           }
         }
@@ -483,12 +493,12 @@
       }
     },
     "e2fe0eca-e002-483a-b480-89fb59bb4de6": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--15124688076883__e2fe0eca-e002-483a-b480-89fb59bb4de6-announcement-1": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive<\/strong> Theme by <a href=\"https:\/\/lumintheme.com\/\" target=\"_blank\" title=\"https:\/\/lumintheme.com\/\">Lumin<em>Themes<\/em><\/a>. These products are not for sale.<\/p>",
+            "Announcement": "<p>This is just a demo store to advertise the <strong>Revive</strong> Theme by <a href=\"https://clarity.com/\" target=\"_blank\" title=\"https://clarity.com/\">Clarity<em>Themes</em></a>. These products are not for sale.</p>",
             "announcement_size": 22,
             "announcement_size_m": 20,
             "text_spacing": 0,
@@ -516,7 +526,7 @@
       }
     },
     "d10e19d4-d161-4991-8eb0-5fd7695fdbad": {
-      "type": "lumin-grids",
+      "type": "image-with-text-grids",
       "blocks": {
         "template--21773862601006__d10e19d4-d161-4991-8eb0-5fd7695fdbad-text-1": {
           "type": "text",
@@ -535,7 +545,7 @@
             "bg_color": "#ffffff",
             "icon_size": 25,
             "icon_corner": 0,
-            "head": "The headline should be <strong>attention-grabbing, concise<\/strong>, and <em>communicate<\/em> the primary benefit.",
+            "head": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
             "use_body_font": false,
             "head_color": "#212121",
             "head_size_d": 34,
@@ -568,7 +578,7 @@
             "padding_size_in": 10,
             "text_border": 0,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "<strong>Benefits and Features<\/strong>",
+            "head": "<strong>Benefits and Features</strong>",
             "head_color": "#ffffff",
             "head_size_d": 30,
             "head_size_m": 24,
@@ -601,13 +611,13 @@
             "bg_color": "#f4f0ec",
             "icon_size": 20,
             "icon_corner": 0,
-            "head": "Benefits and Features",
+            "head": "Lorem ipsum dolor sit amet",
             "use_body_font": false,
             "head_color": "#212121",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "subtitle": "<p>Highlight the key benefits and features of your product or service in a concise and visually appealing manner. Use icons or graphics to make it more engaging.<\/p>",
+            "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid<br/></p>",
             "text_color": "#212121",
             "text_size_d": 16,
             "text_size_m": 14,
@@ -634,12 +644,12 @@
             "padding_size_in": 10,
             "text_border": 0,
             "bg_color": "rgba(0,0,0,0)",
-            "head": "<strong>Benefits and Features<\/strong>",
+            "head": "Lorem ipsum dolor",
             "head_color": "#ffffff",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "text": "Your Beauty, Our Passion",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
             "text_color": "#ffffff",
             "text_size_d": 18,
             "text_size_m": 14,
@@ -730,9 +740,9 @@
         "row_wEBMVh"
       ],
       "settings": {
-        "title": "Comparison table",
+        "title": "Lorem ipsum dolor sit",
         "heading_size": "h1",
-        "text": "<p>Choose Revive® for high-quality, effective, and ethical skincare products that deliver real results. Join our community of satisfied customers and discover the difference today.<\/p>",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid<br/></p>",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
@@ -763,7 +773,7 @@
       }
     },
     "8f065947-747f-4509-983a-3cdf1c2813f8": {
-      "type": "lumin-hero",
+      "type": "hero",
       "blocks": {
         "template--15124688076883__8f065947-747f-4509-983a-3cdf1c2813f8-hero-1": {
           "type": "hero",
@@ -771,23 +781,23 @@
             "use_video": false,
             "main_image_width": 370,
             "show_1": true,
-            "head_1": "High Potency",
-            "text_1": "Serums contain a higher concentration",
+            "head_1": "Lorem ipsum",
+            "text_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             "show_2": true,
-            "head_2": "Hydration",
-            "text_2": "Help plump and smooth the skin's surface",
+            "head_2": "Lorem ipsum",
+            "text_2": "Lorem ipsum dolor sit amet, consectetur",
             "show_3": true,
-            "head_3": "Ergonomic",
-            "text_3": "Skin-friendly silicone material can deliver smooth",
+            "head_3": "Lorem ipsum",
+            "text_3": "Lorem ipsum dolor sit amet, consectetur adipiscing",
             "show_4": true,
-            "head_4": "Skincare",
-            "text_4": "Skin-friendly silicone material can deliver smooth",
+            "head_4": "Lorem ipsum",
+            "text_4": "Lorem ipsum dolor sit amet, consectetur",
             "show_5": false,
-            "head_5": "Brightening",
-            "text_5": "Reduce the appearance of dark spots and uneven skin tone.",
+            "head_5": "Lorem ipsum",
+            "text_5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             "show_6": false,
-            "head_6": "Ergonomic",
-            "text_6": "Skin-friendly silicone material can deliver smooth and soft touch feelings"
+            "head_6": "Lorem ipsum",
+            "text_6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
           }
         }
       },
@@ -797,12 +807,12 @@
       "settings": {
         "color_scheme": "background-1",
         "color_scheme_2": "background-1",
-        "title": "Elevate Your Skincare Routine",
+        "title": "Lorem ipsum dolor",
         "heading_size": "h1",
         "column_alignment": "center",
         "column_alignment_dt": "center",
         "column_alignment_mb": "center",
-        "head_text": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.",
+        "head_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid.",
         "feature_image": 72,
         "feature_image_mb": 40,
         "gap_section_top": 20,
@@ -850,19 +860,23 @@
         "point_N8GFph"
       ],
       "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#121212",
         "container": true,
         "container_max_width": "",
         "header_text_align": "center",
-        "heading": "Lookbook",
+        "heading": "Lorem ipsum",
         "heading_size": "h1",
-        "description": "<p>Optional description for this section<\/p>",
+        "description": "<p><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/><br/></p>",
         "image_border_radius": 1,
         "point_color": "#ffffff",
         "point_diameter": 3,
         "tooltip_width": 260,
         "tooltip_text_align": "center",
         "tooltip_bg_color": "#ffffff",
-        "tooltip_color": "#121212"
+        "tooltip_color": "#121212",
+        "pt": 3,
+        "pb": 3
       }
     },
     "c0ef23cf-5481-4b47-9b78-3c28134c079a": {
@@ -871,36 +885,36 @@
         "template--15124688076883__c0ef23cf-5481-4b47-9b78-3c28134c079a-collapsible_row-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What if it doesn’t work for me?",
+            "heading": "Lorem ipsum dolor sit amet",
             "icon": "none",
-            "row_content": "<p>Enjoy the Flexibility of a 30-Day Return Period for Our Products.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/></p>",
             "page": ""
           }
         },
         "template--15124688076883__c0ef23cf-5481-4b47-9b78-3c28134c079a-collapsible_row-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Guarentee?",
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             "icon": "none",
-            "row_content": "<p>Shop with <strong>Confidence<\/strong> Knowing that Our Products are Guaranteed to Meet Your Expectations.<\/p>",
+            "row_content": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
             "page": ""
           }
         },
         "template--15124688076883__c0ef23cf-5481-4b47-9b78-3c28134c079a-collapsible_row-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Okay, but why have I never heard of this before?",
+            "heading": "orem ipsum dolor sit amet, consectetur adipiscing elit",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
             "page": ""
           }
         },
         "template--15124688076883__c0ef23cf-5481-4b47-9b78-3c28134c079a-collapsible_row-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you provide tracking information?",
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
             "icon": "none",
-            "row_content": "<p>Yes, Every order includes a tracking number which will be provided via email or text once your order is fulfilled.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
             "page": ""
           }
         }
@@ -912,8 +926,8 @@
         "template--15124688076883__c0ef23cf-5481-4b47-9b78-3c28134c079a-collapsible_row-4"
       ],
       "settings": {
-        "caption": "FAQ",
-        "heading": "Revive Q&A",
+        "caption": "LOREM",
+        "heading": "LOREM IPSUM",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "section",
@@ -927,12 +941,12 @@
       }
     },
     "229f333e-9e4c-4172-a74b-6e93599e89c3": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "37b1339b-c738-466b-b8d6-abc7c4f4afa9": {
           "type": "caption",
           "settings": {
-            "caption": "EVERY TIME",
+            "caption": "LOREM IPSUM",
             "text_style": "caption-with-letter-spacing",
             "text_size": "small"
           }
@@ -940,7 +954,7 @@
         "template--15124688076883__229f333e-9e4c-4172-a74b-6e93599e89c3-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Your Beauty, Our Passion",
+            "heading": "Lorem ipsum dolor sit",
             "heading_size": "h1"
           }
         },
@@ -948,27 +962,27 @@
           "type": "feature",
           "settings": {
             "icon_size": 50,
-            "heading": "Deep Hydration",
+            "heading": "<strong>Lorem ipsum dolor sit</strong>",
             "heading_size_alt": 20,
-            "text": "<p>Our face cream provides intense hydration, replenishing your skin's moisture levels.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>"
           }
         },
         "7d85026e-fa9d-4e4b-95b1-0e105f239be4": {
           "type": "feature",
           "settings": {
             "icon_size": 50,
-            "heading": "Anti-Aging Properties",
+            "heading": "<strong>Lorem ipsum dolor sit amet</strong>",
             "heading_size_alt": 20,
-            "text": "<p>Packed with powerful antioxidants like vitamins C and E, our formula helps to combat the signs of aging.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>"
           }
         },
         "0295fbde-df99-4898-bdf5-4bfaa708d5fb": {
           "type": "feature",
           "settings": {
             "icon_size": 50,
-            "heading": "Non-Greasy Formula",
+            "heading": "<strong>Lorem ipsum dolor sit </strong>",
             "heading_size_alt": 20,
-            "text": "<p>Our lightweight and non-comedogenic formula absorbs quickly into the skin.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d</p>"
           }
         }
       },
@@ -1003,22 +1017,22 @@
         "heading_fg3xDQ": {
           "type": "heading",
           "settings": {
-            "heading": "Protective Barrier",
+            "heading": "<strong>Lorem ipsum </strong>",
             "heading_size": "h0"
           }
         },
         "text_4BNWiB": {
           "type": "text",
           "settings": {
-            "text": "<h3>Brightening and Even Skin Tone<\/h3><p>With natural brightening agents such as niacinamide, our face cream helps to fade dark spots and hyperpigmentation. It evens out your skin tone, giving you a luminous and glowing look.<\/p><p>Elevate your skincare routine with the Radiant Glow Face Cream and experience the perfect blend of hydration, anti-aging, and brightening benefits for a truly radiant complexion.<\/p><p><em>Perfect for all skin types<\/em><\/p>",
+            "text": "<h3>Lorem Ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>",
             "text_style": "body"
           }
         },
         "button_gb9ntR": {
           "type": "button",
           "settings": {
-            "button_label": "Shop Collections",
-            "button_link": "shopify:\/\/collections",
+            "button_label": "Lorem Ipsum",
+            "button_link": "shopify://collections",
             "button_style_secondary": false
           }
         }
@@ -1046,12 +1060,12 @@
       }
     },
     "2e0412f4-6423-47f7-8cbc-137f12eb8d99": {
-      "type": "lumin-mega",
+      "type": "image-with-text-custom",
       "blocks": {
         "f3acb3be-4b85-4e1f-9809-069b11bdc777": {
           "type": "caption",
           "settings": {
-            "caption": "EVERY TIME",
+            "caption": "LOREM IPSUM",
             "text_style": "caption-with-letter-spacing",
             "text_size": "small"
           }
@@ -1059,14 +1073,14 @@
         "4bf1e498-15dc-4351-9c65-b07d321c81ff": {
           "type": "heading",
           "settings": {
-            "heading": "Your Beauty, Our Passion",
+            "heading": "LOREM iPSUM",
             "heading_size": "h1"
           }
         },
         "24a40132-d94a-4d66-a5b9-e4c206100a15": {
           "type": "text",
           "settings": {
-            "text": "<p>To ensure our Glow Face Cream meets the highest standards of quality and efficacy, we conducted an extensive survey involving 500 users over a period of 8 weeks. Here are the key findings from our survey:<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
             "text_style": "body"
           }
         },
@@ -1079,9 +1093,9 @@
             "percent_border": "#f2f2f2",
             "circle_value_1": 95,
             "percent_text": 10,
-            "heading": "Hydration and Moisturization",
+            "heading": "<strong>Lorem Ipsum</strong>",
             "heading_size_alt": 20,
-            "text": "<p>95% of users reported a significant increase in skin hydration.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>"
           }
         },
         "b178122d-1276-4625-8772-04f3e3af75d4": {
@@ -1093,9 +1107,9 @@
             "percent_border": "#f2f2f2",
             "circle_value_1": 87,
             "percent_text": 10,
-            "heading": "Anti-Aging Benefits",
+            "heading": "Lorem Ipsum",
             "heading_size_alt": 20,
-            "text": "<p><strong>87%<\/strong> of users observed a reduction in the appearance of fine lines and wrinkles.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>"
           }
         }
       },
@@ -1125,12 +1139,12 @@
       }
     },
     "05f459a6-0335-4bab-8d23-ac347077efcc": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "template--15124688076883__05f459a6-0335-4bab-8d23-ac347077efcc-announcement-1": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>WE LOVE THE PLANET<\/p>",
+            "Announcement": "<p>Lorem Ipsum</p>",
             "announcement_size": 49,
             "announcement_size_m": 44,
             "text_spacing": 3,
@@ -1143,7 +1157,7 @@
         "template--15124688076883__05f459a6-0335-4bab-8d23-ac347077efcc-announcement-2": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>RECYCLABLE PACKAGING<\/p>",
+            "Announcement": "<p>Lorem Ipsum</p>",
             "announcement_size": 50,
             "announcement_size_m": 44,
             "text_spacing": 3,
@@ -1172,12 +1186,12 @@
       }
     },
     "a0df3eca-8a1b-49de-8f51-1e249c35b9f0": {
-      "type": "lumin-scrolling-text",
+      "type": "marquee",
       "blocks": {
         "91817b81-c148-4c6c-8a35-09d6ba380ca5": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>Shop Denim Jackets<\/p>",
+            "Announcement": "<p>Lorem Ipsum</p>",
             "announcement_size": 49,
             "announcement_size_m": 44,
             "text_spacing": 3,
@@ -1190,7 +1204,7 @@
         "dd77f8e0-9a10-41d6-a2a8-69b2326223a3": {
           "type": "announcement",
           "settings": {
-            "Announcement": "<p>RECYCLABLE PACKAGING<\/p>",
+            "Announcement": "<p>Lorem Ipsum</p>",
             "announcement_size": 50,
             "announcement_size_m": 44,
             "text_spacing": 3,
@@ -1231,7 +1245,7 @@
         "mobile_content_position": "middle",
         "color_scheme": "inverse",
         "desktop_content_alignment": "center",
-        "heading": "<strong>Revive, Renew, Rejoice<\/strong>",
+        "heading": "<strong>Lorem Ipsum dolor</strong>",
         "heading_size": "h0",
         "text": "",
         "button_label_1": "",
@@ -1242,81 +1256,55 @@
       }
     },
     "3475a8f9-021f-4acd-8e57-163ef2a26740": {
-      "type": "lumin-review",
+      "type": "reviews",
       "blocks": {
         "f57735f1-30a6-4538-8c95-bfe08674506b": {
           "type": "review",
           "settings": {
             "star_rating": 5,
-            "name_text": "Johan D.",
+            "name_text": "Lorem I.",
             "date_text": "July 2023",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
+            "review_head": "Lorem Ipsum",
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
             "like_size": 0,
             "dislike_size": 0,
             "feature_font_size": 16
           }
         },
-        "d032a47c-6f6e-4a8e-94b9-d1260a5d6b0d": {
+        "review_TQVEHM": {
           "type": "review",
           "settings": {
             "star_rating": 5,
-            "name_text": "Johan D.",
+            "name_text": "Lorem I.",
             "date_text": "July 2023",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
+            "review_head": "Lorem Ipsum",
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
             "like_size": 0,
             "dislike_size": 0,
             "feature_font_size": 16
           }
         },
-        "13a5819e-5698-472f-94eb-34d5a7ad9b21": {
+        "review_UEqNGg": {
           "type": "review",
           "settings": {
             "star_rating": 5,
-            "name_text": "Johan D.",
+            "name_text": "Lorem I.",
             "date_text": "July 2023",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
+            "review_head": "Lorem Ipsum",
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
             "like_size": 0,
             "dislike_size": 0,
             "feature_font_size": 16
           }
         },
-        "review_c7GmkA": {
+        "review_ndhCUP": {
           "type": "review",
           "settings": {
             "star_rating": 5,
-            "name_text": "Johan D.",
-            "date_text": "June 2024",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
-            "like_size": 0,
-            "dislike_size": 0,
-            "feature_font_size": 16
-          }
-        },
-        "review_fLQbtm": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "name_text": "Johan D.",
-            "date_text": "June 2024",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
-            "like_size": 0,
-            "dislike_size": 0,
-            "feature_font_size": 16
-          }
-        },
-        "review_d6McFd": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "name_text": "Johan D.",
-            "date_text": "June 2024",
-            "review_head": "Nice Product",
-            "review_text": "Nice Product. I'm happy with my purchase.",
+            "name_text": "Lorem I.",
+            "date_text": "July 2023",
+            "review_head": "Lorem Ipsum",
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
             "like_size": 0,
             "dislike_size": 0,
             "feature_font_size": 16
@@ -1325,21 +1313,19 @@
       },
       "block_order": [
         "f57735f1-30a6-4538-8c95-bfe08674506b",
-        "d032a47c-6f6e-4a8e-94b9-d1260a5d6b0d",
-        "13a5819e-5698-472f-94eb-34d5a7ad9b21",
-        "review_c7GmkA",
-        "review_fLQbtm",
-        "review_d6McFd"
+        "review_TQVEHM",
+        "review_UEqNGg",
+        "review_ndhCUP"
       ],
       "settings": {
         "editing": true,
         "color_scheme": "background-2",
-        "header_text": "what our customers say about us",
+        "header_text": "Lorem ipsum dolor sit amet, consectetur",
         "show_top": true,
         "rating_text": "4.8",
         "rating_range": 4.5,
         "star_size_top": 1,
-        "rating_count": "Based on 216 Reviews",
+        "rating_count": "Lorem Ipsum dolor",
         "review_column_mobile": "1",
         "review_column_tab": "2",
         "review_column_desk": "2",
@@ -1402,35 +1388,35 @@
         "template--15124688076883__5a4ffa10-f121-4b24-bd98-6ae593fde806-column-1": {
           "type": "column",
           "settings": {
-            "title": "Vegan",
-            "text": "<p>Ethical nourishment without sacrificing efficacy<\/p>",
+            "title": "Lorem Ipsum",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscin</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "c7f20ebe-b2a1-4e36-86de-408bab6c18e6": {
+        "column_Yq6Vf6": {
           "type": "column",
           "settings": {
-            "title": "Third-party Tested",
-            "text": "<p>Providing peace of mind to our customers<\/p>",
+            "title": "Lorem Ipsum",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscin</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "b807c7b7-f29a-4bdf-a1e1-0c8fe3c46007": {
+        "column_VjF3nj": {
           "type": "column",
           "settings": {
-            "title": "Bioavailable",
-            "text": "<p>Ensuring optimal absorption and utilization by your body<\/p>",
+            "title": "Lorem Ipsum",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscin</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "424a118d-6586-4697-9405-3dd91e3ebfde": {
+        "column_6yUUVQ": {
           "type": "column",
           "settings": {
-            "title": "100% Traceable",
-            "text": "<p>Full transparency in the origin and quality<\/p>",
+            "title": "Lorem Ipsum",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscin</p>",
             "link_label": "",
             "link": ""
           }
@@ -1438,9 +1424,9 @@
       },
       "block_order": [
         "template--15124688076883__5a4ffa10-f121-4b24-bd98-6ae593fde806-column-1",
-        "c7f20ebe-b2a1-4e36-86de-408bab6c18e6",
-        "b807c7b7-f29a-4bdf-a1e1-0c8fe3c46007",
-        "424a118d-6586-4697-9405-3dd91e3ebfde"
+        "column_Yq6Vf6",
+        "column_VjF3nj",
+        "column_6yUUVQ"
       ],
       "settings": {
         "title": "",
@@ -1462,7 +1448,7 @@
       }
     },
     "a75de998-117b-40b5-a1eb-153210500d29": {
-      "type": "lumin-gallery",
+      "type": "gallery",
       "blocks": {
         "7a8ecaeb-7f9a-41b2-a621-4c9f3907ea45": {
           "type": "text",
@@ -1479,18 +1465,18 @@
             "bg_color": "#686648",
             "icon_size": 25,
             "icon_corner": 0,
-            "head": "Follow Us on Instagram",
+            "head": "Lorem ipsum dolor sit",
             "use_head_font": true,
             "head_color": "#ffffff",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "subtitle": "<p>14K FOLLOWERS<\/p>",
+            "subtitle": "<p>14K FOLLOWERS</p>",
             "text_color": "#ffffff",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#lumintheme",
-            "button_link": "https:\/\/lumintheme.com\/",
+            "button-text": "#claritytheme",
+            "button_link": "https://clarity.com/",
             "image_content_position": "middle-right",
             "desktop_content_alignment": "right",
             "grid-url": ""
@@ -1661,18 +1647,18 @@
             "bg_color": "#dbdbc4",
             "icon_size": 25,
             "icon_corner": 0,
-            "head": "We continuously push the boundaries",
+            "head": "Lorem ipsum dolor sit",
             "use_head_font": true,
             "head_color": "#212121",
             "head_size_d": 30,
             "head_size_m": 24,
             "margin_bottom": 15,
-            "subtitle": "<p>Of skincare through cutting-edge research and innovative formulations<\/p>",
+            "subtitle": "<p>Of skincare through cutting-edge research and innovative formulations</p>",
             "text_color": "#212121",
             "text_size_d": 16,
             "text_size_m": 14,
-            "button-text": "#lumintheme",
-            "button_link": "https:\/\/lumintheme.com\/",
+            "button-text": "Lorem Ipsum",
+            "button_link": "https://clarity.com/",
             "image_content_position": "middle-right",
             "desktop_content_alignment": "right",
             "grid-url": ""

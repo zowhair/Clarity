@@ -32,7 +32,7 @@
 {% endif %}
 
 <style>
-    .lumin-slide {
+    .clarity-slide {
        z-index:2;
        margin-top: 5px;
        max-width: 240px;
@@ -40,12 +40,12 @@
       {% if section.settings.hide_navigation %} display:none !important;{% endif %}
            }
   @media screen and (max-width: 749px){
-    .lumin-slide {
+    .clarity-slide {
        max-width: 100%;
        left: 0;
            }
   }
-   .lumin-slide .slider-button {
+   .clarity-slide .slider-button {
        height:40px;
            }
 </style>
@@ -57,7 +57,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top lumin-slide slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slideshow__controls--top clarity-slide slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -163,31 +163,28 @@
             {%- if block.settings.image -%}
               {%- assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round -%}
               {%
-                    render 'responsive-image' with
-                    image: block.settings.image,
-                    image_class: "image",
-                    wrapper_class: "image-wrapper"
-                  %}
-                {%- else -%}
-               {% render 'lumin-placeholder' %}
-                  
-                {%- endif -%}
-            {% comment %}
-                
-              {{
-                block.settings.image
-                | image_url: width: 3840
-                | image_tag:
-                  loading: 'lazy',
-                  height: height,
-                  sizes: '100vw',
-                  widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-              }}
+                render 'responsive-image' with
+                image: block.settings.image,
+                image_class: "image",
+                wrapper_class: "image-wrapper"
+              %}
             {%- else -%}
-              {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% render 'image-placeholder' %}
             {%- endif -%}
-              {% endcomment %}
-            
+            {% comment %}
+                {{
+                  block.settings.image
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    height: height,
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                }}
+              {%- else -%}
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            {% endcomment %}
           </div>
         </div>
         <div class="large-up-hide">
@@ -207,7 +204,7 @@
                   widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
               }}
             {%- else -%}
-              {% render 'lumin-placeholder' %}
+              {% render 'image-placeholder' %}
             {%- endif -%}
           </div>
         </div>
@@ -218,7 +215,13 @@
                 class="inline-richtext h2"
                 style="font-size:{{ block.settings.block_cap_size }}px;color:{{ block.settings.cap_color }};margin: 0"
               >
-                {{ block.settings.caption | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                {{
+                  block.settings.caption
+                  | replace: '[', '<span class="clarity-text__fancy1">'
+                  | replace: ']', '</span>'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
+                  | replace: '))', '</span>'
+                }}
               </p>
             {%- endif -%}
             {%- if block.settings.heading != blank -%}
@@ -240,12 +243,26 @@
                           }
               </style>
               <h2 class="banner__heading inline-richtext lm-slide-head-{{block.id}} {{ block.settings.block_head_size }}">
-                {{ block.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                {{
+                  block.settings.heading
+                  | replace: '[', '<span class="clarity-text__fancy1">'
+                  | replace: ']', '</span>'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
+                  | replace: '))', '</span>'
+                }}
               </h2>
             {%- endif -%}
             {%- if block.settings.subheading != blank -%}
               <div class="banner__text" {{ block.shopify_attributes }}>
-                <span>{{ block.settings.subheading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</span>
+                <span>
+                  {{-
+                    block.settings.subheading
+                    | replace: '[', '<span class="clarity-text__fancy1">'
+                    | replace: ']', '</span>'
+                    | replace: '((', '<span class="clarity-text__fancy2">'
+                    | replace: '))', '</span>'
+                  -}}
+                </span>
               </div>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
@@ -269,7 +286,7 @@
   </div>
 
   {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
-    <div class="slideshow__controls slider-buttons lumin-slide no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slider-buttons clarity-slide no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -348,12 +365,12 @@
 
 {% schema %}
 {
-  "name": "Lumin Slidshow",
+  "name": "t:sections.names.slideshow",
   "tag": "section",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "select",
@@ -372,16 +389,16 @@
       "label": "t:sections.slideshow.settings.layout.label"
     },
     {
-          "type": "range",
-          "id": "banner_border",
-          "min": 0,
-          "max": 100,
-          "step": 2,
-          "unit": "px",
-          "label": "Corner Radius",
-          "default": 0,
-          "info": "Work only on grid view"
-        },
+      "type": "range",
+      "id": "banner_border",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Corner Radius",
+      "default": 0,
+      "info": "Work only on grid view"
+    },
     {
       "type": "select",
       "id": "slide_height",
@@ -422,7 +439,7 @@
           "value": "numbers",
           "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
         },
-         {
+        {
           "value": "none",
           "label": "none"
         }
@@ -485,7 +502,7 @@
           "id": "image",
           "label": "t:sections.slideshow.blocks.slide.settings.image.label"
         },
-         {
+        {
           "type": "image_picker",
           "id": "image_mob",
           "label": "Mobile Image"
@@ -497,21 +514,21 @@
           "label": "Sub Heading"
         },
         {
-            "type":      "range",
-            "id":        "block_cap_size",
-            "min":       10,
-            "max":        100,
-            "step":       1,
-            "unit":       "px",
-            "label":     "Sub Heading size",
-            "default":   20
+          "type": "range",
+          "id": "block_cap_size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Sub Heading size",
+          "default": 20
         },
         {
-            "type": "color",
-            "id": "cap_color",
-            "label": "Caption Color",
-            "default": "#222222"
-          },
+          "type": "color",
+          "id": "cap_color",
+          "label": "Caption Color",
+          "default": "#222222"
+        },
         {
           "type": "textarea",
           "id": "heading",
@@ -519,34 +536,34 @@
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
         },
         {
-            "type":      "range",
-            "id":        "block_head_size-2",
-            "min":       10,
-            "max":        100,
-            "step":       1,
-            "unit":       "px",
-            "label":     "Heading size",
-            "default":   20
-        },
-         {
-            "type":      "range",
-            "id":        "block_head_size-mobile",
-            "min":       10,
-            "max":        100,
-            "step":       1,
-            "unit":       "px",
-            "label":     "Heading size Mobile",
-            "default":   20
+          "type": "range",
+          "id": "block_head_size-2",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading size",
+          "default": 20
         },
         {
-            "type":      "range",
-            "id":        "block_head_line",
-            "min":       0.5,
-            "max":        2,
-            "step":       0.1,
-            "unit":       "px",
-            "label":     "Heading Line Height",
-            "default":   1.4
+          "type": "range",
+          "id": "block_head_size-mobile",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading size Mobile",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "block_head_line",
+          "min": 0.5,
+          "max": 2,
+          "step": 0.1,
+          "unit": "px",
+          "label": "Heading Line Height",
+          "default": 1.4
         },
         {
           "type": "select",
@@ -676,12 +693,12 @@
           "label": "t:sections.slideshow.blocks.slide.settings.image_overlay_opacity.label",
           "default": 0
         },
-         {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "background-1"
+        },
         {
           "type": "header",
           "content": "t:sections.slideshow.settings.mobile.content"
@@ -706,7 +723,7 @@
           "default": "center",
           "label": "t:sections.slideshow.blocks.slide.settings.text_alignment_mobile.label"
         },
-           {
+        {
           "type": "select",
           "id": "mobile_box_align",
           "options": [
@@ -727,23 +744,23 @@
           "label": "Mobile content position"
         },
         {
-            "type":      "range",
-            "id":        "mobile_text_spacing",
-            "min":       0,
-            "max":        100,
-            "step":       1,
-            "unit":       "px",
-            "label":     "Mobile Text Box Spacing ",
-            "info":     "Work when text on top",
-            "default":   0
+          "type": "range",
+          "id": "mobile_text_spacing",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Mobile Text Box Spacing ",
+          "info": "Work when text on top",
+          "default": 0
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Lumin Slidshow",
-      "category": "Lumin Slidshow",
+      "name": "t:sections.names.slideshow",
+      "category": "Clarity Slideshow",
       "blocks": [
         {
           "type": "slide"

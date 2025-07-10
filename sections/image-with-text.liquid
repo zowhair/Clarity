@@ -71,7 +71,13 @@
                     class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
                     {{ block.shopify_attributes }}
                   >
-                    {{ block.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                    {{
+                      block.settings.heading
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
                   </h2>
                 {%- when 'caption' -%}
                   <p
@@ -82,64 +88,79 @@
                   </p>
                 {%- when 'text' -%}
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                    {{
+                      block.settings.text
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
                   </div>
                 {%- when 'testimonial-images' -%}
-            {{ 'image-bar.css' | asset_url | stylesheet_tag }}
-                 
-                 <div class="lm-tot-bar"
-                   style="--bar-font-size:{{block.settings.text_size}}px;
-                          --bar-zoom:{{block.settings.image_size}};
-                          --bar-image-space:{{block.settings.image_space}}px;"
-                   >
-                   <div class="lm-img-bar" {{ block.shopify_attributes }}>
-                  {%- if block.settings.image != blank -%}
-                    <span> 
-                      {{ block.settings.image | image_url: width: 100  | image_tag  }}
-                    </span>
+                  {{ 'image-bar.css' | asset_url | stylesheet_tag }}
 
-                  {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                  {%- endif -%}
-                     {%- unless block.settings.hide_img_2  -%}
-                  {%- if block.settings.image_2 != blank -%}
-                    <span> 
-                      {{ block.settings.image_2 | image_url: width: 100  | image_tag  }}
-                    </span>
-                  {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                  {%- endif -%}
-                    {% endunless %}
-                     {%- unless block.settings.hide_img_3  -%}
-                  {%- if block.settings.image_3 != blank -%}
-                    <span> 
-                      {{ block.settings.image_3 | image_url: width: 100  | image_tag  }}
-                    </span>
-                  {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                  {%- endif -%}
-                     {% endunless %}
-                     {%- unless block.settings.hide_img_4  -%}
-                  {%- if block.settings.image_4 != blank -%}
-                   <span> 
-                      {{ block.settings.image_4 | image_url: width: 100  | image_tag  }}
-                    </span>
-                  {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                  {%- endif -%}
-                     {% endunless %}
-                     {%- unless block.settings.hide_img_5  -%}
-                  {%- if block.settings.image_5 != blank -%}
-                    <span> 
-                      {{ block.settings.image_5 | image_url: width: 100  | image_tag  }}
-                    </span>
-                  {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                  {%- endif -%}
-                     {% endunless %}
-                </div>
-                   {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
-                 </div>
+                  <div
+                    class="lm-tot-bar"
+                    style="
+                      --bar-font-size:{{block.settings.text_size}}px;
+                      --bar-zoom:{{block.settings.image_size}};
+                      --bar-image-space:{{block.settings.image_space}}px;
+                    "
+                  >
+                    <div class="lm-img-bar" {{ block.shopify_attributes }}>
+                      {%- if block.settings.image != blank -%}
+                        <span>
+                          {{ block.settings.image | image_url: width: 100 | image_tag }}
+                        </span>
+
+                      {%- else -%}
+                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                      {%- unless block.settings.hide_img_2 -%}
+                        {%- if block.settings.image_2 != blank -%}
+                          <span>
+                            {{ block.settings.image_2 | image_url: width: 100 | image_tag }}
+                          </span>
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      {% endunless %}
+                      {%- unless block.settings.hide_img_3 -%}
+                        {%- if block.settings.image_3 != blank -%}
+                          <span>
+                            {{ block.settings.image_3 | image_url: width: 100 | image_tag }}
+                          </span>
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      {% endunless %}
+                      {%- unless block.settings.hide_img_4 -%}
+                        {%- if block.settings.image_4 != blank -%}
+                          <span>
+                            {{ block.settings.image_4 | image_url: width: 100 | image_tag }}
+                          </span>
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      {% endunless %}
+                      {%- unless block.settings.hide_img_5 -%}
+                        {%- if block.settings.image_5 != blank -%}
+                          <span>
+                            {{ block.settings.image_5 | image_url: width: 100 | image_tag }}
+                          </span>
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      {% endunless %}
+                    </div>
+                    {{
+                      block.settings.text
+                      | replace: '[', '<span class="clarity-text__fancy1">'
+                      | replace: ']', '</span>'
+                      | replace: '((', '<span class="clarity-text__fancy2">'
+                      | replace: '))', '</span>'
+                    }}
+                  </div>
 
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
@@ -168,9 +189,9 @@
 {
   "name": "t:sections.image-with-text.name",
   "class": "section",
-   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "image_picker",
@@ -496,29 +517,29 @@
       "type": "testimonial-images",
       "name": "Testimonial Images",
       "settings": [
-              {
+        {
           "type": "range",
           "id": "image_size",
           "label": "Image Bar Size",
-          "min":       0.5,
-          "max":        2,
-          "step":       0.1,
+          "min": 0.5,
+          "max": 2,
+          "step": 0.1,
           "default": 1
-          },
+        },
         {
           "type": "range",
           "id": "image_space",
           "label": "Image Space",
-          "min":       -30,
-          "max":        10,
-          "step":       1,
+          "min": -30,
+          "max": 10,
+          "step": 1,
           "default": -18
-          },
-             {
-              "type": "image_picker",
-              "id": "image",
-              "label": "Image"
-            },
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_2",
@@ -526,32 +547,32 @@
           "default": false
         },
         {
-              "type": "image_picker",
-              "id": "image_2",
-              "label": "Image"
-            },
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_3",
           "label": "Hide Image 3",
           "default": false
         },
-         {
-              "type": "image_picker",
-              "id": "image_3",
-              "label": "Image"
-            },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_4",
           "label": "Hide Image 4",
           "default": false
         },
-         {
-              "type": "image_picker",
-              "id": "image_4",
-              "label": "Image"
-            },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image"
+        },
         {
           "type": "checkbox",
           "id": "hide_img_5",
@@ -559,25 +580,25 @@
           "default": false
         },
         {
-              "type": "image_picker",
-              "id": "image_5",
-              "label": "Image"
-            },
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image"
+        },
         {
           "type": "richtext",
           "id": "text",
           "default": "<p>★★★★★ Excellent 4.8</p>",
           "label": "t:sections.image-with-text.blocks.text.settings.text.label"
         },
-           {
+        {
           "type": "range",
           "id": "text_size",
           "label": "Text Size",
-          "min":       8,
-          "max":        30,
-          "step":       1,
+          "min": 8,
+          "max": 30,
+          "step": 1,
           "default": 13
-          },
+        },
         {
           "type": "select",
           "id": "text_style",

@@ -47,7 +47,15 @@
     >
       {%- unless section.settings.heading == blank -%}
         <div class="title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}</h2>
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{
+              section.settings.heading
+              | replace: '[', '<span class="clarity-text__fancy1">'
+              | replace: ']', '</span>'
+              | replace: '((', '<span class="clarity-text__fancy2">'
+              | replace: '))', '</span>'
+            }}
+          </h2>
         </div>
       {%- endunless -%}
     </div>
@@ -154,7 +162,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
+    "groups": ["header", "footer", "custom.popup"]
   },
   "settings": [
     {

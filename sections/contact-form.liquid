@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <style>
-  .lumin-contact {
+  .clarity-contact {
     max-width: 70rem;
     margin: auto;
   }
@@ -59,7 +59,7 @@
   <div class="contact page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="contact-heading-{{ section.id }} title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+        {{ section.settings.heading | replace: '[', '<span class="clarity-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="clarity-text__fancy2">' | replace: '))', '</span>' }}
       </h2>
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
@@ -73,7 +73,7 @@
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in lumin-contact'
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in clarity-contact'
       endif
     -%}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}

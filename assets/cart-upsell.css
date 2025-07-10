@@ -216,7 +216,7 @@ cart-items
     width: calc(25% - 23px);
   }
 }
-.lumin-wrapper {
+.clarity-wrapper {
   gap: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));

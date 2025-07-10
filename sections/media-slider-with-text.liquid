@@ -1,8 +1,3 @@
-{% liquid 
-  # Lumin Slider
-  # © 2025 Lumintheme
-  # https://www.lumintheme.com
-%}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -38,7 +33,7 @@
 %}
 
 <div class="gradient color-{{ section.settings.color_scheme }}">
-  <div class="lumin-new-section page-width section-{{ section.id }}-padding">
+  <div class="clarity-new-section page-width section-{{ section.id }}-padding">
     <div class="swiper reviewSwiper review-swiper-{{section.id}}">
       <div class="swiper-wrapper" style="width: 6000px; transition-timing-function: linear;">
         {% for block in section.blocks %}
@@ -88,7 +83,7 @@
               {% elsif block.settings.review_image != blank %}
                 {% assign aspect_ratio = block.settings.review_image.aspect_ratio %}
                 {% assign height = 600 | divided_by: aspect_ratio %}
-                
+
                 <img
                   src="{{ block.settings.review_image | image_url: width: 600 }}"
                   alt="{{ block.settings.review_image.alt | escape }}"
@@ -105,10 +100,10 @@
       </div>
       {% if section.settings.show_navigation %}
         {% unless section.settings.auto_play %}
-          <div class="swiper-button-next slider-button--next lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-next slider-button--next clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
-          <div class="swiper-button-prev slider-button--prev lumin-slider-button-{{section.id}} ">
+          <div class="swiper-button-prev slider-button--prev clarity-slider-button-{{section.id}} ">
             {% render 'icon-arro' %}
           </div>
           <div class="swiper-pagination"></div>
@@ -143,155 +138,152 @@
 </div>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-      function initializeVideoControls() {
-          document.querySelectorAll(".swiper-slide-new video").forEach(video => {
-              let slide = video.closest(".swiper-slide-new");
-              let playButton = slide ? slide.querySelector(".icon-play") : null;
+  document.addEventListener('DOMContentLoaded', function () {
+    function initializeVideoControls() {
+      document.querySelectorAll('.swiper-slide-new video').forEach((video) => {
+        let slide = video.closest('.swiper-slide-new');
+        let playButton = slide ? slide.querySelector('.icon-play') : null;
 
-              if (!playButton) return;
+        if (!playButton) return;
 
-              // Play video, unmute, and hide play button on click
-              playButton.addEventListener("click", function () {
-                  if (video.paused) {
-                      video.muted = false; // Unmute the video
-                      video.play();
-                      playButton.style.display = "none"; // Hide play button
-                  }
-              });
+        // Play video, unmute, and hide play button on click
+        playButton.addEventListener('click', function () {
+          if (video.paused) {
+            video.muted = false; // Unmute the video
+            video.play();
+            playButton.style.display = 'none'; // Hide play button
+          }
+        });
 
-              // Pause video on click and show play button again
-              video.addEventListener("click", function () {
-                  if (!video.paused) {
-                      video.pause();
-                      playButton.style.display = "block"; // Show play button
-                  }
-              });
+        // Pause video on click and show play button again
+        video.addEventListener('click', function () {
+          if (!video.paused) {
+            video.pause();
+            playButton.style.display = 'block'; // Show play button
+          }
+        });
 
-              // Show play button when video ends
-              video.addEventListener("ended", function () {
-                  playButton.style.display = "block";
-              });
-          });
-      }
+        // Show play button when video ends
+        video.addEventListener('ended', function () {
+          playButton.style.display = 'block';
+        });
+      });
+    }
 
-      // Run the function on page load
-      initializeVideoControls();
+    // Run the function on page load
+    initializeVideoControls();
 
-      // Reload script when a section is edited in Shopify Theme Editor
-      document.addEventListener("shopify:section:load", initializeVideoControls);
-      document.addEventListener("shopify:section:unload", initializeVideoControls);
+    // Reload script when a section is edited in Shopify Theme Editor
+    document.addEventListener('shopify:section:load', initializeVideoControls);
+    document.addEventListener('shopify:section:unload', initializeVideoControls);
   });
 </script>
 
-<style>
-     .lumin-slider-button-{{section.id}} {
-      color: {{section.settings.navigation_color}} !important;
+{% style %}
+  .clarity-slider-button-{{section.id}} {
+    color: {{section.settings.navigation_color}} !important;
   }
 
-    .reviewSwiper {
-      width: 100%;
-      margin-bottom: 25px;
-      margin-top: 0;
-      padding: 0 20px;
-      overflow: hidden;
-    }
-  
+  .reviewSwiper {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .review-image {
+    width: 160px;
+    height: var(--image-height-mb);
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f6f6f6;
+  }
 
-    .review-image {
-      width: 160px;
-      height: var(--image-height-mb);
-      object-fit: cover;
-      border-radius: 12px;
-      background: #f6f6f6;
-    }
-
-    .content-wrapper {
-      margin: 0 auto;
-      padding: 0 10px;
-    }
+  .content-wrapper {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
   .content-wrapper-{{section.id}} {
-      text-align: {{section.settings.content_alignment}};
+    text-align: {{section.settings.content_alignment}};
+  }
+
+  .main-title {
+    font-size: {{ head_size_mb }};
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    color: var(--color-foreground);
+  }
+
+  .subtitle {
+    font-size: {{ subhead_size_mb }};
+    margin-bottom: 20px;
+    color: var(--color-foreground);
+    letter-spacing: -0.3px;
+  }
+
+  .swiper-slide-new {
+    width: auto !important;
+    padding: 0 10px;
+  }
+
+  .reviewSwiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+    will-change: transform;
+  }
+
+  @media screen and (min-width: 768px) {
+    .clarity-new-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .review-swiper-{{section.id}} {
+      order: {{section.settings.layout}};
+    }
+
+    .reviewSwiper {
+      margin-bottom: 0;
+      padding: 0;
+    }
+    .content-wrapper {
+      padding: 0;
+    }
+    .content-wrapper-{{section.id}} {
+      text-align:  {{section.settings.content_alignment}};
     }
 
     .main-title {
-      font-size: {{ head_size_mb }};
-      line-height: 1.2;
-      letter-spacing: -0.3px;
-      margin-bottom: 12px;
-      margin-top: 0;
-      color: var(--color-foreground);
+      font-size: {{ head_size }};
+      margin-bottom: 16px;
     }
 
     .subtitle {
-      font-size: {{ subhead_size_mb }};
-      margin-bottom: 20px;
-      color: var(--color-foreground);
-      letter-spacing: -0.3px;
+      font-size: {{ subhead_size }};
+      margin-bottom: 24px;
     }
 
-    .swiper-slide-new {
-      width: auto !important;
-      padding: 0 10px;
+    .claim-button {
+      width: auto;
+      font-size: 16px;
+      padding: 16px 40px;
     }
 
-    .reviewSwiper .swiper-wrapper {
-      transition-timing-function: linear !important;
-      will-change: transform;
+    .review-image {
+      width: 240px;
+      height: var(--image-height);
     }
-
-    @media screen and (min-width: 768px) {
-      .lumin-new-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-      }
-
-    .review-swiper-{{section.id}} {
-        order: {{section.settings.layout}};
-    }
-
-      .reviewSwiper {
-        margin-bottom: 0;
-        padding: 0;
-      }
-      .content-wrapper {
-        padding: 0;
-      }
-      .content-wrapper-{{section.id}} {
-        text-align:  {{section.settings.content_alignment}};
-      }
-
-      .main-title {
-        font-size: {{ head_size }};
-        margin-bottom: 16px;
-      }
-
-      .subtitle {
-        font-size: {{ subhead_size }};
-        margin-bottom: 24px;
-      }
-
-      .claim-button {
-        width: auto;
-        font-size: 16px;
-        padding: 16px 40px;
-      }
-
-      .review-image {
-        width: 240px;
-        height: var(--image-height);
-      }
-    }
-</style>
+  }
+{% endstyle %}
 
 {% schema %}
 {
-  "name": "Lumin Slider #2",
+  "name": "t:sections.names.media_slider_with_text",
   "disabled_on": {
-  "groups": ["header", "footer", "custom.popup"]
-   },
+    "groups": ["header", "footer", "custom.popup"]
+  },
   "settings": [
     {
       "type": "select",
@@ -313,7 +305,7 @@
       "default": "center",
       "label": "t:sections.rich-text.settings.content_alignment.label"
     },
-     {
+    {
       "type": "select",
       "id": "layout",
       "options": [
@@ -364,11 +356,11 @@
       "content": "Colors"
     },
     {
-    "type": "color_scheme",
-    "id": "color_scheme",
-    "label": "t:sections.all.colors.label",
-    "default": "background-1"
-  },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
     {
       "type": "color",
       "id": "button_color",
@@ -403,118 +395,118 @@
       "label": "Show Navigation",
       "info": "Not shown on auto scroll"
     },
-     {
-    "type": "range",
-    "id": "scroll_speed",
-    "min": 1,
-    "max": 10,
-    "step": 1,
-    "label": "Scrolling Speed",
-    "default": 4
-  },
-      {
-    "type": "range",
-    "id": "head_size",
-    "min": 10,
-    "max": 100,
-    "step": 2,
-    "unit": "px",
-    "label": "Heading Size",
-    "default": 42
-  },
-     {
-    "type": "range",
-    "id": "head_size_mb",
-    "min": 10,
-    "max": 100,
-    "step": 2,
-    "unit": "px",
-    "label": "Heading Size Mobile",
-    "default": 32
-  },
-        {
-    "type": "range",
-    "id": "subhead_size",
-    "min": 8,
-    "max": 30,
-    "step": 2,
-    "unit": "px",
-    "label": "Sub Heading Size",
-    "default": 18
-  },
-        {
-    "type": "range",
-    "id": "subhead_size_mb",
-    "min": 8,
-    "max": 30,
-    "step": 2,
-    "unit": "px",
-    "label": "Sub Heading Size Mobile",
-    "default": 16
-  },
-        {
-    "type": "range",
-    "id": "review_size",
-    "min": 8,
-    "max": 30,
-    "step": 2,
-    "unit": "px",
-    "label": "Review Size",
-    "default": 10
-  },
     {
-    "type": "range",
-    "id": "padding_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_bottom",
-    "default": 36
-  },
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Scrolling Speed",
+      "default": 4
+    },
     {
-    "type": "range",
-    "id": "margin_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "margin_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "Margin Bottom",
-    "default": 36
-  },
+      "type": "range",
+      "id": "head_size",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Size",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "head_size_mb",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Size Mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subhead_size",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Sub Heading Size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subhead_size_mb",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Sub Heading Size Mobile",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "review_size",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Review Size",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 36
+    },
     {
       "type": "header",
       "content": "Get Support",
-      "info": "Please see our [Documentation](https://help.lumintheme.com/lumin-theme-documentation) or get [help](https://lumintheme.com/pages/contact) from our support team."
+      "info": "Please see our [Documentation](clarity.com) or get [help](clarity.com) from our support team."
     },
     {
       "type": "header",
       "content": "Shopify Themes",
-      "info": "Want to WOW your customers?! Check out our [Shopify Themes](https://lumintheme.com/)."
+      "info": "Want to WOW your customers?! Check out our [Shopify Themes](clarity.com)."
     },
     {
       "type": "paragraph",
-      "content": "© 2025 lumintheme.com"
+      "content": "© 2025 clarity.com"
     }
   ],
   "blocks": [
@@ -527,7 +519,7 @@
           "id": "review_image",
           "label": "Review Screenshot"
         },
-         {
+        {
           "type": "video",
           "id": "video",
           "label": "Video from Shopify"
@@ -537,7 +529,7 @@
   ],
   "presets": [
     {
-      "name": "Lumin Slider #2",
+      "name": "t:sections.names.media_slider_with_text",
       "blocks": [
         {
           "type": "review_image"

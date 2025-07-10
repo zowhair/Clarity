@@ -1,29 +1,29 @@
 
-  .lumin-table .section-header .title {
+  .clarity-table .section-header .title {
     margin: 0 0 .5rem;
   }
 
-  .lumin-table .section-header .description {
+  .clarity-table .section-header .description {
     margin-bottom: 1.75rem;
   }
   @media (min-width: 750px) {
-    .lumin-table .section-header .title {
+    .clarity-table .section-header .title {
       margin: 0 0 .5rem;
     }
-    .lumin-table .section-header .description {
+    .clarity-table .section-header .description {
       margin-bottom: 2.5rem;
     }
   }
-.lumin-table .section-header {
+.clarity-table .section-header {
     text-align: center;
   }
 
-  .lumin-table .table-responsive {
+  .clarity-table .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .lumin-table .table {
+  .clarity-table .table {
     border-collapse: collapse;
     caption-side: bottom;
     border-radius: var(--table-border-radius);
@@ -35,7 +35,7 @@
     min-width: var(--table-min-width);
   }
 
-  .lumin-table caption {
+  .clarity-table caption {
     color: rgba(var(--color-foreground));
     opacity: .7;
     font-size: .85em;
@@ -43,26 +43,26 @@
     padding: 10px 0;
   }
 
-  .lumin-table .table > :not(caption) > * > * {
+  .clarity-table .table > :not(caption) > * > * {
     background-color: transparent;
     color: currentColor;
     border: 1px solid currentColor;
     padding: 10px;
   }
 
-  .lumin-table .table thead tr {
+  .clarity-table .table thead tr {
     border-top-color: rgba(var(--bg-color-rgb), 1);
     border-bottom-color: rgba(var(--bg-color-rgb), 1);
   }
 
-  .lumin-table .table thead th {
+  .clarity-table .table thead th {
   }
 
-  .lumin-table .table thead th:first-child {
+  .clarity-table .table thead th:first-child {
     width: var(--table-first-col-width);
   }
 
-  .lumin-table .table thead th img {
+  .clarity-table .table thead th img {
     max-width: 200px;
     width: 100%;
     height: auto;
@@ -73,36 +73,36 @@
     display: block;
   }
 
-  .lumin-table .table tbody th {
+  .clarity-table .table tbody th {
   }
 
-  .lumin-table .table tbody td {
+  .clarity-table .table tbody td {
   }
 
-  .lumin-table .table tbody td svg + span {
+  .clarity-table .table tbody td svg + span {
     margin-top: .125rem;
   }
 
-  .lumin-table .lumin-icon-checked-circle {
+  .clarity-table .clarity-icon-checked-circle {
     color: var(--icon-checked-circle-color);
   }
 
-  .lumin-table .lumin-icon-checked {
+  .clarity-table .clarity-icon-checked {
     color: var(--icon-checked-color);
   }
 
-  .lumin-table .lumin-icon-unchecked {
+  .clarity-table .clarity-icon-unchecked {
     color: var(--icon-unchecked-color);
   }
-  .lumin-table .table thead th {
+  .clarity-table .table thead th {
     border-color: transparent !important;
 }
  @media (max-width: 749px) {
-    .lumin-table .table-responsive {
+    .clarity-table .table-responsive {
       padding: 0 1.5rem;
       margin: 0 -1.5rem;
     }
-    .lumin-table .table thead th {
+    .clarity-table .table thead th {
       font-size: .85em;
     }
   }

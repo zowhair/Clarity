@@ -1,11 +1,11 @@
-.lumin-text__fancy1 { 
+.clarity-text__fancy1 { 
       position: relative;                
       background-clip: text;
       -webkit-background-clip: text;
       background-image: var(--fancy-gradient);
       color: transparent;
     }
-.lumin-text__fancy2 {      
+.clarity-text__fancy2 {      
       padding-left: var(--fancy-padding-left);
       padding-right: var(--fancy-padding-left);
       padding-top: var(--fancy-padding-top);
@@ -18,7 +18,7 @@
       color: var(--fancy-text);
       font-size: var(--fancy-text-size);
     }
-.lumin-text__fancy3 {      
+.clarity-text__fancy3 {      
       padding-left: {{ block.settings.padding-left-fancy }}px;
       padding-right: {{ block.settings.padding-left-fancy }}px;
       padding-top: {{ block.settings.padding-fancy }}px;

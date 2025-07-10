@@ -13,7 +13,7 @@
 {% endcomment %}
 
 {%- liquid
-    assign display_variant_image_first = false
+  assign display_variant_image_first = false
   if section.settings.display_variant_image_first
     assign display_variant_image_first = true
   endif
@@ -23,7 +23,7 @@
   else
     assign featured_media = product.media.first
   endif
-  
+
   if section.settings.hide_variants and variant_images.size == product.media.size
     assign single_media_visible = true
   endif
@@ -48,7 +48,6 @@
   elsif section.settings.media_size == 'small'
     assign media_width = 0.45
   endif
-
 
   assign id_append = ''
   if is_duplicate
@@ -136,10 +135,10 @@
       {%- endunless -%}
       <ul
         id="Slider-Gallery-{{ section.id }}{{ id_append }}"
-        class="product__media-list contains-media grid grid--peek list-unstyled lumin-slider slider slider--mobile"
+        class="product__media-list contains-media grid grid--peek list-unstyled clarity-slider slider slider--mobile"
         role="list"
       >
-         {%- if featured_media != null -%}
+        {%- if featured_media != null -%}
           <li
             id="Slide-{{ section.id }}-{{ featured_media.id }}{{ id_append }}"
             class="product__media-item grid__item slider__slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -236,7 +235,9 @@
       </button>
     {%- endif -%}
     {%- if media_count > 1
-      and section.settings.gallery_layout contains 'thumbnail' or section.settings.gallery_layout contains 'vertical_right' or section.settings.gallery_layout contains 'vertical_left'
+      and section.settings.gallery_layout contains 'thumbnail'
+      or section.settings.gallery_layout contains 'vertical_right'
+      or section.settings.gallery_layout contains 'vertical_left'
       or section.settings.mobile_thumbnails == 'show'
     -%}
       <slider-component
@@ -308,7 +309,7 @@
             </li>
           {%- endif -%}
           {%- for media in product.media -%}
-           {%- unless media.id == featured_media.id -%}
+            {%- unless media.id == featured_media.id -%}
               {%- liquid
                 capture media_index
                   if media.media_type == 'model'

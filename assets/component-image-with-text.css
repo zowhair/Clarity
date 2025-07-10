@@ -424,149 +424,149 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
-.lumin-section__flex {
+.clarity-section__flex {
   display: flex;
 }
 
-.lumin-section__flex-wrap {
+.clarity-section__flex-wrap {
   flex-wrap: wrap;
 }
 
-.lumin-section__flex--1-per-row .lumin-section__flex-item {
+.clarity-section__flex--1-per-row .clarity-section__flex-item {
   flex-basis: 100%;
 }
 
-.lumin-section__flex--2-per-row .lumin-section__flex-item {
+.clarity-section__flex--2-per-row .clarity-section__flex-item {
   flex-basis: 50%;
 }
 
-.lumin-section__flex--3-per-row .lumin-section__flex-item {
+.clarity-section__flex--3-per-row .clarity-section__flex-item {
   flex-basis: 33.3333%;
 }
 
-.lumin-section__flex--4-per-row .lumin-section__flex-item {
+.clarity-section__flex--4-per-row .clarity-section__flex-item {
   flex-basis: 25%;
 }
 
-.lumin-section__flex--5-per-row .lumin-section__flex-item {
+.clarity-section__flex--5-per-row .clarity-section__flex-item {
   flex-basis: 20%;
 }
 
-.lumin-section__flex--6-per-row .lumin-section__flex-item {
+.clarity-section__flex--6-per-row .clarity-section__flex-item {
   flex-basis: 16.6666%;
 }
 
-.lumin-section__flex--7-per-row .lumin-section__flex-item {
+.clarity-section__flex--7-per-row .clarity-section__flex-item {
   flex-basis: 14.3%;
 }
 
-.lumin-section__flex--8-per-row .lumin-section__flex-item {
+.clarity-section__flex--8-per-row .clarity-section__flex-item {
   flex-basis: 12.5%;
 }
 
-.lumin-section__flex-row-reverse {
+.clarity-section__flex-row-reverse {
   flex-direction: row-reverse;
 }
 
-.lumin-section__grid-row-reverse {
+.clarity-section__grid-row-reverse {
   direction: rtl;
 }
 
-.lumin-section__grid-row-reverse * {
+.clarity-section__grid-row-reverse * {
   direction: ltr;
 }
 
-.lumin-section__justify-left {
+.clarity-section__justify-left {
   justify-content: flex-start;
   text-align: left;
 }
 
-.lumin-section__justify-center {
+.clarity-section__justify-center {
   justify-content: center;
   text-align: center;
 }
 
-.lumin-section__justify-right {
+.clarity-section__justify-right {
   justify-content: flex-end;
   text-align: right;
 }
 
-.lumin-section__justify-justify {
+.clarity-section__justify-justify {
   justify-content: space-between;
   text-align: justify;
 }
 
-.lumin-section__align-top {
+.clarity-section__align-top {
   align-items: flex-start;
 }
 
-.lumin-section__align-center {
+.clarity-section__align-center {
   align-items: center;
 }
 
-.lumin-section__align-bottom {
+.clarity-section__align-bottom {
   align-items: flex-end;
 }
 
 /** Text alignment **/
 
-.lumin-section__text-alignment-left {
+.clarity-section__text-alignment-left {
   text-align: left;
 }
 
-.lumin-section__text-alignment-center {
+.clarity-section__text-alignment-center {
   text-align: center;
 }
 
-.lumin-section__text-alignment-right {
+.clarity-section__text-alignment-right {
   text-align: right;
 }
 
-.lumin-section__text-alignment-justify {
+.clarity-section__text-alignment-justify {
   text-align: justify;
 }
 
 /*** Grid ***/
-.lumin-section__grid {
+.clarity-section__grid {
   display: grid;
 }
 
-.lumin-section__grid--1-per-row {
+.clarity-section__grid--1-per-row {
   grid-template-columns: 1fr;
 }
 
-.lumin-section__grid--2-per-row {
+.clarity-section__grid--2-per-row {
   grid-template-columns: 1fr 1fr;
 }
 
-.lumin-section__grid--3-per-row {
+.clarity-section__grid--3-per-row {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.lumin-section__grid--4-per-row {
+.clarity-section__grid--4-per-row {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.lumin-section__grid--5-per-row {
+.clarity-section__grid--5-per-row {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.lumin-section__grid--6-per-row {
+.clarity-section__grid--6-per-row {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.lumin-section__grid--7-per-row {
+.clarity-section__grid--7-per-row {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.lumin-section__grid--8-per-row {
+.clarity-section__grid--8-per-row {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.lumin-section__grid-reverse {
+.clarity-section__grid-reverse {
   direction: rtl;
 }
 
-.lumin-section__grid-reverse * {
+.clarity-section__grid-reverse * {
   direction: ltr;
 }

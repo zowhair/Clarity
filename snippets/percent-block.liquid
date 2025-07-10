@@ -1,13 +1,13 @@
 <script>
-    let c1 = document.getElementById('c1');
-    let t1 = document.getElementById('t1');
-    document.forms.form01.range.addEventListener('change', e => {
+  let c1 = document.getElementById('c1');
+  let t1 = document.getElementById('t1');
+  document.forms.form01.range.addEventListener('change', (e) => {
     let value = parseInt(e.target.value);
     c1.style.strokeDasharray = `${value} 100`;
     t1.textContent = `${value}%`;
-    });
+  });
 </script>
-<style>
+{% style %}
     .qa-feature-{{ block.id }} circle#c1 {
       stroke-width: {{block.settings.circle_width}};
       stroke: {{block.settings.percent_bg}};
@@ -37,12 +37,12 @@
         height: auto;
         margin-right: 20px;
     }
-            .qa-feature-{{ block.id }} svg {
-        width: {{block.settings.icon_size}}px !important;
-        height: auto;
-        margin-right: 20px;
-    }
-</style>
+  .qa-feature-{{ block.id }} svg {
+    width: {{block.settings.icon_size}}px !important;
+    height: auto;
+    margin-right: 20px;
+  }
+{% endstyle %}
 <div class="qa-feature-{{ block.id }}" {{ block.shopify_attributes }}>
   <form name="form01">
     <input name="range" type="range" value="{{ block.settings.circle_value_1 }}" min="0" max="100" class="hidden">
@@ -55,17 +55,17 @@
     <h4>
       {{
         block.settings.heading
-        | replace: '[', '<span class="lumin-text__fancy1">'
+        | replace: '[', '<span class="clarity-text__fancy1">'
         | replace: ']', '</span>'
-        | replace: '((', '<span class="lumin-text__fancy2">'
+        | replace: '((', '<span class="clarity-text__fancy2">'
         | replace: '))', '</span>'
       }}
     </h4>
     {{
       block.settings.text
-      | replace: '[', '<span class="lumin-text__fancy1">'
+      | replace: '[', '<span class="clarity-text__fancy1">'
       | replace: ']', '</span>'
-      | replace: '((', '<span class="lumin-text__fancy2">'
+      | replace: '((', '<span class="clarity-text__fancy2">'
       | replace: '))', '</span>'
     }}
   </div>

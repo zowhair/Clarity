@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -86,8 +95,8 @@
         "image_PUQa7W": {
           "type": "image",
           "settings": {
-            "feature_title": "<strong>Fast Shipping<\/strong>",
-            "feature_text": "<p>Doorstep delivery to most of the US.<\/p>",
+            "feature_title": "<strong>Lorem ipsum </strong>",
+            "feature_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>",
             "feature_url": "",
             "hide_image": false
           }
@@ -95,8 +104,8 @@
         "image_hqDRXM": {
           "type": "image",
           "settings": {
-            "feature_title": "<strong>Price-match guarantee<\/strong>",
-            "feature_text": "<p>Safe money when ordering with us<\/p>",
+            "feature_title": "<strong>Lorem ipsum </strong>",
+            "feature_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>",
             "feature_url": "",
             "hide_image": false
           }
@@ -104,8 +113,8 @@
         "image_Bg8wPM": {
           "type": "image",
           "settings": {
-            "feature_title": "<strong>Hassle-free exchange<\/strong>",
-            "feature_text": "<p>No questions ask<\/p>",
+            "feature_title": "<strong>Lorem ipsum</strong>",
+            "feature_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>",
             "feature_url": "",
             "hide_image": false
           }
@@ -113,8 +122,8 @@
         "image_TNiqiN": {
           "type": "image",
           "settings": {
-            "feature_title": "<strong>5 Star Reviews<\/strong>",
-            "feature_text": "<p>Customer satisfaction No.1 priority<\/p>",
+            "feature_title": "<strong>Lorem ipsum dolor</strong>",
+            "feature_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>",
             "feature_url": "",
             "hide_image": false
           }
@@ -173,14 +182,14 @@
         "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Want the chance to trial our new products?",
+            "heading": "Lorem ipsum dolor sit amet, consectetur adip",
             "heading_size": "h2"
           }
         },
         "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-paragraph-1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e</p>"
           }
         },
         "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-email_form-1": {
@@ -243,7 +252,7 @@
           "type": "text",
           "settings": {
             "heading": "Need to Get in Touch?",
-            "subtext": "<p><strong>hello@yourdomain.com<\/strong><\/p><p>Call: <strong>+1 (917) 642-8765<\/strong><\/p><p>Live chat available - Monday - Friday 9am - 5pm CET<\/p>"
+            "subtext": "<p><strong>hello@yourdomain.com</strong></p><p>Call: <strong>+1 (000) 000-000</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>"
           }
         }
       },
@@ -271,9 +280,9 @@
         "custom_icon_2_width": 34,
         "custom_icon_3_width": 34,
         "hide_shopify": false,
-        "copyright": "- Theme by <a href=\"https:\/\/lumintheme.com\/\" target=\"_blank\" title=\"https:\/\/lumintheme.com\/\">Lumin<em>Theme<\/em><\/a> © 2024",
+        "copyright": "- Theme by <a href=\"https://clarity.com/\" target=\"_blank\" title=\"https://clarity.com/\">Clarity <em>Theme</em></a> © 2024",
         "show_bottom_text": false,
-        "bottom_text": "Note that all content and resources provided on our website are not medical advice nor should they be used as a substitute for professional medical treatment. For medical concerns and\/or emergencies, consult your health care provider and emergency services immediately.",
+        "bottom_text": "Note that all content and resources provided on our website are not medical advice nor should they be used as a substitute for professional medical treatment. For medical concerns and/or emergencies, consult your health care provider and emergency services immediately.",
         "color_bottom_text": "#868686",
         "show_policy": true,
         "margin_top": 0,

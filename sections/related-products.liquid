@@ -20,17 +20,26 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden" style="--quick-description-size: {{ section.settings.quick_desc_size }}px;">
+<div
+  class="color-{{ section.settings.color_scheme }} gradient no-js-hidden"
+  style="--quick-description-size: {{ section.settings.quick_desc_size }}px;"
+>
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="related-products__heading {{ section.settings.collection_text_alignment }} inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+        {{
+          section.settings.heading
+          | replace: '[', '<span class="clarity-text__fancy1">'
+          | replace: ']', '</span>'
+          | replace: '((', '<span class="clarity-text__fancy2">'
+          | replace: '))', '</span>'
+        }}
       </h2>
       <ul
-        class="grid lumin-grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        class="grid clarity-grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
         role="list"
       >
         {% for recommendation in recommendations.products %}
@@ -92,25 +101,25 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
-        "type": "select",
-        "id": "collection_text_alignment",
-        "options": [
-          {
-            "value": "left",
-            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
-          },
-          {
-            "value": "center",
-            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
-          },
-          {
-            "value": "right",
-            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
-          }
-        ],
-        "default": "left",
-        "label": "t:settings_schema.global.settings.text_alignment.label"
-      },
+      "type": "select",
+      "id": "collection_text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:settings_schema.global.settings.text_alignment.label"
+    },
     {
       "type": "range",
       "id": "products_to_show",
@@ -160,7 +169,7 @@
       "default": "adapt",
       "label": "t:sections.related-products.settings.image_ratio.label"
     },
-      {
+    {
       "type": "checkbox",
       "id": "image_no_crop",
       "default": true,
@@ -193,25 +202,25 @@
       "info": "90 characters max"
     },
     {
-        "type": "range",
-        "id": "quick_desc_legth",
-        "min": 30,
-        "max": 300,
-        "step": 10,
-        "unit": "n",
-        "label": "Description Characters Count",
-        "default": 90
-      },
-     {
-        "type": "range",
-        "id": "quick_desc_size",
-        "min": 8,
-        "max": 40,
-        "step": 1,
-        "unit": "px",
-        "label": "Description size",
-        "default": 14
-      },
+      "type": "range",
+      "id": "quick_desc_legth",
+      "min": 30,
+      "max": 300,
+      "step": 10,
+      "unit": "n",
+      "label": "Description Characters Count",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "quick_desc_size",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
     {
       "type": "header",
       "content": "t:sections.related-products.settings.header_mobile.content"
