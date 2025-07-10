@@ -43,14 +43,13 @@ if (!customElements.get("parallax-section")) {
                             let visiblePercent = (visiblePart / windowHeight) * 100;
                             let rotationDegree = Math.min((visiblePercent / 100) * maxRotation, maxRotation);
 
-                            // Reverse for odd images
                             if (image.classList.contains("parallax__img--odd")) {
                                 rotationDegree *= -1;
                             }
 
                             // Change direction based on scroll
                             if (!scrollingDown) {
-                                rotationDegree *= -1; // Invert rotation when scrolling up
+                                rotationDegree *= -1;
                             }
 
                             window.requestAnimationFrame(() => {
