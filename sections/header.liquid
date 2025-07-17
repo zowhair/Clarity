@@ -108,8 +108,7 @@
       padding-top: 0.5rem;
     }
   }
-
-    .mega_menu_link_img{
+.mega_menu_link_img{
   max-width:{{section.settings.link_img_size}}%;
   height: auto;
   display: block;
@@ -121,16 +120,16 @@
   border-radius:{{section.settings.img_radius}}%;
 }
   
-  .header__menu-item {
-    padding: 1.2rem;
-    text-decoration: none;
-    color: rgba(var(--color-foreground),.95);
-    font-family:var(--font-menu-family);
-    font-style: var(--font-menu-style);
-    font-weight: var(--font-menu-weight);
-    font-size: {{ settings.header_menu_size }}px;
-    letter-spacing: {{ settings.header_spacing }}px;
-    text-transform: {{ settings.header_menu_transform }};
+.header__menu-item {
+  padding: 1.2rem;
+  text-decoration: none;
+  color: rgba(var(--color-foreground),.95);
+  font-family:var(--font-menu-family);
+  font-style: var(--font-menu-style);
+  font-weight: var(--font-menu-weight);
+  font-size: {{ settings.header_menu_size }}px;
+  letter-spacing: {{ settings.header_spacing }}px;
+  text-transform: {{ settings.header_menu_transform }};
 }
     {%- comment -%} mega-menu-images-style {%- endcomment -%}
   .mega_menu_img img{
@@ -318,167 +317,302 @@ transform: scale(1.03);
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
             <div class="menu-drawer__inner-container">
               <div class="menu-drawer__navigation-container">
-                <nav class="menu-drawer__navigation">
-                  <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-                    {%- for link in section.settings.menu.links -%}
-                      <li>
-                         {%- assign imagesPresent = false -%}
-                         {%- for block in section.blocks -%}
-                              {%- if block.settings.link_name == link.title  -%}
-                                  {%- assign imagesPresent = true -%}
-                              {%- endif -%}
-                         {%- endfor -%}
-                        {%- if link.links != blank or imagesPresent -%}
-                          <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                            <summary
-                              id="HeaderDrawer-{{ link.handle }}"
-                              class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                            >
-                              {{ link.title | escape }}
-                              {% render 'icon-arrow' %}
-                              {% render 'icon-caret' %}
-                            </summary>
-                            <div
-                              id="link-{{ link.handle | escape }}"
-                              class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                              tabindex="-1"
-                            >
-                              <div class="menu-drawer__inner-submenu">
-                                <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                  {% render 'icon-arrow' %}
-                                  {{ link.title | escape }}
-                                </button>
-                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                  {%- for childlink in link.links -%}
-                                    <li>
-                                      {%- if childlink.links == blank -%}
-                                        <a
-                                          id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                          href="{{ childlink.url }}"
-                                          class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                          {% if childlink.current %}
-                                            aria-current="page"
-                                          {% endif %}
-                                        >
-                                          {{ childlink.title | escape }}
-                                        </a>
-                                      {%- else -%}
-                                        <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                          <summary
+                {% if section.settings.menu_type_mobile == 'dropdown' %}
+                  <nav class="menu-drawer__navigation">
+                    <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+                      {%- for link in section.settings.menu.links -%}
+                        <li>
+                           {%- assign imagesPresent = false -%}
+                           {%- for block in section.blocks -%}
+                                {%- if block.settings.link_name == link.title  -%}
+                                    {%- assign imagesPresent = true -%}
+                                {%- endif -%}
+                           {%- endfor -%}
+                          {%- if link.links != blank or imagesPresent -%}
+                            <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                              <summary
+                                id="HeaderDrawer-{{ link.handle }}"
+                                class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                              >
+                                {{ link.title | escape }}
+                                {% render 'icon-arrow' %}
+                                {% render 'icon-caret' %}
+                              </summary>
+                              <div
+                                id="link-{{ link.handle | escape }}"
+                                class="menu-drawer__submenu has-submenu gradient motion-reduce"
+                                tabindex="-1"
+                              >
+                                <div class="menu-drawer__inner-submenu">
+                                  <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                    {% render 'icon-arrow' %}
+                                    {{ link.title | escape }}
+                                  </button>
+                                  <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                    {%- for childlink in link.links -%}
+                                      <li>
+                                        {%- if childlink.links == blank -%}
+                                          <a
                                             id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                            href="{{ childlink.url }}"
+                                            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                            {% if childlink.current %}
+                                              aria-current="page"
+                                            {% endif %}
                                           >
                                             {{ childlink.title | escape }}
-                                            {% render 'icon-arrow' %}
-                                            {% render 'icon-caret' %}
-                                          </summary>
-                                          <div
-                                            id="childlink-{{ childlink.handle | escape }}"
-                                            class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                                          >
-                                            <button
-                                              class="menu-drawer__close-button link link--text focus-inset"
-                                              aria-expanded="true"
+                                          </a>
+                                        {%- else -%}
+                                          <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                            <summary
+                                              id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
+                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                             >
-                                              {% render 'icon-caret' %}
                                               {{ childlink.title | escape }}
-                                            </button>
-                                            <ul
-                                              class="menu-drawer__menu list-menu"
-                                              role="list"
-                                              tabindex="-1"
+                                              {% render 'icon-arrow' %}
+                                              {% render 'icon-caret' %}
+                                            </summary>
+                                            <div
+                                              id="childlink-{{ childlink.handle | escape }}"
+                                              class="menu-drawer__submenu has-submenu gradient motion-reduce"
                                             >
-                                              {%- for grandchildlink in childlink.links -%}
-                                                <li>
-                                                  <a
-                                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                                    href="{{ grandchildlink.url }}"
-                                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                                    {% if grandchildlink.current %}
-                                                      aria-current="page"
-                                                    {% endif %}
-                                                  >
-                                                    {{ grandchildlink.title | escape }}
-                                                  </a>
-                                                </li>
-                                              {%- endfor -%}
-                                            </ul>
-                                          </div>
-                                        </details>
-                                      {%- endif -%}
-                                    </li>
-                                  {%- endfor -%}
-                                  <div class="swiper">
-                                    <div class="swiper-wrapper">
-                                    {%- for block in section.blocks -%}
-                                  {%- if link.title == block.settings.link_name -%}
-                                    {%- if block.settings.link_image != blank -%}
-                                   <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
-                                        <a class="mega-menu__link" href="{{ block.settings.link_url}}">
-                                          <div>
-                                          {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
-                                          </div>
-                                           <div class="mega-heading">{{ block.settings.mega_heading}}</div>
-                                          <div class="title">{{ block.settings.link_title}}</div>
-                                        </a>
-                                   </li>
-                                    {%- endif -%}
-                                      {%- if block.settings.link_image_2 != blank -%}
-                                   <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
-                                        <a class="mega-menu__link" href="{{ block.settings.link_url_2}}">
-                                          <div>
-                                          {{ block.settings.link_image_2 | image_url: width: 500  | image_tag  }} 
-                                          </div>
-                                           <div class="mega-heading">{{ block.settings.mega_heading_2}}</div>
-                                          <div class="title">{{ block.settings.link_title_2}}</div>
-                                        </a>
-                                   </li>
-                                    {%- endif -%}
-                               {%- if block.settings.product != blank -%}
-                                    <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
-                                       {% render 'card-product',  card_product: block.settings.product, hide_badges: true, hide_swatches: true, show_vendor: false, show_secondary_image: false %}
-                                   </li> 
-                                 {%- endif -%}
-                                  {%- endif -%}
-                                      
+                                              <button
+                                                class="menu-drawer__close-button link link--text focus-inset"
+                                                aria-expanded="true"
+                                              >
+                                                {% render 'icon-caret' %}
+                                                {{ childlink.title | escape }}
+                                              </button>
+                                              <ul
+                                                class="menu-drawer__menu list-menu"
+                                                role="list"
+                                                tabindex="-1"
+                                              >
+                                                {%- for grandchildlink in childlink.links -%}
+                                                  <li>
+                                                    <a
+                                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                                      href="{{ grandchildlink.url }}"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                                      {% if grandchildlink.current %}
+                                                        aria-current="page"
+                                                      {% endif %}
+                                                    >
+                                                      {{ grandchildlink.title | escape }}
+                                                    </a>
+                                                  </li>
+                                                {%- endfor -%}
+                                              </ul>
+                                            </div>
+                                          </details>
+                                        {%- endif -%}
+                                      </li>
                                     {%- endfor -%}
+                                    <div class="swiper">
+                                      <div class="swiper-wrapper">
+                                      {%- for block in section.blocks -%}
+                                    {%- if link.title == block.settings.link_name -%}
+                                      {%- if block.settings.link_image != blank -%}
+                                     <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
+                                          <a class="mega-menu__link" href="{{ block.settings.link_url}}">
+                                            <div>
+                                            {{ block.settings.link_image | image_url: width: 500  | image_tag  }} 
+                                            </div>
+                                             <div class="mega-heading">{{ block.settings.mega_heading}}</div>
+                                            <div class="title">{{ block.settings.link_title}}</div>
+                                          </a>
+                                     </li>
+                                      {%- endif -%}
+                                        {%- if block.settings.link_image_2 != blank -%}
+                                     <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
+                                          <a class="mega-menu__link" href="{{ block.settings.link_url_2}}">
+                                            <div>
+                                            {{ block.settings.link_image_2 | image_url: width: 500  | image_tag  }} 
+                                            </div>
+                                             <div class="mega-heading">{{ block.settings.mega_heading_2}}</div>
+                                            <div class="title">{{ block.settings.link_title_2}}</div>
+                                          </a>
+                                     </li>
+                                      {%- endif -%}
+                                 {%- if block.settings.product != blank -%}
+                                      <li class="mega_menu_img slide swiper-slide" style="--mega-image-radius: {{ block.settings.img_radius }}px;">
+                                         {% render 'card-product',  card_product: block.settings.product, hide_badges: true, hide_swatches: true, show_vendor: false, show_secondary_image: false %}
+                                     </li> 
+                                   {%- endif -%}
+                                    {%- endif -%}
+                                        
+                                      {%- endfor -%}
+                                      </div>
+                                      <div class="swiper-pagination" style="display:flex;"></div>
                                     </div>
-                                    <div class="swiper-pagination" style="display:flex;"></div>
-                                  </div>
-                                  {%- if section.blocks.size  >= 2 -%}
-                                  <script>
-                                    document.addEventListener("DOMContentLoaded", function(){
-                                      var swiper = new Swiper(".swiper", {
-                                        slidesPerView: "auto"
-                                      });
-                                    }); 
-                                    document.addEventListener("shopify:section:load", function(){
-                                      var swiper = new Swiper(".swiper", {
-                                        slidesPerView: "auto"
-                                      });
-                                    }); 
-                                  </script>
-                                  {%- endif -%}
-                                </ul>
+                                    {%- if section.blocks.size  >= 2 -%}
+                                    <script>
+                                      document.addEventListener("DOMContentLoaded", function(){
+                                        var swiper = new Swiper(".swiper", {
+                                          slidesPerView: "auto"
+                                        });
+                                      }); 
+                                      document.addEventListener("shopify:section:load", function(){
+                                        var swiper = new Swiper(".swiper", {
+                                          slidesPerView: "auto"
+                                        });
+                                      }); 
+                                    </script>
+                                    {%- endif -%}
+                                  </ul>
+                                </div>
                               </div>
-                            </div>
-                          </details>
-                        {%- else -%}
-                          <a
-                            id="HeaderDrawer-{{ link.handle }}"
-                            href="{{ link.url }}"
-                            class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                            {% if link.current %}
-                              aria-current="page"
-                            {% endif %}
-                          >
-                            {{ link.title | escape }}
-                          </a>
-                        {%- endif -%}
-                      </li>
-                    {%- endfor -%}
-                  </ul>
-                </nav>
+                            </details>
+                          {%- else -%}
+                            <a
+                              id="HeaderDrawer-{{ link.handle }}"
+                              href="{{ link.url }}"
+                              class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                              {% if link.current %}
+                                aria-current="page"
+                              {% endif %}
+                            >
+                              {{ link.title | escape }}
+                            </a>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </nav>
+                {% else %}
+                {{ 'mobile-mega-menu.css' |  asset_url |  stylesheet_tag }}
+                  <nav class="menu-drawer__navigation mobile__mega-menu">
+                    <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+                      {%- for link in section.settings.menu.links -%}
+                        {% assign m_outer_loop_index = forloop.index %}
+                        <li class="mega__tab-li ">
+                          {%- assign imagesPresent = false -%}
+                          {%- for block in section.blocks -%}
+                            {%- if block.type == "menu-image" -%}
+                                {%- if block.settings.link_name == link.title  -%}
+                                    {%- assign imagesPresent = true -%}
+                                {%- endif -%}
+                            {%-endif-%}
+                          {%- endfor -%}
+                          {%- if true -%}
+                            <header-menu>
+                              <div class="list__item">
+                                <span
+                                  {%- if link.child_active %}
+                                    class="header__active-menu-item"
+                                  {% endif %}
+                                >
+                                  {{- link.title | escape -}}
+                                </span>
+                              </div>
+                              {% for block in section.blocks %}
+                                {% if block.type == 'mega-tab' %}
+                                  {% assign tab_link_downcase = block.settings.tab_link | downcase %}
+                                  {% assign link_title_downcase = link.title | downcase %}
+                                  {% if link_title_downcase == tab_link_downcase %}
+                                    <div class="item__content">
+                                      <div class="tabs__lists">
+                                        <ul class="tab-list">
+                                        {% for collection in block.settings.tab_collection %}
+                                            <li data-role="{{ collection.handle }}-{{m_outer_loop_index}}-{{forloop.index}}">
+                                              <span class="list__item-title">
+                                                {{ collection.title }}
+                                              </span>
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                      </div>
+                                      <div class="tabs__contents-wrapper">
+                                        {% for collection in block.settings.tab_collection %}
+                                          <div class="tab-contents">
+                                            <div data-role="{{ collection.handle }}-{{m_outer_loop_index}}-{{forloop.index}}" class="tab-content">
+                                              {% for product_item in collection.products limit: 4 %}
+                                                {% render 'card-product', card_product: product_item, media_aspect_ratio: 'portrait', image_shape: 'arch', lazy_load: true, show_quick_add: true, hide_swatches: true, hide_badges:  true, navigation: true  %}
+                                              {% endfor %}
+                                            </div>
+                                          </div>
+                                        {% endfor %}
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                                {% endif %}
+                              {% endfor %}
+                              <div
+                                id="MegaMenu-Content-{{ forloop.index }}"
+                                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                                tabindex="-1"
+                              >
+                                {% comment %} <ul
+                                  class=" mega-menu__list page-width{% if link.levels == 1 and section.settings['extended-megamenu-show-imgs'] != 'yes' %} mega-menu__list--condensed{% endif %}"
+                                  role="list"
+                                >
+                                  {% for block in section.blocks %}
+                                    {% if block.type == 'mega-tab' %}
+                                      {% assign tab_link_downcase = block.settings.tab_link | downcase %}
+                                      {% assign link_title_downcase = link.title | downcase %}
+                                      {% if link_title_downcase == tab_link_downcase %}
+                                        <div class="tabs__lists">
+                                          {% for collection in block.settings.tab_collection %}
+                                            <ul class="tab-list">
+                                              <li data-role="{{ collection.handle }}-{{forloop.index}}">
+                                                <span class="list__item-title">
+                                                  {{ collection.title }}
+                                                </span>
+                                                <span class="list__item-chevron">
+                                                  <svg
+                                                    width="5"
+                                                    height="8"
+                                                    viewBox="0 0 5 8"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  >
+                                                    <path d="M1.25 1L4.25 4L1.25 7" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                  </svg>
+                                                </span>
+                                              </li>
+                                            </ul>
+                                          {% endfor %}
+                                        </div>
+                                        <div class="tabs__contents-wrapper">
+                                          {% for collection in block.settings.tab_collection %}
+                                            <div class="tab-contents">
+                                              <div data-role="{{ collection.handle }}-{{forloop.index}}" class="tab-content">
+                                                {% for product_item in collection.products limit: 4 %}
+                                                  {% render 'card-product', card_product: product_item, media_aspect_ratio: 'portrait', image_shape: 'arch', lazy_load: true, show_quick_add: true, hide_swatches: true, hide_badges:  true, navigation: true  %}
+                                                {% endfor %}
+                                              </div>
+                                            </div>
+                                          {% endfor %}
+                                        </div>
+                                      {% endif %}
+                                    {% endif %}
+                                  {% endfor %}
+                                </ul> {% endcomment %}
+                              </div>
+                            </header-menu>
+                          {%- else -%}
+                            <a
+                              id="HeaderMenu-{{ link.handle }}"
+                              href="{{ link.url }}"
+                              class="header__menu-item list-menu__item link link--text focus-inset"
+                              {% if link.current %}
+                                aria-current="page"
+                              {% endif %}
+                            >
+                              <span
+                                {%- if link.current %}
+                                  class="header__active-menu-item"
+                                {% endif %}
+                              >
+                                {{- link.title | escape -}}
+                              </span>
+                            </a>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </nav>
+                {% endif %}
                 <div class="menu-drawer__utility-links">
                   {%- if shop.customer_accounts_enabled -%}
                     <a
@@ -703,14 +837,16 @@ transform: scale(1.03);
                           role="list"
                         >
                         {% for block in section.blocks %}
+                          {% assign outer_loop_index= forloop.index %}
                           {% if block.type == 'mega-tab' %}
+                            
                             {% assign tab_link_downcase = block.settings.tab_link | downcase %}
                             {% assign link_title_downcase = link.title | downcase %}
                             {% if link_title_downcase == tab_link_downcase %}
                               <div class="tabs__lists">
                                 {% for collection in block.settings.tab_collection %}
                                   <ul class="tab-list">
-                                    <li data-role="{{ collection.handle }}-{{forloop.index}}">
+                                    <li data-role="{{ collection.handle }}-{{outer_loop_index}}-{{forloop.index}}">
                                       <span class="list__item-title">
                                         {{ collection.title }}
                                       </span>
@@ -732,7 +868,7 @@ transform: scale(1.03);
                               <div class="tabs__contents-wrapper">
                                 {% for collection in block.settings.tab_collection %}
                                   <div class="tab-contents">
-                                    <div data-role="{{ collection.handle }}-{{forloop.index}}" class="tab-content">
+                                    <div data-role="{{ collection.handle }}-{{outer_loop_index}}-{{forloop.index}}" class="tab-content">
                                       {% for product_item in collection.products limit: 4 %}
                                         {% render 'card-product', card_product: product_item, media_aspect_ratio: 'portrait', image_shape: 'arch', lazy_load: true, show_quick_add: true, hide_swatches: true, hide_badges:  true, navigation: true  %}
                                       {% endfor %}
@@ -1002,44 +1138,95 @@ transform: scale(1.03);
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
-
+{% comment %} Mobile Navigation {% endcomment %}
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const tabItems = document.querySelectorAll('[js-mega-tabs-menu] .tab-list li');
-    const tabContents = document.querySelectorAll('[js-mega-tabs-menu] .tab-content');
+  document.addEventListener("DOMContentLoaded", function () {
+    const megaMenus = document.querySelectorAll(".mobile__mega-menu");
 
-    // Clear any existing active classes (just in case)
-    tabItems.forEach(item => item.classList.remove('active'));
-    tabContents.forEach(content => content.classList.remove('active'));
+    megaMenus.forEach((menu) => {
+      const megaTabItems = menu.querySelectorAll(".mega__tab-li");
 
-    // Set the first tab and content as active by default
-    if (tabItems.length > 0) {
-      tabItems[0].classList.add('active');
-      const role = tabItems[0].getAttribute('data-role');
-      const matchingContent = document.querySelector(`.tab-content[data-role="${role}"]`);
-      if (matchingContent) {
-        matchingContent.classList.add('active');
-      }
-    }
+      megaTabItems.forEach((tabItem) => {
+        const tabButtons = tabItem.querySelectorAll(".tabs__lists .tab-list li");
+        const tabContents = tabItem.querySelectorAll(".tab-content");
 
-    // Add hover interaction
-    tabItems.forEach((item) => {
-      item.addEventListener('mouseenter', function () {
-        const role = item.getAttribute('data-role');
+        tabButtons.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const target = tab.getAttribute("data-role");
 
-        // Remove active from all
-        tabItems.forEach(item => item.classList.remove('active'));
-        tabContents.forEach((content) => content.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove("active"));
+            tabContents.forEach(content => content.classList.remove("active"));
 
-        // Add to hovered tab and matching content
-        item.classList.add('active');
-        const matchingContent = document.querySelector(`.tab-content[data-role="${role}"]`);
-        if (matchingContent) {
-          matchingContent.classList.add('active');
+            tab.classList.add("active");
+            const match = tabItem.querySelector(`.tab-content[data-role="${target}"]`);
+            if (match) match.classList.add("active");
+          });
+        });
+
+        if (tabButtons.length > 0) {
+          tabButtons[0].click();
         }
       });
     });
   });
+</script>
+
+<script>
+  document.querySelectorAll('.list__item').forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.nextElementSibling;
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove('open');
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.classList.add('open');
+      }
+    });
+  });
+</script>
+
+{% comment %}  Desktop Navigation  {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const megaTabGroups = document.querySelectorAll('[js-mega-tabs-menu] .mega__tab-li');
+
+  megaTabGroups.forEach((group) => {
+    const tabItems = group.querySelectorAll('.tab-list li');
+    const tabContents = group.querySelectorAll('.tab-content');
+
+    const activateTab = (tabEl) => {
+      const role = tabEl.getAttribute('data-role');
+
+      tabItems.forEach(item => item.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      tabEl.classList.add('active');
+      const matchingContent = group.querySelector(`.tab-content[data-role="${role}"]`);
+      if (matchingContent) {
+        matchingContent.classList.add('active');
+      }
+    };
+
+    if (tabItems.length > 0) {
+      activateTab(tabItems[0]);
+    }
+
+    tabItems.forEach((item) => {
+      item.addEventListener('mouseenter', function () {
+        activateTab(item);
+      });
+    });
+
+    group.addEventListener('mouseleave', function () {
+      if (tabItems.length > 0) {
+        activateTab(tabItems[0]);
+      }
+    });
+  });
+});
+
 </script>
 
 {% javascript %}
@@ -1259,7 +1446,7 @@ transform: scale(1.03);
       logoLight.style.opacity = 1;
     }
   }
-  document.getElementById("header-menu").addEventListener('click',function () {
+  document.getElementById("header-menu")?.addEventListener('click',function () {
     var sideMenu = document.getElementById('Details-menu-drawer-container');
     var header = document.getElementById('site-header');
     var height = document.getElementById('site-header').offsetHeight;
@@ -1271,7 +1458,7 @@ transform: scale(1.03);
     }
     }
   });
-  document.getElementById("header-search").addEventListener('click',function () {
+  document.getElementById("header-search")?.addEventListener('click',function () {
     var search = document.getElementById('template-index');
     var header = document.getElementById('site-header');
     var main = document.getElementById('MainContent');
@@ -1352,7 +1539,7 @@ transform: scale(1.03);
       logoLight.style.opacity = 1;
     }
   }
-  document.getElementById("header-menu").addEventListener('click',function () {
+  document.getElementById("header-menu")?.addEventListener('click',function () {
     var sideMenu = document.getElementById('Details-menu-drawer-container');
     var header = document.getElementById('site-header');
     var height = document.getElementById('site-header').offsetHeight;
@@ -1364,7 +1551,7 @@ transform: scale(1.03);
     }
     }
   });
-  document.getElementById("header-search").addEventListener('click',function () {
+  document.getElementById("header-search")?.addEventListener('click',function () {
     var search = document.getElementById('template-index');
     var header = document.getElementById('site-header');
     var main = document.getElementById('MainContent');
@@ -1432,7 +1619,7 @@ transform: scale(1.03);
       main.classList.remove('site-header-transition');
     }
   }
-  document.getElementById("header-menu").addEventListener('click',function () {
+  document.getElementById("header-menu")?.addEventListener('click',function () {
     var sideMenu = document.getElementById('Details-menu-drawer-container');
     var header = document.getElementById('site-header');
     var height = document.getElementById('site-header').offsetHeight;
@@ -1444,7 +1631,7 @@ transform: scale(1.03);
     }
     }
   });
-  document.getElementById("header-search").addEventListener('click',function () {
+  document.getElementById("header-search")?.addEventListener('click',function () {
     var search = document.getElementById('template-index');
     var header = document.getElementById('site-header');
     var main = document.getElementById('MainContent');
@@ -1512,7 +1699,7 @@ transform: scale(1.03);
       main.classList.remove('site-header-transition');
     }
   }
-  document.getElementById("header-menu").addEventListener('click',function () {
+  document.getElementById("header-menu")?.addEventListener('click',function () {
     var sideMenu = document.getElementById('Details-menu-drawer-container');
     var header = document.getElementById('site-header');
     var height = document.getElementById('site-header').offsetHeight;
@@ -1524,7 +1711,7 @@ transform: scale(1.03);
     }
     }
   });
-  document.getElementById("header-search").addEventListener('click',function () {
+  document.getElementById("header-search")?.addEventListener('click',function () {
     var search = document.getElementById('template-index');
     var header = document.getElementById('site-header');
     var main = document.getElementById('MainContent');
@@ -1683,6 +1870,23 @@ transform: scale(1.03);
       "default": "dropdown",
       "label": "t:sections.header.settings.menu_type_desktop.label",
       "info": "t:sections.header.settings.menu_type_desktop.info"
+    },
+    {
+      "type": "select",
+      "id": "menu_type_mobile",
+      "options": [
+        {
+          "value": "dropdown",
+          "label": "t:sections.header.settings.menu_type_mobile.options__1.label"
+        },
+        {
+          "value": "mega",
+          "label": "t:sections.header.settings.menu_type_mobile.options__2.label"
+        }
+      ],
+      "default": "dropdown",
+      "label": "t:sections.header.settings.menu_type_mobile.label",
+      "info": "t:sections.header.settings.menu_type_mobile.info"
     },
     {
       "type": "checkbox",

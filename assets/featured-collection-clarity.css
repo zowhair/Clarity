@@ -1,0 +1,98 @@
+.clarity__collection .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.clarity__collection .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #444; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clarity__collection .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.clarity__collection .card-wrapper {
+    width: 100%;
+    align-items: center;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+    background-color: white;
+    border-radius: 100%;
+
+
+}
+.clarity__collection .swiper-scrollbar.scrollbar_color {
+    scrollbar-color: black;
+}
+.clarity__collection div:empty {
+    display: block;
+}
+.clarity__collection .swiper-button-next, .clarity__collection .swiper-button-prev {
+    border: unset;
+    background: unset;
+    color: black;
+    right: 30px;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 22px;
+    border: 1px solid #f0e1e1;
+    padding: 8px 13px;
+}
+.clarity__collection .swiper-button[aria-disabled="true"] {
+    display: none;
+}
+
+.clarity__collection .quick-add {
+    position: absolute;
+    bottom: -20px;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .3s ease-in-out;
+    width: 100%;
+
+}
+
+.clarity__collection .quick-add__submit {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    transition: all .3s linear;
+    text-transform: uppercase;
+}
+
+
+.clarity__collection .swiper-slide .card-wrapper:hover .quick-add {
+    bottom: 0px;
+    opacity: 1;
+}
+
+.clarity__collection .swiper-slide .card-wrapper .quick-add:hover .quick-add__submit {
+    background-color: black;
+    color: white;
+}
+.clarity__collection .card-information,
+.clarity__collection .card__heading,
+.clarity__collection .card-price {
+    text-align: center;
+    align-items: center;
+    /* display: grid; */
+}
+.clarity__collection .text__content {
+    text-align: center;
+}
+.clarity__collection .navigation_enable {
+    display: block;
+}

@@ -51,11 +51,11 @@
             {% case block.type %}
               {% when 'image' %}
                 <style>
-                              .announcement-bar-{{ block.id }} img {
+                  .announcement-bar-{{ block.id }} img {
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
-                               .announcement-bar-{{ block.id }} svg {
+                  .announcement-bar-{{ block.id }} svg {
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
@@ -74,15 +74,15 @@
                 </div>
 
               {% when 'announcement' %}
-                <style>
-                      .clarity-text-{{ block.id }} {
-                      color: {{ block.settings.announcement_color }};
-                      font-size: {{ block.settings.announcement_size }}px;
-                    }
-                    .clarity-text-{{ block.id }} svg {
-                      width: {{ block.settings.announcement_size }}px;
-                      height: {{ block.settings.announcement_size }}px;
-                    }
+                {% style %}
+                  .clarity-text-{{ block.id }} {
+                    color: {{ block.settings.announcement_color }};
+                    font-size: {{ block.settings.announcement_size }}px;
+                  }
+                  .clarity-text-{{ block.id }} svg {
+                    width: {{ block.settings.announcement_size }}px;
+                    height: {{ block.settings.announcement_size }}px;
+                  }
                   @media screen and (max-width: 749px) {
                      .clarity-text-{{ block.id }} {
                       font-size: {{ block.settings.announcement_size_m }}px;
@@ -92,7 +92,7 @@
                       height: {{ block.settings.announcement_size_m }}px;
                     }
                   }
-                </style>
+                {% endstyle %}
                 <div
                   class="clarity-text-{{ block.id }} announcement-bar-{{ section.id }}"
                   role="region"
@@ -123,16 +123,16 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {% when 'image' %}
-                <style>
-                              .announcement-bar-{{ block.id }} img {
+                {% style %}
+                  .announcement-bar-{{ block.id }} img {
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
-                               .announcement-bar-{{ block.id }} svg {
+                  .announcement-bar-{{ block.id }} svg {
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
-                </style>
+                {% endstyle %}
                 <div
                   class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
                   role="region"
@@ -147,8 +147,8 @@
                 </div>
 
               {% when 'announcement' %}
-                <style>
-                      .clarity-text-{{ block.id }} {
+                {% style %}
+                    .clarity-text-{{ block.id }} {
                       color: {{ block.settings.announcement_color }};
                       font-size: {{ block.settings.announcement_size }}px;
                     }
@@ -165,7 +165,7 @@
                       height: {{ block.settings.announcement_size_m }}px;
                     }
                   }
-                </style>
+                {% endstyle %}
                 <div
                   class="clarity-text-{{ block.id }} announcement-bar-{{ section.id }}"
                   role="region"
@@ -195,8 +195,8 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {% when 'image' %}
-                <style>
-                              .announcement-bar-{{ block.id }} img {
+                {% style %}
+                  .announcement-bar-{{ block.id }} img {
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
@@ -204,79 +204,7 @@
                     width: {{block.settings.logo_image_width}}px;
                     height:auto;
                   }
-                </style>
-                <div
-                  class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
-                  role="region"
-                  aria-label="Announcement"
-                  {{ block.shopify_attributes }}
-                >
-                  {% if block.settings.logo_image != blank %}
-                    {{ block.settings.logo_image | image_url: width: 200 | image_tag: loading: 'lazy' }}
-                  {%- else -%}
-                    <p style="font-size: 40px;margin: 0;">LOGO</p>
-                  {%- endif -%}
-                </div>
-
-              {% when 'announcement' %}
-                <style>
-                      .clarity-text-{{ block.id }} {
-                      color: {{ block.settings.announcement_color }};
-                      font-size: {{ block.settings.announcement_size }}px;
-                    }
-                    .clarity-text-{{ block.id }} svg {
-                      width: {{ block.settings.announcement_size }}px;
-                      height: {{ block.settings.announcement_size }}px;
-                    }
-                  @media screen and (max-width: 749px) {
-                     .clarity-text-{{ block.id }} {
-                      font-size: {{ block.settings.announcement_size_m }}px;
-                    }
-                    .clarity-text-{{ block.id }} svg {
-                      width: {{ block.settings.announcement_size_m }}px;
-                      height: {{ block.settings.announcement_size_m }}px;
-                    }
-                  }
-                </style>
-                <div
-                  class="clarity-text-{{ block.id }} announcement-bar-{{ section.id }}"
-                  role="region"
-                  aria-label="Announcement"
-                  {{ block.shopify_attributes }}
-                >
-                  <a
-                    {% if block.settings.text_link != blank %}
-                      {{- block.settings.text_link -}}
-                    {% else %}
-                      href="/collections/frontpage"
-                    {% endif %}
-                    class="announcement-bar__link link link--text focus-inset animate-arrow"
-                  >
-                    {% render 'icon-accordion', icon: block.settings.icon %}
-                    <p class="announcement-bar__message h6 clarity-text-{{ block.id }}">
-                      {{ block.settings.Announcement }}
-                    </p>
-                  </a>
-                </div>
-            {% endcase %}
-          {% endfor %}
-        </div>
-      </div>
-      <div style="display: flex;">
-        <div style="display: flex;">
-          {%- for block in section.blocks -%}
-            {% case block.type %}
-              {% when 'image' %}
-                <style>
-                              .announcement-bar-{{ block.id }} img {
-                    width: {{block.settings.logo_image_width}}px;
-                    height:auto;
-                  }
-                               .announcement-bar-{{ block.id }} svg {
-                    width: {{block.settings.logo_image_width}}px;
-                    height:auto;
-                  }
-                </style>
+                {% endstyle %}
                 <div
                   class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
                   role="region"
@@ -483,6 +411,77 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {% when 'image' %}
+                <style>
+                              .announcement-bar-{{ block.id }} img {
+                    width: {{block.settings.logo_image_width}}px;
+                    height:auto;
+                  }
+                               .announcement-bar-{{ block.id }} svg {
+                    width: {{block.settings.logo_image_width}}px;
+                    height:auto;
+                  }
+                </style>
+                <div
+                  class="announcement-bar-{{ section.id }} announcement-bar-{{ block.id }}"
+                  role="region"
+                  aria-label="Announcement"
+                  {{ block.shopify_attributes }}
+                >
+                  {% if block.settings.logo_image != blank %}
+                    {{ block.settings.logo_image | image_url: width: 200 | image_tag: loading: 'lazy' }}
+                  {%- else -%}
+                    <p style="font-size: 40px;margin: 0;">LOGO</p>
+                  {%- endif -%}
+                </div>
+
+              {% when 'announcement' %}
+                <style>
+                      .clarity-text-{{ block.id }} {
+                      color: {{ block.settings.announcement_color }};
+                      font-size: {{ block.settings.announcement_size }}px;
+                    }
+                    .clarity-text-{{ block.id }} svg {
+                      width: {{ block.settings.announcement_size }}px;
+                      height: {{ block.settings.announcement_size }}px;
+                    }
+                  @media screen and (max-width: 749px) {
+                     .clarity-text-{{ block.id }} {
+                      font-size: {{ block.settings.announcement_size_m }}px;
+                    }
+                    .clarity-text-{{ block.id }} svg {
+                      width: {{ block.settings.announcement_size_m }}px;
+                      height: {{ block.settings.announcement_size_m }}px;
+                    }
+                  }
+                </style>
+                <div
+                  class="clarity-text-{{ block.id }} announcement-bar-{{ section.id }}"
+                  role="region"
+                  aria-label="Announcement"
+                  {{ block.shopify_attributes }}
+                >
+                  <a
+                    {% if block.settings.text_link != blank %}
+                      {{- block.settings.text_link -}}
+                    {% else %}
+                      href="/collections/frontpage"
+                    {% endif %}
+                    class="announcement-bar__link link link--text focus-inset animate-arrow"
+                  >
+                    {% render 'icon-accordion', icon: block.settings.icon %}
+                    <p class="announcement-bar__message h6 clarity-text-{{ block.id }}">
+                      {{ block.settings.Announcement }}
+                    </p>
+                  </a>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div style="display: flex;">
+          {%- for block in section.blocks -%}
+            {% case block.type %}
                 <style>
                               .announcement-bar-{{ block.id }} img {
                     width: {{block.settings.logo_image_width}}px;

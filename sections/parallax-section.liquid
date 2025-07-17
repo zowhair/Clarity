@@ -1,21 +1,20 @@
 {{ 'parallax.css' | asset_url | stylesheet_tag }}
-{% if section.settings.bg_color != blank %}
-  {% style %}
-    parallax-section {
-        background: {{ section.settings.bg_color }};
-    }
-  {% endstyle %}
-{% endif %}
 <parallax-section data-rotation="6">
-  <div class="parallax__text-background">
+  <div class="parallax__text-background gradient color-{{ section.settings.section_color_scheme }}">
     <div class="parallax__text-content">
-      <h1 class="parallax__title">{{ section.settings.title }}</h1>
+      <h1
+        class="parallax__title {{ section.settings.parallax_heading_size }}"
+      >
+        {{ section.settings.title }}
+      </h1>
       <span class="description">
         {{ section.settings.description }}
       </span>
-      <a class="parallax__link" href="{{ section.settings.btn_url }}">
-        {{ section.settings.btn_label }}
-      </a>
+      <div class="rich-text__text rte {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} animations_reveal_on_scroll">
+        <a class="parallax__link" href="{{ section.settings.btn_url }}">
+          {{ section.settings.btn_label }}
+        </a>
+      </div>
     </div>
   </div>
 
@@ -41,6 +40,36 @@
       "label": "t:sections.parallax-section.title.label"
     },
     {
+      "type": "select",
+      "id": "parallax_heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
       "type": "richtext",
       "id": "description",
       "label": "t:sections.parallax-section.description.label"
@@ -54,11 +83,6 @@
       "type": "url",
       "id": "btn_url",
       "label": "t:sections.parallax-section.btn_url.label"
-    },
-    {
-      "type": "color_background",
-      "id": "bg_color",
-      "label": "t:sections.parallax-section.bg_clr.label"
     }
   ],
   "blocks": [

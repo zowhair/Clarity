@@ -84,7 +84,7 @@
                   {%- endif -%}
                 </div>
               </div>
-              <div class="image-with-text__text-item grid__item">
+              <div class="image-with-text__text-item grid__item gradient color-{{ block.settings.color_scheme }} ">
                 <div
                   id="ImageWithText--{{ section.id }}"
                   class="image-with-text__content image-with-text__content--{{ block.settings.desktop_content_position }} image-with-text__content--desktop-{{ block.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ block.settings.mobile_content_alignment }} image-with-text__content--{{ block.settings.height }} content-container{% unless remove_color_classes %} gradient color-{{ block.settings.color_scheme }}{% else %} background-transparent{% endunless %}"
@@ -422,14 +422,8 @@
         },
         {
           "type": "color_scheme",
-          "id": "section_color_scheme",
-          "label": "t:sections.all.colors.label",
-          "default": "background-1"
-        },
-        {
-          "type": "color_scheme",
           "id": "color_scheme",
-          "label": "t:sections.multirow.settings.container_color_scheme.label",
+          "label": "t:sections.all.colors.label",
           "default": "background-1"
         },
         {

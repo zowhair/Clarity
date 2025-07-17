@@ -665,6 +665,88 @@
       }
     },
     "all": {
+      "timeline": {
+        "name": "Timeline",
+        "settings":{
+          "margin_top": {
+            "label": "Margin Top"
+          },
+          "margin_bottom": {
+            "label": "Margin Bottom"
+          },
+          "line_color": {
+            "label": "Line Color"
+          },
+          "dot_color": {
+            "label": "Dot Color"
+          },
+        },
+        "blocks": {
+          "box": {
+            "settings": {
+              "caption": {
+                "label": "Caption"
+              },
+              "first_text": {
+                "label": "First Text"
+              },
+              "second_text": {
+                "label": "Second Text"
+              },
+              "box_bg_clr": {
+                "label": "Box Background Color"
+              },
+              "caption_text_color": {
+                "label": "Caption Text Color"
+              },
+              "caption_bg_color": {
+                "label": "Caption Background Color"
+              },
+              "first_text_color": {
+                "label": "First Text Color"
+              },
+              "first_text_bg_color": {
+                "label": "First Text Background Color"
+              },
+              "second_text_color": {
+                "label": "Second Text Color"
+              },
+              "second_text_bg_color": {
+                "label": "Second Text Background Color"
+              }
+            }
+          }
+        }
+      },
+      "featured_collections_clarity": {
+        "name": "Clarity Collection",
+        "settings": {
+          "heading": {
+            "label": "Heading"
+          },
+          "collection": {
+            "label": "Select Collection"
+          },
+          "description": {
+            "label": "Description"
+          },
+          "caption": {
+            "label": "Caption"
+          },
+          "navigation": {
+            "label": "Show Navigation Buttons"
+          },
+          "show_scrollbar": {
+            "label": "Show Scrollbar"
+          },
+          "show_quick_add": {
+            "label": "Show Quick Add"
+          },
+          "show_secondary_image" :{
+            "label": "Show Secondary Image"
+          }
+        }
+      },
       "animation": {
         "content": "Animations",
         "image_behavior": {
@@ -1927,6 +2009,16 @@
           },
           "options__4": {
             "label": "Mega Tabs"
+          }
+        },
+        "menu_type_mobile": {
+          "label": "Mobile menu type",
+          "info": "Menu type is automatically optimized for mobile.",
+          "options__1": {
+            "label": "Dropdown"
+          },
+          "options__2": {
+            "label": "Mega menu"
           }
         },
         "show_line_separator": {

@@ -17,7 +17,7 @@ parallax-section {
     margin: 100px 0;
 }
 
-.parallax__img {
+.parallax__gallery__item img {
     width: 300px;
     transition: transform 0.3s ease-out;
     will-change: transform;
@@ -35,7 +35,6 @@ parallax-section {
 }
 
 .parallax__text-background h1 {
-    font-size: 3rem;
     max-width: 600px;
     padding: 0 20px;
 }
@@ -48,7 +47,7 @@ parallax-section {
     justify-content: flex-start;
 }
 .parallax__text-background .parallax__title {
-    font-size: 32px;
+    /* font-size: 32px; */
 }
 .parallax__text-background .description {
     font-size: 16px;
@@ -57,17 +56,25 @@ parallax-section {
     width: 100%;
     text-wrap: nowrap;
     margin: 0 auto;
+    padding: 0;
 }
 .parallax__text-background a.parallax__link {
-    background-color: black;
-    color: white;
+    /* background-color: black;
+    color: white; */
     padding: 10px 25px;
     border-radius: 10px;
     text-decoration: none;
     font-size: 18px;
 }
+.parallax__text-background .parallax__text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
 @media screen and (min-width: 1200px) {
     .parallax__text-background .parallax__title {
-        font-size: 92px;
+        /* font-size: 92px; */
     }
 }

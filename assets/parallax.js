@@ -21,8 +21,6 @@ if (!customElements.get("parallax-section")) {
                     item.classList.add(isOdd ? "odd" : "even"); // <-- This line adds layout class
                 });
             }
-
-
             rotateOnScroll() {
                 const { images } = this;
                 const maxRotation = parseInt(this.dataset.rotation, 10) || 5;

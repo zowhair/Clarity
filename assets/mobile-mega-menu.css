@@ -1,0 +1,72 @@
+.mobile__mega-menu .list-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.mobile__mega-menu .list__item {
+    padding: 12px 16px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mobile__mega-menu .item__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #fff;
+    padding: 0 16px;
+}
+
+.mobile__mega-menu .item__content.open {
+    padding: 12px 16px;
+}
+
+.mobile__mega-menu .tab-list li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    background: #eee;
+    margin-right: 5px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.mobile__mega-menu .tab-list li.active {
+    background: #222;
+    color: white;
+}
+
+.mobile__mega-menu .tab-content {
+    display: none;
+    margin-top: 1rem;
+}
+
+.mobile__mega-menu .tab-content.active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mobile__mega-menu .card-wrapper {
+    max-width: 200px;
+}
+
+.mobile__mega-menu .card-wrapper modal-opener {
+    position: absolute;
+    bottom: 17px;
+    text-wrap: nowrap;
+    left: 20px;
+}
+.mobile__mega-menu .card__heading a:after {
+    content: unset;
+}
+.mobile__mega-menu .tabs__lists {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mobile__mega-menu .tabs__lists ul {
+    padding: 0;
+}

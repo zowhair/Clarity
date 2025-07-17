@@ -1,0 +1,191 @@
+{{ 'timeline.css' | asset_url | stylesheet_tag }}
+{% style %}
+  {% if section.settings.dot_color != blank %}
+    .timeline ul li::after {
+      background-color: {{ section.settings.dot_color }};
+    }
+  {% endif %}
+  {% if section.settings.margin_top != blank %}
+    .timeline.section-id-{{section.id}} {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+  {% endif %}
+  {% if section.settings.margin_bottom  != blank %}
+  .timeline.section-id-{{section.id}} {
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+  {% endif %}
+  {% if section.settings.line_color != blank %}
+    .timeline ul li {
+      background-color: {{ section.settings.line_color }};
+    }
+  {% endif %}
+{% endstyle %}
+
+<section class="timeline gradient color-{{section.settings.color_scheme}}  section-id-{{section.id}}">
+  <ul>
+    {% for block in section.blocks %}
+      {% if block.type == 'box' %}
+        {% assign caption = block.settings.caption %}
+        {% assign first_text = block.settings.first_text %}
+        {% assign second_text = block.settings.second_text %}
+        {% if caption != blank or first_text != blank or second_text != blank %}
+          <li>
+            <div
+              {% if block.settings.box_bg_clr != blank %}
+                style="background-color: {{ block.settings.box_bg_clr }};"
+              {% endif %}
+            >
+              {% if caption != blank %}
+                <p style="color: {{block.settings.caption_text_color}}; background: {{ block.settings.caption_bg_color }};">
+                  {{- caption -}}
+                </p>
+              {% endif %}
+              {% if first_text != blank %}
+                <div
+                  class="first__text-wrapper"
+                  {% if section.settings.first_text_bg_color != blank %}
+                    style="background: {{ block.settings.first_text_bg_color }};"
+                  {% endif %}
+                >
+                  <h1
+                    {% if section.settings.first_text_color != blank %}
+                      style="color: {{block.settings.first_text_color}};"
+                    {% endif %}
+                  >
+                    {{ first_text }}
+                  </h1>
+                  {% comment %} <p>Laws of motion</p> {% endcomment %}
+                </div>
+              {% endif %}
+              {% if second_text != blank %}
+                <div
+                  class="second__text-wrapper"
+                  {% if section.settings.second_text_bg_color != blank %}
+                    style="background: {{ block.settings.second_text_bg_color }};"
+                  {% endif %}
+                >
+                  <h1
+                    {% if block.settings.second_text_color != blank %}
+                      style="color: {{block.settings.second_text_color}};"
+                    {% endif %}
+                  >
+                    {{ second_text }}
+                  </h1>
+                  {% comment %} <span>Newton</span> {% endcomment %}
+                </div>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+<script src="{{ 'timeline.js' |  asset_url }}"></script>
+{% schema %}
+{
+  "name": "t:sections.all.timeline.name",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "t:sections.all.timeline.settings.dot_color.label"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "t:sections.all.timeline.settings.line_color.label"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "max": 100,
+      "min": 0,
+      "unit": "px",
+      "step": 1,
+      "default": 10,
+      "label": "t:sections.all.timeline.settings.margin_top.label"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "max": 100,
+      "min": 0,
+      "unit": "px",
+      "step": 1,
+      "default": 10,
+      "label": "t:sections.all.timeline.settings.margin_bottom.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "label": "t:sections.all.timeline.blocks.box.settings.caption.label",
+          "id": "caption",
+          "type": "text"
+        },
+        {
+          "type": "color",
+          "id": "caption_text_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.caption_text_color.label"
+        },
+        {
+          "type": "color",
+          "id": "caption_bg_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.caption_bg_color.label"
+        },
+        {
+          "label": "t:sections.all.timeline.blocks.box.settings.first_text.label",
+          "id": "first_text",
+          "type": "text"
+        },
+        {
+          "type": "color",
+          "id": "first_text_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.first_text_color.label"
+        },
+        {
+          "type": "color",
+          "id": "first_text_bg_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.first_text_bg_color.label"
+        },
+        {
+          "id": "second_text",
+          "type": "text",
+          "label": "t:sections.all.timeline.blocks.box.settings.second_text.label"
+        },
+        {
+          "type": "color",
+          "id": "second_text_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.second_text_color.label"
+        },
+        {
+          "type": "color",
+          "id": "second_text_bg_color",
+          "label": "t:sections.all.timeline.blocks.box.settings.second_text_bg_color.label"
+        },
+        {
+          "type": "color",
+          "id": "box_bg_clr",
+          "label": "t:sections.all.timeline.blocks.box.settings.box_bg_clr.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.all.timeline.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1386,27 +1386,29 @@
               {%- when 'product_grouping_picker' -%}
                 {% render 'product-grouping-picker-custom', product: product, block: block %}
 
-              {%- when 'variant_picker' -%}
-                {% style %}
-                  .form__label-{{block.id}} {
-                    font-weight: {{block.settings.font_style}};
-                    font-size: {{block.settings.font_size}}px;
-                  }
-                  .form__label-{{block.id}} span {
-                    padding-left: 5px;
-                    border-left: 1px solid rgb(var(--color-foreground), 0.1);
-                    margin-left: 6px;
-                  }
-                  .form__label-variant_picker {
-                    font-size: {{block.settings.font_size}}px;
-                    font-weight: {{block.settings.font_style}};
-                    min-height: 0.5rem;margin-bottom: 0;color: currentColor;
-                  }
-                {% endstyle %}
-                {%- capture size_chart_title -%}
-                  {{ block.settings.chart_id }} {% render 'size-icons', block:block, size_icons: block.settings.size_icon %}
-                {%- endcapture -%}
-
+              
+ {%- when 'variant_picker' -%}
+                      <style>
+                            .form__label-{{block.id}} {
+                            font-weight: {{block.settings.font_style}};
+                            font-size: {{block.settings.font_size}}px;
+                        }
+                       .form__label-{{block.id}} span { 
+                          padding-left: 5px;
+                          border-left: 1px solid rgb(var(--color-foreground), 0.1);
+                          margin-left: 6px;
+                        }
+                        .form__label-variant_picker {
+                           font-size: {{block.settings.font_size}}px;
+                           font-weight: {{block.settings.font_style}};
+                           min-height: 0.5rem;margin-bottom: 0;color: currentColor;
+                        }
+                      </style>
+                            {%- capture size_chart_title -%}
+                        {{ block.settings.chart_id }} {% render 'size-icons', block:block, size_icons: block.settings.size_icon %}
+                              {%- endcapture -%}
+                      
+                     
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
                     <variant-radios
@@ -1432,75 +1434,67 @@
                             endfor
                           -%}
                           {%- if useColor -%}
-                            {%- liquid
+                             {%- liquid
                               assign is_size = false
                               assign size_trigger = block.settings.size_trigger | downcase | replace: ' ', '-'
                               assign downcased_option = option.name | downcase | replace: ' ', '-'
-
+                            
                               if downcased_option == size_trigger
                                 assign is_size = true
                               endif
                             -%}
                             <div style="display: flex;align-items: center;width:100%;align-items: baseline;{% if block.settings.spaced_size %}justify-content: space-between;{% endif %}">
-                              <legend class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
-                                {{ option.name -}}
-                                <span id="atc selected-{{ option.name | downcase | replace: ' ', '-' }}"></span>
-                                {{- option.selected_value }}
-                              </legend>
-
-                              {% if is_size %}
-                                {% unless block.settings.spaced_size %}
-                                  <span style="padding: 0 4px 0 10px;">—</span>
-                                {% endunless %}
-                                <span>
-                                  <modal-opener
-                                    class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-                                    data-modal="#PopupModal-{{ block.id }}"
-                                    style="display:flex;"
+                            <legend class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
+                              {{ option.name }}<span id="atc selected-{{ option.name | downcase | replace: ' ', '-' }}"></span>
+                              {{- option.selected_value }}
+                            </legend>
+                        
+                            {% if is_size %}
+                              {% unless block.settings.spaced_size %}
+                            <span style="padding: 0 4px 0 10px;">—</span>
+                              {% endunless %}
+                            <span>
+                              <modal-opener
+                                  class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                                  data-modal="#PopupModal-{{ block.id }}"
+                                 style="display:flex;"
+                                >
+                                  <button
+                                    id="ProductPopup-{{ block.id }}"
+                                    class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                    type="button"
+                                    style="padding: 0;text-decoration: none;border-bottom: 1px solid;"
+                                    aria-haspopup="dialog"
                                   >
-                                    <button
-                                      id="ProductPopup-{{ block.id }}"
-                                      class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
-                                      type="button"
-                                      style="padding: 0;text-decoration: none;border-bottom: 1px solid;"
-                                      aria-haspopup="dialog"
-                                    >
-                                      {{ size_chart_title }}
-                                    </button>
-                                  </modal-opener>
-                                  <a
-                                    href="{{ block.settings.size_page.url }}"
-                                    class="product-popup-modal__button link no-js"
-                                  >
-                                    {{- block.settings.text -}}
-                                  </a>
-                                  <modal-dialog
-                                    id="PopupModal-{{ block.id }}"
-                                    class="product-popup-modal"
-                                    {{ block.shopify_attributes }}
-                                  >
-                                    <div
-                                      role="dialog"
-                                      aria-label="{{ block.settings.text }}"
-                                      aria-modal="true"
-                                      class="product-popup-modal__content"
-                                      tabindex="-1"
-                                    >
-                                      <button
-                                        id="ModalClose-{{ block.id }}"
-                                        type="button"
-                                        class="product-popup-modal__toggle"
-                                        aria-label="{{ 'accessibility.close' | t }}"
+                                    {{ size_chart_title }}
+                                  </button>
+                                </modal-opener>
+                                <a href="{{ block.settings.size_page.url }}" class="product-popup-modal__button link no-js">
+                                  {{- block.settings.text -}}
+                                </a>
+                                  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                                      <div
+                                        role="dialog"
+                                        aria-label="{{ block.settings.text }}"
+                                        aria-modal="true"
+                                        class="product-popup-modal__content"
+                                        tabindex="-1"
                                       >
-                                        {% render 'icon-close' %}
-                                      </button>
-                                      <div class="product-popup-modal__content-info">
-                                        <h1 class="h2">{{ block.settings.chart_id }}</h1>
-                                        {{ block.settings.size_page.content }}
+                                        <button
+                                          id="ModalClose-{{ block.id }}"
+                                          type="button"
+                                          class="product-popup-modal__toggle"
+                                          aria-label="{{ 'accessibility.close' | t }}"
+                                        >
+                                          {% render 'icon-close' %}
+                                        </button>
+                                        <div class="product-popup-modal__content-info">
+                                          <h1 class="h2">{{ block.settings.chart_id }}</h1>
+                                          {{ block.settings.size_page.content }}
+                                        </div>
                                       </div>
-                                    </div>
-                                  </modal-dialog>
-                                </span>
+                                    </modal-dialog>
+                            </span>
                               {% endif %}
                             </div>
 
@@ -1511,11 +1505,12 @@
                               assign variants_option3_arr = product.variants | map: 'option3'
 
                               assign product_form_id = 'product-form-' | append: section.id
-                              assign swatch_type = block.settings.swatch_type
-                              assign swatch_style = block.settings.swatch_style
-                              assign swatch_size = block.settings.swatch_size
-                              assign swatch_height = block.settings.swatch_height
-                              assign swatch_colors = settings.swatch_colors | newline_to_br | split: '<br />'
+
+                              assign swatchType = block.settings.swatchType
+                              assign swatchStyle = block.settings.swatchStyle
+                              assign swatchSize = block.settings.swatchSize
+                              assign swatchHeight = block.settings.swatchHeight
+                              assign swatchColors = settings.swatchColors | newline_to_br | split: '<br />'
                             -%}
 
                             <style>
@@ -1536,8 +1531,8 @@
                                 }
                                 .product-form__input input[type='radio'] + label.color-swatch{
                                   border:1px rgb(214,214,214) solid;
-                                  width: {{swatch_size}}px;
-                                  height: {{swatch_size}}px;
+                                  width: {{swatchSize}}px;
+                                  height: {{swatchSize}}px;
                                   background-repeat: no-repeat;
                                   background-position: center;
                                   background-size: cover;
@@ -1564,7 +1559,7 @@
                                   width: 100%;
                                   height: 100%;
                                   z-index: 1;
-                                  {%- if settings.dark or swatch_type == "variantImage" -%}
+                                  {%- if settings.dark or swatchType == "variantImage" -%}
                                      border: none;
                                   {%- else -%}
                                     border: 0px rgb(48 48 48) solid;
@@ -1589,8 +1584,8 @@
                                 }
                                 .product-form__input input[type='radio'] + label.color-swatch.variant-swatch{
                                   background-color:white;
-                                  {%- if swatch_style == "portrait" -%}
-                                  height: {{swatch_height}}px;
+                                  {%- if swatchStyle == "portrait" -%}
+                                  height: {{swatchHeight}}px;
                                   {%- endif -%}
                                 }
                                 .product-form__input input[type='radio'].disabled+label.color-swatch:before {
@@ -1603,7 +1598,7 @@
                                   box-shadow: none;
                                   border-color: #acacac;
                               }
-                                /* {%- if settings.dark or swatch_type == "variantImage" -%}
+                                /* {%- if settings.dark or swatchType == "variantImage" -%}
                                 .product-form__input input[type=radio]:checked+.color-swatch {
                                      box-shadow: none !important;
                                 }
@@ -1633,7 +1628,7 @@
                               -%}
 
                               {%- if block.settings.picker_type == 'button' -%}
-                                <input
+                              <input
                                   type="radio"
                                   id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"
@@ -1646,7 +1641,7 @@
                                     class="disabled"
                                   {% endif %}
                                 >
-                                {%- if swatch_type == 'variantImage' -%}
+                                {%- if swatchType == 'variantImage' -%}
                                   <label
                                     data-{{ option.name | downcase | replace: ' ', '-' }}="{{value}}"
                                     style="
@@ -1655,7 +1650,7 @@
                                           assign optionIndex = option.position | minus: 1
                                           for variant in product.variants
                                               if variant.options[optionIndex] == value
-                                                assign swatchSizePortrait = swatch_size | times: 2
+                                                assign swatchSizePortrait = swatchSize | times: 2
                                                 echo variant.image | image_url: width: swatchSizePortrait
                                                 break
                                               endif
@@ -1663,7 +1658,7 @@
                                       -%}
                                          );
                                     "
-                                    class="color-swatch variant-swatch {% case swatch_style %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
+                                    class="color-swatch variant-swatch {% case swatchStyle %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
                                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   >
                                     <span class="visually-hidden">
@@ -1672,7 +1667,7 @@
                                   </label>
                                 {%- else -%}
                                   {%- liquid
-                                    for colorData in swatch_colors
+                                    for colorData in swatchColors
                                       assign colorDataArr = colorData | split: ':'
                                       assign ruleName = colorDataArr[0] | strip
                                       assign colorImg = value | append: '.png'
@@ -1699,7 +1694,7 @@
                                               background-image:url({{ colorImg | downcase | replace: ' ', '-' | file_img_url }});
                                           {%- endcase -%}
                                     "
-                                    class="color-swatch {% case swatch_style %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
+                                    class="color-swatch {% case swatchStyle %}{% when "round" %}round{% when "square-round-corners" %}round-corners{% endcase %}"
                                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   >
                                     <span class="visually-hidden">
@@ -1736,72 +1731,69 @@
                               assign is_size = false
                               assign size_trigger = block.settings.size_trigger | downcase | replace: ' ', '-'
                               assign downcased_option = option.name | downcase | replace: ' ', '-'
-
+                            
                               if downcased_option == size_trigger
                                 assign is_size = true
                               endif
                             -%}
                             <div style="display: flex;align-items: center;width:100%;align-items: baseline;{% if block.settings.spaced_size %}justify-content: space-between;{% endif %}">
-                              <legend class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %} ">
-                                {{ option.name -}}
-                                <span id="selected-{{ option.name | downcase | replace: ' ', '-' }}"></span>
-                                {{- option.selected_value -}}
-                              </legend>
+                            <legend class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %} ">
+                              {{ option.name }}<span id="selected-{{ option.name | downcase | replace: ' ', '-' }}"></span>
+                              {{- option.selected_value -}}
+                            </legend>
 
+
+  
                               {% if is_size %}
-                                {% unless block.settings.spaced_size %}
-                                  <span style="padding: 0 4px 0 10px;">—</span>
-                                {% endunless %}
-                                <span>
-                                  <modal-opener
-                                    class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-                                    data-modal="#PopupModal-{{ block.id }}"
-                                    style="display:flex;"
+                            {% unless block.settings.spaced_size %}
+                            <span style="padding: 0 4px 0 10px;">—</span>
+                              {% endunless %}
+                            <span>
+                             <modal-opener
+                                  class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                                  data-modal="#PopupModal-{{ block.id }}"
+                                 style="display:flex;"
+                                >
+                                  <button
+                                    id="ProductPopup-{{ block.id }}"
+                                    class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                    type="button"
+                                    style="padding: 0;"
+                                    aria-haspopup="dialog"
                                   >
-                                    <button
-                                      id="ProductPopup-{{ block.id }}"
-                                      class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
-                                      type="button"
-                                      style="padding: 0;"
-                                      aria-haspopup="dialog"
-                                    >
-                                      {{ size_chart_title }}
-                                    </button>
-                                  </modal-opener>
-                                  <a
-                                    href="{{ block.settings.size_page.url }}"
-                                    class="product-popup-modal__button link no-js"
-                                  >
-                                    {{- block.settings.text -}}
-                                  </a>
-                                  <modal-dialog
-                                    id="PopupModal-{{ block.id }}"
-                                    class="product-popup-modal"
-                                    {{ block.shopify_attributes }}
-                                  >
-                                    <div
-                                      role="dialog"
-                                      aria-label="{{ block.settings.text }}"
-                                      aria-modal="true"
-                                      class="product-popup-modal__content"
-                                      tabindex="-1"
-                                    >
-                                      <button
-                                        id="ModalClose-{{ block.id }}"
-                                        type="button"
-                                        class="product-popup-modal__toggle"
-                                        aria-label="{{ 'accessibility.close' | t }}"
+                                    {{ size_chart_title }}
+                                  </button>
+                                </modal-opener>
+                                <a href="{{ block.settings.size_page.url }}" class="product-popup-modal__button link no-js">
+                                  {{- block.settings.text -}}
+                                </a>
+                                  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                                      <div
+                                        role="dialog"
+                                        aria-label="{{ block.settings.text }}"
+                                        aria-modal="true"
+                                        class="product-popup-modal__content"
+                                        tabindex="-1"
                                       >
-                                        {% render 'icon-close' %}
-                                      </button>
-                                      <div class="product-popup-modal__content-info">
-                                        <h1 class="h2">{{ block.settings.chart_id }}</h1>
-                                        {{ block.settings.size_page.content }}
+                                        <button
+                                          id="ModalClose-{{ block.id }}"
+                                          type="button"
+                                          class="product-popup-modal__toggle"
+                                          aria-label="{{ 'accessibility.close' | t }}"
+                                        >
+                                          {% render 'icon-close' %}
+                                        </button>
+                                        <div class="product-popup-modal__content-info">
+                                          <h1 class="h2">{{ block.settings.chart_id }}</h1>
+                                          {{ block.settings.size_page.content }}
+                                        </div>
                                       </div>
-                                    </div>
-                                  </modal-dialog>
-                                </span>
+                                    </modal-dialog>
+                            </span>
                               {% endif %}
+
+
+                              
                             </div>
                             {% render 'product-variant-options', product: product, option: option, block: block %}
                           {%- endif -%}
@@ -1823,79 +1815,71 @@
                       {{ block.shopify_attributes }}
                     >
                       {%- for option in product.options_with_values -%}
-                        {%- liquid
-                          assign is_size = false
-                          assign size_trigger = block.settings.size_trigger | downcase | replace: ' ', '-'
-                          assign downcased_option = option.name | downcase | replace: ' ', '-'
-
-                          if downcased_option == size_trigger
-                            assign is_size = true
-                          endif
-                        -%}
+                         {%- liquid
+                              assign is_size = false
+                              assign size_trigger = block.settings.size_trigger | downcase | replace: ' ', '-'
+                              assign downcased_option = option.name | downcase | replace: ' ', '-'
+                            
+                              if downcased_option == size_trigger
+                                assign is_size = true
+                              endif
+                            -%}
                         <div class="product-form__input product-form__input--dropdown">
-                          <div style="display: flex;align-items: center;width:100%;align-items: baseline;{% if block.settings.spaced_size %}justify-content: space-between;{% endif %}">
-                            <label
-                              class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
-                              for="Option-{{ section.id }}-{{ forloop.index0 }}"
-                            >
-                              {{ option.name }}
-                            </label>
+                           <div style="display: flex;align-items: center;width:100%;align-items: baseline;{% if block.settings.spaced_size %}justify-content: space-between;{% endif %}">
+                          <label class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                            {{ option.name }}
+                          </label>
 
+                          
                             {% if is_size %}
-                              {% unless block.settings.spaced_size %}
-                                <span style="padding: 0 4px 0 10px;">—</span>
+                            {% unless block.settings.spaced_size %}
+                            <span style="padding: 0 4px 0 10px;">—</span>
                               {% endunless %}
-                              <span>
-                                <modal-opener
+                            <span>
+                              <modal-opener
                                   class="product-popup-modal__opener no-js-hidden quick-add-hidden"
                                   data-modal="#PopupModal-{{ block.id }}"
-                                  style="display:flex;"
+                                 style="display:flex;"
                                 >
                                   <button
                                     id="ProductPopup-{{ block.id }}"
-                                    class="form__label form__label-variant_picker product-popup-modal__button link clarity-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
+                                    class="form__label form__label-variant_picker product-popup-modal__button link lumin-popup {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
                                     type="button"
                                     aria-haspopup="dialog"
                                   >
                                     {{ size_chart_title }}
                                   </button>
                                 </modal-opener>
-                                <a
-                                  href="{{ block.settings.size_page.url }}"
-                                  class="product-popup-modal__button link no-js"
-                                >
+                                <a href="{{ block.settings.size_page.url }}" class="product-popup-modal__button link no-js">
                                   {{- block.settings.text -}}
                                 </a>
-                                <modal-dialog
-                                  id="PopupModal-{{ block.id }}"
-                                  class="product-popup-modal"
-                                  {{ block.shopify_attributes }}
-                                >
-                                  <div
-                                    role="dialog"
-                                    aria-label="{{ block.settings.text }}"
-                                    aria-modal="true"
-                                    class="product-popup-modal__content"
-                                    tabindex="-1"
-                                  >
-                                    <button
-                                      id="ModalClose-{{ block.id }}"
-                                      type="button"
-                                      class="product-popup-modal__toggle"
-                                      aria-label="{{ 'accessibility.close' | t }}"
-                                    >
-                                      {% render 'icon-close' %}
-                                    </button>
-                                    <div class="product-popup-modal__content-info">
-                                      <h1 class="h2">{{ block.settings.chart_id }}</h1>
-                                      {{ block.settings.size_page.content }}
-                                    </div>
-                                  </div>
-                                </modal-dialog>
-                              </span>
-                            {% endif %}
-                          </div>
+                                  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                                      <div
+                                        role="dialog"
+                                        aria-label="{{ block.settings.text }}"
+                                        aria-modal="true"
+                                        class="product-popup-modal__content"
+                                        tabindex="-1"
+                                      >
+                                        <button
+                                          id="ModalClose-{{ block.id }}"
+                                          type="button"
+                                          class="product-popup-modal__toggle"
+                                          aria-label="{{ 'accessibility.close' | t }}"
+                                        >
+                                          {% render 'icon-close' %}
+                                        </button>
+                                        <div class="product-popup-modal__content-info">
+                                          <h1 class="h2">{{ block.settings.chart_id }}</h1>
+                                          {{ block.settings.size_page.content }}
+                                        </div>
+                                      </div>
+                                    </modal-dialog>
+                            </span>
+                              {% endif %}
+                            </div>
 
+                             
                           <div class="select">
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
@@ -1919,10 +1903,7 @@
 
                 <noscript class="product-form__noscript-wrapper-{{ section.id }}">
                   <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-                    <label
-                      class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}"
-                      for="Variants-{{ section.id }}"
-                    >
+                    <label class="form__label form__label-{{block.id}}{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}" for="Variants-{{ section.id }}">
                       {{- 'products.product.product_variants' | t -}}
                     </label>
                     <div class="select">
@@ -1973,8 +1954,7 @@
                   </div>
                 </noscript>
 
-                {% assign variant_picker_block = block %}
-
+              {% assign variant_picker_block = block %}
               {%- when 'buy_buttons' -%}
                 {% if block.settings.show_full_button %}
                   <style>
@@ -3166,7 +3146,6 @@
           "label": "Text Size",
           "default": 14
         },
-
         {
           "type": "header",
           "content": "Look"
@@ -5827,7 +5806,7 @@
         },
         {
           "type": "select",
-          "id": "swatch_type",
+          "id": "swatchType",
           "label": "Swatch type",
           "options": [
             {
@@ -5854,7 +5833,7 @@
         },
         {
           "type": "select",
-          "id": "swatch_style",
+          "id": "swatchStyle",
           "label": "Swatch style",
           "options": [
             {
@@ -5879,7 +5858,7 @@
         },
         {
           "type": "range",
-          "id": "swatch_size",
+          "id": "swatchSize",
           "min": 20,
           "max": 120,
           "step": 2,
@@ -5889,7 +5868,7 @@
         },
         {
           "type": "range",
-          "id": "swatch_height",
+          "id": "swatchHeight",
           "min": 20,
           "max": 120,
           "step": 2,

@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{{ 'featured-collection-clarity.css' | asset_url | stylesheet_tag }}
+<div class="clarity__collection">
+  <div class="text__content">
+    {% if section.settings.heading != blank %}
+      <h3
+        class="{{ section.settings.clarity_heading_size }} "
+        style="color :{{ section.settings.clarity_heading_color }}; "
+      >
+        {{ section.settings.heading }}
+      </h3>
+    {% endif %}
+    {% if section.settings.caption != blank %}
+      <span>{{ section.settings.caption }}</span>
+    {% endif %}
+    {% if section.settings.description != blank %}
+    {% endif %}
+  </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for product in collections[section.settings.collection].products %}
+        <div class="swiper-slide">
+          {% render 'card-product',
+            card_product: product,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_quick_desc: section.settings.show_quick_desc,
+            show_scroll_tags: section.settings.show_scroll_tags,
+            show_quick_add: section.settings.show_quick_add,
+            navigation: true
+          %}
+        </div>
+      {% endfor %}
+    </div>
+    <div
+      class="swiper-button-next swiper-button {%  if section.settings.navigation_enable == true  %} navigation_enable {%  endif  %}"
+    ></div>
+    <div
+      class="swiper-button-prev swiper-button {%  if section.settings.navigation_enable == true  %} navigation_enable {%  endif  %}"
+    ></div>
+    {% if section.settings.show_scrollbar == true %}
+      <div class="swiper-scrollbar scrollbar_color"></div>
+    {% endif %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3.5,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+      },
+      576: {
+        slidesPerView: 1.5, // For screens >= 576px and < 767px
+      },
+      767: {
+        slidesPerView: 3,
+      },
+      990: {
+        slidesPerView: 4,
+      },
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+{% schema %}
+{
+  "name": "t:sections.all.featured_collections_clarity.name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.featured_collections_clarity.settings.heading.label",
+      "id": "heading"
+    },
+    {
+      "type": "select",
+      "id": "clarity_heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color",
+      "id": "clarity_heading_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.all.featured_collections_clarity.settings.description.label",
+      "id": "description"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.all.featured_collections_clarity.settings.caption.label",
+      "id": "caption"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.all.featured_collections_clarity.settings.collection.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "navigation_enable",
+      "default": true,
+      "label": "t:sections.all.featured_collections_clarity.settings.navigation.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scrollbar",
+      "default": true,
+      "label": "t:sections.all.featured_collections_clarity.settings.show_scrollbar.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "t:sections.all.featured_collections_clarity.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "default": true,
+      "label": "t:sections.all.featured_collections_clarity.settings.show_quick_add.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.all.featured_collections_clarity.name"
+    }
+  ]
+}
+{% endschema %}
