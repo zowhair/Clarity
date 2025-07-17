@@ -16,10 +16,10 @@
           "type": "slide",
           "settings": {
             "caption": "Lorem ipsum",
-            "block_cap_size": 33,
+            "block_cap_size": 23,
             "cap_color": "#231a10",
             "heading": "Lorem ipsum dolor sit amet,",
-            "block_head_size-2": 16,
+            "block_head_size-2": 36,
             "block_head_size-mobile": 12,
             "block_head_line": 1.1,
             "heading_size": "h1",
