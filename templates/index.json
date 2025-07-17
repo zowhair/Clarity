@@ -264,7 +264,7 @@
         "image_nmpc6m": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/blue-men-3.webp"
+            "image": "shopify://shop_images/capsule-hair.webp"
           }
         }
       },
@@ -276,7 +276,7 @@
       "settings": {
         "title": "Lorem Ipsum",
         "parallax_heading_size": "hxl",
-        "section_color_scheme": "accent-1",
+        "section_color_scheme": "accent-2",
         "description": "<p>Lorem ispum treats made from high-quality ingredients for a guilt-free indulgence. Experience the rich flavor without compromising your health goals.</p>",
         "btn_label": "Lorem",
         "btn_url": "#"
