@@ -137,7 +137,6 @@
         "transparent_header": "transparent_header_home",
         "content_color": "#212121",
         "menu_type_desktop": "mega",
-        "menu_type_mobile": "mega",
         "menu_hover": true,
         "mega_columns": "20",
         "menu_align": "start",

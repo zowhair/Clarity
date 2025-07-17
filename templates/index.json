@@ -276,7 +276,7 @@
       "settings": {
         "title": "Lorem Ipsum",
         "parallax_heading_size": "hxl",
-        "section_color_scheme": "scheme-f5e5a3f3-e48e-40cf-8d78-03eebea4986b",
+        "section_color_scheme": "background-1",
         "description": "<p>Lorem ispum treats made from high-quality ingredients for a guilt-free indulgence. Experience the rich flavor without compromising your health goals.</p>",
         "btn_label": "Lorem",
         "btn_url": "#"
@@ -388,7 +388,9 @@
       "settings": {
         "color_scheme": "",
         "dot_color": "#dbdbc4",
-        "line_color": "#dbdbc4"
+        "line_color": "#dbdbc4",
+        "margin_top": 10,
+        "margin_bottom": 10
       }
     },
     "rich_text_GdMTUM": {
