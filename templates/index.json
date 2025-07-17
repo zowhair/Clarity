@@ -384,6 +384,7 @@
         "box_xw93ab",
         "box_YLEfBd"
       ],
+      "disabled": true,
       "name": "t:sections.all.timeline.name",
       "settings": {
         "color_scheme": "",
@@ -633,6 +634,7 @@
         "template--15124687650899__7c49854d-841e-4486-a518-217b88181104-heading-1",
         "template--15124687650899__7c49854d-841e-4486-a518-217b88181104-text-1"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -779,6 +781,7 @@
         "template--15124687650899__24a76f3a-b24e-4495-9798-d8787a0b9e94-text-1",
         "462e5887-4682-4b94-bfe4-addb9e21eaba"
       ],
+      "disabled": true,
       "settings": {
         "video_border": 6,
         "zoom_hover": true,
@@ -962,6 +965,7 @@
         "template--15124687650899__5ba491c9-db08-4028-9406-07c41d9279e4-announcement-1",
         "template--15124687650899__5ba491c9-db08-4028-9406-07c41d9279e4-announcement-2"
       ],
+      "disabled": true,
       "settings": {
         "scroll_speed": 15,
         "reverse": false,
@@ -977,6 +981,7 @@
     },
     "58054187-7070-4732-93cb-2a5dede46e56": {
       "type": "video-with-text",
+      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 750px) {.video-container--medium:not(.video-container--adapt) {padding-top: 36%; }}"
       ],
@@ -1003,6 +1008,7 @@
     },
     "2ad845cb-2654-426a-a07a-d1171b48e543": {
       "type": "timer",
+      "disabled": true,
       "settings": {
         "color_scheme": "background-2",
         "layout": "grid",
@@ -1099,6 +1105,7 @@
         "template--15124687650899__f6aa73dd-735c-463c-a915-039d2a5a8dd1-text-1",
         "49756edd-2a88-48bb-9a4e-bf55aef7966d"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme_main": "background-1",
         "full-width": false,
@@ -1247,6 +1254,7 @@
         "image_7J7Bdj",
         "image_akr7B4"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "color_scheme": "",
@@ -1360,6 +1368,7 @@
     },
     "media_gallery_iVM7pw": {
       "type": "media-gallery",
+      "disabled": true,
       "name": "t:sections.names.media_slider",
       "settings": {
         "title": "",
@@ -1472,6 +1481,7 @@
         "image_aFXBhA",
         "image_rQY8dk"
       ],
+      "disabled": true,
       "name": "t:sections.names.media_gallery",
       "settings": {
         "title": "Gallery",
