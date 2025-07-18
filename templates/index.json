@@ -231,7 +231,7 @@
             "margin_bottom": 36,
             "padding_top": 36,
             "padding_bottom": 36,
-            "heading": "Image (* with *) text",
+            "heading": "Image (* with text*)",
             "text_svg": "<svg class=\"svg-marker svg-marker--style2\" width=\"192\" height=\"28\" viewbox=\"0 0 192 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" preserveaspectratio=\"none\">\n<path d=\"M3 11.9994C56 8.99939 167.626 -0.217816 187 4.99939C201 8.76949 83.5 14.9993 56 24.9997\" stroke=\"#37eb5c\" stroke-width=\"6\" stroke-linecap=\"round\" style=\"stroke-dashoffset: 0; stroke-dasharray: none;\"></path>\n</svg>",
             "target_text": "",
             "heading_size": "h1",
