@@ -387,7 +387,7 @@
       "name": "t:sections.all.timeline.name",
       "settings": {
         "color_scheme": "",
-        "dot_color": "#dbdbc4",
+        "dot_color": "#000000",
         "line_color": "#dbdbc4",
         "margin_top": 10,
         "margin_bottom": 10
