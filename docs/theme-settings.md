@@ -31,3 +31,7 @@ We have option in theme settings.
 
 # Animation 
 
+
+#   Sections
+##  Parallax Section
+** We can add image blocks and add texts into the section via customizer

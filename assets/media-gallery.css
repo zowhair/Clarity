@@ -57,7 +57,7 @@
 .content_box {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 10px;
     transform: translateX(-50%);
 }
 @media (max-width: 768px) {
@@ -66,7 +66,8 @@
     }
 
     .media__gallery .left__column {
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-columns: 1fr;
     }
 
     .media__gallery .right__column,
@@ -82,3 +83,17 @@
     font-size: 16px;
     font-weight: 500;
 }
+.media__gallery .gallery__cta-wrapper {
+    text-align: center;
+}
+/* .media__gallery .gallery__cta-wrapper {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    text-align: center;
+}
+.media__gallery .gallery__cta-wrapper a {
+    text-decoration: none;
+    margin: 0 auto;
+} */

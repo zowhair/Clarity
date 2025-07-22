@@ -99,7 +99,7 @@
         </div>
       {% endif %}
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive desktop">
       <table
         class="table table-striped clarity-tbody-{{section.id}}"
         style="
@@ -152,7 +152,7 @@
                     assign text = header_block.settings.cell_7_text
                 endcase
               %}
-              <th scope="col">
+              <th scope="col" data-label="{{text}}">
                 {% unless img == null %}
                   <img
                     src="{{ img | image_url: width: 400 }}"
@@ -295,6 +295,186 @@
         </tbody>
       </table>
     </div>
+
+    {% comment %}
+      <div class="table-responsive mobile">
+        {% assign group_size = 3 %}
+        {% assign last_index = cols_count | minus: 1 %}
+        {% for set_index in (0..last_index) %}
+          <table
+            class="table table-striped clarity-tbody-{{section.id}}"
+            style="
+              background: {{ section.settings.table_bg_color }};
+              color: {{ section.settings.table_text_color }};
+              --table-min-width: {{ section.settings.table_min_width | append: 'px' }};
+              --table-first-col-width: {{ section.settings.table_first_col_width | append: '%' }};
+              --icon-checked-circle-color: {{ section.settings.icon_color_checked_circle }};
+              --icon-checked-color: {{ section.settings.icon_color_checked }};
+              --icon-unchecked-color: {{ section.settings.icon_color_unchecked }};
+              --table-border-radius: {{ section.settings.table_border_radius | append: 'px' }};
+            "
+          >
+            {% if section.settings.table_caption != blank %}
+              <caption>
+                {{
+                  section.settings.table_caption
+                  | replace: '[', '<span class="clarity-text__fancy1">'
+                  | replace: ']', '</span>'
+                  | replace: '((', '<span class="clarity-text__fancy2">'
+                  | replace: '))', '</span>'
+                }}
+              </caption>
+            {% endif %}
+
+            <!-- TABLE HEAD -->
+            <thead>
+              <tr>
+                <th></th>
+                <!-- Row Title Column -->
+                {% for i in (1..group_size) %}
+                  {% assign col_index = set_index | times: group_size | plus: i %}
+                  {% if col_index <= cols_count %}
+                    {% liquid
+                      case col_index
+                        when 2
+                          assign img = header_block.settings.cell_2_img
+                          assign text = header_block.settings.cell_2_text
+                        when 3
+                          assign img = header_block.settings.cell_3_img
+                          assign text = header_block.settings.cell_3_text
+                        when 4
+                          assign img = header_block.settings.cell_4_img
+                          assign text = header_block.settings.cell_4_text
+                        when 5
+                          assign img = header_block.settings.cell_5_img
+                          assign text = header_block.settings.cell_5_text
+                        when 6
+                          assign img = header_block.settings.cell_6_img
+                          assign text = header_block.settings.cell_6_text
+                        when 7
+                          assign img = header_block.settings.cell_7_img
+                          assign text = header_block.settings.cell_7_text
+                      endcase
+                    %}
+                    <th>
+                      {% if img %}
+                        <img
+                          src="{{ img | image_url: width: 400 }}"
+                          alt="{{ img.alt }}"
+                          width="200"
+                          height="{{ 200 | divided_by: img.aspect_ratio | round }}"
+                          loading="lazy"
+                        >
+                      {% endif %}
+                      {% if text != blank and text != '#' %}
+                        <span>
+                          {{
+                            text
+                            | replace: '[', '<span class="clarity-text__fancy1">'
+                            | replace: ']', '</span>'
+                            | replace: '((', '<span class="clarity-text__fancy2">'
+                            | replace: '))', '</span>'
+                          }}
+                        </span>
+                      {% endif %}
+                    </th>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+
+            <!-- TABLE BODY -->
+            <tbody>
+              {% for block in section.blocks %}
+                {% if block.type == 'row' %}
+                  <tr>
+                    <th scope="row" style="text-align: {{ section.settings.first_col_text_align }};">
+                      {{
+                        block.settings.title
+                        | replace: '[', '<span class="clarity-text__fancy1">'
+                        | replace: ']', '</span>'
+                        | replace: '((', '<span class="clarity-text__fancy2">'
+                        | replace: '))', '</span>'
+                      }}
+                    </th>
+                    {% for i in (1..group_size) %}
+                      {% assign col_index = set_index | times: group_size | plus: i %}
+                      {% if col_index <= cols_count %}
+                        {% liquid
+                          case col_index
+                            when 2
+                              assign checkbox = block.settings.cell_2_checkbox
+                              assign text = block.settings.cell_2_text
+                            when 3
+                              assign checkbox = block.settings.cell_3_checkbox
+                              assign text = block.settings.cell_3_text
+                            when 4
+                              assign checkbox = block.settings.cell_4_checkbox
+                              assign text = block.settings.cell_4_text
+                            when 5
+                              assign checkbox = block.settings.cell_5_checkbox
+                              assign text = block.settings.cell_5_text
+                            when 6
+                              assign checkbox = block.settings.cell_6_checkbox
+                              assign text = block.settings.cell_6_text
+                            when 7
+                              assign checkbox = block.settings.cell_7_checkbox
+                              assign text = block.settings.cell_7_text
+                          endcase
+                        %}
+                        <td>
+                          {% if checkbox == 'checked-circle' %}
+                            <!-- checked-circle SVG -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <circle cx="10" cy="10" r="9.375" stroke="currentColor" stroke-width="1.25"/><path d="M5.55469 9.99995L8.88802 13.3333L14.9991 7.22217" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                          {% elsif checkbox == 'checked' %}
+                            <!-- checked SVG -->
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          {% elsif checkbox == 'unchecked' %}
+                            <!-- unchecked SVG -->
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                          {% endif %}
+                          {% unless text == blank %}
+                            <span>
+                              {{
+                                text
+                                | replace: '[', '<span class="clarity-text__fancy1">'
+                                | replace: ']', '</span>'
+                                | replace: '((', '<span class="clarity-text__fancy2">'
+                                | replace: '))', '</span>'
+                              }}
+                            </span>
+                          {% endunless %}
+                        </td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endfor %}
+      </div>
+    {% endcomment %}
   </div>
 </div>
 

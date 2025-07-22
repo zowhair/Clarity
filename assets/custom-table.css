@@ -1,108 +1,119 @@
+/* @media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+} */
 
+.clarity-table .section-header .title {
+  margin: 0 0 .5rem;
+}
+
+.clarity-table .section-header .description {
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 750px) {
   .clarity-table .section-header .title {
     margin: 0 0 .5rem;
   }
 
   .clarity-table .section-header .description {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2.5rem;
   }
-  @media (min-width: 750px) {
-    .clarity-table .section-header .title {
-      margin: 0 0 .5rem;
-    }
-    .clarity-table .section-header .description {
-      margin-bottom: 2.5rem;
-    }
-  }
-.clarity-table .section-header {
-    text-align: center;
-  }
-
-  .clarity-table .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .clarity-table .table {
-    border-collapse: collapse;
-    caption-side: bottom;
-    border-radius: var(--table-border-radius);
-    border-style: hidden;
-    width: 100%;
-    text-align: center;
-    table-layout: fixed;
-    line-height: normal;
-    min-width: var(--table-min-width);
-  }
-
-  .clarity-table caption {
-    color: rgba(var(--color-foreground));
-    opacity: .7;
-    font-size: .85em;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .clarity-table .table > :not(caption) > * > * {
-    background-color: transparent;
-    color: currentColor;
-    border: 1px solid currentColor;
-    padding: 10px;
-  }
-
-  .clarity-table .table thead tr {
-    border-top-color: rgba(var(--bg-color-rgb), 1);
-    border-bottom-color: rgba(var(--bg-color-rgb), 1);
-  }
-
-  .clarity-table .table thead th {
-  }
-
-  .clarity-table .table thead th:first-child {
-    width: var(--table-first-col-width);
-  }
-
-  .clarity-table .table thead th img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-    display: block;
-  } 
-
-  .ks-able-compare .table thead th img + span {
-    display: block;
-  }
-
-  .clarity-table .table tbody th {
-  }
-
-  .clarity-table .table tbody td {
-  }
-
-  .clarity-table .table tbody td svg + span {
-    margin-top: .125rem;
-  }
-
-  .clarity-table .clarity-icon-checked-circle {
-    color: var(--icon-checked-circle-color);
-  }
-
-  .clarity-table .clarity-icon-checked {
-    color: var(--icon-checked-color);
-  }
-
-  .clarity-table .clarity-icon-unchecked {
-    color: var(--icon-unchecked-color);
-  }
-  .clarity-table .table thead th {
-    border-color: transparent !important;
 }
- @media (max-width: 749px) {
-    .clarity-table .table-responsive {
-      padding: 0 1.5rem;
-      margin: 0 -1.5rem;
-    }
-    .clarity-table .table thead th {
-      font-size: .85em;
-    }
+
+.clarity-table .section-header {
+  text-align: center;
+}
+
+.clarity-table .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clarity-table .table {
+  border-collapse: collapse;
+  caption-side: bottom;
+  border-radius: var(--table-border-radius);
+  border-style: hidden;
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
+  line-height: normal;
+  min-width: var(--table-min-width);
+}
+
+.clarity-table caption {
+  color: rgba(var(--color-foreground));
+  opacity: .7;
+  font-size: .85em;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.clarity-table .table> :not(caption)>*>* {
+  background-color: transparent;
+  color: currentColor;
+  border: 1px solid currentColor;
+  padding: 10px;
+}
+
+.clarity-table .table thead tr {
+  border-top-color: rgba(var(--bg-color-rgb), 1);
+  border-bottom-color: rgba(var(--bg-color-rgb), 1);
+}
+
+.clarity-table .table thead th {}
+
+.clarity-table .table thead th:first-child {
+  width: var(--table-first-col-width);
+}
+
+.clarity-table .table thead th img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ks-able-compare .table thead th img+span {
+  display: block;
+}
+
+.clarity-table .table tbody th {}
+
+.clarity-table .table tbody td {}
+
+.clarity-table .table tbody td svg+span {
+  margin-top: .125rem;
+}
+
+.clarity-table .clarity-icon-checked-circle {
+  color: var(--icon-checked-circle-color);
+}
+
+.clarity-table .clarity-icon-checked {
+  color: var(--icon-checked-color);
+}
+
+.clarity-table .clarity-icon-unchecked {
+  color: var(--icon-unchecked-color);
+}
+
+.clarity-table .table thead th {
+  border-color: transparent !important;
+}
+
+@media (max-width: 749px) {
+  .clarity-table .table-responsive {
+    padding: 0 1.5rem;
+    margin: 0 -1.5rem;
   }
+
+  .clarity-table .table thead th {
+    font-size: .85em;
+  }
+}

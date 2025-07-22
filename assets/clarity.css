@@ -1,9 +1,8 @@
-
 @media (max-width: 600px) {
-.dlmc {
-  text-align: center;
-  justify-content: center;
-}
+  .dlmc {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 .dcml {
@@ -12,10 +11,10 @@
 }
 
 @media (max-width: 600px) {
-.dcml {
-  text-align: left;
-  justify-content: start;
-}
+  .dcml {
+    text-align: left;
+    justify-content: start;
+  }
 }
 @media screen and (max-width: 600px) {
   .mobile-hide {

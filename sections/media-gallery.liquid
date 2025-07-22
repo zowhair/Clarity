@@ -22,13 +22,26 @@
         {% if block.type == 'image' %}
           <div class="image__box">
             <img src="{{ block.settings.image |  image_url: width: 500 }}" alt="">
-            <div class="content_box">
+            <div class="content_box" style="text-align: {{ block.settings.desktop_content_alignment }};">
               {% if block.settings.title != blank %}
                 <span class="image__title">{{ block.settings.title }}</span>
               {% endif %}
               {% if block.settings.description != blank %}
                 <span class="image__desc">{{ block.settings.description }}</span>
               {% endif %}
+              <div class="gallery__cta-wrapper">
+                <a
+                  {% if block.settings.button_url == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="{{ block.settings.button_url }}"
+                  {% endif %}
+                  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.button_text | escape }}
+                </a>
+              </div>
             </div>
           </div>
         {% endif %}
@@ -90,6 +103,52 @@
           "type": "richtext",
           "id": "description",
           "label": "t:sections.media_gallery.blocks.image.description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.media_gallery.blocks.image.btn_label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.media_gallery.blocks.image.btn_url"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "t:sections.media_gallery.blocks.image.btn_bg"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "t:sections.media_gallery.blocks.image.btn_text_color"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button.settings.outline_button.label"
+        },
+        {
+          "type": "select",
+          "id": "desktop_content_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center",
+          "label": "Content Alignment"
         }
       ]
     }

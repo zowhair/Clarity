@@ -1,0 +1,145 @@
+{% style %}
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url(" {{ 'HelveticaNeue-Bold.woff2' | asset_url }}") format("woff2"),
+            url("{{ 'HelveticaNeue-Bold.woff' | asset_url }}") format("woff");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Black.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Black.woff" | asset_url }}') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-BlackItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-BlackItalic.woff" | asset_url }}') format('woff');
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-BoldItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-BoldItalic.woff" | asset_url }}') format('woff');
+        font-weight: bold;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-HeavyItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-HeavyItalic.woff" | asset_url }}') format('woff');
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Heavy.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Heavy.woff" | asset_url }}') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url(' {{ "HelveticaNeue-Light.woff2" | asset__url }} ') format('woff2'),
+            url(' {{ "HelveticaNeue-Light.woff" | asset_url }}') format('woff');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Italic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Italic.woff" | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Medium.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Medium.woff" | asset_url }}') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-LightItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-LightItalic.woff" | asset_url }}') format('woff');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-MediumItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-MediumItalic.woff" | asset_url }}') format('woff');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Thin.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Thin.woff" | asset_url }}') format('woff');
+        font-weight: 100;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-Roman.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-Roman.woff" | asset_url }}') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-ThinItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-ThinItalic.woff" | asset_url }}') format('woff');
+        font-weight: 100;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-UltraLight.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-UltraLight.woff" | asset_url }}')  format('woff');
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('{{ "HelveticaNeue-UltraLightItalic.woff2" | asset_url }}') format('woff2'),
+            url('{{ "HelveticaNeue-UltraLightItalic.woff" | asset_url }}') format('woff');
+        font-weight: 200;
+        font-style: italic;
+        font-display: swap;
+    }
+{% endstyle %}

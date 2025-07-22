@@ -104,6 +104,131 @@
         "padding_bottom": 0
       }
     },
+    "clarity_compare_table_GUggtD": {
+      "type": "clarity-compare-table",
+      "blocks": {
+        "row_DYWPzr": {
+          "type": "row",
+          "settings": {
+            "table_heading": "",
+            "icon_field_1": false,
+            "cell_1_checkbox": "",
+            "table_data_1": "abc",
+            "icon_field_2": false,
+            "cell_2_checkbox": "",
+            "table_data_2": "abc",
+            "icon_field_3": false,
+            "cell_3_checkbox": "",
+            "table_data_3": "abc",
+            "icon_field_4": false,
+            "cell_4_checkbox": "",
+            "table_data_4": "abc",
+            "icon_field_5": false,
+            "cell_5_checkbox": "",
+            "table_data_5": "",
+            "icon_field_6": false,
+            "cell_6_checkbox": "",
+            "table_data_6": "",
+            "icon_field_7": false,
+            "cell_7_checkbox": "",
+            "table_data_7": ""
+          }
+        },
+        "row_KVTk86": {
+          "type": "row",
+          "settings": {
+            "table_heading": "Heading",
+            "icon_field_1": false,
+            "cell_1_checkbox": "",
+            "table_data_1": "abc",
+            "icon_field_2": false,
+            "cell_2_checkbox": "",
+            "table_data_2": "abc",
+            "icon_field_3": false,
+            "cell_3_checkbox": "",
+            "table_data_3": "abc",
+            "icon_field_4": false,
+            "cell_4_checkbox": "",
+            "table_data_4": "abc",
+            "icon_field_5": false,
+            "cell_5_checkbox": "",
+            "table_data_5": "",
+            "icon_field_6": false,
+            "cell_6_checkbox": "",
+            "table_data_6": "",
+            "icon_field_7": false,
+            "cell_7_checkbox": "",
+            "table_data_7": ""
+          }
+        },
+        "row_qq4JTX": {
+          "type": "row",
+          "settings": {
+            "table_heading": "Heading",
+            "icon_field_1": false,
+            "cell_1_checkbox": "",
+            "table_data_1": "abc",
+            "icon_field_2": false,
+            "cell_2_checkbox": "",
+            "table_data_2": "abc",
+            "icon_field_3": false,
+            "cell_3_checkbox": "",
+            "table_data_3": "abc",
+            "icon_field_4": false,
+            "cell_4_checkbox": "",
+            "table_data_4": "abc",
+            "icon_field_5": false,
+            "cell_5_checkbox": "",
+            "table_data_5": "",
+            "icon_field_6": false,
+            "cell_6_checkbox": "",
+            "table_data_6": "",
+            "icon_field_7": false,
+            "cell_7_checkbox": "",
+            "table_data_7": ""
+          }
+        },
+        "row_wwpUzi": {
+          "type": "row",
+          "settings": {
+            "table_heading": "Heading",
+            "icon_field_1": false,
+            "cell_1_checkbox": "",
+            "table_data_1": "abc",
+            "icon_field_2": false,
+            "cell_2_checkbox": "",
+            "table_data_2": "abc",
+            "icon_field_3": false,
+            "cell_3_checkbox": "checked-circle",
+            "table_data_3": "abc",
+            "icon_field_4": false,
+            "cell_4_checkbox": "",
+            "table_data_4": "abc",
+            "icon_field_5": false,
+            "cell_5_checkbox": "",
+            "table_data_5": "",
+            "icon_field_6": false,
+            "cell_6_checkbox": "",
+            "table_data_6": "",
+            "icon_field_7": false,
+            "cell_7_checkbox": "",
+            "table_data_7": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_DYWPzr",
+        "row_KVTk86",
+        "row_qq4JTX",
+        "row_wwpUzi"
+      ],
+      "name": "t:sections.clarity-table.name",
+      "settings": {
+        "heading_table": "Lorem Ipsum",
+        "para_table": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+        "caption_table": "<p>Lorem Ipsum <a href=\"#\" title=\"#\">Dolor </a>world</p>"
+      }
+    },
     "collection_list_Yh74nL": {
       "type": "collection-list",
       "blocks": {
@@ -1446,7 +1571,13 @@
           "settings": {
             "image": "shopify://shop_images/purple-t-shirt.jpg",
             "title": "Lorem Ipsum",
-            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>",
+            "button_text": "",
+            "button_url": "",
+            "background_color": "",
+            "text_color": "",
+            "button_style_secondary": false,
+            "desktop_content_alignment": "center"
           }
         },
         "image_qnCPFf": {
@@ -1454,7 +1585,13 @@
           "settings": {
             "image": "shopify://shop_images/green-t-shirt.jpg",
             "title": "Lorem Ipsum",
-            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>",
+            "button_text": "",
+            "button_url": "",
+            "background_color": "",
+            "text_color": "",
+            "button_style_secondary": false,
+            "desktop_content_alignment": "center"
           }
         },
         "image_aFXBhA": {
@@ -1462,7 +1599,13 @@
           "settings": {
             "image": "shopify://shop_images/grey-t-shirt.jpg",
             "title": "Lorem Ipsum",
-            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>",
+            "button_text": "",
+            "button_url": "",
+            "background_color": "",
+            "text_color": "",
+            "button_style_secondary": false,
+            "desktop_content_alignment": "center"
           }
         },
         "image_rQY8dk": {
@@ -1470,7 +1613,13 @@
           "settings": {
             "image": "shopify://shop_images/purple-t-shirt.jpg",
             "title": "Lorem Ipsum",
-            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>"
+            "description": "<p>Lorem Ipsum dolor sut lorem ipsum</p>",
+            "button_text": "",
+            "button_url": "",
+            "background_color": "",
+            "text_color": "",
+            "button_style_secondary": false,
+            "desktop_content_alignment": "center"
           }
         }
       },
@@ -1492,6 +1641,7 @@
   "order": [
     "slideshow_EVKABK",
     "logo_scroll_3VKwJ8",
+    "clarity_compare_table_GUggtD",
     "collection_list_Yh74nL",
     "featured_collection_clarity_Be6wCM",
     "animated_image_with_text_4qbbNc",

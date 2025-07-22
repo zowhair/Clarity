@@ -610,6 +610,14 @@
       "lookbook": "Lookbook",
       "media_gallery": "Media Gallery"
     },
+    "clarity-table": {
+      "name": "Clarity Compare Table",
+      "blocks": {
+        "row": {
+          "label": "Row"
+        }
+      }
+    },
     "media_gallery": {
       "settings": {
         "header":"Media Gallery",
@@ -623,7 +631,11 @@
           "name": "Select Images",
           "label": "Image",
           "title": "Title",
-          "description": "Description"
+          "description": "Description",
+          "btn_url": "Button Url",
+          "btn_label": "Button Label",
+          "btn_bg": "button bg color",
+          "btn_text_color": "button text color"
         }
       }
     },
